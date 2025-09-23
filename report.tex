@@ -1,33 +1,223 @@
-\documentclass[11pt,aps,prl,lengthcheck]{revtex4-2}
-\usepackage{amsmath,amsfonts,amssymb,natbib,graphicx,mathtools}
-\usepackage{hyperref,pgfplots,siunitx}
+\documentclass{article}
+
+\setlength{\parskip}{1em}
+\usepackage{indentfirst}
+
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+\usepackage{amsmath,amsfonts,amssymb,amsthm,natbib,graphicx,mathtools}
 \usepackage{braket}
+\usepackage{enumitem}
+\usepackage{hyperref,pgfplots,siunitx}
 \usepackage[outdir=./]{epstopdf}
-\pagestyle{empty}
 
 \sisetup{detect-all}
+\pgfplotsset{compat=1.18}
 
-\bibliographystyle{apsrev4-1}
-\hypersetup{
-  colorlinks = true,
-  urlcolor = blue,
-  linkcolor = blue,
-  citecolor = blue
-}
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}[section]
+\newtheorem{rmk}[defn]{Remark}
+\newtheorem{note}[defn]{Note}
+\newtheorem{notation}[defn]{Notation}
+
+\theoremstyle{plain}
+\newtheorem{lemma}[defn]{Lemma}
+\newtheorem{prop}[defn]{Proposition}
+\newtheorem{thm}[defn]{Theorem}
 
 \begin{document}
-\title{Local Gauge Anomalies and The Standard Model}
-\author{E.A. \& K.O.}
-\date{\today}
-\begin{abstract}
-\noindent
-placeholder text qoijpwvpisegvpaiwrpiwarnvpaiwrb
-\end{abstract}
-\maketitle
 
-\section{I\@. Introduction}
-\section{II\@. Classical field theory \& Noether's theorem}
-\section{III\@. Path integral \& generating functional}
+\begin{titlepage}
+    \centering
+    {\huge \bfseries Local Gauge Anomalies and The Standard Model \par}
+    \vspace{1cm}
+    {\Large \itshape E. Arnold \& K. Okeyre\par}
+    \vfill
+    {\Large October 2025 \par}
+    {\Large Undergraduate Summer Research Project \par}
+    {\Large Durham University \par}
+\end{titlepage}
+
+\section*{General structure}
+
+    \begin{enumerate}
+    \item { Generalise term 1 MathPhys to Quantum field theory. Explain symmetries (global syms and the different local syms) and their conserved quantities }
+    \item { Explain what anomolies are and why gauge anomolies must be cancelled out }
+    \item { Maybe talk about how they were cancelled out before Dai-Freed }
+    \item { Explain Partition Functions }
+    \item {Explain the operator formulation of QFT}
+    \item {Explain the Path integral formulation}
+    \item Try to explain gauge transformations and gauge vs global symmetries
+    \item 
+    \end{enumerate}
+
+\section*{New General structure}
+
+    \begin{enumerate}
+    \item Explain the operator formulation of QFT
+    \item Explain the Path integral formulation
+    \item Try to explain gauge transformations and gauge vs global symmetries
+    \item Explain the partition function and anomalies
+    \end{enumerate}
+
+
+\newpage
+
+\section*{Abstract}
+Abstract here
+\newpage
+
+\tableofcontents
+\newpage
+
+\section{Introduction}
+
+The following report is aimed at undergraduate 
+students familiar with lagrangian mechanics, hamiltonian mechanics,
+quantum mechanics, and topology. For a guide to the expected prerequisite knowledge see \cite{mathphys1, mathphys2, topnotes}.
+
+[The aim of this report is to offer a gentle 
+introduction to quantum field theory, and offer 
+insight into one example of where topology shows up 
+in theoretical physics.] - CHANGE THIS
+
+Explain structure of report here. 
+
+\section{Quantum States}
+
+One should be familiar with the notion of a quantum wavefunction, such as 
+$\psi(x)$, which describes the position of a particle. 
+However, in quantum field theory we deal with a more 
+abstract concept called a quantum state.
+
+\begin{defn}
+Define Hilbert space
+\end{defn}
+
+\begin{notation}
+We use the Bra-Ket notation for vectors in Hilbert space. A 
+vector is written as $| \psi \rangle$ and a covector is 
+written as $\langle \phi |$. We define \[ \langle \phi | \psi \rangle := \langle \phi | (| \psi \rangle) \]
+Given a vector 
+$| \psi \rangle$ the corresponding hermition transpose of 
+this vector is $\langle \psi |$, meaning 
+$|\psi|^2 = \langle \psi | \psi \rangle$.
+\end{notation}
+
+A quantum state is a mathematical entity that embodies all 
+the known information of some given quantum system. There 
+are two types of quantum states, pure and mixed. We will 
+only explain pure quantum states in this section.
+
+A (pure) quantum state is an abstract vector in a complex 
+Hilbert space, denoted by $| \psi \rangle $. This Hilbert 
+space is called our state space and often has infinite 
+dimensions.
+
+Observables of our quantum system correspond to Hermition 
+operators on our state space. The eigenvalues of such an 
+operator are real and correspond to possible observed 
+values. It can be shown that the eigenstates of any 
+Hermition operator form a basis for our state space. This 
+allows us to relate quantum states to the more familiar 
+notion of a quantum wavefunction.
+
+Let $\langle \psi |$ be a quantum state and $\hat{X}$ be the position operator with eigenstates $|x \rangle$. Then $\psi (x) = \langle x | \psi \rangle$. WHY???
+
+
+\section{The Heisenburg Picture of Quantum Mechanics}
+
+One is usually introduced to quantum mechanics in the 
+Schrödinger picture, however, in quantum field theory, 
+it is more natural to consider the Heisenburg picture.
+
+In the Schrödinger picture, the quantum states vary with 
+time. For example, our quantum state may be represented 
+by a wave function $\psi(x,t)$, which evolves in time. 
+Conversely,
+the operators that act on our state space, such as 
+momentum, position, etc, are usually fixed with respect to time. 
+The only exception to this is that the Hamiltonian may include 
+a potential energy term that varies with time. 
+
+Consider a time dependent quantum state 
+$| \psi(t) \rangle$. This state evolves in time 
+according the  Schrodinger equation. One can 
+represent this via a unitary time-evolution operator 
+$U(t,t_0)$ 
+as follows;
+\[ | \psi(t) \rangle = U(t,t_0) | \psi(t_0) \rangle .\]
+
+In the Schrödinger 
+picture, the expectation of a potentially time-dependent hermition operator, $A(t)$, in the 
+state $| \psi(t) \rangle$,  can be written as 
+\[\langle \hat{A}(t) \rangle = \langle \psi(t) | \hat{A}(t) | \psi(t) \rangle.\]
+Choosing some reference time $t_0$ we can rewrite this as
+\[\langle \psi(t_0) | \hat{U}\textsuperscript{\textdagger}(t,t_0) \hat{A}  (t) \hat{U}(t,t_0) | \psi(t_0) \rangle.\]
+If we define 
+\[\hat{A_H}(t) = \hat{U}\textsuperscript{\textdagger}(t,t_0) \hat{A}  (t) \hat{U}(t,t_0) \]
+then we have 
+\[\langle \hat{A}(t) \rangle = \langle \psi(t_0) | \hat{A_H}(t) | \psi(t_0) \rangle.\]
+
+So we notice that we could have obtained this same 
+expectation by considering a constant quantum state 
+$| \psi(t_0) \rangle$ and a new operator that evolves with 
+time. This is the idea behind the Heisenberg picture of 
+quantum mechanics. One interprets the quantum states as 
+being fixed in time, and it is the operators that evolve 
+in time. 
+
+In the Schrödinger picture, the Schrödinger equation 
+governs the time evolution of quantum states. Hence, a 
+natural question is, in the Heisenberg picture, how do the 
+operators evolve in time?
+
+One can derive the following equation
+\[ \frac{d}{dt} \hat{A}_H(t) = \frac{1}{i \hbar} [\hat{A}_H(t), \hat{H}_H(t)] + \left[\frac{d}{dt} \hat{A}_S(t) \right]_H \]
+where the subscripts $S$ and $H$ denote whether we are considering the element in the Schrodinger or Heisenberg picture respectively. 
+
+\section{Classical field theory \& Noether's theorem}
+Classical field theory is a generalisation of classical 
+mechanics where instead of considering a collection of 
+particles $\{q_i(t)\}_i$, we consider a function on 
+spacetime, $\phi(\vec{x},t)$, called a field. The $i$ has 
+been generalised to $\vec{x}$.
+
+The Lagrangian density at a point is a function of 
+fields and their derivatives, 
+\[\mathcal{L} (\vec{x},t) = \mathcal{L}( \phi_a (\vec{x},t),\partial_{\mu} \phi_a (\vec{x},t) ),\]
+where the subscript $a$ is because the density may depend on multiple fields.
+The Lagrangian is then written as an integral of this Lagrangian density over space,
+\[ L(t) = \int d^3\vec{x} \mathcal{L} (\vec{x},t) .\]
+Our action is then written as a time integral of this Lagrangian,
+\[ S = \int dt L(t) \]
+or equivalently
+\[ S = \int d^4x \mathcal{L} ( \phi_a,\partial_{\mu} \phi_a ). \]
+From this, we can derive the new Euler-Lagrange equations,
+\[ \frac{\partial \mathcal{L}}{\partial \phi_a} - \partial_{\mu} \left[ \frac{\partial \mathcal{L}}{ \partial (\partial_{\mu} \phi_a)} \right] =0 .\]
+
+***NOT SURE IF THIS WILL BE NEEDED
+
+The fields in the Lagrangian density are relativistic, 
+meaning under Lorentz tranformations
+\[ x'^{\mu} = \Lambda^{\mu}_{\nu} x^{\nu} \]
+they transform as 
+\[ \phi_i'(x') = R_l^j \phi_i(x) \]
+
+**what is i? Does it matter?
+
+We use the Minkowski metric 
+\[ \eta_{\mu \nu} = diag(-1,1,1,1) \]
+in these notes.
+
+***DOWN TO HERE 
+
+Define a symmetry
+
+State Noether's thm
+
+
+
+\section{Path Integral \& Generating Functional}
 Given a particle position $x$ at time $t$ the probability amplitude of
 a measurement at time $t'$ observing a position $x'$ is
 
@@ -53,12 +243,14 @@ which acts as our propagator
 \end{equation}
 
 
+\section{Scalar Fields \& Green's Functions}
+\section{Wess-Zumino Consistency \& Ward Identity}
+\section{Stora-Zumino Descent}
+\section{Dai-Freed \& Index Theorems}
 
-\section{IV\@. Scalar fields \& Green's functions}
-\section{V\@. Wess-Zumino consistency \& Ward Identity}
-\section{VI\@. Stora-Zumino descent}
-\section{VII\@. Dai-Freed \& Index theorems}
-
+\newpage
+\bibliographystyle{unsrt}
+\bibliography{references}
+\addcontentsline{toc}{section}{References}
 
 \end{document}
-

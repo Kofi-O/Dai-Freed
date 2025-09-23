@@ -1,6 +1,7 @@
 \documentclass[11pt,aps,prl,lengthcheck]{revtex4-2}
-\usepackage{amsmath,amsfonts,amssymb,natbib,graphicx}
+\usepackage{amsmath,amsfonts,amssymb,natbib,graphicx,mathtools}
 \usepackage{hyperref,pgfplots,siunitx}
+\usepackage{braket}
 \usepackage[outdir=./]{epstopdf}
 \pagestyle{empty}
 
@@ -27,6 +28,32 @@ placeholder text qoijpwvpisegvpaiwrpiwarnvpaiwrb
 \section{I\@. Introduction}
 \section{II\@. Classical field theory \& Noether's theorem}
 \section{III\@. Path integral \& generating functional}
+Given a particle position $x$ at time $t$ the probability amplitude of
+a measurement at time $t'$ observing a position $x'$ is
+
+\begin{align*}
+  \begin{split}
+  M(x', t'; x, t) &= \prescript{}{H}{\braket{x',t'|x, t}_{H}}
+  \end{split} \\
+  \begin{split}
+  &= \braket{x'|\exp{\left[\frac{-i}{\hbar}\hat{H}(t-t')\right]}|x}
+  \end{split}
+\end{align*}\label{eq:1}
+now we note that if the states are normalised
+\begin{equation}
+  \int{dy |y,t\rangle{} \langle{y,t|} } = \mathbb{I}
+\end{equation}
+we can write 
+  \begin{equation}
+    M(x', t'; x, t) = \sum_{n}{\psi_{n}(x')\psi_{n}^*(x)\exp{\left[\frac{-i}{\hbar}\hat{H}(t-t')\right]}}
+  \end{equation}
+which acts as our propagator
+\begin{equation}
+ \psi(x', t') = \int{dx \ M(x', t'; x, t) \psi(x, t)}
+\end{equation}
+
+
+
 \section{IV\@. Scalar fields \& Green's functions}
 \section{V\@. Wess-Zumino consistency \& Ward Identity}
 \section{VI\@. Stora-Zumino descent}

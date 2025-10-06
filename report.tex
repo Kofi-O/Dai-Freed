@@ -158,7 +158,8 @@ In classical mechanics we consider a countable set of particles
 each with finitely many degrees of freedom
 and generalised coordinates $q_i(t)$. These generalised coordinates ${\{ q_i(t) \}}_i$ specify
 the system's configuration (position in configuration space) and together with the 
-generalised conjugate momenta ${\left\{p_i(t)= \frac{\partial L}{\partial \dot{q}_i} \right\}}_i $ 
+generalised conjugate momenta
+${\left\{p_i(t) \coloneq \frac{\partial L}{\partial \dot{q}_i} \right\}}_i $ 
 define the system's position in phase space.
 
 In classical field theory we generalise this notion of configuration space to a
@@ -185,19 +186,19 @@ the Euler-Lagrange equations
   \frac{\partial \mathcal{L}}{\partial \phi_k}
   = \partial_\mu \left[ \frac{\partial \mathcal{L}}{\partial(\partial_\mu{\phi_k}) } \right]
 \end{equation}
- 
-The Lagrangian density at a point is a function of 
-fields and their derivatives, 
-\[\mathcal{L} (\vec{x},t) = \mathcal{L}( \phi_a (\vec{x},t),\partial_{\mu} \phi_a (\vec{x},t) ),\]
-where the subscript $a$ is because the density may depend on multiple fields.
-The Lagrangian is then written as an integral of this Lagrangian density over space,
-\[ L(t) = \int d^3\vec{x} \mathcal{L} (\vec{x},t) .\]
-Our action is then written as a time integral of this Lagrangian,
-\[ S = \int dt L(t) \]
-or equivalently
-\[ S = \int d^4x \mathcal{L} ( \phi_a,\partial_{\mu} \phi_a ). \]
-From this, we can derive the new Euler-Lagrange equations,
-\[ \frac{\partial \mathcal{L}}{\partial \phi_a} - \partial_{\mu} \left[ \frac{\partial \mathcal{L}}{ \partial (\partial_{\mu} \phi_a)} \right] =0 .\]
+In classical mechanics we define the hamiltonian, $H(p_i(t), q_i(t), t)$, via the
+Legendre transform (IS THIS ACTUALLY THE DEFINITION OF H? ASK INAKI)
+\begin{equation}
+  H = \sum_{i}{p_i(t)\dot{q}_i(t) - L}
+\end{equation}
+to generalise this to field theory we introduce the momentum field conjugate to 
+$\phi_k(\vec{x}, t)$
+\begin{equation}
+  \pi_k(\vec{x}, t) \coloneq \frac{\partial \mathcal{L} }{\partial \dot{\phi}_k}
+\end{equation}
+
+
+We define the momentum fields conjugate to 
 
 ***NOT SURE IF THIS WILL BE NEEDED
 

@@ -1,4 +1,6 @@
-\documentclass{article}
+\documentclass[11pt, a4paper]{article}
+
+\usepackage{jheppub}
 
 \setlength{\parskip}{1em}
 \usepackage{indentfirst}
@@ -16,7 +18,7 @@
 \theoremstyle{definition}
 \newtheorem{defn}{Definition}[section]
 \newtheorem{rmk}[defn]{Remark}
-\newtheorem{note}[defn]{Note}
+%\newtheorem{note}[defn]{Note}
 \newtheorem{notation}[defn]{Notation}
 
 \theoremstyle{plain}
@@ -152,10 +154,17 @@ where the subscripts $S$ and $H$ denote whether we are considering the element i
 
 \section{Classical field theory \& Noether's theorem}
 Classical field theory is a generalisation of classical 
-mechanics where instead of considering a collection of 
-particles $\{q_i(t)\}_i$, we consider a function on 
-spacetime, $\phi(\vec{x},t)$, called a field. The $i$ has 
-been generalised to $\vec{x}$.
+mechanics where instead of considering a countable set of 
+particles $\{q_i(t)\}_i$, we consider the continuum of fields,
+$\phi(\vec{x},t)$, where $\vec{x}$ is a generalisation of $i$ and not a particle coordinate.
+
+
+Subsequently, we generalise the classical Lagrangian $L(q(t),\dot{q}(t),t)$ via the Lagrangian density 
+$\mathcal{L}(\phi({x}, t),\partial_{\mu}\phi(\vec{x}, t), t)$
+
+\begin{equation}
+  L(t) = \int{d^{3}\vec{x} \mathcal{L}(\phi({x}, t),\partial_{\mu}\phi(\vec{x}, t), t)}
+\end{equation}
 
 The Lagrangian density at a point is a function of 
 fields and their derivatives, 

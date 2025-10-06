@@ -3,8 +3,8 @@
 \contentsline {section}{\numberline {3}The Heisenburg Picture of Quantum Mechanics}{4}{section.3}%
 \contentsline {section}{\numberline {4}Classical field theory \& Noether's theorem}{5}{section.4}%
 \contentsline {section}{\numberline {5}Path Integral \& Generating Functional}{6}{section.5}%
-\contentsline {section}{\numberline {6}Scalar Fields \& Green's Functions}{6}{section.6}%
-\contentsline {section}{\numberline {7}Wess-Zumino Consistency \& Ward Identity}{6}{section.7}%
-\contentsline {section}{\numberline {8}Stora-Zumino Descent}{6}{section.8}%
-\contentsline {section}{\numberline {9}Dai-Freed \& Index Theorems}{6}{section.9}%
-\contentsline {section}{References}{7}{section*.3}%
+\contentsline {section}{\numberline {6}Scalar Fields \& Green's Functions}{7}{section.6}%
+\contentsline {section}{\numberline {7}Wess-Zumino Consistency \& Ward Identity}{7}{section.7}%
+\contentsline {section}{\numberline {8}Stora-Zumino Descent}{7}{section.8}%
+\contentsline {section}{\numberline {9}Dai-Freed \& Index Theorems}{7}{section.9}%
+\contentsline {section}{References}{8}{section*.3}%

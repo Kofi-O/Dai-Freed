@@ -153,19 +153,39 @@ One can derive the following equation
 where the subscripts $S$ and $H$ denote whether we are considering the element in the Schrodinger or Heisenberg picture respectively. 
 
 \section{Classical field theory \& Noether's theorem}
-Classical field theory is a generalisation of classical 
-mechanics where instead of considering a countable set of 
-particles $\{q_i(t)\}_i$, we consider the continuum of fields,
-$\phi(\vec{x},t)$, where $\vec{x}$ is a generalisation of $i$ and not a particle coordinate.
+
+In classical mechanics we consider a countable set of particles
+each with finitely many degrees of freedom
+and generalised coordinates $q_i(t)$. These generalised coordinates ${\{ q_i(t) \}}_i$ specify
+the system's configuration (position in configuration space) and together with the 
+generalised conjugate momenta ${\left\{p_i(t)= \frac{\partial L}{\partial \dot{q}_i} \right\}}_i $ 
+define the system's position in phase space.
+
+In classical field theory we generalise this notion of configuration space to a
+continuum with infinite degrees of freedom. The scalar field $\phi(t)$ can be seen as
+the generalised coordinates of a continuum 
+$\left( q_i(t) \xrightarrow{i \rightarrow \vec{x}} \phi(\vec{x}, t) \right)$ and for a system
+of continua the set of scalar fields ${\{ \phi_k(\vec{x}, t) \}}_k$
+specifies the system's configuration.
 
 
-Subsequently, we generalise the classical Lagrangian $L(q(t),\dot{q}(t),t)$ via the Lagrangian density 
-$\mathcal{L}(\phi({x}, t),\partial_{\mu}\phi(\vec{x}, t), t)$
-
+Subsequently, we generalise the classical Lagrangian $L(q_i(t), \dot{q}_i(t), t)$ via
 \begin{equation}
-  L(t) = \int{d^{3}\vec{x} \mathcal{L}(\phi({x}, t),\partial_{\mu}\phi(\vec{x}, t), t)}
+  L(t) = \int{d^{3}\vec{x} \mathcal{L}(\phi_k(\vec{x}, t),\partial_{\mu}\phi_k(\vec{x}, t), t)}
 \end{equation}
-
+where $\mathcal{L}$ is the Lagrangian density. With respect to some path
+in configuration space, $\vec{\Phi}(\vec{x}, t)$, the classical action becomes 
+\begin{equation}
+  S\left[\vec{\Phi}(\vec{x}, t) \right] = \int{dt L} 
+  = \int{d^4x \mathcal{L}(\phi_k(\vec{x}, t),\partial_{\mu}\phi_k(\vec{x}, t), t)}
+\end{equation}
+Using Hamilton's principle $\left( \frac{\delta S}{\delta \vec{\Phi} } = 0 \right)$ we obtain
+the Euler-Lagrange equations 
+\begin{equation}
+  \frac{\partial \mathcal{L}}{\partial \phi_k}
+  = \partial_\mu \left[ \frac{\partial \mathcal{L}}{\partial(\partial_\mu{\phi_k}) } \right]
+\end{equation}
+ 
 The Lagrangian density at a point is a function of 
 fields and their derivatives, 
 \[\mathcal{L} (\vec{x},t) = \mathcal{L}( \phi_a (\vec{x},t),\partial_{\mu} \phi_a (\vec{x},t) ),\]

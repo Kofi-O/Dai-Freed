@@ -154,6 +154,7 @@ where the subscripts $S$ and $H$ denote whether we are considering the element i
 
 \section{Classical field theory \& Noether's theorem}
 
+\subsection{Classical field theory}
 In classical mechanics we consider a countable set of particles
 each with finitely many degrees of freedom
 and generalised coordinates $q_i(t)$. These generalised coordinates ${\{ q_i(t) \}}_i$ specify
@@ -236,6 +237,34 @@ We define the poisson bracket
   \sum_{k}{\left[ \frac{\delta \mathcal{F}}{\delta \phi_k}\frac{\delta \mathcal{G}}{\delta \pi_k} 
 - \frac{\delta \mathcal{G}}{\delta \phi_k}\frac{\delta \mathcal{F}}{\delta \pi_k} \right]}  }
 \end{equation}
+
+\subsection{Noether's Theorem}
+
+In classical mechanics Noether's theorem shows the correspondence between symmetries of 
+the lagrangian and conserved quantities called Noether charges. This generalises to symmetries
+of the lagrangian density corresponding to conserved Noether currents in classical field theory.
+Consider an infinitesimal field transformation, $\vartheta(\epsilon)$, such that
+\begin{equation}
+  \phi_k \rightarrow \phi_k + \epsilon\vartheta_k(\phi_k)
+\end{equation}
+where each $\vartheta_k$ may be a function of an arbitrary number of fields $\phi_k$, and 
+we suppress high order terms in $\epsilon$.
+Such a transformation is called a symmetry if its effect on the Lagrangian density is
+\begin{equation}
+  \mathcal{L} \rightarrow \mathcal{L} + \epsilon\partial_\mu\Lambda^\mu(\phi_k, \vec{x}, t)
+\end{equation}
+This change in the Lagrangian density leaves the Euler-Lagrange equations invariant (add proof L8r).
+Noether's theorem for fields states that a transformation $\vartheta_k(\epsilon)$ is a symmetry
+of the lagrangian if and only if 
+\begin{equation}
+  j^\mu \coloneq
+  \sum_{k}{\vartheta_k \frac{\partial \mathcal{L}}{\partial (\partial_\mu \phi_k)}}
+  - \Lambda^\mu, \, \partial_\mu j^\mu = 0 
+\end{equation}
+and the divergence free quantity $j^\mu$ is called the conserved Noether current (add proof L8r).
+\subsection{Second Quantisation}
+
+
 
 
 ***NOT SURE IF THIS WILL BE NEEDED

@@ -172,13 +172,13 @@ specifies the system's configuration.
 
 Subsequently, we generalise the classical Lagrangian $L(q_i(t), \dot{q}_i(t), t)$ via
 \begin{equation}
-  L(t) = \int{d^{3}\vec{x} \mathcal{L}(\phi_k(\vec{x}, t),\partial_{\mu}\phi_k(\vec{x}, t), t)}
+  L(t) = \int{d^{3}\vec{x}\,\mathcal{L}(\phi_k(\vec{x}, t),\partial_{\mu}\phi_k(\vec{x}, t), \vec{x}, t)}
 \end{equation}
 where $\mathcal{L}$ is the Lagrangian density. With respect to some path
 in configuration space, $\vec{\Phi}(\vec{x}, t)$, the classical action becomes 
 \begin{equation}
-  S\left[\vec{\Phi}(\vec{x}, t) \right] = \int{dt L} 
-  = \int{d^4x \mathcal{L}(\phi_k(\vec{x}, t),\partial_{\mu}\phi_k(\vec{x}, t), t)}
+  S\left[\vec{\Phi}(\vec{x}, t) \right] = \int{dt\,L} 
+  = \int{d^4x\,\mathcal{L}(\phi_k(\vec{x}, t),\partial_{\mu}\phi_k(\vec{x}, t), \vec{x}, t)}
 \end{equation}
 Using Hamilton's principle $\left( \frac{\delta S}{\delta \vec{\Phi} } = 0 \right)$ we obtain
 the Euler-Lagrange equations 
@@ -196,9 +196,47 @@ $\phi_k(\vec{x}, t)$
 \begin{equation}
   \pi_k(\vec{x}, t) \coloneq \frac{\partial \mathcal{L} }{\partial \dot{\phi}_k}
 \end{equation}
+\begin{equation}
+  p_i(t) \coloneq \frac{\partial L}{\partial \dot{q}_i} \xrightarrow{i \rightarrow \vec{x}}
+  \frac{\partial}{\partial \dot{\phi}_k} \left[ \int{d^3\vec{x}\,\mathcal{L}} \right]
+  = \int{d^3\vec{x}\,\pi_k(\vec{x}, t)}
+\end{equation}
+Thus the classical Hamiltonian is generalised to
+\begin{equation}
+  H(t) = \int{d^3\vec{x}\,\mathcal{H}(\pi_k(\vec{x}, t), \phi_k(\vec{x}, t), \vec{x}, t) }
+\end{equation}
+\begin{equation}
+  \mathcal{H} = \sum_{k}{\pi_k(\vec{x}, t)\dot{\phi}_k(\vec{x}, t) - \mathcal{L}}
+\end{equation}
+where $\mathcal{H}$ is the Hamiltonian density, and Hamilton's equations become
+the Hamiltonian field equations
+\begin{equation}
+  \dot{\phi}_k = \frac{\partial \mathcal{H}}{\partial \pi_k}
+  - \partial_\mu \left[ \frac{\partial \mathcal{H}}{\partial (\partial_\mu \pi_k)} \right],\,
+  \dot{\pi}_k = \partial_\mu \left[ \frac{\partial \mathcal{H}}{\partial (\partial_\mu \phi_k)} \right]
+  - \frac{\partial \mathcal{H}}{\partial \phi_k}
+\end{equation}
 
+[I tried not to use this notation but the rest will be unreadable if I don't, so I hope this
+does not contradict following variational deriv notation, also use this notation earlier]
+\begin{equation}
+  \frac{\delta \mathcal{F}}{\delta g} \coloneq \frac{\partial \mathcal{F}}{\partial g}
+  - \partial_\mu \left[ \frac{\partial \mathcal{F}}{\partial (\partial_\mu g)} \right],
+\end{equation}
 
-We define the momentum fields conjugate to 
+To begin second quantisation we will also require the notion of a field theoretic poisson bracket.
+Given two functionals of the dynamical fields F and G given by 
+\begin{equation}
+  F = \int{d^3\vec{x}\, \mathcal{F}(\pi_k, \phi_k, \vec{x}, t)},\,
+  G = \int{d^3\vec{x}\, \mathcal{G}(\pi_k, \phi_k, \vec{x}, t)}
+\end{equation}
+We define the poisson bracket
+\begin{equation}
+  {\{F, G \}}_{\phi,\pi} = \int{d^3\vec{x}\,
+  \sum_{k}{\left[ \frac{\delta \mathcal{F}}{\delta \phi_k}\frac{\delta \mathcal{G}}{\delta \pi_k} 
+- \frac{\delta \mathcal{G}}{\delta \phi_k}\frac{\delta \mathcal{F}}{\delta \pi_k} \right]}  }
+\end{equation}
+
 
 ***NOT SURE IF THIS WILL BE NEEDED
 

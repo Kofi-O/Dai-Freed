@@ -237,21 +237,21 @@ We define the poisson bracket
   \sum_{k}{\left[ \frac{\delta \mathcal{F}}{\delta \phi_k}\frac{\delta \mathcal{G}}{\delta \pi_k} 
 - \frac{\delta \mathcal{G}}{\delta \phi_k}\frac{\delta \mathcal{F}}{\delta \pi_k} \right]}  }
 \end{equation}
-Note that $K(\vec{x}) = \int{d^3\vec{y}\,[K(\vec{y}) \delta(\vec{x} - \vec{y})]}$
+Note that $K({x}) = \int{d{y}\,[K({y}) \delta(x - y)]}$
 
 
 \subsection{Noether's Theorem}
 
-In classical mechanics Noether's theorem shows the correspondence between symmetries of 
-the lagrangian and conserved quantities called Noether charges. This generalises to symmetries
+In classical mechanics Noether's theorem shows the correspondence between global symmetries of 
+the lagrangian and conserved quantities called Noether charges. This generalises to global symmetries
 of the lagrangian density corresponding to conserved Noether currents in classical field theory.
 Consider an infinitesimal field transformation, $\vartheta(\epsilon)$, such that
 \begin{equation}
   \phi_k \rightarrow \phi_k + \epsilon\vartheta_k(\phi_k)
 \end{equation}
-where each $\vartheta_k$ may be a function of an arbitrary number of fields $\phi_k$, and 
-we suppress high order terms in $\epsilon$.
-Such a transformation is called a symmetry if its effect on the Lagrangian density is
+where each $\vartheta_k$ may be a function of an arbitrary number of fields $\phi_k$ but
+is independent of spacetime, and we suppress high order terms in $\epsilon$.
+Such a transformation is called a global symmetry if its effect on the Lagrangian density is
 \begin{equation}
   \mathcal{L} \rightarrow \mathcal{L} + \epsilon\partial_\mu\Lambda^\mu(\phi_k, \vec{x}, t)
 \end{equation}
@@ -280,17 +280,28 @@ To obtain a quantised field theory we consider the field theoretic poisson brack
   \{ \phi_n(\vec{z}), \phi_m(\vec{w}) \} = 0 = \{ \pi_n(\vec{z}), \pi_m(\vec{w}) \}
 \end{equation}
 \begin{equation}
-  \{\phi_n(\vec{z}), \pi_m(\vec{w}) \} = \delta_{nm}\delta(\vec{z} - \vec{w})
+  \{\phi_n(\vec{z}), \pi_m(\vec{w}) \} = \delta_{nm}\delta^{(3)}(\vec{z} - \vec{w})
 \end{equation}
 Which are canonically quantised to the commutator and anti-commutator relations 
-for bosonic and fermionic fields operators respectively acting on a Fock space
-(corollary of the spin-statistics theorem)
+for bosonic and fermionic fields operators respectively (consequence of spin-statistics)
+acting on a Fock space
 \begin{equation}
-  {[\hat{\phi}_n(\vec{z}), \hat{\phi}_m(\vec{w}) ]}_\pm = 0 = {[\hat{\pi}_n(\vec{z}), \hat{\pi}_m(\vec{w}) ]}_\pm
+  {[\hat{\phi}_n(\vec{z}), \hat{\phi}_m(\vec{w}) ]}_\pm = 0
+  = {[\hat{\pi}_n(\vec{z}), \hat{\pi}_m(\vec{w}) ]}_\pm
 \end{equation}
 \begin{equation}
-  {[ \hat{\phi}_n(\vec{z}), \hat{\pi}_m(\vec{w}) ]}_\pm = i\hbar\delta_{nm}\delta(\vec{z} - \vec{w})
+  {[ \hat{\phi}_n(\vec{z}), \hat{\pi}_m(\vec{w}) ]}_\pm
+  = i\hbar\delta_{nm}\delta^{(3)}(\vec{z} - \vec{w})
 \end{equation}
+
+\section{QED Lagrangian}
+Introduce dirac eqn as relativistic QM,
+show U(1) global symm. and that gauging this symm leads to QED lagrangian.
+Show we now wish to gauge the axial symm. because of the prev. success but 
+at the quantum level there is an anomaly acting as an obstruction to gauging.
+
+
+
 
 ***NOT SURE IF THIS WILL BE NEEDED
 

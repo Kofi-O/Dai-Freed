@@ -195,7 +195,7 @@ Legendre transform (IS THIS ACTUALLY THE DEFINITION OF H? ASK INAKI)
 to generalise this to field theory we introduce the momentum field conjugate to 
 $\phi_k(\vec{x}, t)$
 \begin{equation}
-  \pi_k(\vec{x}, t) \coloneq \frac{\partial \mathcal{L} }{\partial \dot{\phi}_k}
+  \pi_k(\vec{x}, t) \coloneq \frac{\partial \mathcal{L} }{\partial \dot{\phi}_k} \\
 \end{equation}
 \begin{equation}
   p_i(t) \coloneq \frac{\partial L}{\partial \dot{q}_i} \xrightarrow{i \rightarrow \vec{x}}
@@ -237,6 +237,8 @@ We define the poisson bracket
   \sum_{k}{\left[ \frac{\delta \mathcal{F}}{\delta \phi_k}\frac{\delta \mathcal{G}}{\delta \pi_k} 
 - \frac{\delta \mathcal{G}}{\delta \phi_k}\frac{\delta \mathcal{F}}{\delta \pi_k} \right]}  }
 \end{equation}
+Note that $K(\vec{x}) = \int{d^3\vec{y}\,[K(\vec{y}) \delta(\vec{x} - \vec{y})]}$
+
 
 \subsection{Noether's Theorem}
 
@@ -263,9 +265,32 @@ of the lagrangian if and only if
 \end{equation}
 and the divergence free quantity $j^\mu$ is called the conserved Noether current (add proof L8r).
 \subsection{Second Quantisation}
+In classical mechanics, the canonical transformations are those which preserve the symplectic 
+structure; poisson brackets of the dynamical variables ($p_i, q_i$) are invariant under such 
+transformations. A system's position in phase space specifies its classical state.
 
-
-
+However, in quantum mechanics all properties of a system are included in a quantum state, $\ket{\psi}$, 
+inside of a Hilbert space upon which operators corresponding to observables act.
+Dirac's famous canonical quantisation
+rule (${\{A, B \} \rightarrow \frac{1}{i\hbar}[\hat{A}, \hat{B}]}$) allows us quantise 
+the canonical structure of classical mechanics (although Groenewold's theorem shows us 
+that such a rule cannot hold for all functions of the dynamical variables). 
+To obtain a quantised field theory we consider the field theoretic poisson brackets
+\begin{equation}
+  \{ \phi_n(\vec{z}), \phi_m(\vec{w}) \} = 0 = \{ \pi_n(\vec{z}), \pi_m(\vec{w}) \}
+\end{equation}
+\begin{equation}
+  \{\phi_n(\vec{z}), \pi_m(\vec{w}) \} = \delta_{nm}\delta(\vec{z} - \vec{w})
+\end{equation}
+Which are canonically quantised to the commutator and anti-commutator relations 
+for bosonic and fermionic fields operators respectively acting on a Fock space
+(corollary of the spin-statistics theorem)
+\begin{equation}
+  {[\hat{\phi}_n(\vec{z}), \hat{\phi}_m(\vec{w}) ]}_\pm = 0 = {[\hat{\pi}_n(\vec{z}), \hat{\pi}_m(\vec{w}) ]}_\pm
+\end{equation}
+\begin{equation}
+  {[ \hat{\phi}_n(\vec{z}), \hat{\pi}_m(\vec{w}) ]}_\pm = i\hbar\delta_{nm}\delta(\vec{z} - \vec{w})
+\end{equation}
 
 ***NOT SURE IF THIS WILL BE NEEDED
 

@@ -243,6 +243,7 @@ Note that $K({x}) = \int{d{y}\,[K({y}) \delta(x - y)]}$
 
 
 \subsection{Noether's Theorem}
+[From here we should somehow state that $\vec{x}$ is a spatial vector and $x$ is a four-vector]
 
 In classical mechanics Noether's theorem shows the correspondence between global symmetries of 
 the lagrangian and conserved quantities called Noether charges. This generalises to global symmetries
@@ -255,7 +256,7 @@ where each $\vartheta_k$ may be a function of an arbitrary number of fields $\ph
 is independent of spacetime, and we suppress high order terms in $\epsilon$.
 Such a transformation is called a global symmetry if its effect on the Lagrangian density is
 \begin{equation}
-  \mathcal{L} \mapsto \mathcal{L} + \epsilon\partial_\mu\Lambda^\mu(\phi_k, \vec{x}, t)
+  \mathcal{L} \mapsto \mathcal{L} + \epsilon\partial_\mu\Lambda^\mu(\phi_k, x)
 \end{equation}
 This change in the Lagrangian density leaves the Euler-Lagrange equations invariant (add proof L8r).
 Noether's theorem for fields states that a transformation $\vartheta_k(\epsilon)$ is a symmetry
@@ -279,20 +280,20 @@ the canonical structure of classical mechanics (although Groenewold's theorem sh
 that such a rule cannot hold for all functions of the dynamical variables). 
 To obtain a quantised field theory we consider the field theoretic poisson brackets
 \begin{equation}
-  \{ \phi_n(\vec{z}), \phi_m(\vec{w}) \} = 0 = \{ \pi_n(\vec{z}), \pi_m(\vec{w}) \}
+  \{ \phi_n(z), \phi_m(w) \} = 0 = \{ \pi_n(z), \pi_m(w) \}
 \end{equation}
 \begin{equation}
-  \{\phi_n(\vec{z}), \pi_m(\vec{w}) \} = \delta_{nm}\delta^{(3)}(\vec{z} - \vec{w})
+  \{\phi_n(z), \pi_m(w) \} = \delta_{nm}\delta^{(3)}(\vec{z} - \vec{w})
 \end{equation}
 Which are canonically quantised to the commutator and anti-commutator relations 
 for bosonic and fermionic fields operators respectively (consequence of spin-statistics)
 acting on a Fock space
 \begin{equation}
-  {[\hat{\phi}_n(\vec{z}), \hat{\phi}_m(\vec{w}) ]}_\pm = 0
-  = {[\hat{\pi}_n(\vec{z}), \hat{\pi}_m(\vec{w}) ]}_\pm
+  {[\hat{\phi}_n(z), \hat{\phi}_m(w) ]}_\pm = 0
+  = {[\hat{\pi}_n(z), \hat{\pi}_m(w) ]}_\pm
 \end{equation}
 \begin{equation}
-  {[ \hat{\phi}_n(\vec{z}), \hat{\pi}_m(\vec{w}) ]}_\pm
+  {[ \hat{\phi}_n(z), \hat{\pi}_m(w) ]}_\pm
   = i\hbar\delta_{nm}\delta^{(3)}(\vec{z} - \vec{w})
 \end{equation}
 
@@ -301,6 +302,8 @@ Introduce dirac eqn as relativistic QM,
 show U(1) global symm. and that gauging this symm leads to QED lagrangian.
 Show we now wish to gauge the axial symm. because of the prev. success but 
 at the quantum level there is an anomaly acting as an obstruction to gauging.
+From here we use natural units.
+
 
 In quantum mechanics the Schrodinger equation is not Lorentz invariant and is thus
 incompatible with special relativity. A naive generalisation of the relativistic
@@ -310,7 +313,7 @@ equation. However, the Klein-Gordon is a second order partial differential equat
 subsequently does not uniquely determine time-evolution of the wavefunction.
 A more complicated treatment produces the Dirac equation
 \begin{equation}
-  (i \gamma^\mu\partial_\mu - m)\psi = 0
+  (i \gamma^\mu\partial_\mu - m)\psi(x) = 0
 \end{equation}
 Which corresponds to the Lagrangian density
 \begin{equation}
@@ -319,16 +322,30 @@ Which corresponds to the Lagrangian density
 Where the adjoint spinor is defined as $\bar{\psi} \coloneq \psi^\dagger\gamma^0$.
 This Lagrangian admits a global $\mathrm{U}(1)$ symmetry
 \begin{equation}
-  \psi \mapsto e^{i\vartheta}\psi, \quad \bar{\psi} \mapsto \bar{\psi}e^{-i\vartheta}  
+  \psi \mapsto e^{i\vartheta}\psi, \quad \bar{\psi} \mapsto \bar{\psi}e^{-i\vartheta} 
 \end{equation}
 This symmetry corresponds to a conserved current via Noether's theorem for fields
+[add proof L8R]
 \begin{equation}
   j^\mu = \bar{\psi}\gamma^\mu\psi
 \end{equation}
-
-
-
-
+We now attempt to 'gauge' this symmetry by adding spacetime dependence to the 
+parameter
+\begin{equation}
+  \psi \mapsto e^{i\vartheta(x)}\psi, \quad \bar{\psi} \mapsto \bar{\psi}e^{-i\vartheta(x)}  
+\end{equation}
+However, the Lagrangian is not invariant under such a transformation so we introduce the
+derivative operator which transforms covariantly
+\begin{equation}
+  D_\mu \coloneq \partial_\mu + ieA_\mu
+\end{equation}
+\begin{equation}
+  D_\mu \psi \mapsto D'_\mu\left[e^{i\vartheta(x)}\psi\right] = e^{i\vartheta(x)}D_\mu\psi
+\end{equation}
+This implies the gauge field transforms as
+\begin{equation}
+  A_\mu \mapsto A_\mu -\frac{1}{e}\partial_\mu\vartheta(x)
+\end{equation}
 
 ***NOT SURE IF THIS WILL BE NEEDED
 

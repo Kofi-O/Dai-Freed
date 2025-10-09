@@ -11,6 +11,8 @@
 \usepackage{enumitem}
 \usepackage{hyperref,pgfplots,siunitx}
 \usepackage[outdir=./]{epstopdf}
+\usepackage{slashed}
+
 
 \sisetup{detect-all}
 \pgfplotsset{compat=1.18}
@@ -300,8 +302,21 @@ show U(1) global symm. and that gauging this symm leads to QED lagrangian.
 Show we now wish to gauge the axial symm. because of the prev. success but 
 at the quantum level there is an anomaly acting as an obstruction to gauging.
 
-
-
+In quantum mechanics the Schrodinger equation is not Lorentz invariant and is thus
+incompatible with special relativity. A naive generalisation of the relativistic
+dispersion relation using the quantum mechanical
+Hamiltonian and momentum operators for free particles leads to the Klein-Gordon
+equation. However, the Klein-Gordon is a second order partial differential equation and
+subsequently does not uniquely determine time-evolution of the wavefunction.
+A more complicated treatment produces the Dirac equation
+\begin{equation}
+  (i \gamma^\mu\partial_\mu - m)\psi = 0
+\end{equation}
+Which corresponds to the Lagrangian density
+\begin{equation}
+  \mathcal{L} = \bar{\psi}(i \gamma^\mu\partial_\mu - m)\psi
+\end{equation}
+Where the adjoint spinor is defined as $\bar{\psi} \coloneq \psi^\dagger\gamma^0$
 
 ***NOT SURE IF THIS WILL BE NEEDED
 

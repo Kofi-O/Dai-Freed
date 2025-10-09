@@ -337,17 +337,32 @@ parameter
 However, the Lagrangian is not invariant under such a transformation so we introduce the
 derivative operator which transforms covariantly
 \begin{equation}
-  D_\mu \coloneq \partial_\mu + ieA_\mu
+  D_\mu \coloneq \partial_\mu + ie\Lambda_\mu
 \end{equation}
 \begin{equation}
   D_\mu \psi \mapsto D'_\mu\left[e^{i\vartheta(x)}\psi\right] = e^{i\vartheta(x)}D_\mu\psi
 \end{equation}
-This implies the gauge field transforms as
+To satisfy this the gauge field must transform as
 \begin{equation}
-  A_\mu \mapsto A_\mu -\frac{1}{e}\partial_\mu\vartheta(x)
+  \Lambda_\mu \mapsto \Lambda_\mu -\frac{1}{e}\partial_\mu\vartheta(x)
 \end{equation}
+Thus we have a modified Lagrangian which admits a local $\mathrm{U}(1)$ gauge symmetry
+\begin{equation}
+  \mathcal{L} =  \bar{\psi}(i \gamma^\mu\partial_\mu - m)\psi -e\Lambda_\mu j^\mu
+\end{equation}
+This is strikingly similar to the electromagnetic Lagrangian density which
+also has a $\mathrm{U}(1)$ gauge symmetry
+\begin{equation}
+  \mathcal{L}_{EM} = -\frac{1}{4}F_{\mu\nu}F^{\mu\nu} -A_\mu J^\mu
+\end{equation}
+where $A_\mu$, $J^\mu$, and $F^{\mu\nu}$ are the electromagnetic four-potential, four-current,
+and field tensor respectively. Thus we identify
+
+
+
 
 ***NOT SURE IF THIS WILL BE NEEDED
+
 
 The fields in the Lagrangian density are relativistic, 
 meaning under Lorentz tranformations

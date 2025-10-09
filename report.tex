@@ -249,13 +249,13 @@ the lagrangian and conserved quantities called Noether charges. This generalises
 of the lagrangian density corresponding to conserved Noether currents in classical field theory.
 Consider an infinitesimal field transformation, $\vartheta(\epsilon)$, such that
 \begin{equation}
-  \phi_k \rightarrow \phi_k + \epsilon\vartheta_k(\phi_k)
+  \phi_k \mapsto \phi_k + \epsilon\vartheta_k(\phi_k)
 \end{equation}
 where each $\vartheta_k$ may be a function of an arbitrary number of fields $\phi_k$ but
 is independent of spacetime, and we suppress high order terms in $\epsilon$.
 Such a transformation is called a global symmetry if its effect on the Lagrangian density is
 \begin{equation}
-  \mathcal{L} \rightarrow \mathcal{L} + \epsilon\partial_\mu\Lambda^\mu(\phi_k, \vec{x}, t)
+  \mathcal{L} \mapsto \mathcal{L} + \epsilon\partial_\mu\Lambda^\mu(\phi_k, \vec{x}, t)
 \end{equation}
 This change in the Lagrangian density leaves the Euler-Lagrange equations invariant (add proof L8r).
 Noether's theorem for fields states that a transformation $\vartheta_k(\epsilon)$ is a symmetry
@@ -316,7 +316,19 @@ Which corresponds to the Lagrangian density
 \begin{equation}
   \mathcal{L} = \bar{\psi}(i \gamma^\mu\partial_\mu - m)\psi
 \end{equation}
-Where the adjoint spinor is defined as $\bar{\psi} \coloneq \psi^\dagger\gamma^0$
+Where the adjoint spinor is defined as $\bar{\psi} \coloneq \psi^\dagger\gamma^0$.
+This Lagrangian admits a global $\mathrm{U}(1)$ symmetry
+\begin{equation}
+  \psi \mapsto e^{i\vartheta}\psi, \quad \bar{\psi} \mapsto \bar{\psi}e^{-i\vartheta}  
+\end{equation}
+This symmetry corresponds to a conserved current via Noether's theorem for fields
+\begin{equation}
+  j^\mu = \bar{\psi}\gamma^\mu\psi
+\end{equation}
+
+
+
+
 
 ***NOT SURE IF THIS WILL BE NEEDED
 

@@ -298,11 +298,11 @@ acting on a Fock space
 \end{equation}
 
 \section{The Dirac Lagrangian}
-Introduce dirac eqn as relativistic QM,
+[Introduce dirac eqn as relativistic QM,
 show U(1) global symm. and that gauging this symm leads to QED lagrangian.
 Show we now wish to gauge the axial symm. because of the prev. success but 
 at the quantum level there is an anomaly acting as an obstruction to gauging.
-From here we use natural units.
+From here we use natural units.]
 
 \subsection{Gauging the vector symmetry}
 
@@ -320,7 +320,7 @@ Which corresponds to the Lagrangian density
 \begin{equation}
   \mathcal{L}_\mathrm{D} = \bar{\psi}(i \gamma^\mu\partial_\mu - m)\psi
 \end{equation}
-Where the adjoint spinor is defined as $\bar{\psi} \coloneq \psi^\dagger\gamma^0$.
+Where the adjoint bispinor is defined as $\bar{\psi} \coloneq \psi^\dagger\gamma^0$.
 This Lagrangian admits a global $\mathrm{U}(1)$ symmetry
 \begin{equation}
   \psi \mapsto e^{i\vartheta}\psi, \quad \bar{\psi} \mapsto \bar{\psi}e^{-i\vartheta} 
@@ -338,18 +338,18 @@ parameter
 However, the Lagrangian is not invariant under such a transformation so we introduce the
 derivative operator which transforms covariantly
 \begin{equation}
-  D_\mu \coloneq \partial_\mu + ie\Lambda_\mu
+  D_\mu \coloneq \partial_\mu + ie\Pi_\mu
 \end{equation}
 \begin{equation}
   D_\mu \psi \mapsto D'_\mu\left[e^{i\vartheta(x)}\psi\right] = e^{i\vartheta(x)}D_\mu\psi
 \end{equation}
 To satisfy this the gauge field must transform as
 \begin{equation}
-  \Lambda_\mu \mapsto \Lambda_\mu -\frac{1}{e}\partial_\mu\vartheta(x)
+  \Pi_\mu \mapsto \Pi_\mu -\frac{1}{e}\partial_\mu\vartheta(x)
 \end{equation}
 Thus we have a modified Lagrangian which admits a local $\mathrm{U}(1)$ gauge symmetry
 \begin{equation}
-  \mathcal{L} =  \bar{\psi}(i \gamma^\mu\partial_\mu - m)\psi -e\Lambda_\mu j^\mu
+  \mathcal{L} =  \bar{\psi}(i \gamma^\mu\partial_\mu - m)\psi -e\Pi_\mu j^\mu
 \end{equation}
 This is strikingly similar to the electromagnetic Lagrangian density which
 also has a $\mathrm{U}(1)$ gauge symmetry
@@ -357,14 +357,43 @@ also has a $\mathrm{U}(1)$ gauge symmetry
   \mathcal{L}_\mathrm{EM} = -\frac{1}{4}F_{\mu\nu}F^{\mu\nu} -A_\mu J^\mu
 \end{equation}
 where $A_\mu$, $J^\mu$, and $F^{\mu\nu}$ are the electromagnetic four-potential, four-current,
-and field tensor respectively. Thus we identify $\Lambda_\mu = A_\mu$ and $ej^\mu = J^\mu$
+and field tensor respectively. Thus we identify $\Pi_\mu = A_\mu$ and $ej^\mu = J^\mu$
 and arrive at the Lagrangian for quantum electrodynamics.
 \begin{equation}
   \mathcal{L}_\mathrm{QED} = -\frac{1}{4}F_{\mu\nu}F^{\mu\nu} -eA_\mu j^\mu
     + \bar{\psi}(i \gamma^\mu\partial_\mu - m)\psi
 \end{equation}
 
+[Speak about how QED is an incredibly successful theory of photon-electron interactions]
+
+
 \subsection{The Axial symmetry}
+
+However, this is not the end of the story. The massless Dirac Lagrangian admits
+another symmetry better seen in the weyl basis.
+\begin{equation}
+  \psi =
+  \begin{pmatrix} \psi_\mathrm{R} \\ \psi_\mathrm{L} \end{pmatrix}, \quad
+  \gamma^{\mu}\partial_\mu =
+  \begin{pmatrix}0 & \sigma^\mu\partial_\mu \\ \bar{\sigma}^{\mu}\partial_\mu & 0 \end{pmatrix}
+\end{equation}
+Thus the Dirac Lagrangian can be seen as the interaction between two Weyl fermions
+of opposite chirality
+\begin{equation}
+  \mathcal{L}_\mathrm{D} = \psi_\mathrm{R}^{\dagger}(i\sigma^\mu\partial_\mu)\psi_\mathrm{R} +
+  \psi_\mathrm{L}^{\dagger}(i\bar{\sigma}^\mu\partial_\mu)\psi_\mathrm{L}
+  - m(\psi_\mathrm{L}^{\dagger}\psi_\mathrm{R} + \psi_\mathrm{R}^{\dagger}\psi_\mathrm{L})
+\end{equation}
+In the massless case the Lagrangian gains a global $\mathrm{U}(1)$ symmetry
+\begin{equation}
+  \psi_\mathrm{L} \mapsto e^{i\vartheta}\psi_\mathrm{L}, \quad
+  \psi_\mathrm{R} \mapsto e^{-i\vartheta}\psi_\mathrm{R}
+\end{equation}
+which is equivalent to 
+\begin{equation}
+  \psi \mapsto e^{i\vartheta\gamma^5}\psi
+\end{equation}
+
 
 \newpage
 

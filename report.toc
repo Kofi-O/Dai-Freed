@@ -5,10 +5,12 @@
 \contentsline {subsection}{\numberline {4.1}Classical field theory}{5}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Noether's Theorem}{6}{subsection.4.2}%
 \contentsline {subsection}{\numberline {4.3}Second Quantisation}{7}{subsection.4.3}%
-\contentsline {section}{\numberline {5}QED Lagrangian}{7}{section.5}%
+\contentsline {section}{\numberline {5}The Dirac Lagrangian}{7}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Gauging the vector symmetry}{7}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}The Axial symmetry}{8}{subsection.5.2}%
 \contentsline {section}{\numberline {6}Path Integral \& Generating Functional}{9}{section.6}%
-\contentsline {section}{\numberline {7}Scalar Fields \& Green's Functions}{9}{section.7}%
-\contentsline {section}{\numberline {8}Wess-Zumino Consistency \& Ward Identity}{9}{section.8}%
-\contentsline {section}{\numberline {9}Stora-Zumino Descent}{9}{section.9}%
-\contentsline {section}{\numberline {10}Dai-Freed \& Index Theorems}{9}{section.10}%
-\contentsline {section}{References}{10}{section*.3}%
+\contentsline {section}{\numberline {7}Scalar Fields \& Green's Functions}{10}{section.7}%
+\contentsline {section}{\numberline {8}Wess-Zumino Consistency \& Ward Identity}{10}{section.8}%
+\contentsline {section}{\numberline {9}Stora-Zumino Descent}{10}{section.9}%
+\contentsline {section}{\numberline {10}Dai-Freed \& Index Theorems}{10}{section.10}%
+\contentsline {section}{References}{11}{section*.3}%

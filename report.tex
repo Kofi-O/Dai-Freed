@@ -297,13 +297,14 @@ acting on a Fock space
   = i\hbar\delta_{nm}\delta^{(3)}(\vec{z} - \vec{w})
 \end{equation}
 
-\section{QED Lagrangian}
+\section{The Dirac Lagrangian}
 Introduce dirac eqn as relativistic QM,
 show U(1) global symm. and that gauging this symm leads to QED lagrangian.
 Show we now wish to gauge the axial symm. because of the prev. success but 
 at the quantum level there is an anomaly acting as an obstruction to gauging.
 From here we use natural units.
 
+\subsection{Gauging the vector symmetry}
 
 In quantum mechanics the Schrodinger equation is not Lorentz invariant and is thus
 incompatible with special relativity. A naive generalisation of the relativistic
@@ -317,7 +318,7 @@ A more complicated treatment produces the Dirac equation
 \end{equation}
 Which corresponds to the Lagrangian density
 \begin{equation}
-  \mathcal{L} = \bar{\psi}(i \gamma^\mu\partial_\mu - m)\psi
+  \mathcal{L}_\mathrm{D} = \bar{\psi}(i \gamma^\mu\partial_\mu - m)\psi
 \end{equation}
 Where the adjoint spinor is defined as $\bar{\psi} \coloneq \psi^\dagger\gamma^0$.
 This Lagrangian admits a global $\mathrm{U}(1)$ symmetry
@@ -329,7 +330,7 @@ This symmetry corresponds to a conserved current via Noether's theorem for field
 \begin{equation}
   j^\mu = \bar{\psi}\gamma^\mu\psi
 \end{equation}
-We now attempt to 'gauge' this symmetry by adding spacetime dependence to the 
+We now attempt to `gauge' this symmetry by adding spacetime dependence to the 
 parameter
 \begin{equation}
   \psi \mapsto e^{i\vartheta(x)}\psi, \quad \bar{\psi} \mapsto \bar{\psi}e^{-i\vartheta(x)}  
@@ -353,12 +354,19 @@ Thus we have a modified Lagrangian which admits a local $\mathrm{U}(1)$ gauge sy
 This is strikingly similar to the electromagnetic Lagrangian density which
 also has a $\mathrm{U}(1)$ gauge symmetry
 \begin{equation}
-  \mathcal{L}_{EM} = -\frac{1}{4}F_{\mu\nu}F^{\mu\nu} -A_\mu J^\mu
+  \mathcal{L}_\mathrm{EM} = -\frac{1}{4}F_{\mu\nu}F^{\mu\nu} -A_\mu J^\mu
 \end{equation}
 where $A_\mu$, $J^\mu$, and $F^{\mu\nu}$ are the electromagnetic four-potential, four-current,
-and field tensor respectively. Thus we identify
+and field tensor respectively. Thus we identify $\Lambda_\mu = A_\mu$ and $ej^\mu = J^\mu$
+and arrive at the Lagrangian for quantum electrodynamics.
+\begin{equation}
+  \mathcal{L}_\mathrm{QED} = -\frac{1}{4}F_{\mu\nu}F^{\mu\nu} -eA_\mu j^\mu
+    + \bar{\psi}(i \gamma^\mu\partial_\mu - m)\psi
+\end{equation}
 
+\subsection{The Axial symmetry}
 
+\newpage
 
 
 ***NOT SURE IF THIS WILL BE NEEDED

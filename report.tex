@@ -228,7 +228,7 @@ does not contradict following variational deriv notation, also use this notation
 \end{equation}
 
 To begin second quantisation we will also require the notion of a field theoretic poisson bracket.
-Given two functionals of the dynamical fields F and G given by 
+Given two functionals, $F$ and $G$, of the dynamical fields given by 
 \begin{equation}
   F = \int{d^3\vec{x}\, \mathcal{F}(\pi_k, \phi_k, \vec{x}, t)},\,
   G = \int{d^3\vec{x}\, \mathcal{G}(\pi_k, \phi_k, \vec{x}, t)}
@@ -267,10 +267,12 @@ of the lagrangian if and only if
   - \Lambda^\mu, \, \partial_\mu j^\mu = 0 
 \end{equation}
 and the divergence free quantity $j^\mu$ is called the conserved Noether current (add proof L8r).
+
 \subsection{Second Quantisation}
-In classical mechanics, the canonical transformations are those which preserve the symplectic 
-structure; poisson brackets of the dynamical variables ($p_i, q_i$) are invariant under such 
-transformations. A system's position in phase space specifies its classical state.
+In classical mechanics, the canonical transformations are exactly those which preserve the symplectic 
+structure; invariance of poisson brackets of the dynamical variables ($p_i, q_i$) characterises
+transformations which leave Hamilton's equations unchanged.
+A system's position in phase space specifies its classical state.
 
 However, in quantum mechanics all properties of a system are included in a quantum state, $\ket{\psi}$, 
 inside of a Hilbert space upon which operators corresponding to observables act.
@@ -285,17 +287,20 @@ To obtain a quantised field theory we consider the field theoretic poisson brack
 \begin{equation}
   {\{\phi_n(z), \pi_m(w) \}}_f = \delta_{nm}\delta^{(3)}(\vec{z} - \vec{w})
 \end{equation}
-Which are canonically quantised to the commutator and anti-commutator relations 
-for bosonic and fermionic fields operators respectively (consequence of spin-statistics)
-acting on a Fock space
+Which are quantised to the canonical commutation relations for the dynamical
+field operators acting on a Fock space
 \begin{equation}
-  {[\hat{\phi}_n(z), \hat{\phi}_m(w) ]}_\pm = 0
-  = {[\hat{\pi}_n(z), \hat{\pi}_m(w) ]}_\pm
+  {[\hat{\phi}_n(z), \hat{\phi}_m(w) ]} = 0
+  = {[\hat{\pi}_n(z), \hat{\pi}_m(w) ]}
 \end{equation}
 \begin{equation}
-  {[ \hat{\phi}_n(z), \hat{\pi}_m(w) ]}_\pm
+  {[ \hat{\phi}_n(z), \hat{\pi}_m(w) ]}
   = i\hbar\delta_{nm}\delta^{(3)}(\vec{z} - \vec{w})
 \end{equation}
+However, just like Dirac's rule this procedure does not always produce a consistent quantum
+theory and in the case of quantising the Dirac Lagrangian we require the analogous anti-commutation
+relations. In principle, commutation relations are axioms of any quantum theory
+chosen to reproduce experimental observations.
 
 \section{The Dirac Lagrangian}
 [Introduce dirac eqn as relativistic QM,
@@ -406,7 +411,7 @@ to a covariant derivative as in (5.6) and determining the required gauge transfo
 \end{equation}
 \begin{equation}
   \Pi_\mu \mapsto e^{i\vartheta\gamma^5}\Pi_\mu e^{-i\vartheta\gamma^5} 
-  - \frac{1}{q}\partial_\mu\vartheta(x)\gamma^5
+  - \frac{1}{q}\partial_\mu\vartheta\gamma^5
 \end{equation}
 Now we must add a kinetic term to the Lagrangian to determine the dynamics 
 of the matrix-valued gauge field. Such a term must be gauge-invariant to preserve
@@ -426,7 +431,26 @@ of massless dirac fermions to a mysterious gauge field
   + \bar{\psi}(i\gamma^\mu \partial_\mu)\psi
 \end{equation}
 
+
+\section{Quantum Field Theory}
+
+So far we have studied relativistic quantum mechanics, making use of classical
+fields to describe the dynamics of quantum states. However, such a quantum theory is
+inconsistent subsequently predicting negative energy states which require 
+peculiar interpretations to reconcile (Dirac's hole theory). To proceed to a
+quantum theory of particle interactions we must promote the dynamical fields
+to field operators; second quantisation. We shall see how this shift to
+a quantised field theory affects our calculation of expectation values and probabilities.
+
+\subsection{Quantising the dirac field}
+
 \newpage
+
+
+
+
+
+
 
 
 ***NOT SURE IF THIS WILL BE NEEDED
@@ -478,11 +502,8 @@ which acts as our propagator
  \partial^{x}_{\mu}
 \end{equation}
 
-
-\section{Scalar Fields \& Green's Functions}
-\section{Wess-Zumino Consistency \& Ward Identity}
-\section{Stora-Zumino Descent}
-\section{Dai-Freed \& Index Theorems}
+\section{Time-ordered products \& ward identities}
+\section{Anomalies in QFT \& violation of Ward identities}
 
 \newpage
 \bibliographystyle{unsrt}

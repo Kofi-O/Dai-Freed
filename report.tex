@@ -235,7 +235,7 @@ Given two functionals of the dynamical fields F and G given by
 \end{equation}
 We define the poisson bracket
 \begin{equation}
-  {\{F, G \}}_{\phi,\pi} = \int{d^3\vec{x}\,
+  {\{F, G \}}_{f} = \int{d^3\vec{x}\,
   \sum_{k}{\left[ \frac{\delta \mathcal{F}}{\delta \phi_k}\frac{\delta \mathcal{G}}{\delta \pi_k} 
 - \frac{\delta \mathcal{G}}{\delta \phi_k}\frac{\delta \mathcal{F}}{\delta \pi_k} \right]}  }
 \end{equation}
@@ -280,10 +280,10 @@ the canonical structure of classical mechanics (although Groenewold's theorem sh
 that such a rule cannot hold for all functions of the dynamical variables). 
 To obtain a quantised field theory we consider the field theoretic poisson brackets
 \begin{equation}
-  \{ \phi_n(z), \phi_m(w) \} = 0 = \{ \pi_n(z), \pi_m(w) \}
+  {\{ \phi_n(z), \phi_m(w) \}}_f = 0 = {\{ \pi_n(z), \pi_m(w) \}}_f
 \end{equation}
 \begin{equation}
-  \{\phi_n(z), \pi_m(w) \} = \delta_{nm}\delta^{(3)}(\vec{z} - \vec{w})
+  {\{\phi_n(z), \pi_m(w) \}}_f = \delta_{nm}\delta^{(3)}(\vec{z} - \vec{w})
 \end{equation}
 Which are canonically quantised to the commutator and anti-commutator relations 
 for bosonic and fermionic fields operators respectively (consequence of spin-statistics)
@@ -308,9 +308,9 @@ From here we use natural units.]
 
 In quantum mechanics the Schrodinger equation is not Lorentz invariant and is thus
 incompatible with special relativity. A naive generalisation of the relativistic
-dispersion relation using the quantum mechanical
-Hamiltonian and momentum operators for free particles leads to the Klein-Gordon
-equation. However, the Klein-Gordon is a second order partial differential equation and
+dispersion relation using Hamiltonian and momentum operators
+for free particles leads to the Klein-Gordon
+equation. However, the Klein-Gordon equation is a second order partial differential equation and
 subsequently does not uniquely determine time-evolution of the wavefunction.
 A more complicated treatment produces the Dirac equation
 \begin{equation}
@@ -321,11 +321,11 @@ Which corresponds to the Lagrangian density
   \mathcal{L}_\mathrm{D} = \bar{\psi}(i \gamma^\mu\partial_\mu - m)\psi
 \end{equation}
 Where the adjoint bispinor is defined as $\bar{\psi} \coloneq \psi^\dagger\gamma^0$.
-This Lagrangian admits a global $\mathrm{U}(1)$ symmetry
+This Lagrangian admits a global $\mathrm{U}(1)$ symmetry called the vector symmetry
 \begin{equation}
   \psi \mapsto e^{i\vartheta}\psi, \quad \bar{\psi} \mapsto \bar{\psi}e^{-i\vartheta} 
 \end{equation}
-This symmetry corresponds to a conserved current via Noether's theorem for fields
+This symmetry corresponds to a conserved vector current via Noether's theorem for fields
 [add proof L8R]
 \begin{equation}
   j^\mu = \bar{\psi}\gamma^\mu\psi
@@ -370,21 +370,22 @@ and arrive at the Lagrangian for quantum electrodynamics.
 \subsection{The Axial symmetry}
 
 However, this is not the end of the story. The massless Dirac Lagrangian admits
-another symmetry better seen in the weyl basis.
+another symmetry better seen in the Weyl basis.
 \begin{equation}
   \psi =
-  \begin{pmatrix} \psi_\mathrm{R} \\ \psi_\mathrm{L} \end{pmatrix}, \quad
+  \begin{pmatrix} \psi_\mathrm{L} \\ \psi_\mathrm{R} \end{pmatrix}, \quad
   \gamma^{\mu}\partial_\mu =
   \begin{pmatrix}0 & \sigma^\mu\partial_\mu \\ \bar{\sigma}^{\mu}\partial_\mu & 0 \end{pmatrix}
 \end{equation}
 Thus the Dirac Lagrangian can be seen as the interaction between two Weyl fermions
 of opposite chirality
 \begin{equation}
-  \mathcal{L}_\mathrm{D} = \psi_\mathrm{R}^{\dagger}(i\sigma^\mu\partial_\mu)\psi_\mathrm{R} +
-  \psi_\mathrm{L}^{\dagger}(i\bar{\sigma}^\mu\partial_\mu)\psi_\mathrm{L}
+  \mathcal{L}_\mathrm{D} = \psi_\mathrm{L}^{\dagger}(i\sigma^\mu\partial_\mu)\psi_\mathrm{L} +
+  \psi_\mathrm{R}^{\dagger}(i\bar{\sigma}^\mu\partial_\mu)\psi_\mathrm{R}
   - m(\psi_\mathrm{L}^{\dagger}\psi_\mathrm{R} + \psi_\mathrm{R}^{\dagger}\psi_\mathrm{L})
 \end{equation}
 In the massless case the Lagrangian gains a global $\mathrm{U}(1)$ symmetry
+known as the axial symmetry
 \begin{equation}
   \psi_\mathrm{L} \mapsto e^{i\vartheta}\psi_\mathrm{L}, \quad
   \psi_\mathrm{R} \mapsto e^{-i\vartheta}\psi_\mathrm{R}
@@ -393,7 +394,37 @@ which is equivalent to
 \begin{equation}
   \psi \mapsto e^{i\vartheta\gamma^5}\psi
 \end{equation}
-
+and a Noether current
+\begin{equation}
+  j^\mu = \bar{\psi}\gamma^\mu\gamma^5\psi, \quad \partial_\mu j^\mu = 2im\bar{\psi}\gamma^5\psi
+\end{equation}
+We now proceed as before, gauging the axial symmetry by promoting $\partial_\mu$
+to a covariant derivative as in (5.6) and determining the required gauge transformation
+\begin{equation}
+  {\mathcal{L}_{D}|}_{m=0} = \bar{\psi}(i\gamma^\mu \partial_\mu)\psi
+  - q\bar{\psi}\gamma^\mu\Pi_\mu\psi
+\end{equation}
+\begin{equation}
+  \Pi_\mu \mapsto e^{i\vartheta\gamma^5}\Pi_\mu e^{-i\vartheta\gamma^5} 
+  - \frac{1}{q}\partial_\mu\vartheta(x)\gamma^5
+\end{equation}
+Now we must add a kinetic term to the Lagrangian to determine the dynamics 
+of the matrix-valued gauge field. Such a term must be gauge-invariant to preserve
+the $\mathrm{U}(1)$ symmetry. We find a Lagrangian analogous to the Maxwell Lagrangian
+\begin{equation}
+  \mathcal{L}_\Pi = - \frac{1}{4}\mathrm{Tr}(\Gamma_{\mu\nu}\Gamma^{\mu\nu})
+\end{equation}
+with field strength
+\begin{equation}
+  \Gamma_{\mu\nu} = \partial_\mu\Pi_\nu - \partial_\nu\Pi_\mu +q[\Pi_\mu, \Pi_\nu]
+\end{equation}
+has the required gauge-invariance. Thus we have a theory describing the coupling
+of massless dirac fermions to a mysterious gauge field
+\begin{equation}
+  \mathcal{L} =  - \frac{1}{4}\mathrm{Tr}(\Gamma_{\mu\nu}\Gamma^{\mu\nu}) 
+  - q\bar{\psi}\gamma^\mu\Pi_\mu\psi
+  + \bar{\psi}(i\gamma^\mu \partial_\mu)\psi
+\end{equation}
 
 \newpage
 

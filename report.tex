@@ -457,10 +457,18 @@ all particle annihilation operators
 Subsequently an $N$ particle state is
 \begin{equation}
   a^{r_1\dagger}_{\vec{p}_1}a^{r_2\dagger}_{\vec{p}_2}\dotsi
-  a^{r_N\dagger}_{\vec{p}_N}\!\!\ket{0} = \ket{r_1, p_1; r_2, p_2; \dots; r_N, p_N}
-
+  a^{r_N\dagger}_{\vec{p}_N}\!\!\ket{0} =
+  \ket{r_1, \vec{p}_1; r_2, \vec{p}_2; \dots; r_N, \vec{p}_N}
 \end{equation}
-
+Thus the probability amplitude of a state transitioning from one particle to 
+another is
+\begin{equation}
+  \braket{r_2, \vec{p}_2|r_1, \vec{p}_1} =
+  \braket{0|a^{r_2}_{\vec{p}_2}a^{r_1\dagger}_{\vec{p}_1}|0}
+\end{equation}
+which generalises to transitions between arbitrary quantum states.
+Thus it becomes clear that in quantum field theory the study of probabilities is
+characterised by vacuum expectation values of operators and their products
 
 \newpage
 

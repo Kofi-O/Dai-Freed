@@ -268,41 +268,6 @@ of the lagrangian if and only if
 \end{equation}
 and the divergence free quantity $j^\mu$ is called the conserved Noether current (add proof L8r).
 
-\subsection{Second Quantisation}
-In classical mechanics, the canonical transformations are exactly those which preserve the symplectic 
-structure; invariance of poisson brackets of the dynamical variables ($p_i, q_i$) characterises
-transformations which leave Hamilton's equations unchanged.
-A system's position in phase space specifies its classical state.
-
-However, in quantum mechanics all properties of a system are included in a quantum state, $\ket{\psi}$, 
-inside of a Hilbert space upon which operators corresponding to observables act.
-Dirac's famous canonical quantisation
-rule (${\{A, B \} \rightarrow \frac{1}{i\hbar}[\hat{A}, \hat{B}]}$) allows us quantise 
-the canonical structure of classical mechanics (although Groenewold's theorem shows us 
-that such a rule cannot hold for all functions of the dynamical variables). 
-To obtain a quantised field theory we consider the field theoretic poisson brackets
-\begin{equation}
-  {\{ \phi_n(z), \phi_m(w) \}}_f = 0 = {\{ \pi_n(z), \pi_m(w) \}}_f
-\end{equation}
-\begin{equation}
-  {\{\phi_n(z), \pi_m(w) \}}_f = \delta_{nm}\delta^{(3)}(\vec{z} - \vec{w})
-\end{equation}
-Which are quantised to the canonical commutation relations for the dynamical
-field operators acting on a Fock space
-\begin{equation}
-  {[\hat{\phi}_n(z), \hat{\phi}_m(w) ]} = 0
-  = {[\hat{\pi}_n(z), \hat{\pi}_m(w) ]}
-\end{equation}
-\begin{equation}
-  {[ \hat{\phi}_n(z), \hat{\pi}_m(w) ]}
-  = i\hbar\delta_{nm}\delta^{(3)}(\vec{z} - \vec{w})
-\end{equation}
-However, just like Dirac's rule this procedure does not always produce a consistent quantum
-theory and in the case of quantising the Dirac Lagrangian we require the analogous anti-commutation
-relations because of the spin-statistics theorem.
-In principle, commutation relations are axioms of any quantum theory
-chosen to reproduce experimental observations.
-
 \section{The Dirac Lagrangian}
 [Introduce dirac eqn as relativistic QM,
 show U(1) global symm. and that gauging this symm leads to QED lagrangian.
@@ -443,37 +408,48 @@ quantum theory of particle interactions we must promote the dynamical fields
 to field operators; second quantisation. We shall see how this shift to
 a quantised field theory affects our calculation of expectation values and probabilities.
 
-\subsection{Quantising the dirac field/ Fock Space}
 
-[You're gonna need to rewrite most of this to make sense]
+\subsection{Second Quantisation}
+In classical mechanics, the canonical transformations are exactly those which preserve the symplectic 
+structure; invariance of poisson brackets of the dynamical variables ($p_i, q_i$) characterises
+transformations which leave Hamilton's equations unchanged.
+A system's position in phase space specifies its classical state.
 
-For the Dirac equation we have the momentum conjugate to $\psi_\mu$ is
+However, in quantum mechanics all properties of a system are included in a quantum state, $\ket{\psi}$, 
+inside of a Hilbert space upon which operators corresponding to observables act.
+Dirac's famous canonical quantisation
+rule (${\{A, B \} \rightarrow \frac{1}{i\hbar}[\hat{A}, \hat{B}]}$) allows us quantise 
+the canonical structure of classical mechanics (although Groenewold's theorem shows us 
+that such a rule cannot hold for all functions of the dynamical variables). 
+To obtain a quantised field theory we consider the field theoretic poisson brackets
 \begin{equation}
-\pi_\mu \coloneq \frac{\partial \mathcal{L}}{\partial \dot{\psi}_\mu} = i\psi^{\dagger}_\mu
-\end{equation}
-Subsequently we impose the anti-commutation relations for the field operators
-\begin{equation}
-  {[\hat{\psi}_\mu(z), \hat{\psi}_\nu(w)]}_+ = 0
-  = {[\hat{\psi}^{\dagger}_\mu(z), \hat{\psi}^{\dagger}_\nu(w)]}_+
+  {\{ \phi_n(z), \phi_m(w) \}}_f = 0 = {\{ \pi_n(z), \pi_m(w) \}}_f
 \end{equation}
 \begin{equation}
-  {[\hat{\psi}_\mu(z), \hat{\psi}^{\dagger}_\nu(w)]}_+
-  = \delta_{\mu\nu}\delta^{(3)}(\vec{z} - \vec{w})
+  {\{\phi_n(z), \pi_m(w) \}}_f = \delta_{nm}\delta^{(3)}(\vec{z} - \vec{w})
 \end{equation}
-This implies the creation and annihilation operators must satisfy
+Which are quantised to the canonical commutation relations for the dynamical
+field operators acting on a Fock space
 \begin{equation}
-  {[ \hat{b}^{r}_{\vec{p}}, \hat{b}^{s\dagger}_{\vec{q}} ]}_{+} =
-  {(2\pi)}^3 \delta^{rs}\delta^{(3)}(\vec{p} - \vec{q}) =
-  {[ \hat{c}^{r}_{\vec{p}}, \hat{c}^{s\dagger}_{\vec{q}} ]}_{+}
+  {[\hat{\phi}_n(z), \hat{\phi}_m(w) ]} = 0
+  = {[\hat{\pi}_n(z), \hat{\pi}_m(w) ]}
 \end{equation}
-We define the vacuum state by 
 \begin{equation}
-  \hat{b}^r_{\vec{p}}\ket{0} = 0 = \hat{c}^s_{\vec{q}}\ket{0}
+  {[ \hat{\phi}_n(z), \hat{\pi}_m(w) ]}
+  = i\hbar\delta_{nm}\delta^{(3)}(\vec{z} - \vec{w})
 \end{equation}
-and the creation operators add particles to the vacuum
-\begin{equation}
-  \hat{b}^{r\dagger}_{\vec{p}}\ket{0} = \ket{\vec{p}, r}
-\end{equation}
+However, just like Dirac's rule this procedure does not always produce a consistent quantum
+theory and in the case of quantising the Dirac Lagrangian we require the analogous anti-commutation
+relations because of the spin-statistics theorem.
+In principle, commutation relations are axioms of any quantum theory
+chosen to reproduce experimental observations.
+
+
+\subsection{Fock Space}
+After second quantisation in general we obtain an expression for the Hamiltonian operator
+in terms of various creation and annihilation operators (e.g. $a^{r\dagger}_{\vec{p_1}},
+b^{s\dagger}_{\vec{p_2}}, \dots$ and $a^{r}_{\vec{p_1}}, b^{s}_{\vec{p_2}}, \dots$ 
+respectively). Subsequently we define the vacuum state to be annihilated by
 
 
 

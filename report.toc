@@ -9,7 +9,7 @@
 \contentsline {subsection}{\numberline {5.1}Gauging the vector symmetry}{7}{subsection.5.1}%
 \contentsline {subsection}{\numberline {5.2}The Axial symmetry}{9}{subsection.5.2}%
 \contentsline {section}{\numberline {6}Quantum Field Theory}{10}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Quantising the dirac field}{10}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.1}Quantising the dirac field/ Fock Space}{10}{subsection.6.1}%
 \contentsline {section}{\numberline {7}Path Integral \& Generating Functional}{11}{section.7}%
 \contentsline {section}{\numberline {8}Time-ordered products \& ward identities}{12}{section.8}%
 \contentsline {section}{\numberline {9}Anomalies in QFT \& violation of Ward identities}{12}{section.9}%

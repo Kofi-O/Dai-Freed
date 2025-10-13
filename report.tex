@@ -299,7 +299,8 @@ field operators acting on a Fock space
 \end{equation}
 However, just like Dirac's rule this procedure does not always produce a consistent quantum
 theory and in the case of quantising the Dirac Lagrangian we require the analogous anti-commutation
-relations. In principle, commutation relations are axioms of any quantum theory
+relations because of the spin-statistics theorem.
+In principle, commutation relations are axioms of any quantum theory
 chosen to reproduce experimental observations.
 
 \section{The Dirac Lagrangian}
@@ -442,7 +443,39 @@ quantum theory of particle interactions we must promote the dynamical fields
 to field operators; second quantisation. We shall see how this shift to
 a quantised field theory affects our calculation of expectation values and probabilities.
 
-\subsection{Quantising the dirac field}
+\subsection{Quantising the dirac field/ Fock Space}
+
+[You're gonna need to rewrite most of this to make sense]
+
+For the Dirac equation we have the momentum conjugate to $\psi_\mu$ is
+\begin{equation}
+\pi_\mu \coloneq \frac{\partial \mathcal{L}}{\partial \dot{\psi}_\mu} = i\psi^{\dagger}_\mu
+\end{equation}
+Subsequently we impose the anti-commutation relations for the field operators
+\begin{equation}
+  {[\hat{\psi}_\mu(z), \hat{\psi}_\nu(w)]}_+ = 0
+  = {[\hat{\psi}^{\dagger}_\mu(z), \hat{\psi}^{\dagger}_\nu(w)]}_+
+\end{equation}
+\begin{equation}
+  {[\hat{\psi}_\mu(z), \hat{\psi}^{\dagger}_\nu(w)]}_+
+  = \delta_{\mu\nu}\delta^{(3)}(\vec{z} - \vec{w})
+\end{equation}
+This implies the creation and annihilation operators must satisfy
+\begin{equation}
+  {[ \hat{b}^{r}_{\vec{p}}, \hat{b}^{s\dagger}_{\vec{q}} ]}_{+} =
+  {(2\pi)}^3 \delta^{rs}\delta^{(3)}(\vec{p} - \vec{q}) =
+  {[ \hat{c}^{r}_{\vec{p}}, \hat{c}^{s\dagger}_{\vec{q}} ]}_{+}
+\end{equation}
+We define the vacuum state by 
+\begin{equation}
+  \hat{b}^r_{\vec{p}}\ket{0} = 0 = \hat{c}^s_{\vec{q}}\ket{0}
+\end{equation}
+and the creation operators add particles to the vacuum
+\begin{equation}
+  \hat{b}^{r\dagger}_{\vec{p}}\ket{0} = \ket{\vec{p}, r}
+\end{equation}
+
+
 
 \newpage
 

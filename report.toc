@@ -1,0 +1,16 @@
+\contentsline {section}{\numberline {1}Introduction}{3}{section.1}%
+\contentsline {section}{\numberline {2}Quantum States}{3}{section.2}%
+\contentsline {section}{\numberline {3}The Heisenburg Picture of Quantum Mechanics}{4}{section.3}%
+\contentsline {section}{\numberline {4}Classical field theory \& Noether's theorem}{5}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Classical field theory}{5}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Noether's Theorem}{6}{subsection.4.2}%
+\contentsline {section}{\numberline {5}The Dirac Lagrangian}{7}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Gauging the vector symmetry}{7}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}The Axial symmetry}{8}{subsection.5.2}%
+\contentsline {section}{\numberline {6}Quantum Field Theory}{9}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Second Quantisation}{9}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Fock Space}{10}{subsection.6.2}%
+\contentsline {section}{\numberline {7}Path Integral \& Generating Functional}{11}{section.7}%
+\contentsline {section}{\numberline {8}Time-ordered products \& ward identities}{12}{section.8}%
+\contentsline {section}{\numberline {9}Anomalies in QFT \& violation of Ward identities}{12}{section.9}%
+\contentsline {section}{References}{13}{section*.3}%

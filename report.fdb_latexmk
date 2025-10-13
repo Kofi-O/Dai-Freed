@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex report"] 1760387613.69686 "report.aux" "report.bbl" "report" 1760397180.25693 0
+["bibtex report"] 1760399744.82262 "report.aux" "report.bbl" "report" 1760399745.47217 0
   "./reportNotes.bib" 1759684922.60836 820 8e5784d9a9b2052a51c9e7ef9c333ce5 ""
   "/usr/share/texlive/texmf-dist/bibtex/bst/base/unsrt.bst" 1292289607 18030 1376b4b231b50c66211e47e42eda2875 ""
-  "report.aux" 1760397180.16326 2482 8fef52382777fd1c9edefd7d72c61557 "pdflatex"
+  "report.aux" 1760399745.38749 3546 1e5255597a89c188d634d75b9330d986 "pdflatex"
   (generated)
   "report.bbl"
   "report.blg"
   (rewritten before read)
-["pdflatex"] 1760397179.57199 "report.tex" "report.pdf" "report" 1760397180.25715 0
+["pdflatex"] 1760399744.8388 "report.tex" "report.pdf" "report" 1760399745.47235 0
   "/etc/texmf/web2c/texmf.cnf" 1724101197.05744 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/kofio/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm0800.600pk" 1759690651.50993 9268 29004cf6a7310b43ff4489d7c0e8c7e4 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -33,6 +33,7 @@
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm" 1136768653 1124 6c73e740cf17375f03eec0ee63599741 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm" 1136768653 1116 933a60c408fc0a863a92debe84b2d294 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1136768653 1120 8b7d695260f3cff42e636090a8002094 ""
+  "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmti10.tfm" 1136768653 1480 aa8e34af0eb6a2941b776984cf1dfdc4 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmti12.tfm" 1136768653 1484 ed72f8f5cf654cda15ecc8e32bfcbee5 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb" 1248133631 34811 78b52f49e893bcba91bd7581cdc144c0 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1248133631 32080 340ef9bf63678554ee606688e7b5339d ""
@@ -45,7 +46,9 @@
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb" 1248133631 32734 69e00a6b65cedb993666e42eedb3d48f ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1248133631 32726 0a1aea6fcd6468ee2cf64d891f5c43c8 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb" 1248133631 32587 1788b0c1c5b39540c96f5e42ccd6dae8 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1248133631 32626 4f5c1b83753b1dd3a97d1b399a005b4b ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb" 1248133631 37944 359e864bd06cde3b1cf57bb20757fb06 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb" 1248133631 36118 fad905eba93cff5bce1e185fe980a177 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1248133631 34694 ad62b13721ee8eda1dcc8993c8bd7041 ""
   "/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1461363279 71627 94eb9990bed73c364d7f53f960cc8c5b ""
@@ -172,6 +175,8 @@
   "/usr/share/texlive/texmf-dist/tex/latex/base/atveryend-ltx.sty" 1705352648 2462 6bc53756156dbd71c1ad550d30a3b93f ""
   "/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo" 1705352648 8464 59874a3b0776c73e2a138b025d8473dd ""
   "/usr/share/texlive/texmf-dist/tex/latex/braket/braket.sty" 1266794558 3601 193635d942bc4777a5acaaeeffdce692 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty" 1696191071 56128 c2ccf1a29d78c33bc553880402e4fb9a ""
+  "/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty" 1696191071 72619 ee90b6612147680fd73c3b1406a74245 ""
   "/usr/share/texlive/texmf-dist/tex/latex/carlisle/slashed.sty" 1137109962 5327 8b3c95b5f71136add36a4a0bb1507594 ""
   "/usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty" 1561238569 51697 f8f08183cd2080d9d18a41432d651dfb ""
   "/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty" 1579991033 13886 d1306dcf79a944f6988e688c1785f9ce ""
@@ -228,11 +233,12 @@
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1732716588.99893 165012 f177baa1c39a3ebd62c3096a43521a0d ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1732716601 6831044 9143bc0ea3a1d013f04bc345f8bf2c5f ""
   "jheppub.sty" 1759690542.61932 11813 20b4b86253a008f7e565f43366dd9d48 ""
-  "report.aux" 1760397180.16326 2482 8fef52382777fd1c9edefd7d72c61557 "pdflatex"
-  "report.bbl" 1760387613.71477 319 8a07bb5e9b2c8468565086fd244a0053 "bibtex report"
-  "report.out" 1760397180.16326 2897 f195d5f0a8ae2c4b76dbcfaafed71574 "pdflatex"
-  "report.tex" 1760397178.96923 22323 d380701758b1d9f7ca4a45458991fa65 ""
-  "report.toc" 1760397180.16326 1348 6d6780b69352028c0eb32752c9ec2391 "pdflatex"
+  "paths.jpeg" 1760399723.65348 314887 0fc978f641ce1ed627ca33a9b1680ea6 ""
+  "report.aux" 1760399745.38749 3546 1e5255597a89c188d634d75b9330d986 "pdflatex"
+  "report.bbl" 1760399744.83449 319 8a07bb5e9b2c8468565086fd244a0053 "bibtex report"
+  "report.out" 1760399745.38749 3810 c5258914e8a62827c50a28193f0aea40 "pdflatex"
+  "report.tex" 1760399723.65348 26740 2826ef6173b343cc3c6ca7bb1f527975 ""
+  "report.toc" 1760399745.38749 1743 9441a42e709bccacdf4beed94e4daf2e "pdflatex"
   (generated)
   "report.aux"
   "report.log"

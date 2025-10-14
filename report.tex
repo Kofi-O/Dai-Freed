@@ -390,7 +390,8 @@ with field strength
 \begin{equation}
   \Gamma_{\mu\nu} = \partial_\mu\Pi_\nu - \partial_\nu\Pi_\mu +q[\Pi_\mu, \Pi_\nu]
 \end{equation}
-has the required gauge-invariance. Thus we have a theory describing the coupling
+has the required gauge-invariance and is Lorentz invariant.
+Thus we have a theory describing the coupling
 of massless dirac fermions to a mysterious gauge field
 \begin{equation}
   \mathcal{L} =  - \frac{1}{4}\mathrm{Tr}(\Gamma_{\mu\nu}\Gamma^{\mu\nu}) 
@@ -455,21 +456,30 @@ all particle annihilation operators
 \begin{equation}
   {a^{r}_{\vec{p}_1}}\!\!\ket{0} = b^{r}_{\vec{p}_1}\!\!\ket{0} = \dotsi = 0
 \end{equation}
-Subsequently an $N$ particle state is
+The indistinguishable $n$-particle state is given by 
 \begin{equation}
   a^{r_1\dagger}_{\vec{p}_1}a^{r_2\dagger}_{\vec{p}_2}\dotsi
-  a^{r_N\dagger}_{\vec{p}_N}\!\!\ket{0} =
-  \ket{r_1, \vec{p}_1; r_2, \vec{p}_2; \dots; r_N, \vec{p}_N}
+  a^{r_n\dagger}_{\vec{p}_n}\!\!\ket{0} =
+  \ket{r_1, \vec{p}_1; r_2, \vec{p}_2; \dots; r_n, \vec{p}_n} \in H^{\otimes n}
+\end{equation}
+\begin{equation}
+  H^{\otimes n} \coloneq \bigotimes_{k=1}^{n}{H}
+\end{equation}
+Where $H^{\otimes n}$ is the $n$-particle Hilbert space, and an arbitrary
+quantum state is an element of the Fock space
+\begin{equation}
+  F(H) \coloneq \bigoplus_{n=0}^{\infty}{H^{\otimes n}}
 \end{equation}
 Thus the probability amplitude of a state transitioning from one particle to 
 another is
 \begin{equation}
   \braket{r_2, \vec{p}_2|r_1, \vec{p}_1} =
-  \braket{0|a^{r_2}_{\vec{p}_2}a^{r_1\dagger}_{\vec{p}_1}|0}
+  \braket{0|a^{r_2}_{\vec{p}_2}a^{r_1\dagger}_{\vec{p}_1}|0} \coloneq 
+  \braket{a^{r_2}_{\vec{p}_2}a^{r_1\dagger}_{\vec{p}_1}}
 \end{equation}
 which generalises to transitions between arbitrary quantum states.
-Thus it becomes clear that in quantum field theory the study of probabilities is
-characterised by vacuum expectation values of operators and their products
+Hence in quantum field theory the study of probabilities is
+characterised by vacuum expectation values of operators and their compositions.
 
 \newpage
 
@@ -604,6 +614,22 @@ maybe talk about why deriving the PI approach to QFT is difficult
 talk about how generating functional generalises and how time ordered products generalise to operators I think?
 
 \section{Anomalies in QFT \& violation of Ward identities}
+
+The classical conservation laws for Noether currents present in quantum mechanics
+have a quantum field theoretic analogue, the Ward identities. The conservation
+of classical fields induces analogous relations for the Green functions of the 
+corresponding field operators.
+
+Suppose $j^\mu$ is a classically conserved current and the operators $\{\hat{\phi}^i(z_i)\}$
+are functions of spacetime
+\begin{equation}
+\partial^x_{\mu}\braket{0|T\left[
+\hat{\jmath}^\mu(x)\hat{\phi}^{1}(z_1)\dots\hat{\phi}^{2}(z_n) \right]|0} =
+\end{equation}
+
+
+
+
 
 \newpage
 \bibliographystyle{unsrt}

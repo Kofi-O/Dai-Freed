@@ -620,14 +620,27 @@ have a quantum field theoretic analogue, the Ward identities. The conservation
 of classical fields induces analogous relations for the Green functions of the 
 corresponding field operators.
 
-Suppose $j^\mu$ is a classically conserved current and the operators $\{\hat{\phi}^i(z_i)\}$
-are functions of spacetime
+Suppose we promote a classically conserved current to the operator $\hat{\jmath}^\mu(x)$
+and the operators $\{\hat{\phi}_i(z_i)\}$ are functions of spacetime. The 
+derivative of the Green function is
+\begin{equation*}
+  \begin{aligned}
+    \partial^x_{\mu}\!\braket{T \{
+    \hat{\jmath}^\mu(x)\hat{\phi}_{1}(z_1)\dots \hat{\phi}_{n}(z_n) \}} = 
+    \braket{T\{\partial^x_{\mu}\hat{\jmath}^\mu(x)
+    \hat{\phi}_{1}(z_1)\dots\hat{\phi}_{n}(z_n) \}} + \qquad \quad \qquad & \\
+    \sum_{k = 1}^{n}{ \braket{T\{ \delta(x_0 - z_{k_0})
+    [\hat{\jmath}^0(x), \hat{\phi}_k(z_k)]
+\hat{\phi}_1 \dots \hat{\phi}_{k-1}\hat{\phi}_{k+1} \dots \hat{\phi}_{n} \} } } &
+  \end{aligned}
+\end{equation*}
+Applying the classical conservation law for the current we have
+the Ward identity
 \begin{equation}
-\partial^x_{\mu}\braket{0|T\left[
-\hat{\jmath}^\mu(x)\hat{\phi}^{1}(z_1)\dots\hat{\phi}^{2}(z_n) \right]|0} =
+  \partial^x_{\mu}\!\braket{T \{
+    \hat{\jmath}^\mu(x)\hat{\phi}_{1}(z_1)\dots \hat{\phi}_{n}(z_n) \}} = 0 \quad ;\quad x \neq z_k
 \end{equation}
-
-
+\textcolor{red}{These relations must hold otherwise renormalisability of QFT is lost.}
 
 
 

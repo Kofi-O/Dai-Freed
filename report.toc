@@ -17,5 +17,5 @@
 \contentsline {subsection}{\numberline {7.4}Functional Derivatives of the Partition Function}{14}{subsection.7.4}%
 \contentsline {section}{\numberline {8}Generalising the Path Integral to Quantum Field Theory}{14}{section.8}%
 \contentsline {section}{\numberline {9}Symmetries in QFT}{14}{section.9}%
-\contentsline {section}{\numberline {10}Anomalies in QFT \& violation of Ward identities}{15}{section.10}%
-\contentsline {section}{References}{16}{section*.4}%
+\contentsline {section}{\numberline {10}Anomalies in QFT \& violation of Ward identities}{16}{section.10}%
+\contentsline {section}{References}{17}{section*.4}%

@@ -6,7 +6,7 @@
 \usepackage{indentfirst}
 
 \usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
-\usepackage{amsmath,amsfonts,amssymb,amsthm,natbib,graphicx,mathtools}
+\usepackage{amsmath,amsfonts,amssymb,amsthm,natbib,graphicx,mathtools,mathrsfs}
 \usepackage{braket}
 \usepackage{enumitem}
 \usepackage{hyperref,pgfplots,siunitx}
@@ -251,7 +251,7 @@ the lagrangian and conserved quantities called Noether charges. This generalises
 of the lagrangian density corresponding to conserved Noether currents in classical field theory.
 Consider an infinitesimal field transformation, $\vartheta(\epsilon)$, such that
 \begin{equation}
-  \phi_k \mapsto \phi_k + \epsilon\vartheta_k(\phi_k)
+  \phi_k \mapsto \phi_k + \epsilon\vartheta_k(\phi)
 \end{equation}
 where each $\vartheta_k$ may be a function of an arbitrary number of fields $\phi_k$ but
 is independent of spacetime, and we suppress high order terms in $\epsilon$.
@@ -465,8 +465,9 @@ The indistinguishable $n$-particle state is given by
 \begin{equation}
   H^{\otimes n} \coloneq \bigotimes_{k=1}^{n}{H}
 \end{equation}
-Where $H^{\otimes n}$ is the $n$-particle Hilbert space, and an arbitrary
-quantum state is an element of the Fock space
+Where $H^{\otimes n}$ is the $n$-particle Hilbert space ($H^0 = \mathbb{C}$ 
+corresponds to the vacuum),
+and an arbitrary quantum state is an element of the Fock space
 \begin{equation}
   F(H) \coloneq \bigoplus_{n=0}^{\infty}{H^{\otimes n}}
 \end{equation}
@@ -474,8 +475,8 @@ Thus the probability amplitude of a state transitioning from one particle to
 another is
 \begin{equation}
   \braket{r_2, \vec{p}_2|r_1, \vec{p}_1} =
-  \braket{0|a^{r_2}_{\vec{p}_2}a^{r_1\dagger}_{\vec{p}_1}|0} \coloneq 
-  \braket{a^{r_2}_{\vec{p}_2}a^{r_1\dagger}_{\vec{p}_1}}
+  \Braket{0|a^{r_2}_{\vec{p}_2}a^{r_1\dagger}_{\vec{p}_1}|0} \coloneq 
+  \Braket{a^{r_2}_{\vec{p}_2}a^{r_1\dagger}_{\vec{p}_1}}
 \end{equation}
 which generalises to transitions between arbitrary quantum states.
 Hence in quantum field theory the study of probabilities is
@@ -613,6 +614,46 @@ maybe talk about why deriving the PI approach to QFT is difficult
 
 talk about how generating functional generalises and how time ordered products generalise to operators I think?
 
+\section{Symmetries in QFT}
+
+We now extend our investigation of symmetries from classical fields to a
+quantised theory. Suppose the classical action admits a global symmetry
+such that the path integral measure is invariant
+\begin{equation}
+  \phi_\mu \mapsto \phi_\mu + \epsilon\vartheta_\mu(\phi)
+\end{equation}
+\begin{equation}
+  \mathcal{D}\phi \mapsto
+  \mathcal{D}\phi\,\det\!{\left(\frac{\partial \phi'_{\mu}(x)}{\partial \phi_\nu(y)}\right)}
+  = \mathcal{D}\phi
+\end{equation}
+where $K_{\mu\nu} = \frac{\partial \phi'_{\mu}(x)}{\partial \phi_\nu(y)}$ is the 
+transformation jacobian. Thus the partition function is invariant
+and for a source $J^\mu$ corresponding to $\phi_\mu$ we can write [ADD PROOF L8R]
+\begin{equation}
+  \int{d^4x\,J^\mu(x)\!\braket{\vartheta_\mu(\phi)}}_J = 0
+\end{equation}
+The quantum action is $W[J] = -i\ln{Z[J]}$, and 
+we define the effective quantum action as the Legendre transform
+\begin{equation}
+  \Gamma[\varphi] = W[J] - \int{d^4x\,J^\mu(x)\varphi_\mu(x)} \quad; 
+  \quad \varphi_\mu \coloneq \braket{\phi_\mu}_J
+\end{equation}
+Taking the functional derivative we obtain
+\begin{equation}
+  J^\mu(x) = - \frac{\delta \Gamma[\varphi]}{\delta \varphi_\mu(x)}
+\end{equation}
+Subsequently using (9.3) and the definition of a functional derivative 
+\begin{equation}
+  \delta\Gamma[\varphi_\mu;\braket{\vartheta_\mu(\phi)}_J] = 0
+\end{equation}
+Thus the effective quantum action is invariant under the transformations
+\begin{equation}
+  \varphi_\mu \mapsto \varphi_\mu + \epsilon\!\braket{\vartheta_\mu(\phi)}_J 
+\end{equation}
+such a relation is called a Slavnov-Taylor identity. 
+
+
 \section{Anomalies in QFT \& violation of Ward identities}
 
 The classical conservation laws for Noether currents present in quantum mechanics
@@ -625,11 +666,11 @@ and the operators $\{\hat{\phi}_i(z_i)\}$ are functions of spacetime. The
 derivative of the Green function is
 \begin{equation*}
   \begin{aligned}
-    \partial^x_{\mu}\!\braket{T \{
+    \partial^x_{\mu}\!\Braket{T \{
     \hat{\jmath}^\mu(x)\hat{\phi}_{1}(z_1)\dots \hat{\phi}_{n}(z_n) \}} = 
-    \braket{T\{\partial^x_{\mu}\hat{\jmath}^\mu(x)
+    \Braket{T\{\partial^x_{\mu}\hat{\jmath}^\mu(x)
     \hat{\phi}_{1}(z_1)\dots\hat{\phi}_{n}(z_n) \}} + \qquad \quad \qquad & \\
-    \sum_{k = 1}^{n}{ \braket{T\{ \delta(x_0 - z_{k_0})
+    \sum_{k = 1}^{n}{ \Braket{T\{ \delta(x_0 - z_{k_0})
     [\hat{\jmath}^0(x), \hat{\phi}_k(z_k)]
 \hat{\phi}_1 \dots \hat{\phi}_{k-1}\hat{\phi}_{k+1} \dots \hat{\phi}_{n} \} } } &
   \end{aligned}
@@ -637,7 +678,7 @@ derivative of the Green function is
 Applying the classical conservation law for the current we have
 the Ward identity
 \begin{equation}
-  \partial^x_{\mu}\!\braket{T \{
+  \partial^x_{\mu}\!\Braket{T \{
     \hat{\jmath}^\mu(x)\hat{\phi}_{1}(z_1)\dots \hat{\phi}_{n}(z_n) \}} = 0 \quad ;\quad x \neq z_k
 \end{equation}
 \textcolor{red}{These relations must hold otherwise renormalisability of QFT is lost.}

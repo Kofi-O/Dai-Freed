@@ -323,8 +323,10 @@ To satisfy this the gauge field must transform as
 \end{equation}
 Thus we have a modified Lagrangian which admits a local $\mathrm{U}(1)$ gauge symmetry
 \begin{equation}
-  \mathcal{L} =  \bar{\psi}(i \gamma^\mu\partial_\mu - m)\psi -e\Pi_\mu j^\mu
+  \mathcal{L} = \bar{\psi}(i\slashed{D} - m)\psi
+  = \bar{\psi}(i \gamma^\mu\partial_\mu - m)\psi -e\Pi_\mu j^\mu
 \end{equation}
+where $\slashed{D} \coloneq \gamma^\mu D_\mu$ is the Dirac operator.
 This is strikingly similar to the electromagnetic Lagrangian density which
 also has a $\mathrm{U}(1)$ gauge symmetry
 \begin{equation}
@@ -370,7 +372,7 @@ which is equivalent to
 \end{equation}
 and a Noether current
 \begin{equation}
-  j^\mu = \bar{\psi}\gamma^\mu\gamma^5\psi, \quad \partial_\mu j^\mu = 2im\bar{\psi}\gamma^5\psi
+  j^\mu_5 = \bar{\psi}\gamma^\mu\gamma^5\psi, \quad \partial_\mu j^\mu_5 = 2im\bar{\psi}\gamma^5\psi
 \end{equation}
 We now proceed as before, gauging the axial symmetry by promoting $\partial_\mu$
 to a covariant derivative as in (5.6) and determining the required gauge transformation
@@ -682,6 +684,75 @@ Returning to the Dirac Lagrangian, the vector and axial symmetries are linear
 in the fields but without identifying symmetry preserving regularisations 
 their accession to a quantum theory is undetermined.
 
+\subsection{The Path Integral measure}
+
+To further investigate the effect of transformations on the partition function
+we must introduce a more precise notion a path integral for fermionic fields.
+
+We decompose the Dirac spinor and its adjoint using an orthonormal basis $\{ \phi_n(x) \}$ of
+the Dirac operator's eigenfunctions and the independent Grassmann variables 
+$\theta_n$ and $\bar{\xi}_m$
+\begin{equation}
+  \psi = \sum_n{\theta_n\phi_n(x)} = \sum_n{\theta_n\!\braket{x|n}}
+\end{equation}
+\begin{equation}
+  \bar{\psi} = \sum_m{\bar{\xi}_m\phi^{\dagger}_m(x)} = \sum_m{\bar{\xi}_m\!\braket{m|x}}
+  \end{equation}
+Hence the path integral measure can be seen as a transformation of a Grassmann measure
+under a change of variables
+\begin{equation}
+  \theta \mapsto A\theta = \theta_n\braket{x|n},\quad
+  \bar{\xi} \mapsto \bar{\xi}B^{\dagger} = \bar{\xi}_m\braket{m|x}
+\end{equation}
+\begin{equation}
+  \prod_n{d\theta_n}\prod_m{d\bar{\xi}_m} \mapsto \mathcal{D}\psi\mathcal{D}\bar{\psi}
+  = {(\det{A}\det{B^\dagger})}^{-1}\prod_n{d\theta_n}\prod_m{d\bar{\xi}_m}
+  = \prod_n{d\theta_n d\bar{\xi}_n} 
+\end{equation}
+Under the infinitesimal vector transformation the Dirac spinor becomes
+\begin{equation}
+  \psi' = \sum_n{\theta_n'\phi_n(x)} ;\quad \theta_n' = e^{i\vartheta(x)}\theta_n
+\end{equation}
+and similarly for the adjoint spinor. Thus the path integral measure transforms as
+\begin{equation}
+  \mathcal{D}\psi\mathcal{D}\bar{\psi} \mapsto
+  {\left[\det\left(e^{i\vartheta(x)\mathbb{I}}\right)\right]}^{-2} \mathcal{D}\psi\mathcal{D}\bar{\psi}
+\end{equation}
+and using the identity
+\begin{equation}
+  \det\left( e^{A}\right) = e^{\mathrm{Tr}(A)}
+\end{equation}
+we see the measure changes by a pure phase only; the vector symmetry is retained
+by the quantum theory and the correlators are gauge invariant.
+However, this is not the case for the axial transformation
+where the Grassmann variables transform as
+\begin{equation}
+  \theta_n' = \sum_m{C_{nm} \theta_m} ,\quad \bar{\xi}_n' = \sum_m{C_{nm} \bar{\xi}_m}
+\end{equation}
+\begin{equation}
+  C_{nm} = \delta_{nm} +i\int{dx\, \vartheta(x)\phi_{n}^{\dagger}(x)\gamma^5\phi_m(x)}
+\end{equation}
+and the path integral measure changes by the Jacobian
+\begin{equation}
+  J[\vartheta] = {(\det{C})}^{-2} = \exp\left[-2 \mathrm{Tr}(\ln{C}) \right]
+\end{equation}
+Expanding the matrix logarithm to first order in the infinitesimal parameter
+\begin{equation}
+  \ln{(\mathbb{I} + \epsilon A)} = \epsilon A
+\end{equation}
+we obtain
+\begin{equation}
+  J[\vartheta] = \exp{\left[-2\mathrm{Tr}\left(i
+  \int{dx\,  \vartheta(x)\phi_{n}^{\dagger}(x)\gamma^5\phi_m(x)} \right) \right]}
+\end{equation}
+\begin{equation}
+  J[\vartheta] = \exp{\left[ -2i
+  \int{dx\,\vartheta(x) \sum_n{\phi_{n}^{\dagger}(x)\gamma^5\phi_n(x)}} \right]}
+\end{equation}
+However the sum appearing in the Jacobian is clearly divergent (by orthonormality)
+and requires the introduction of a regulator or ultraviolet cut-off to obtain a
+non-singular Jacobian.But there is a much more elegant approach available involving 
+the Atiyah–Singer index theorem.
 
 \subsection{Atiyah–Singer index Theorem}
 
@@ -693,33 +764,56 @@ a differential operator coincide. My guess is the topological index should
 be the same using any `sensible' regularisation thus the anomaly should
 persist.]
 
-
-\subsection{Ward-Takahashi identities}
-
-The classical conservation laws for Noether currents present in quantum mechanics
-have a quantum field theoretic analogue, the Ward-Takahashi identities. The conservation
-of classical fields induces analogous relations for the Green functions of the 
-corresponding field operators.
-
-Suppose we promote a classically conserved current to a field operator $\hat{\jmath}^\mu(x)$
-and the operators $\{\hat{\mathcal{O}}_i(z_i)\}$ are functions of spacetime. The 
-derivative of the correlator is [WE SUPPRESS THE HATS IN THE CORRELATOR
-TO INDICATE A TIME-ORDERED PROD][ADD PROOF L8R]
+Given an eigenfunction of the Dirac operator, $\phi_n$, with an eigenvalue $\lambda_n \neq 0$ 
+,$\gamma^5\phi_n$ is also an eigenfunction
 \begin{equation}
-  \partial^x_{\mu}\!\Braket{j^\mu(x)\prod^n_{i=1}{\!\mathcal{O}_i(z_i)}} = 
-  \Braket{\partial^x_{\mu}j^\mu(x) \prod^n_{i=1}{\!\mathcal{O}_i(z_i)}} + 
-    \sum_{k = 1}^{n}{ \delta(x_0 - z_{k_0})
-    \!\Braket{\left[j^0(x), \mathcal{O}_k(z_k)\right]\prod^n_{i\neq k}{\!\mathcal{O}_i(z_i)} } }
+  \slashed{D}(\gamma^5\phi_n) = -\gamma^5\slashed{D}(\phi_n) = -\lambda_n\gamma^5\phi_n
 \end{equation}
-Applying the classical conservation law for the current we have
-the Ward-Takahashi identity
+and the two are orthogonal as they have different eigenvalues.
+However, when the eigenvalue is zero $\phi_n$ and $\gamma^5\phi_n$ correspond to $\lambda_n = 0$
+and are called zero modes of $\slashed{D}$. We also have that $\gamma^5$ is 
+hermitian thus by the spectral theorem there is a basis that diagonalises $\gamma^5$
+and spans $\mathrm{Ker}(\slashed{D})$. The eigenvalues of $\gamma^5$ are $\pm 1$
+(because ${(\gamma^5)}^2 = I_4$) and we use the projection
+operators $P_\pm = \frac{1}{2}(I_4 \pm \gamma^5)$ to decompose
+spinors into their positive and negative eigenvalue (positive and negative chirality respectively)
+components. Ignoring the infinitesimal parameter for now, only the zero modes contribute
+to the integral in the Jacobian because of orthonormality and we have
 \begin{equation}
-  \partial^x_{\mu}\!\Braket{j^\mu(x)\prod^n_{i=1}{\mathcal{O}_i(z_i)}} = 0 \quad ;\quad x \neq z_k
+  \int{dx\, \sum_n{\phi^\dagger_n\gamma^5\phi_n}}
+  = \sum_n{\int{dx\,\phi^{0\dagger}_{n+}\phi^0_{n+}}}
+  -\sum_n{\int{dx\,\phi^{0\dagger}_{n-}\phi^0_{n-}}} = n_+ - n_-
 \end{equation}
-\textcolor{red}{These relations must hold otherwise renormalisability of QFT is lost.
-However, showing they dont hold requires feynman diagrams which is beyond us, might have to
-switch to index thrm}
-
+where $n_\pm$ are the number of positive and negative chirality zero modes $\phi^0_{n\pm}$
+respectively. This is precisely the analytical index of the Dirac operator 
+projected onto the positive chirality subspace
+\begin{equation}
+  \mathrm{index}(\slashed{D}|_{\{+\}}) = n_+ - n_- 
+\end{equation}
+\begin{equation}
+  \slashed{D}P_{\pm} = \slashed{D}|_{\{\pm\}} 
+\end{equation}
+By the Atiyah–Singer index theorem this coincides with the Dirac operator's 
+topological index
+\begin{equation}
+  \mathrm{index}(\slashed{D}|_{\{+\}}) = - \frac{e^2}{32\pi^2}\int{dx\,
+  \varepsilon^{\mu\nu\rho\sigma}F_{\mu\nu}F_{\rho\sigma}}
+\end{equation}
+one can also show this is also the divergence of the axial current using Feynman diagrams.
+Thus the axial symmetry is anomalous and the Jacobian is
+\begin{equation}
+  J[\vartheta] = \exp{\left[-\int{dx\,\vartheta(x)\mathcal{A}[A_\mu]}\right]}
+\end{equation}
+where $\mathcal{A}$ is the axial anomaly given by
+\begin{equation}
+  \partial_\mu j^\mu_5 = \mathcal{A}[A_\mu] = 2i\,\mathrm{Index}(\slashed{D}|_{\{+\}})
+\end{equation}
+using the index density defined by
+\begin{equation}
+  \int{dx\, \mathrm{Index}(\slashed{D}|_{\{+\}})} = \mathrm{index}(\slashed{D}|_{\{+\}})
+\end{equation}
+Thus the axial anomaly is a topological invariant
+and is independent of any homeomorphic regularisation procedure.
 
 
 \newpage

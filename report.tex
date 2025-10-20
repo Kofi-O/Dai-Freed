@@ -730,7 +730,7 @@ where the Grassmann variables transform as
   \theta_n' = \sum_m{C_{nm} \theta_m} ,\quad \bar{\xi}_n' = \sum_m{C_{nm} \bar{\xi}_m}
 \end{equation}
 \begin{equation}
-  C_{nm} = \delta_{nm} +i\int{dx\, \vartheta(x)\phi_{n}^{\dagger}(x)\gamma^5\phi_m(x)}
+  C_{nm} = \delta_{nm} +i\int{d^4x\, \vartheta(x)\phi_{n}^{\dagger}(x)\gamma^5\phi_m(x)}
 \end{equation}
 and the path integral measure changes by the Jacobian
 \begin{equation}
@@ -743,11 +743,11 @@ Expanding the matrix logarithm to first order in the infinitesimal parameter
 we obtain
 \begin{equation}
   J[\vartheta] = \exp{\left[-2\mathrm{Tr}\left(i
-  \int{dx\,  \vartheta(x)\phi_{n}^{\dagger}(x)\gamma^5\phi_m(x)} \right) \right]}
+  \int{d^4x\,  \vartheta(x)\phi_{n}^{\dagger}(x)\gamma^5\phi_m(x)} \right) \right]}
 \end{equation}
 \begin{equation}
   J[\vartheta] = \exp{\left[ -2i
-  \int{dx\,\vartheta(x) \sum_n{\phi_{n}^{\dagger}(x)\gamma^5\phi_n(x)}} \right]}
+  \int{d^4x\,\vartheta(x) \sum_n{\phi_{n}^{\dagger}(x)\gamma^5\phi_n(x)}} \right]}
 \end{equation}
 However the sum appearing in the Jacobian is clearly divergent (by orthonormality)
 and requires the introduction of a regulator or ultraviolet cut-off to obtain a
@@ -780,9 +780,9 @@ spinors into their positive and negative eigenvalue (positive and negative chira
 components. Ignoring the infinitesimal parameter for now, only the zero modes contribute
 to the integral in the Jacobian because of orthonormality and we have
 \begin{equation}
-  \int{dx\, \sum_n{\phi^\dagger_n\gamma^5\phi_n}}
-  = \sum_n{\int{dx\,\phi^{0\dagger}_{n+}\phi^0_{n+}}}
-  -\sum_n{\int{dx\,\phi^{0\dagger}_{n-}\phi^0_{n-}}} = n_+ - n_-
+  \int{d^4x\, \sum_n{\phi^\dagger_n\gamma^5\phi_n}}
+  = \sum_n{\int{d^4x\,\phi^{0\dagger}_{n+}\phi^0_{n+}}}
+  -\sum_n{\int{d^4x\,\phi^{0\dagger}_{n-}\phi^0_{n-}}} = n_+ - n_-
 \end{equation}
 where $n_\pm$ are the number of positive and negative chirality zero modes $\phi^0_{n\pm}$
 respectively. This is precisely the analytical index of the Dirac operator 
@@ -802,7 +802,7 @@ topological index
 one can also show this is also the divergence of the axial current using Feynman diagrams.
 Thus the axial symmetry is anomalous and the Jacobian is
 \begin{equation}
-  J[\vartheta] = \exp{\left[-\int{dx\,\vartheta(x)\mathcal{A}[A_\mu]}\right]}
+  J[\vartheta] = \exp{\left[-\int{d^4x\,\vartheta(x)\mathcal{A}[A_\mu]}\right]}
 \end{equation}
 where $\mathcal{A}$ is the axial anomaly given by
 \begin{equation}

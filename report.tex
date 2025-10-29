@@ -701,13 +701,15 @@ $\theta_n$ and $\bar{\xi}_m$
 Hence the path integral measure can be seen as a transformation of a Grassmann measure
 under a change of variables
 \begin{equation}
-  \theta \mapsto A\theta = \theta_n\braket{x|n},\quad
-  \bar{\xi} \mapsto \bar{\xi}B^{\dagger} = \bar{\xi}_m\braket{m|x}
+  \theta \mapsto \theta_n\braket{x|n},\quad
+  \bar{\xi} \mapsto \bar{\xi}_m\braket{m|x}
 \end{equation}
 \begin{equation}
-  \prod_n{d\theta_n}\prod_m{d\bar{\xi}_m} \mapsto \mathcal{D}\psi\mathcal{D}\bar{\psi}
-  = {(\det{A}\det{B^\dagger})}^{-1}\prod_n{d\theta_n}\prod_m{d\bar{\xi}_m}
-  = \prod_n{d\theta_n d\bar{\xi}_n} 
+  \mathcal{D}\psi\mathcal{D}\bar{\psi}
+  = {\left[\det{\braket{x|n}}\det{\braket{m|x}}\right]}^{-1}
+  \lim_{\substack{N \rightarrow \infty \\
+  M \rightarrow \infty}}{\left\{ \prod_n^N{d\theta_n}\prod_m^M{d\bar{\xi}_m} \right\}}
+  = \lim_{N \rightarrow \infty}{\prod_n^N{d\theta_n d\bar{\xi}_n}} 
 \end{equation}
 Under the infinitesimal vector transformation the Dirac spinor becomes
 \begin{equation}
@@ -716,13 +718,15 @@ Under the infinitesimal vector transformation the Dirac spinor becomes
 and similarly for the adjoint spinor. Thus the path integral measure transforms as
 \begin{equation}
   \mathcal{D}\psi\mathcal{D}\bar{\psi} \mapsto
-  {\left[\det\left(e^{i\vartheta(x)\mathbb{I}}\right)\right]}^{-2} \mathcal{D}\psi\mathcal{D}\bar{\psi}
+  {\left[\det{\left(e^{i\vartheta(x)\mathbb{I}}\right)}
+  \det{\left(e^{-i\vartheta(x)\mathbb{I}}\right)} \right]}^{-1}
+  \mathcal{D}\psi\mathcal{D}\bar{\psi}
 \end{equation}
-and using the identity
+and using the identity [move this bcz it doesnt apply here anymore]
 \begin{equation}
   \det\left( e^{A}\right) = e^{\mathrm{Tr}(A)}
 \end{equation}
-we see the measure changes by a pure phase only; the vector symmetry is retained
+we see the measure is invariant; the vector symmetry is retained
 by the quantum theory and the correlators are gauge invariant.
 However, this is not the case for the axial transformation
 where the Grassmann variables transform as
@@ -749,10 +753,38 @@ we obtain
   J[\vartheta] = \exp{\left[ -2i
   \int{d^4x\,\vartheta(x) \sum_n{\phi_{n}^{\dagger}(x)\gamma^5\phi_n(x)}} \right]}
 \end{equation}
-However the sum appearing in the Jacobian is clearly divergent (by orthonormality)
+The sum appearing in the Jacobian is clearly divergent (by orthonormality)
 and requires the introduction of a regulator or ultraviolet cut-off to obtain a
-non-singular Jacobian.But there is a much more elegant approach available involving 
-the Atiyah–Singer index theorem.
+non-singular Jacobian. However, there is a much more elegant approach available involving 
+the Atiyah–Singer index theorem but first we show the relation between the axial anomaly
+and the axial current. Henceforth, we define the axial anomaly $\mathcal{A}$
+via the Jacobian of the path integral measure
+\begin{equation}
+   J[\vartheta] = \exp{\left[ -\int{d^4x\,\vartheta(x) \mathcal{A} } \right]}
+\end{equation}
+under the axial transformation the partition function becomes
+\begin{equation}
+  Z'[A_\mu, \vartheta] = \int{\mathcal{D}\psi'\mathcal{D}\bar{\psi}'\,
+  \exp{\left[ \int{d^4x\,\bar{\psi}'(i\slashed{D} -m)\psi' -\frac{1}{4}F_{\mu\nu}F^{\mu\nu} } \right]}}
+\end{equation}
+but this is just a relabeling of the integration variables and thus the partition
+function is invariant. Considering the change in the QED lagrangian we have
+\begin{equation}
+  Z[A_\mu, \vartheta] = \int{\mathcal{D}\psi\mathcal{D}\bar{\psi}\,J[\vartheta]
+    \exp{ \left[ \int{d^4x\, \mathcal{L}_{\mathrm{QED}} + \vartheta(x)(\partial_\mu j^\mu_5
+- 2im\bar{\psi}\gamma^5\psi) }  \right] } } 
+\end{equation}
+Thus to first order in $\vartheta(x)$ we have
+\begin{equation}
+   Z[A_\mu, \vartheta] = \int{\mathcal{D}\psi\mathcal{D}\bar{\psi}\, \left\{1 + \int{d^4x\,
+     \vartheta(x)(\partial_\mu j^\mu_5 - 2im\bar{\psi}\gamma^5\psi -\mathcal{A})} \right\}
+   \exp{\left[ \int{d^4x\, \mathcal{L}_{\mathrm{QED}} } \right]}} 
+\end{equation}
+which leads to the anomalous divergence of the axial current
+\begin{equation}
+  \partial_\mu\!\braket{j^\mu_5} = 2im\!\braket{\bar{\psi}\gamma^5\psi} - \braket{\mathcal{A}}
+\end{equation}
+
 
 \subsection{Atiyah–Singer index Theorem}
 
@@ -796,9 +828,11 @@ projected onto the positive chirality subspace
 By the Atiyah–Singer index theorem this coincides with the Dirac operator's 
 topological index
 \begin{equation}
-  \mathrm{index}(\slashed{D}|_{\{+\}}) = - \frac{e^2}{32\pi^2}\int{dx\,
-  \varepsilon^{\mu\nu\rho\sigma}F_{\mu\nu}F_{\rho\sigma}}
+  \mathrm{index}(\slashed{D}|_{\{+\}}) =  \int{ \mathrm{ch}(F)}
 \end{equation}
+
+[rewrite after this]
+
 one can also show this is also the divergence of the axial current using Feynman diagrams.
 Thus the axial symmetry is anomalous and the Jacobian is
 \begin{equation}

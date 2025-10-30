@@ -820,16 +820,44 @@ where $n_\pm$ are the number of positive and negative chirality zero modes $\phi
 respectively. This is precisely the analytical index of the Dirac operator 
 projected onto the positive chirality subspace
 \begin{equation}
-  \mathrm{index}(\slashed{D}|_{\{+\}}) = n_+ - n_- 
+  \mathrm{index}(\slashed{D}_{+}) = n_+ - n_- 
 \end{equation}
 \begin{equation}
-  \slashed{D}P_{\pm} = \slashed{D}|_{\{\pm\}} 
+  \slashed{D}_\pm \coloneq \slashed{D}P_{\pm} = \slashed{D}|_{\{\pm\}} 
 \end{equation}
-By the Atiyah–Singer index theorem this coincides with the Dirac operator's 
-topological index
+The Atiyah–Singer index theorem states this coincides with the Dirac operator's 
+topological index. On a 4-dimensional compact manifold $\Omega$ without boundary and
+Riemannian curvature $R$
+this is [\textcolor{red}{This is crucial; our 
+calculations only work using a wick transformation, also add manifolds to integrals}]
+(``Although the index theorem should be applied only
+to compact manifolds, it may, nevertheless, also
+be used in our Euclidean 4-space problem, since
+the conformal invariance of the theory and the as-
+sumption that the gauge fields decrease rapidly at
+infinity allow our problem to be mapped onto the
+surface of a 5-dimensional hypersphere which is
+compact'' - R. JACKIW, C. REBBI 1977)
 \begin{equation}
-  \mathrm{index}(\slashed{D}|_{\{+\}}) =  \int{ \mathrm{ch}(F)}
+  \mathrm{index}(\slashed{D}_+ ) =  \int_{\Omega}{\hat{A}(\Omega)\mathrm{ch}(F)}
 \end{equation}
+where the integrand only includes 4-form terms. The characteristic classes
+$\mathrm{ch}(F)$ and $\hat{A}(\Omega)$ are the Chern character
+of the curvature (field strength) and Dirac genus of the manifold respectively
+\begin{equation}
+  \mathrm{ch}(F) = \mathrm{Tr}\left(\exp{\left[ \frac{i}{2\pi}F \right]}\right)
+\end{equation}
+\begin{equation}
+  \hat{A}(\Omega) = \sqrt{ \det{\left( \frac{ \frac{i}{4\pi}R }{ \sinh{\frac{i}{4\pi}R} } \right) } } 
+\end{equation}
+Now we pick the hypersphere $S^{4} = \Omega$ so the Riemannian curvature is 
+constant [put a reference to JACKIW and REBBI here] and the index becomes
+\begin{equation}
+  \mathrm{index}(\slashed{D}_+ ) =  \int_{S^4}{\mathrm{ch}(F)}
+= \frac{1}{2!}{\left(\frac{i}{2\pi}\right)}^2 \int_{S^4}{\mathrm{Tr}(F^2)}  
+\end{equation}
+which coincides with 
+
 
 [rewrite after this]
 

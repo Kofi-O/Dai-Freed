@@ -375,7 +375,7 @@ and a Noether current
   j^\mu_5 = \bar{\psi}\gamma^\mu\gamma^5\psi, \quad \partial_\mu j^\mu_5 = 2im\bar{\psi}\gamma^5\psi
 \end{equation}
 We now proceed as before, gauging the axial symmetry by promoting $\partial_\mu$
-to a covariant derivative as in (5.6) and determining the required gauge transformation
+to a covariant derivative ${(D_\mathrm{A})}_\mu$ as in (5.6) and determining the required gauge transformation
 \begin{equation}
   {\mathcal{L}_{D}|}_{m=0} = \bar{\psi}(i\gamma^\mu \partial_\mu)\psi
   - q\bar{\psi}\gamma^\mu\Pi_\mu\psi
@@ -395,10 +395,14 @@ with field strength
   \Gamma_{\mu\nu} = \partial_\mu\Pi_\nu - \partial_\nu\Pi_\mu +q[\Pi_\mu, \Pi_\nu]
 \end{equation}
 has the required gauge-invariance and is Lorentz invariant.
-Thus we have a theory describing the coupling
-of massless dirac fermions to a mysterious gauge field
+Thus we have constructed a classical theory describing the interaction between
+massless dirac fermions and an axial gauge boson
 \begin{equation}
-  \mathcal{L} =  - \frac{1}{4}\mathrm{Tr}(\Gamma_{\mu\nu}\Gamma^{\mu\nu}) 
+  \mathcal{L}_\mathrm{A} =  - \frac{1}{4}\mathrm{Tr}(\Gamma_{\mu\nu}\Gamma^{\mu\nu}) 
+  + i\bar{\psi}\slashed{D}_\mathrm{A}\psi
+\end{equation}
+\begin{equation}
+  \mathcal{L}_\mathrm{A} =  - \frac{1}{4}\mathrm{Tr}(\Gamma_{\mu\nu}\Gamma^{\mu\nu}) 
   - q\bar{\psi}\gamma^\mu\Pi_\mu\psi
   + \bar{\psi}(i\gamma^\mu \partial_\mu)\psi
 \end{equation}
@@ -780,9 +784,10 @@ Thus to first order in $\vartheta(x)$ we have
      \vartheta(x)(\partial_\mu j^\mu_5 - 2im\bar{\psi}\gamma^5\psi -\mathcal{A})} \right\}
    \exp{\left[ \int{d^4x\, \mathcal{L}_{\mathrm{QED}} } \right]}} 
 \end{equation}
-which leads to the anomalous divergence of the axial current
+by the fundamental lemma of the calculus of variations we attain 
+the anomalous divergence for the axial current
 \begin{equation}
-  \partial_\mu\!\braket{j^\mu_5} = 2im\!\braket{\bar{\psi}\gamma^5\psi} - \braket{\mathcal{A}}
+  \partial_\mu j^\mu_5 = 2im\bar{\psi}\gamma^5\psi + \mathcal{A}
 \end{equation}
 
 
@@ -796,16 +801,17 @@ a differential operator coincide. My guess is the topological index should
 be the same using any `sensible' regularisation thus the anomaly should
 persist.]
 
-Given an eigenfunction of the Dirac operator, $\phi_n$, with an eigenvalue $\lambda_n \neq 0$ 
+Given an eigenfunction of the Dirac operator
+$i\slashed{D}$, $\phi_n$, with an eigenvalue $\lambda_n \neq 0$ 
 ,$\gamma^5\phi_n$ is also an eigenfunction
 \begin{equation}
-  \slashed{D}(\gamma^5\phi_n) = -\gamma^5\slashed{D}(\phi_n) = -\lambda_n\gamma^5\phi_n
+  i\slashed{D}(\gamma^5\phi_n) = -i\gamma^5\slashed{D}(\phi_n) = -\lambda_n\gamma^5\phi_n
 \end{equation}
 and the two are orthogonal as they have different eigenvalues.
 However, when the eigenvalue is zero $\phi_n$ and $\gamma^5\phi_n$ correspond to $\lambda_n = 0$
-and are called zero modes of $\slashed{D}$. We also have that $\gamma^5$ is 
+and are called zero modes of $i\slashed{D}$. We also have that $\gamma^5$ is 
 hermitian thus by the spectral theorem there is a basis that diagonalises $\gamma^5$
-and spans $\mathrm{Ker}(\slashed{D})$. The eigenvalues of $\gamma^5$ are $\pm 1$
+and spans $\mathrm{Ker}(i\slashed{D})$. The eigenvalues of $\gamma^5$ are $\pm 1$
 (because ${(\gamma^5)}^2 = I_4$) and we use the projection
 operators $P_\pm = \frac{1}{2}(I_4 \pm \gamma^5)$ to decompose
 spinors into their positive and negative eigenvalue (positive and negative chirality respectively)
@@ -816,14 +822,17 @@ to the integral in the Jacobian because of orthonormality and we have
   = \sum_n{\int{d^4x\,\phi^{0\dagger}_{n+}\phi^0_{n+}}}
   -\sum_n{\int{d^4x\,\phi^{0\dagger}_{n-}\phi^0_{n-}}} = n_+ - n_-
 \end{equation}
+\begin{equation}
+  \int{d^4x\, \mathcal{A}} = 2i(n_+ - n_-)
+\end{equation}
 where $n_\pm$ are the number of positive and negative chirality zero modes $\phi^0_{n\pm}$
 respectively. This is precisely the analytical index of the Dirac operator 
 projected onto the positive chirality subspace
 \begin{equation}
-  \mathrm{index}(\slashed{D}_{+}) = n_+ - n_- 
+  \mathrm{index}(i\slashed{D}_{+}) = n_+ - n_- 
 \end{equation}
 \begin{equation}
-  \slashed{D}_\pm \coloneq \slashed{D}P_{\pm} = \slashed{D}|_{\{\pm\}} 
+  i\slashed{D}_\pm \coloneq i\slashed{D}P_{\pm} = i\slashed{D}|_{\{\pm\}} 
 \end{equation}
 The Atiyah–Singer index theorem states this coincides with the Dirac operator's 
 topological index. On a 4-dimensional compact manifold $\Omega$ without boundary and
@@ -839,11 +848,13 @@ infinity allow our problem to be mapped onto the
 surface of a 5-dimensional hypersphere which is
 compact'' - R. JACKIW, C. REBBI 1977)
 \begin{equation}
-  \mathrm{index}(\slashed{D}_+ ) =  \int_{\Omega}{\hat{A}(\Omega)\mathrm{ch}(F)}
+  \mathrm{index}(i\slashed{D}_+ ) =  \int_{\Omega}{\hat{A}(\Omega)\mathrm{ch}(F)}
 \end{equation}
-where the integrand only includes 4-form terms. The characteristic classes
+where the integrand, called the index density, only includes 4-form terms and the curvature
+form is given by $F = e\,dA = \frac{e}{2}F_{\mu\nu}dx^\mu \wedge dx^\nu$.
+The characteristic classes
 $\mathrm{ch}(F)$ and $\hat{A}(\Omega)$ are the Chern character
-of the curvature (field strength) and Dirac genus of the manifold respectively
+of the curvature and Dirac genus of the manifold respectively
 \begin{equation}
   \mathrm{ch}(F) = \mathrm{Tr}\left(\exp{\left[ \frac{i}{2\pi}F \right]}\right)
 \end{equation}
@@ -856,26 +867,17 @@ constant [put a reference to JACKIW and REBBI here] and the index becomes
   \mathrm{index}(\slashed{D}_+ ) =  \int_{S^4}{\mathrm{ch}(F)}
 = \frac{1}{2!}{\left(\frac{i}{2\pi}\right)}^2 \int_{S^4}{\mathrm{Tr}(F^2)}  
 \end{equation}
-which coincides with 
+and the integrand coincides with the Dirac operator's index density in Euclidean space.
+Subsequently, we identity the axial anomaly in Euclidean space as 
+\begin{equation}
+  \partial_\mu j^\mu_5 - 2im\bar{\psi}\gamma^5\psi =
+  \mathcal{A}[A_\mu] = \frac{-ie^2}{16\pi^2}\epsilon^{\mu\nu\rho\sigma}
+  \mathrm{Tr}(F_{\mu\nu}F_{\rho\sigma})
+\end{equation}
+
+\subsection{Anomalies as obstructions to gauging}
 
 
-[rewrite after this]
-
-one can also show this is also the divergence of the axial current using Feynman diagrams.
-Thus the axial symmetry is anomalous and the Jacobian is
-\begin{equation}
-  J[\vartheta] = \exp{\left[-\int{d^4x\,\vartheta(x)\mathcal{A}[A_\mu]}\right]}
-\end{equation}
-where $\mathcal{A}$ is the axial anomaly given by
-\begin{equation}
-  \partial_\mu j^\mu_5 = \mathcal{A}[A_\mu] = 2i\,\mathrm{Index}(\slashed{D}|_{\{+\}})
-\end{equation}
-using the index density defined by
-\begin{equation}
-  \int{dx\, \mathrm{Index}(\slashed{D}|_{\{+\}})} = \mathrm{index}(\slashed{D}|_{\{+\}})
-\end{equation}
-Thus the axial anomaly is a topological invariant
-and is independent of any homeomorphic regularisation procedure.
 
 
 \newpage

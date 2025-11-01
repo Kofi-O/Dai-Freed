@@ -29,13 +29,14 @@
 \newtheorem{prop}[defn]{Proposition}
 \newtheorem{thm}[defn]{Theorem}
 
+
 \begin{document}
 
 \begin{titlepage}
     \centering
     {\huge \bfseries Local Gauge Anomalies and The Standard Model \par}
     \vspace{1cm}
-    {\Large \itshape E. Arnold \& K. Okeyre\par}
+    {\Large \itshape E. Arnold \& K. Okyere\par}
     \vfill
     {\Large October 2025 \par}
     {\Large Undergraduate Summer Research Project \par}
@@ -375,7 +376,8 @@ and a Noether current
   j^\mu_5 = \bar{\psi}\gamma^\mu\gamma^5\psi, \quad \partial_\mu j^\mu_5 = 2im\bar{\psi}\gamma^5\psi
 \end{equation}
 We now proceed as before, gauging the axial symmetry by promoting $\partial_\mu$
-to a covariant derivative ${(D_\mathrm{A})}_\mu$ as in (5.6) and determining the required gauge transformation
+to a covariant derivative $\widetilde{D}_\mu$
+as in (5.6) and determining the required gauge transformation
 \begin{equation}
   {\mathcal{L}_{D}|}_{m=0} = \bar{\psi}(i\gamma^\mu \partial_\mu)\psi
   - q\bar{\psi}\gamma^\mu\Pi_\mu\psi
@@ -392,14 +394,14 @@ the $\mathrm{U}(1)$ symmetry. We find a Lagrangian analogous to the Maxwell Lagr
 \end{equation}
 with field strength
 \begin{equation}
-  \Gamma_{\mu\nu} = \partial_\mu\Pi_\nu - \partial_\nu\Pi_\mu +q[\Pi_\mu, \Pi_\nu]
+  \Gamma_{\mu\nu} = \partial_\mu\Pi_\nu - \partial_\nu\Pi_\mu +iq[\Pi_\mu, \Pi_\nu]
 \end{equation}
 has the required gauge-invariance and is Lorentz invariant.
 Thus we have constructed a classical theory describing the interaction between
 massless dirac fermions and an axial gauge boson
 \begin{equation}
   \mathcal{L}_\mathrm{A} =  - \frac{1}{4}\mathrm{Tr}(\Gamma_{\mu\nu}\Gamma^{\mu\nu}) 
-  + i\bar{\psi}\slashed{D}_\mathrm{A}\psi
+  + \bar{\psi}i\widetilde{\slashed{D}}\psi
 \end{equation}
 \begin{equation}
   \mathcal{L}_\mathrm{A} =  - \frac{1}{4}\mathrm{Tr}(\Gamma_{\mu\nu}\Gamma^{\mu\nu}) 
@@ -802,14 +804,14 @@ be the same using any `sensible' regularisation thus the anomaly should
 persist.]
 
 Given an eigenfunction of the Dirac operator
-$i\slashed{D}$, $\phi_n$, with an eigenvalue $\lambda_n \neq 0$ 
+$\slashed{D}$, $\phi_n$, with an eigenvalue $\lambda_n \neq 0$ 
 ,$\gamma^5\phi_n$ is also an eigenfunction
 \begin{equation}
-  i\slashed{D}(\gamma^5\phi_n) = -i\gamma^5\slashed{D}(\phi_n) = -\lambda_n\gamma^5\phi_n
+  \slashed{D}(\gamma^5\phi_n) = -\gamma^5\slashed{D}(\phi_n) = -\lambda_n\gamma^5\phi_n
 \end{equation}
 and the two are orthogonal as they have different eigenvalues.
 However, when the eigenvalue is zero $\phi_n$ and $\gamma^5\phi_n$ correspond to $\lambda_n = 0$
-and are called zero modes of $i\slashed{D}$. We also have that $\gamma^5$ is 
+and are called zero modes of $\slashed{D}$. We also have that $\gamma^5$ is 
 hermitian thus by the spectral theorem there is a basis that diagonalises $\gamma^5$
 and spans $\mathrm{Ker}(i\slashed{D})$. The eigenvalues of $\gamma^5$ are $\pm 1$
 (because ${(\gamma^5)}^2 = I_4$) and we use the projection
@@ -829,10 +831,10 @@ where $n_\pm$ are the number of positive and negative chirality zero modes $\phi
 respectively. This is precisely the analytical index of the Dirac operator 
 projected onto the positive chirality subspace
 \begin{equation}
-  \mathrm{index}(i\slashed{D}_{+}) = n_+ - n_- 
+  \mathrm{index}(\slashed{D}_{+}) = n_+ - n_- 
 \end{equation}
 \begin{equation}
-  i\slashed{D}_\pm \coloneq i\slashed{D}P_{\pm} = i\slashed{D}|_{\{\pm\}} 
+  \slashed{D}_\pm \coloneq \slashed{D}P_{\pm} = \slashed{D}|_{\{\pm\}} 
 \end{equation}
 The Atiyah–Singer index theorem states this coincides with the Dirac operator's 
 topological index. On a 4-dimensional compact manifold $\Omega$ without boundary and
@@ -848,7 +850,7 @@ infinity allow our problem to be mapped onto the
 surface of a 5-dimensional hypersphere which is
 compact'' - R. JACKIW, C. REBBI 1977)
 \begin{equation}
-  \mathrm{index}(i\slashed{D}_+ ) =  \int_{\Omega}{\hat{A}(\Omega)\mathrm{ch}(F)}
+  \mathrm{index}(\slashed{D}_+ ) =  \int_{\Omega}{\hat{A}(\Omega)\mathrm{ch}(F)}
 \end{equation}
 where the integrand, called the index density, only includes 4-form terms and the curvature
 form is given by $F = e\,dA = \frac{e}{2}F_{\mu\nu}dx^\mu \wedge dx^\nu$.
@@ -865,20 +867,51 @@ Now we pick the hypersphere $S^{4} = \Omega$ so the Riemannian curvature is
 constant [put a reference to JACKIW and REBBI here] and the index becomes
 \begin{equation}
   \mathrm{index}(\slashed{D}_+ ) =  \int_{S^4}{\mathrm{ch}(F)}
-= \frac{1}{2!}{\left(\frac{i}{2\pi}\right)}^2 \int_{S^4}{\mathrm{Tr}(F^2)}  
+  = \frac{1}{2!}{\left(\frac{i}{2\pi}\right)}^2 \int_{S^4}{\mathrm{Tr}(F^2)}  
 \end{equation}
 and the integrand coincides with the Dirac operator's index density in Euclidean space.
 Subsequently, we identity the axial anomaly in Euclidean space as 
 \begin{equation}
   \partial_\mu j^\mu_5 - 2im\bar{\psi}\gamma^5\psi =
-  \mathcal{A}[A_\mu] = \frac{-ie^2}{16\pi^2}\epsilon^{\mu\nu\rho\sigma}
-  \mathrm{Tr}(F_{\mu\nu}F_{\rho\sigma})
+  \mathcal{A}[A_\mu] = \frac{-ie^2}{16\pi^2}
+  \mathrm{Tr}(\epsilon^{\mu\nu\rho\sigma} F_{\mu\nu}F_{\rho\sigma})
 \end{equation}
 
 \subsection{Anomalies as obstructions to gauging}
 
-
-
+We now study the effect of gauging an anomalous symmetries in the case of
+the Dirac Lagrangian's axial symmetry. For the theory of massless
+Dirac fermions coupling to an axial gauge field in \textcolor{red}{eq5.22}, 
+the Euclidean path integral is 
+\begin{equation}
+  \int{\mathcal{D}\psi\mathcal{D}\bar{\psi}\,
+    \exp{\left[- \int{d^4x\, \bar{\psi}i\widetilde{\slashed{D}}\psi
+  -\frac{1}{4}\mathrm{Tr}(\Gamma_{\mu\nu}\Gamma^{\mu\nu})} \right]}}
+\end{equation}
+The classical action is gauge-invariant by construction, thus the only change in
+the path integral under a gauge transformation is from the Jacobian
+\begin{equation}
+    \int{\mathcal{D}\psi'\mathcal{D}\bar{\psi}'\, e^{-S[\psi',\bar{\psi}']} } =
+    \int{\mathcal{D}\psi\mathcal{D}\bar{\psi}\, J[\vartheta] e^{-S[\psi,\bar{\psi}]} }
+\end{equation}
+where the Jacobian takes the same form as in \textcolor{red}{eq9.23} for an orthonormal
+basis of eigenfunctions $\{ \phi_n(x)\}$ of the operator $\widetilde{\slashed{D}}$.
+We now proceed via Fujikawa's method of gauge-invariant mode cut-off
+to calculate the Jacobian by introducing a smooth regulator
+\begin{equation}
+  J[\vartheta] = \exp{\left[ -2i \lim_{N \rightarrow \infty}{ \left\{
+  \sum_{n=1}^N{ \int{d^4x\, \vartheta(x)\phi_n^\dagger\gamma^5\phi_n} } \right\} } \right]} 
+\end{equation}
+\begin{equation}
+  J[\vartheta] = \exp{\left[ -2i \lim_{M \rightarrow \infty}{ \left\{
+          \sum_{n=1}^{\infty}{ \int{d^4x\, \vartheta(x)\phi_n^\dagger\gamma^5
+          f\left(\frac{\lambda_n^2}{M^2}\right) \phi_n} } \right\} } \right]} 
+\end{equation}
+\begin{equation}
+  J[\vartheta] = \exp{\left[ -2i \lim_{M \rightarrow \infty}{
+  \mathrm{Tr}\left\{ \vartheta(x)\gamma^5
+f\left( \frac{ {\widetilde{\slashed{D}}}^2 }{M^2}\right) \right\}} \right]} 
+\end{equation}
 
 \newpage
 \bibliographystyle{unsrt}

@@ -21,4 +21,4 @@
 \contentsline {subsection}{\numberline {9.2}The Path Integral measure}{16}{subsection.9.2}%
 \contentsline {subsection}{\numberline {9.3}Atiyah–Singer index Theorem}{17}{subsection.9.3}%
 \contentsline {subsection}{\numberline {9.4}Anomalies as obstructions to gauging}{19}{subsection.9.4}%
-\contentsline {section}{References}{20}{section*.4}%
+\contentsline {section}{References}{21}{section*.4}%

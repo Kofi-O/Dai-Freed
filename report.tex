@@ -897,7 +897,8 @@ the path integral under a gauge transformation is from the Jacobian
 where the Jacobian takes the same form as in \textcolor{red}{eq9.23} for an orthonormal
 basis of eigenfunctions $\{ \phi_n(x)\}$ of the operator $\widetilde{\slashed{D}}$.
 We now proceed via Fujikawa's method of gauge-invariant mode cut-off
-to calculate the Jacobian by introducing a smooth regulator
+to calculate the Jacobian by introducing a smooth regulator $f(x)$ with
+all derivatives vanishing at infinity
 \begin{equation}
   J[\vartheta] = \exp{\left[ -2i \lim_{N \rightarrow \infty}{ \left\{
   \sum_{n=1}^N{ \int{d^4x\, \vartheta(x)\phi_n^\dagger\gamma^5\phi_n} } \right\} } \right]} 
@@ -912,6 +913,61 @@ to calculate the Jacobian by introducing a smooth regulator
   \mathrm{Tr}\left\{ \vartheta(x)\gamma^5
 f\left( \frac{ {\widetilde{\slashed{D}}}^2 }{M^2}\right) \right\}} \right]} 
 \end{equation}
+where the functional trace is taken over spacetime using the basis $\{ \phi_n(x) \}$.
+Now we compute the series using momentum space
+\begin{equation}
+  \phi_n(x) = \int{\frac{d^4k}{(2\pi)^2}\,\tilde{\phi}_n(k)e^{ikx}   }
+\end{equation}
+\begin{equation}
+  \sum_{n = 1}^{\infty}{\phi_n^\dagger\gamma^5
+  f\left( \frac{\widetilde{\slashed{D}}{}^2 }{M^2} \right)\phi_n} =
+  \int{\frac{d^4k d^4p}{(2\pi)^4} \sum_{n=1}^{\infty}{ e^{-ipx}\tilde{\phi}_n^\dagger(p)
+      \gamma^5 f\left( \frac{ \widetilde{\slashed{D}}{}^2 }{M^2}\right) \tilde{\phi}_n(k)
+  e^{ikx} } }
+\end{equation}
+\begin{equation}
+  =  \int{\frac{d^4k}{(2\pi)^4}\, \mathrm{Tr}\left\{
+      \gamma^5 f\left( \frac{(\widetilde{D}_\mu +ik_\mu)(\widetilde{D}^\mu +ik^\mu)}{M^2}
+        + \frac{iq [\gamma^\mu,\gamma^\nu ]\Gamma_{\mu\nu} }{4M^2} \right)  \right\} } 
+\end{equation}
+where we have used the identities
+\begin{equation}
+  \sum_{n = 1}^{\infty}{\tilde{\phi}_n^\dagger(p) A \tilde{\phi}_n(k)} =
+  \delta(k-p) \mathrm{Tr}(A)
+\end{equation}
+\begin{equation}
+  \widetilde{\slashed{D}}{}^2 = \widetilde{D}_\mu \widetilde{D}^\mu
+  + \frac{iq}{4}[\gamma^\mu, \gamma^\nu]\Gamma_{\mu\nu}
+\end{equation}
+Now we rescale the momenta via $k_\mu \rightarrow Mk_\mu$ and the series becomes
+\begin{equation}
+  M^4 \int{\frac{d^4k}{(2\pi)^4}\, \mathrm{Tr}\left\{
+      \gamma^5 f\left( \frac{ \widetilde{D}_\mu \widetilde{D}^\mu
+        + 2iMk_\mu \widetilde{D}^\mu}{M^2} -k^2
+        + \frac{iq [\gamma^\mu,\gamma^\nu ]\Gamma_{\mu\nu} }{4M^2} \right)  \right\} } 
+\end{equation}
+expanding the Taylor series of $f(x)$ about $-k^2 = - k_\mu k^\mu$, and using the trace 
+properties of the gamma matrices the only term non-vanishing in
+the limit $M \rightarrow \infty$ is quadratic in $\Gamma_{\mu\nu}$ 
+\begin{equation}
+  \frac{M^4q^2}{2!M^4}\mathrm{Tr}(\epsilon^{\mu\nu\rho\sigma}\Gamma_{\mu\nu}\Gamma_{\rho\sigma})
+  \int{\frac{d^4k}{(2\pi)^4}f''(-k^2) }
+\end{equation}
+and we have 
+\begin{equation}
+J[\vartheta] = \exp{\left[ \int{d^4x\, \frac{-iq^2}{16\pi^2}
+      \mathrm{Tr}(\epsilon^{\mu\nu\rho\sigma}\Gamma_{\mu\nu}\Gamma_{\rho\sigma})
+      \vartheta(x)} \right]}
+\end{equation}
+thus there is gauge-variance in the path integral measure and the quantum theory
+is inconsistent. In the general case, gauging an anomalous symmetry will
+produce an inconsistent quantum theory as constructing a gauge invariant
+classical action ensures the shift in the measure makes the path integral
+change under a gauge transformation.
+
+
+
+
 
 \newpage
 \bibliographystyle{unsrt}

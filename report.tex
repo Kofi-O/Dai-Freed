@@ -52,111 +52,7 @@ Abstract here
 
 \section{Introduction}
 
-The following report is aimed at undergraduate 
-students familiar with lagrangian mechanics, hamiltonian mechanics,
-quantum mechanics, and topology. For a guide to the expected prerequisite knowledge see \cite{mathphys1, mathphys2, topnotes}.
-
-[The aim of this report is to offer a gentle 
-introduction to quantum field theory, and offer 
-insight into one example of where topology shows up 
-in theoretical physics.] - CHANGE THIS
-
-Explain structure of report here. 
-
-\section{Quantum States}
-
-One should be familiar with the notion of a quantum wavefunction, such as 
-$\psi(x)$, which describes the position of a particle. 
-However, in quantum field theory we deal with a more 
-abstract concept called a quantum state.
-
-\begin{defn}
-Define Hilbert space
-\end{defn}
-
-\begin{notation}
-We use the Bra-Ket notation for vectors in Hilbert space. A 
-vector is written as $| \psi \rangle$ and a covector is 
-written as $\langle \phi |$. We define \[ \langle \phi | \psi \rangle := \langle \phi | (| \psi \rangle) \]
-Given a vector 
-$| \psi \rangle$ the corresponding hermition transpose of 
-this vector is $\langle \psi |$, meaning 
-$|\psi|^2 = \langle \psi | \psi \rangle$.
-\end{notation}
-
-A quantum state is a mathematical entity that embodies all 
-the known information of some given quantum system. There 
-are two types of quantum states, pure and mixed. We will 
-only explain pure quantum states in this section.
-
-A (pure) quantum state is an abstract vector in a complex 
-Hilbert space, denoted by $| \psi \rangle $. This Hilbert 
-space is called our state space and often has infinite 
-dimensions.
-
-Observables of our quantum system correspond to Hermition 
-operators on our state space. The eigenvalues of such an 
-operator are real and correspond to possible observed 
-values. It can be shown that the eigenstates of any 
-Hermition operator form a basis for our state space. This 
-allows us to relate quantum states to the more familiar 
-notion of a quantum wavefunction.
-
-Let $\langle \psi |$ be a quantum state and $\hat{X}$ be the position operator with eigenstates $|x \rangle$. Then $\psi (x) = \langle x | \psi \rangle$. WHY???
-
-
-\section{The Heisenburg Picture of Quantum Mechanics}
-
-One is usually introduced to quantum mechanics in the 
-Schrödinger picture, however, in quantum field theory, 
-it is more natural to consider the Heisenburg picture.
-
-In the Schrödinger picture, the quantum states vary with 
-time. For example, our quantum state may be represented 
-by a wave function $\psi(x,t)$, which evolves in time. 
-Conversely,
-the operators that act on our state space, such as 
-momentum, position, etc, are usually fixed with respect to time. 
-The only exception to this is that the Hamiltonian may include 
-a potential energy term that varies with time. 
-
-Consider a time dependent quantum state 
-$| \psi(t) \rangle$. This state evolves in time 
-according the  Schrodinger equation. One can 
-represent this via a unitary time-evolution operator 
-$U(t,t_0)$ 
-as follows;
-\[ | \psi(t) \rangle = U(t,t_0) | \psi(t_0) \rangle .\]
-
-In the Schrödinger 
-picture, the expectation of a potentially time-dependent hermition operator, $A(t)$, in the 
-state $| \psi(t) \rangle$,  can be written as 
-\[\langle \hat{A}(t) \rangle = \langle \psi(t) | \hat{A}(t) | \psi(t) \rangle.\]
-Choosing some reference time $t_0$ we can rewrite this as
-\[\langle \psi(t_0) | \hat{U}\textsuperscript{\textdagger}(t,t_0) \hat{A}  (t) \hat{U}(t,t_0) | \psi(t_0) \rangle.\]
-If we define 
-\[\hat{A_H}(t) = \hat{U}\textsuperscript{\textdagger}(t,t_0) \hat{A}  (t) \hat{U}(t,t_0) \]
-then we have 
-\[\langle \hat{A}(t) \rangle = \langle \psi(t_0) | \hat{A_H}(t) | \psi(t_0) \rangle.\]
-
-So we notice that we could have obtained this same 
-expectation by considering a constant quantum state 
-$| \psi(t_0) \rangle$ and a new operator that evolves with 
-time. This is the idea behind the Heisenberg picture of 
-quantum mechanics. One interprets the quantum states as 
-being fixed in time, and it is the operators that evolve 
-in time. 
-
-In the Schrödinger picture, the Schrödinger equation 
-governs the time evolution of quantum states. Hence, a 
-natural question is, in the Heisenberg picture, how do the 
-operators evolve in time?
-
-One can derive the following equation
-\[ \frac{d}{dt} \hat{A}_H(t) = \frac{1}{i \hbar} [\hat{A}_H(t), \hat{H}_H(t)] + \left[\frac{d}{dt} \hat{A}_S(t) \right]_H \]
-where the subscripts $S$ and $H$ denote whether we are considering the element in the Schrodinger or Heisenberg picture respectively. 
-
-\section{Classical field theory \& Noether's theorem}
+\section{Classical field theory \& Noether's theorems}
 
 \subsection{Classical field theory}
 In classical mechanics we consider a countable set of particles
@@ -189,8 +85,9 @@ Using Hamilton's principle $\left( \frac{\delta S}{\delta \vec{\Phi} } = 0 \righ
 the Euler-Lagrange equations 
 \begin{equation}
   \frac{\partial \mathcal{L}}{\partial \phi_k}
-  = \partial_\mu \left[ \frac{\partial \mathcal{L}}{\partial(\partial_\mu{\phi_k}) } \right]
+  \approx \partial_\mu \left[ \frac{\partial \mathcal{L}}{\partial(\partial_\mu{\phi_k}) } \right]
 \end{equation}
+Where $\approx$ denotes an on-shell equality.
 In classical mechanics we define the hamiltonian, $H(p_i(t), q_i(t), t)$, via the
 Legendre transform (IS THIS ACTUALLY THE DEFINITION OF H? ASK INAKI)
 \begin{equation}
@@ -245,39 +142,101 @@ Note that $K({x}) = \int{d{y}\,[K({y}) \delta(x - y)]}$
 
 
 \subsection{Noether's first Theorem}
-[From here we should somehow state that $\vec{x}$ is a spatial vector and $x$ is a four-vector]
-
 In classical mechanics Noether's first theorem shows the correspondence between global symmetries of 
 the lagrangian and conserved quantities called Noether charges. This generalises to global symmetries
 of the lagrangian density corresponding to conserved Noether currents in classical field theory.
-Consider an infinitesimal field transformation, $\vartheta(\epsilon)$, such that
+Consider an infinitesimal field transformation $\vartheta(\epsilon)$ such that
 \begin{equation}
-  \phi_k \mapsto \phi_k + \epsilon\vartheta_k(\phi)
+  \phi_n \mapsto \phi_n + \delta_\epsilon\phi_n + \mathcal{O}(\epsilon^2), \quad 
+  \delta_\epsilon\phi_n = \epsilon\vartheta_n(\phi_k)
 \end{equation}
-where the generators, $\vartheta_k$, may be a functions of an arbitrary number of fields $\phi_k$ but
-are independent of spacetime, and we suppress high order terms in $\epsilon$.
-Such a transformation is called a global symmetry if its effect on the Lagrangian density is
+where the generators, $\vartheta_k$, are independent of spacetime.
+A transformation is called a global symmetry if its effect on the Lagrangian density is
 \begin{equation}
   \mathcal{L} \mapsto \mathcal{L} + \epsilon\partial_\mu\Lambda^\mu(\phi_k, x)
+  + \mathcal{O}(\epsilon^2)
 \end{equation}
-This change in the Lagrangian density leaves the Euler-Lagrange equations invariant (add proof L8r).
-Noether's theorem for fields states that a transformation $\vartheta(\epsilon)$ is a symmetry
-of the lagrangian if and only if 
+This transformation changes the action by a surface term and the Euler-Lagrange equations
+are invariant. Using a Taylor expansion of the Lagrangian density under $\vartheta(\epsilon)$
+we find that
 \begin{equation}
-  j^\mu \coloneq
-  \sum_{k}{\vartheta_k \frac{\partial \mathcal{L}}{\partial (\partial_\mu \phi_k)}}
-  - \Lambda^\mu, \, \partial_\mu j^\mu = 0 
+  \delta_\epsilon\mathcal{L} = \sum_k{\delta_\epsilon\phi_k E_k} + \partial_\mu\theta^\mu
 \end{equation}
-and the divergence free quantity $j^\mu$ is called the conserved Noether current.
+\begin{equation}
+  \quad \theta^\mu = \sum_k{\delta_\epsilon\phi_k
+  \frac{\partial \mathcal{L}}{\partial(\partial_\mu{\phi_k}) } }
+\end{equation}
+Where $E_k$ are the Euler-Lagrange derivatives and $\theta^\mu$ is the symplectic potential.
+By considering the shift in the action we arrive at Noether's first theorem; an 
+infinitesimal transformation $\vartheta(\epsilon)$ is a symmetry
+of the Lagrangian if and only if 
+\begin{equation}
+  j^\mu(\epsilon) \coloneq \theta^\mu
+  - \epsilon\Lambda^\mu, \quad \partial_\mu j^\mu = - \delta_\epsilon\phi_k E_k \approx 0 
+\end{equation}
+Where we use the summation convention for the field indices hereafter
+and the on-shell divergence free quantity $j^\mu$ is called the conserved Noether current.
 This easily generalises to local symmetries: spacetime dependent generators
-$\vartheta_k(\phi, x)$ (add proof L8r).
+$\vartheta_k(\phi, x)$.
+
+\subsection{Noether's Second Theorem}
+Noether's second theorem shows that a local symmetry introduces off-shell constraints
+on the equations of motion and leads to Noether current identities which are
+crucial for gauge theories. Noether's original formulation considers
+local infinitesimal symmetries $R_\xi$ of the form
+\begin{equation}
+   \phi_n \mapsto \phi_n + \delta_\xi\phi_n + \mathcal{O}(\xi^2), 
+   \quad \delta_\xi\phi_n = \sum_{m=0}{R^{\mu_1 \cdots \mu_m}_n(\phi_k)
+   \partial_{\mu_1}\cdots\partial_{\mu_m} \xi(x)}
+\end{equation}
+Under $R_\xi$ the action shifts by
+\begin{equation}
+  \delta_\xi S = \int{d^4x\, \delta_\xi\phi_n E_n + \partial_\mu\theta^\mu}
+\end{equation}
+If $\xi(x)$ is a compactly supported smooth function the boundary term vanishes and we have
+\begin{equation}
+  \int{d^4x\, \delta_\xi\phi_n E_n} = 0 
+\end{equation}
+integration by parts leads to 
+\begin{equation}
+  \int{d^4x\, \xi(x)\Delta(E) } = 0 , \quad
+  \Delta(E) \coloneq \sum_{m=0}{ {(-1)}^m \partial_{\mu_1}\cdots\partial_{\mu_m}
+  [R^{\mu_1 \cdots \mu_m}_n(\phi_k) E_n] } 
+\end{equation}
+By the fundamental lemma of the calculus of variations we obtain the 
+off-shell constraint $\Delta(E) = 0$. Thus the 
+equations of motion are not all independent and the Euler-Lagrange equations
+($E_n = 0$) are under-determined. However, observables must be uniquely
+determined by the theory hence we conclude some degrees of freedom are gauge.
+Using the surface term $S^\mu$ from integration by parts we find an expression
+similar to \textcolor{red}{eq2.17}
+\begin{equation}
+ \delta_\xi\phi_n E_n = \partial_\mu S^\mu(E_k, \xi)
+\end{equation}
+with the important difference that $S^\mu$ vanishes on-shell. The
+quantity $j^\mu + S^\mu$ is divergence-free off-shell, subsequently
+by the Poincaré lemma we obtain Noether's second theorem;
+on-shell the canonical Noether current $j^\mu$ is
+the divergence of a two-form
+\begin{equation}
+  j^\mu(\xi) = -S^\mu(E_k, \xi) + \partial_\nu \kappa^{\mu\nu}(\xi)
+  \approx \partial_\nu \kappa^{\mu\nu}(\xi),
+  \quad \kappa^{\mu\nu}(\xi) = -\kappa^{\nu\mu}(\xi)
+\end{equation}
+the anti-symmetric two-form $\kappa^{\mu\nu}$ is called a superpotential.
+Although the superpotential is arbitrary ($\kappa^{\mu\nu}$
+is determined upto addition by a divergence-free quantity) 
+it can be uniquely determined if
+one demands the superpotential obeys additional constraints (
+such as asymptotic conservation). In the case of electrodynamics
+the superpotential is electromagnetic field tensor and
+\textcolor{red}{eq2.23} becomes Maxwell's equations
+\begin{equation}
+  J^\mu = \partial_\nu F^{\nu\mu}, \quad F_{\mu\nu} = \partial_{\mu}A_{\nu} - \partial_{\nu}A_{\mu}
+\end{equation}
+
 
 \section{The Dirac Lagrangian}
-[Introduce dirac eqn as relativistic QM,
-show U(1) global symm. and that gauging this symm leads to QED lagrangian.
-Show we now wish to gauge the axial symm. because of the prev. success but 
-at the quantum level there is an anomaly acting as an obstruction to gauging.
-From here we use natural units.]
 
 \subsection{Gauging the vector symmetry}
 
@@ -939,6 +898,9 @@ where we have used the identities
   \widetilde{\slashed{D}}{}^2 = \widetilde{D}_\mu \widetilde{D}^\mu
   + \frac{iq}{4}[\gamma^\mu, \gamma^\nu]\Gamma_{\mu\nu}
 \end{equation}
+\begin{equation}
+  e^{-ikx}f(\partial_\mu)e^{ikx} = f(\partial_\mu +ik_\mu)
+\end{equation}
 Now we rescale the momenta via $k_\mu \rightarrow Mk_\mu$ and the series becomes
 \begin{equation}
   M^4 \int{\frac{d^4k}{(2\pi)^4}\, \mathrm{Tr}\left\{
@@ -948,7 +910,7 @@ Now we rescale the momenta via $k_\mu \rightarrow Mk_\mu$ and the series becomes
 \end{equation}
 expanding the Taylor series of $f(x)$ about $-k^2 = - k_\mu k^\mu$, and using the trace 
 properties of the gamma matrices the only term non-vanishing in
-the limit $M \rightarrow \infty$ is quadratic in $\Gamma_{\mu\nu}$ 
+the limit $M \rightarrow \infty$ is the term quadratic in $\Gamma_{\mu\nu}$ 
 \begin{equation}
   \frac{M^4q^2}{2!M^4}\mathrm{Tr}(\epsilon^{\mu\nu\rho\sigma}\Gamma_{\mu\nu}\Gamma_{\rho\sigma})
   \int{\frac{d^4k}{(2\pi)^4}f''(-k^2) }

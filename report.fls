@@ -368,7 +368,6 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/rsfs/rsfs5.tfm
 OUTPUT report.toc
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm0800.tfm
 INPUT ./paths.jpeg
 INPUT ./paths.jpeg
 INPUT ./paths.jpeg
@@ -381,7 +380,6 @@ INPUT report.bbl
 INPUT report.aux
 INPUT ./report.out
 INPUT ./report.out
-INPUT /home/kofio/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm0800.600pk
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb

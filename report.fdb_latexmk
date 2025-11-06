@@ -1,18 +1,16 @@
 # Fdb version 4
-["bibtex report"] 1762125847.30979 "report.aux" "report.bbl" "report" 1762128293.01361 0
+["bibtex report"] 1762402755.18279 "report.aux" "report.bbl" "report" 1762402755.8337 0
   "./reportNotes.bib" 1759684922.60836 820 8e5784d9a9b2052a51c9e7ef9c333ce5 ""
   "/usr/share/texlive/texmf-dist/bibtex/bst/base/unsrt.bst" 1292289607 18030 1376b4b231b50c66211e47e42eda2875 ""
-  "report.aux" 1762128292.91981 4083 3cc4b1ab0747e4b770c8f3732d5dbbca "pdflatex"
+  "report.aux" 1762402755.75232 3764 fccfaf7c91a87872b5e31a7c6cad10bb "pdflatex"
   (generated)
   "report.bbl"
   "report.blg"
   (rewritten before read)
-["pdflatex"] 1762128292.33084 "report.tex" "report.pdf" "report" 1762128293.01375 0
+["pdflatex"] 1762402755.2 "report.tex" "report.pdf" "report" 1762402755.83383 0
   "/etc/texmf/web2c/texmf.cnf" 1724101197.05744 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/kofio/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm0800.600pk" 1759690651.50993 9268 29004cf6a7310b43ff4489d7c0e8c7e4 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/helvetic/phvbc7t.tfm" 1136768653 2672 88159036c64e674fcd9515bc9c7052d4 ""
-  "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm0800.tfm" 1136768653 1536 05df9db6aeccc4eea94fec15c9024f79 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -238,11 +236,11 @@
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1732716601 6831044 9143bc0ea3a1d013f04bc345f8bf2c5f ""
   "jheppub.sty" 1759690542.61932 11813 20b4b86253a008f7e565f43366dd9d48 ""
   "paths.jpeg" 1760399723.65348 314887 0fc978f641ce1ed627ca33a9b1680ea6 ""
-  "report.aux" 1762128292.91981 4083 3cc4b1ab0747e4b770c8f3732d5dbbca "pdflatex"
-  "report.bbl" 1762125847.32246 319 8a07bb5e9b2c8468565086fd244a0053 "bibtex report"
-  "report.out" 1762128292.91981 4574 9c6f14da1db1da194593cbe48b6686e0 "pdflatex"
-  "report.tex" 1762128290.57179 43669 20b5521b762ada686f4b3120663d3c50 ""
-  "report.toc" 1762128292.92081 2116 f1c680a9419372a5a83602da382bc2de "pdflatex"
+  "report.aux" 1762402755.75232 3764 fccfaf7c91a87872b5e31a7c6cad10bb "pdflatex"
+  "report.bbl" 1762402755.19532 49 0eba253fc001332e731e8aba3f23127b "bibtex report"
+  "report.out" 1762402755.75232 4372 5c59639b3559daf6f5a3e9f1271f45cd "pdflatex"
+  "report.tex" 1762402753.27231 42143 ab821e42a77edfc42c40ff4ad6cf0f93 ""
+  "report.toc" 1762402755.75232 2036 df44fc8789ac8ca20c8cef5378f46e79 "pdflatex"
   (generated)
   "report.aux"
   "report.log"

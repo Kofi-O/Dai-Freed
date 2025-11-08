@@ -5,14 +5,16 @@
 \setlength{\parskip}{1em}
 \usepackage{indentfirst}
 
-\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+\usepackage{hyperref}
+%\hypersetup{colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue}
 \usepackage{amsmath,amsfonts,amssymb,amsthm,natbib,graphicx,mathtools,mathrsfs}
 \usepackage{braket}
 \usepackage{enumitem}
-\usepackage{hyperref,pgfplots,siunitx}
+\usepackage{pgfplots,siunitx}
 \usepackage[outdir=./]{epstopdf}
 \usepackage{slashed}
 \usepackage{caption}
+\bibliographystyle{JHEP}
 
 
 \sisetup{detect-all}
@@ -61,85 +63,80 @@ and generalised coordinates $q_i(t)$. These generalised coordinates ${\{ q_i(t) 
 the system's configuration (position in configuration space) and together with the 
 generalised conjugate momenta
 ${\left\{p_i(t) \coloneq \frac{\partial L}{\partial \dot{q}_i} \right\}}_i $ 
-define the system's position in phase space.
-
+define the system's position in phase space~\cite{LA&LI-Mech-I}.
 In classical field theory we generalise this notion of configuration space to a
 continuum with infinite degrees of freedom. The scalar field $\phi(t)$ can be seen as
 the generalised coordinates of a continuum 
 $\left( q_i(t) \xrightarrow{i \rightarrow \vec{x}} \phi(\vec{x}, t) \right)$ and for a system
 of continua the set of scalar fields ${\{ \phi_k(\vec{x}, t) \}}_k$
-specifies the system's configuration.
-
-
+specifies the system's configuration~\cite{ClassField}.
 Subsequently, we generalise the classical Lagrangian $L(q_i(t), \dot{q}_i(t), t)$ via
 \begin{equation}
-  L(t) = \int{d^{3}\vec{x}\,\mathcal{L}(\phi_k(\vec{x}, t),\partial_{\mu}\phi_k(\vec{x}, t), \vec{x}, t)}
+  L(t) = \int{d^{3}\vec{x}\,
+  \mathcal{L}(\phi_k(\vec{x}, t),\partial_{\mu}\phi_k(\vec{x}, t), \vec{x}, t)},
 \end{equation}
-where $\mathcal{L}$ is the Lagrangian density. With respect to some path
+where $\mathcal{L}$ is the Lagrangian density. With respect to a path
 in configuration space, $\vec{\Phi}(\vec{x}, t)$, the classical action becomes 
 \begin{equation}
   S\left[\vec{\Phi}(\vec{x}, t) \right] = \int{dt\,L} 
-  = \int{d^4x\,\mathcal{L}(\phi_k(\vec{x}, t),\partial_{\mu}\phi_k(\vec{x}, t), \vec{x}, t)}
+  = \int{d^4x\,\mathcal{L}(\phi_k(\vec{x}, t),\partial_{\mu}\phi_k(\vec{x}, t), \vec{x}, t)}.
 \end{equation}
-Using Hamilton's principle $\left( \frac{\delta S}{\delta \vec{\Phi} } = 0 \right)$ we obtain
-the Euler-Lagrange equations 
+Using Hamilton's principle~\cite{LA&LI-Mech-VII}($\delta S[\vec{\Phi}; \vec{\rho} ] = 0,
+\forall\vec{\rho} \in C^{\infty}$)
+we obtain the field-theoretic Euler-Lagrange equations 
 \begin{equation}
   \frac{\partial \mathcal{L}}{\partial \phi_k}
-  \approx \partial_\mu \left[ \frac{\partial \mathcal{L}}{\partial(\partial_\mu{\phi_k}) } \right]
+  \approx \partial_\mu \left[ \frac{\partial \mathcal{L}}{\partial(\partial_\mu{\phi_k}) } \right],
 \end{equation}
-Where $\approx$ denotes an on-shell equality.
-In classical mechanics we define the hamiltonian, $H(p_i(t), q_i(t), t)$, via the
-Legendre transform (IS THIS ACTUALLY THE DEFINITION OF H? ASK INAKI)
+where we use $\approx$ to denote an on-shell equality.
+In Lagrangian systems the Hamiltonian, $H(p_i(t), q_i(t), t)$,
+is characterised by the Legendre transform
 \begin{equation}
-  H = \sum_{i}{p_i(t)\dot{q}_i(t) - L}
+  H = \sum_{i}{p_i(t)\dot{q}_i(t) - L},
 \end{equation}
 to generalise this to field theory we introduce the momentum field conjugate to 
 $\phi_k(\vec{x}, t)$
 \begin{equation}
-  \pi_k(\vec{x}, t) \coloneq \frac{\partial \mathcal{L} }{\partial \dot{\phi}_k} \\
+  \pi_k(\vec{x}, t) \coloneq \frac{\partial \mathcal{L} }{\partial \dot{\phi}_k},
 \end{equation}
 \begin{equation}
   p_i(t) \coloneq \frac{\partial L}{\partial \dot{q}_i} \xrightarrow{i \rightarrow \vec{x}}
   \frac{\partial}{\partial \dot{\phi}_k} \left[ \int{d^3\vec{x}\,\mathcal{L}} \right]
-  = \int{d^3\vec{x}\,\pi_k(\vec{x}, t)}
+  = \int{d^3\vec{x}\,\pi_k(\vec{x}, t)}.
 \end{equation}
 Thus the classical Hamiltonian is generalised to
 \begin{equation}
-  H(t) = \int{d^3\vec{x}\,\mathcal{H}(\pi_k(\vec{x}, t), \phi_k(\vec{x}, t), \vec{x}, t) }
+  H(t) = \int{d^3\vec{x}\,\mathcal{H}(\pi_k(\vec{x}, t), \phi_k(\vec{x}, t), \vec{x}, t) },
 \end{equation}
 \begin{equation}
-  \mathcal{H} = \sum_{k}{\pi_k(\vec{x}, t)\dot{\phi}_k(\vec{x}, t) - \mathcal{L}}
+  \mathcal{H} = \sum_{k}{\pi_k(\vec{x}, t)\dot{\phi}_k(\vec{x}, t) - \mathcal{L}},
 \end{equation}
-where $\mathcal{H}$ is the Hamiltonian density, and Hamilton's equations become
-the Hamiltonian field equations
+where $\mathcal{H}$ is the Hamiltonian density, and the field-theoretic 
+analogue of Hamilton's equations~\cite{LA&LI-Mech-VII} is
+the Hamiltonian field equations~\cite{ClassField}
 \begin{equation}
-  \dot{\phi}_k = \frac{\partial \mathcal{H}}{\partial \pi_k}
-  - \partial_\mu \left[ \frac{\partial \mathcal{H}}{\partial (\partial_\mu \pi_k)} \right],\,
-  \dot{\pi}_k = \partial_\mu \left[ \frac{\partial \mathcal{H}}{\partial (\partial_\mu \phi_k)} \right]
-  - \frac{\partial \mathcal{H}}{\partial \phi_k}
+  \dot{\phi}_k = \frac{\delta \mathcal{H}}{\delta \pi_k}, \quad
+  \dot{\pi}_k = - \frac{\delta \mathcal{H}}{\delta \phi_k},
 \end{equation}
-
-[I tried not to use this notation but the rest will be unreadable if I don't, so I hope this
-does not contradict following variational deriv notation, also use this notation earlier]
+where we use the functional derivative identify 
 \begin{equation}
-  \frac{\delta \mathcal{F}}{\delta g} \coloneq \frac{\partial \mathcal{F}}{\partial g}
-  - \partial_\mu \left[ \frac{\partial \mathcal{F}}{\partial (\partial_\mu g)} \right],
+  \frac{\delta \mathcal{F}}{\delta g} = \frac{\partial \mathcal{F}}{\partial g}
+  - \partial_\mu \left[ \frac{\partial \mathcal{F}}{\partial (\partial_\mu g)} \right].
 \end{equation}
-
-To begin second quantisation we will also require the notion of a field theoretic poisson bracket.
-Given two functionals, $F$ and $G$, of the dynamical fields given by 
+To begin second quantisation we will also require the notion of a field-theoretic poisson bracket.
+Given two functionals, $F$ and $G$, of the dynamical fields
+\footnote{n.b. $K({x}) = \int{d{y}\,[K({y}) \delta(x - y)]}$} given by 
 \begin{equation}
-  F = \int{d^3\vec{x}\, \mathcal{F}(\pi_k, \phi_k, \vec{x}, t)},\,
-  G = \int{d^3\vec{x}\, \mathcal{G}(\pi_k, \phi_k, \vec{x}, t)}
+  F = \int{d^3\vec{x}\, \mathcal{F}(\pi_k, \phi_k, \vec{x}, t)}, \quad
+  G = \int{d^3\vec{x}\, \mathcal{G}(\pi_k, \phi_k, \vec{x}, t)},
 \end{equation}
-We define the poisson bracket
+we define the poisson bracket in field theory via
 \begin{equation}
   {\{F, G \}}_{f} = \int{d^3\vec{x}\,
   \sum_{k}{\left[ \frac{\delta \mathcal{F}}{\delta \phi_k}\frac{\delta \mathcal{G}}{\delta \pi_k} 
 - \frac{\delta \mathcal{G}}{\delta \phi_k}\frac{\delta \mathcal{F}}{\delta \pi_k} \right]}  }
 \end{equation}
-Note that $K({x}) = \int{d{y}\,[K({y}) \delta(x - y)]}$
-
+ 
 
 \subsection{Noether's first Theorem}
 In classical mechanics Noether's first theorem shows the correspondence between global symmetries of 
@@ -148,31 +145,33 @@ of the lagrangian density corresponding to conserved Noether currents in classic
 Consider an infinitesimal field transformation $\vartheta(\epsilon)$ such that
 \begin{equation}
   \phi_n \mapsto \phi_n + \delta_\epsilon\phi_n + \mathcal{O}(\epsilon^2), \quad 
-  \delta_\epsilon\phi_n = \epsilon\vartheta_n(\phi_k)
+  \delta_\epsilon\phi_n = \epsilon\vartheta_n(\phi_k),
 \end{equation}
 where the generators, $\vartheta_k$, are independent of spacetime.
 A transformation is called a global symmetry if its effect on the Lagrangian density is
 \begin{equation}
   \mathcal{L} \mapsto \mathcal{L} + \epsilon\partial_\mu\Lambda^\mu(\phi_k, x)
-  + \mathcal{O}(\epsilon^2)
+  + \mathcal{O}(\epsilon^2).
 \end{equation}
 This transformation changes the action by a surface term and the Euler-Lagrange equations
 are invariant. Using a Taylor expansion of the Lagrangian density under $\vartheta(\epsilon)$
 we find that
 \begin{equation}
-  \delta_\epsilon\mathcal{L} = \sum_k{\delta_\epsilon\phi_k E_k} + \partial_\mu\theta^\mu
+  \delta_\epsilon\mathcal{L} = \sum_k{\delta_\epsilon\phi_k E_k} + \partial_\mu\theta^\mu,
 \end{equation}
 \begin{equation}
   \quad \theta^\mu = \sum_k{\delta_\epsilon\phi_k
-  \frac{\partial \mathcal{L}}{\partial(\partial_\mu{\phi_k}) } }
+  \frac{\partial \mathcal{L}}{\partial(\partial_\mu{\phi_k}) } }.
 \end{equation}
-Where $E_k$ are the Euler-Lagrange derivatives and $\theta^\mu$ is the symplectic potential.
-By considering the shift in the action we arrive at Noether's first theorem; an 
+Where $E_k$ are the Euler-Lagrange derivatives and $\theta^\mu$ is
+the symplectic potential density~\cite{LocalSymm}.
+By considering the shift in the action we arrive at
+Noether's first theorem~\cite{Noether1918,NoetherTran}; an 
 infinitesimal transformation $\vartheta(\epsilon)$ is a symmetry
 of the Lagrangian if and only if 
 \begin{equation}
   j^\mu(\epsilon) \coloneq \theta^\mu
-  - \epsilon\Lambda^\mu, \quad \partial_\mu j^\mu = - \delta_\epsilon\phi_k E_k \approx 0 
+  - \epsilon\Lambda^\mu, \quad \partial_\mu j^\mu = - \delta_\epsilon\phi_k E_k \approx 0.
 \end{equation}
 Where we use the summation convention for the field indices hereafter
 and the on-shell divergence free quantity $j^\mu$ is called the conserved Noether current.
@@ -182,28 +181,28 @@ $\vartheta_k(\phi, x)$.
 \subsection{Noether's Second Theorem}
 Noether's second theorem shows that a local symmetry introduces off-shell constraints
 on the equations of motion and leads to Noether current identities which are
-crucial for gauge theories. Noether's original formulation considers
+crucial for gauge theories. Under
 local infinitesimal symmetries $R_\xi$ of the form
 \begin{equation}
    \phi_n \mapsto \phi_n + \delta_\xi\phi_n + \mathcal{O}(\xi^2), 
    \quad \delta_\xi\phi_n = \sum_{m=0}{R^{\mu_1 \cdots \mu_m}_n(\phi_k)
-   \partial_{\mu_1}\cdots\partial_{\mu_m} \xi(x)}
+   \partial_{\mu_1}\cdots\partial_{\mu_m} \xi(x)},
 \end{equation}
-Under $R_\xi$ the action shifts by
+the action shifts by
 \begin{equation}
-  \delta_\xi S = \int{d^4x\, \delta_\xi\phi_n E_n + \partial_\mu\theta^\mu}
+  \delta_\xi S = \int{d^4x\, \delta_\xi\phi_n E_n + \partial_\mu\theta^\mu}.
 \end{equation}
-If $\xi(x)$ is a compactly supported smooth function the boundary term vanishes and we have
+If $\xi(x)$ is a compactly supported smooth function, the boundary term vanishes and we have
 \begin{equation}
-  \int{d^4x\, \delta_\xi\phi_n E_n} = 0 
+  \int{d^4x\, \delta_\xi\phi_n E_n} = 0,
 \end{equation}
-integration by parts leads to 
+and integration by parts leads to 
 \begin{equation}
   \int{d^4x\, \xi(x)\Delta(E) } = 0 , \quad
   \Delta(E) \coloneq \sum_{m=0}{ {(-1)}^m \partial_{\mu_1}\cdots\partial_{\mu_m}
   [R^{\mu_1 \cdots \mu_m}_n(\phi_k) E_n] } 
 \end{equation}
-By the fundamental lemma of the calculus of variations we obtain the 
+By the fundamental lemma of the calculus of variations~\cite{calcvar} we obtain the 
 off-shell constraint $\Delta(E) = 0$. Thus the 
 equations of motion are not all independent and the Euler-Lagrange equations
 ($E_n = 0$) are under-determined. However, observables must be uniquely
@@ -211,11 +210,12 @@ determined by the theory hence we conclude some degrees of freedom are gauge.
 Using the surface term $S^\mu$ from integration by parts we find an expression
 similar to \textcolor{red}{eq2.17}
 \begin{equation}
- \delta_\xi\phi_n E_n = \partial_\mu S^\mu(E_k, \xi)
+ \delta_\xi\phi_n E_n = \partial_\mu S^\mu(E_k, \xi),
 \end{equation}
 with the important difference that $S^\mu$ vanishes on-shell. The
 quantity $j^\mu + S^\mu$ is divergence-free off-shell, subsequently
-by the Poincaré lemma we obtain Noether's second theorem;
+by the Poincaré lemma we obtain
+Noether's second theorem~\cite{Noether1918, NoetherTran, Noeth2Ward, SuperPot};
 on-shell the canonical Noether current $j^\mu$ is
 the divergence of a two-form
 \begin{equation}
@@ -225,10 +225,10 @@ the divergence of a two-form
 \end{equation}
 the anti-symmetric two-form $\kappa^{\mu\nu}$ is called a superpotential.
 Although the superpotential is arbitrary ($\kappa^{\mu\nu}$
-is determined upto addition by a divergence-free quantity) 
+is determined up to addition by a divergence-free quantity) 
 it can be uniquely determined if
-one demands the superpotential obeys additional constraints (
-such as asymptotic conservation). In the case of electrodynamics
+one demands the superpotential obeys additional constraints
+(such as asymptotic conservation)~\cite{SuperPot}. In the case of electrodynamics
 the superpotential is electromagnetic field tensor and
 \textcolor{red}{eq2.23} becomes Maxwell's equations
 \begin{equation}
@@ -239,133 +239,137 @@ the superpotential is electromagnetic field tensor and
 \section{The Dirac Lagrangian}
 
 \subsection{Gauging the vector symmetry}
-
 In quantum mechanics the Schrodinger equation is not Lorentz invariant and is thus
-incompatible with special relativity. A naive generalisation of the relativistic
+incompatible with special relativity. A generalisation of the relativistic
 dispersion relation using Hamiltonian and momentum operators
-for free particles leads to the Klein-Gordon
-equation. However, the Klein-Gordon equation is a second order partial differential equation and
+for free particles leads to the Klein-Gordon equation~\cite{Klein1926, Gordon1926}.
+However, the Klein-Gordon equation is a second order partial differential equation and
 subsequently does not uniquely determine time-evolution of the wavefunction.
-A more complicated treatment produces the Dirac equation
+Alternatively, by finding the half-iterate of d'Alembert operator the 
+Klein-Gordon equation simplifies to a first order partial differential equation;
+the Dirac equation~\cite{dirac1958}
 \begin{equation}
-  (i \gamma^\mu\partial_\mu - m)\psi(x) = 0
+  (i \gamma^\mu\partial_\mu - m)\psi(x) = 0.
 \end{equation}
-Which corresponds to the Lagrangian density
+We call the corresponding Lagrangian density the Dirac Lagrangian
 \begin{equation}
-  \mathcal{L}_\mathrm{D} = \bar{\psi}(i \gamma^\mu\partial_\mu - m)\psi
+  \mathcal{L}_\mathrm{D} = \bar{\psi}(i \gamma^\mu\partial_\mu - m)\psi,
 \end{equation}
-Where the adjoint bispinor is defined as $\bar{\psi} \coloneq \psi^\dagger\gamma^0$.
+where the adjoint bispinor is defined as $\bar{\psi} \coloneq \psi^\dagger\gamma^0$.
 This Lagrangian admits a global $\mathrm{U}(1)$ symmetry called the vector symmetry
 \begin{equation}
-  \psi \mapsto e^{i\vartheta}\psi, \quad \bar{\psi} \mapsto \bar{\psi}e^{-i\vartheta} 
+  \psi \mapsto e^{i\vartheta}\psi, \quad \bar{\psi} \mapsto \bar{\psi}e^{-i\vartheta}.
 \end{equation}
-This symmetry corresponds to a conserved vector current via Noether's theorem for fields
-[add proof L8R]
+This symmetry corresponds to a conserved current, namely the vector current,
+via Noether's first theorem
 \begin{equation}
-  j^\mu = \bar{\psi}\gamma^\mu\psi
+  j^\mu = \bar{\psi}\gamma^\mu\psi.
 \end{equation}
-We now attempt to `gauge' this symmetry by adding spacetime dependence to the 
-parameter
+We now attempt to `gauge' this symmetry by adding spacetime dependence
+to the infinitesimal parameter
 \begin{equation}
-  \psi \mapsto e^{i\vartheta(x)}\psi, \quad \bar{\psi} \mapsto \bar{\psi}e^{-i\vartheta(x)}  
+  \psi \mapsto e^{i\vartheta(x)}\psi, \quad \bar{\psi} \mapsto \bar{\psi}e^{-i\vartheta(x)}.
 \end{equation}
-However, the Lagrangian is not invariant under such a transformation so we introduce the
+However, the Lagrangian is not invariant under such a transformation so we introduce a
 derivative operator which transforms covariantly
 \begin{equation}
-  D_\mu \coloneq \partial_\mu + ie\Pi_\mu
+  D_\mu \coloneq \partial_\mu + ie\Pi_\mu,
 \end{equation}
 \begin{equation}
-  D_\mu \psi \mapsto D'_\mu\left[e^{i\vartheta(x)}\psi\right] = e^{i\vartheta(x)}D_\mu\psi
+  D_\mu \psi \mapsto D'_\mu\left[e^{i\vartheta(x)}\psi\right] = e^{i\vartheta(x)}D_\mu\psi.
 \end{equation}
 To satisfy this the gauge field must transform as
 \begin{equation}
-  \Pi_\mu \mapsto \Pi_\mu -\frac{1}{e}\partial_\mu\vartheta(x)
+  \Pi_\mu \mapsto \Pi_\mu -\frac{1}{e}\partial_\mu\vartheta(x),
 \end{equation}
 Thus we have a modified Lagrangian which admits a local $\mathrm{U}(1)$ gauge symmetry
 \begin{equation}
   \mathcal{L} = \bar{\psi}(i\slashed{D} - m)\psi
-  = \bar{\psi}(i \gamma^\mu\partial_\mu - m)\psi -e\Pi_\mu j^\mu
+  = \bar{\psi}(i \gamma^\mu\partial_\mu - m)\psi -e\Pi_\mu j^\mu,
 \end{equation}
 where $\slashed{D} \coloneq \gamma^\mu D_\mu$ is the Dirac operator.
 This is strikingly similar to the electromagnetic Lagrangian density which
 also has a $\mathrm{U}(1)$ gauge symmetry
 \begin{equation}
-  \mathcal{L}_\mathrm{EM} = -\frac{1}{4}F_{\mu\nu}F^{\mu\nu} -A_\mu J^\mu
+  \mathcal{L}_\mathrm{EM} = -\frac{1}{4}F_{\mu\nu}F^{\mu\nu} -A_\mu J^\mu.
 \end{equation}
-where $A_\mu$, $J^\mu$, and $F^{\mu\nu}$ are the electromagnetic four-potential, four-current,
-and field tensor respectively. Thus we identify $\Pi_\mu = A_\mu$ and $ej^\mu = J^\mu$
+Thus we identify $\Pi_\mu = A_\mu$ and $ej^\mu = J^\mu$
 and arrive at the Lagrangian for quantum electrodynamics.
 \begin{equation}
   \mathcal{L}_\mathrm{QED} = -\frac{1}{4}F_{\mu\nu}F^{\mu\nu} -eA_\mu j^\mu
-    + \bar{\psi}(i \gamma^\mu\partial_\mu - m)\psi
+    + \bar{\psi}(i \gamma^\mu\partial_\mu - m)\psi.
 \end{equation}
+Schwinger arrived at the covariant formulation of quantum electrodynamics
+similarly by constructing a Lagrangian invariant under Lorentz transformations,
+gauge transformations, and charge conjugation~\cite{Schwinger}. 
+However, this is not the end of the story, the massless Dirac equation
+admits another global $\mathrm{U}(1)$ symmetry. In the next sections 
+we construct a gauge-invariant Lagrangian and investigate
+the resultant gauge theory.
 
-[Speak about how QED is an incredibly successful theory of photon-electron interactions]
+\subsection{Gauging the axial symmetry}
 
-
-\subsection{The Axial symmetry}
-
-However, this is not the end of the story. The massless Dirac Lagrangian admits
-another symmetry better seen in the Weyl basis.
+The massless Dirac Lagrangian admits
+another symmetry better seen in the Weyl basis
 \begin{equation}
   \psi =
   \begin{pmatrix} \psi_\mathrm{L} \\ \psi_\mathrm{R} \end{pmatrix}, \quad
   \gamma^{\mu}\partial_\mu =
-  \begin{pmatrix}0 & \sigma^\mu\partial_\mu \\ \bar{\sigma}^{\mu}\partial_\mu & 0 \end{pmatrix}
+  \begin{pmatrix}0 & \sigma^\mu\partial_\mu \\ \bar{\sigma}^{\mu}\partial_\mu & 0 \end{pmatrix}.
 \end{equation}
-Thus the Dirac Lagrangian can be seen as the interaction between two Weyl fermions
-of opposite chirality
+In this basis the Dirac Lagrangian can be seen as the interaction between two Weyl fermions
+of opposite chirality~\cite{Weyl}
 \begin{equation}
   \mathcal{L}_\mathrm{D} = \psi_\mathrm{L}^{\dagger}(i\sigma^\mu\partial_\mu)\psi_\mathrm{L} +
   \psi_\mathrm{R}^{\dagger}(i\bar{\sigma}^\mu\partial_\mu)\psi_\mathrm{R}
-  - m(\psi_\mathrm{L}^{\dagger}\psi_\mathrm{R} + \psi_\mathrm{R}^{\dagger}\psi_\mathrm{L})
+  - m(\psi_\mathrm{L}^{\dagger}\psi_\mathrm{R} + \psi_\mathrm{R}^{\dagger}\psi_\mathrm{L}).
 \end{equation}
 In the massless case the Lagrangian gains a global $\mathrm{U}(1)$ symmetry
 known as the axial symmetry
 \begin{equation}
   \psi_\mathrm{L} \mapsto e^{i\vartheta}\psi_\mathrm{L}, \quad
-  \psi_\mathrm{R} \mapsto e^{-i\vartheta}\psi_\mathrm{R}
+  \psi_\mathrm{R} \mapsto e^{-i\vartheta}\psi_\mathrm{R},
 \end{equation}
 which is equivalent to 
 \begin{equation}
-  \psi \mapsto e^{i\vartheta\gamma^5}\psi
+  \psi \mapsto e^{i\vartheta\gamma^5}\psi,
 \end{equation}
 and a Noether current
 \begin{equation}
-  j^\mu_5 = \bar{\psi}\gamma^\mu\gamma^5\psi, \quad \partial_\mu j^\mu_5 = 2im\bar{\psi}\gamma^5\psi
+  j^\mu_5 = \bar{\psi}\gamma^\mu\gamma^5\psi, \quad \partial_\mu j^\mu_5 = 2im\bar{\psi}\gamma^5\psi.
 \end{equation}
-We now proceed as before, gauging the axial symmetry by promoting $\partial_\mu$
+We now proceed à la Schwinger, gauging the axial symmetry by promoting $\partial_\mu$
 to a covariant derivative $\widetilde{D}_\mu$
-as in (5.6) and determining the required gauge transformation
+as in \textcolor{red}{eq3.6} and determining the required gauge transformation
 \begin{equation}
   {\mathcal{L}_{D}|}_{m=0} = \bar{\psi}(i\gamma^\mu \partial_\mu)\psi
-  - q\bar{\psi}\gamma^\mu\Pi_\mu\psi
+  - q\bar{\psi}\gamma^\mu\Pi_\mu\psi,
 \end{equation}
 \begin{equation}
   \Pi_\mu \mapsto e^{i\vartheta\gamma^5}\Pi_\mu e^{-i\vartheta\gamma^5} 
-  - \frac{1}{q}\partial_\mu\vartheta\gamma^5
+  - \frac{1}{q}\partial_\mu\vartheta\gamma^5.
 \end{equation}
 Now we must add a kinetic term to the Lagrangian to determine the dynamics 
 of the matrix-valued gauge field. Such a term must be gauge-invariant to preserve
 the $\mathrm{U}(1)$ symmetry. We find a Lagrangian analogous to the Maxwell Lagrangian
 \begin{equation}
-  \mathcal{L}_\Pi = - \frac{1}{4}\mathrm{Tr}(\Gamma_{\mu\nu}\Gamma^{\mu\nu})
+  \mathcal{L}_\Pi = - \frac{1}{4}\mathrm{Tr}(\Gamma_{\mu\nu}\Gamma^{\mu\nu}),
 \end{equation}
 with field strength
 \begin{equation}
-  \Gamma_{\mu\nu} = \partial_\mu\Pi_\nu - \partial_\nu\Pi_\mu +iq[\Pi_\mu, \Pi_\nu]
+  \Gamma_{\mu\nu} = \partial_\mu\Pi_\nu - \partial_\nu\Pi_\mu +iq[\Pi_\mu, \Pi_\nu],
 \end{equation}
 has the required gauge-invariance and is Lorentz invariant.
 Thus we have constructed a classical theory describing the interaction between
 massless dirac fermions and an axial gauge boson
 \begin{equation}
   \mathcal{L}_\mathrm{A} =  - \frac{1}{4}\mathrm{Tr}(\Gamma_{\mu\nu}\Gamma^{\mu\nu}) 
-  + \bar{\psi}i\widetilde{\slashed{D}}\psi
+  + \bar{\psi}i\widetilde{\slashed{D}}\psi,
 \end{equation}
 \begin{equation}
   \mathcal{L}_\mathrm{A} =  - \frac{1}{4}\mathrm{Tr}(\Gamma_{\mu\nu}\Gamma^{\mu\nu}) 
   - q\bar{\psi}\gamma^\mu\Pi_\mu\psi
-  + \bar{\psi}(i\gamma^\mu \partial_\mu)\psi
+  + \bar{\psi}(i\gamma^\mu \partial_\mu)\psi.
 \end{equation}
 
 
@@ -373,26 +377,26 @@ massless dirac fermions and an axial gauge boson
 
 So far we have studied relativistic quantum mechanics, making use of classical
 fields to describe the dynamics of quantum states. However, such a quantum theory is
-inconsistent subsequently predicting negative energy states which require 
-peculiar interpretations to reconcile (Dirac's hole theory). To proceed to a
-quantum theory of particle interactions we must promote the dynamical fields
+inconsistent and predicts negative energy states which require 
+peculiar interpretations to reconcile like Dirac's infamous hole theory~\cite{Holethry}.
+To proceed to a quantum theory of particle interactions we must promote the dynamical fields
 to field operators; second quantisation. We shall see how this shift to
 a quantised field theory affects our calculation of expectation values and probabilities.
-
 
 \subsection{Second Quantisation}
 In classical mechanics, the canonical transformations are exactly those which preserve the symplectic 
 structure; invariance of poisson brackets of the dynamical variables ($p_i, q_i$) characterises
-transformations which leave Hamilton's equations unchanged.
+transformations which leave Hamilton's equations unchanged~\cite{LA&LI-Mech-VII}.
 A system's position in phase space specifies its classical state.
-
 However, in quantum mechanics all properties of a system are included in a quantum state, $\ket{\psi}$, 
 inside of a Hilbert space upon which operators corresponding to observables act.
+
 Dirac's famous canonical quantisation
-rule (${\{A, B \} \rightarrow \frac{1}{i\hbar}[\hat{A}, \hat{B}]}$) allows us quantise 
-the canonical structure of classical mechanics (although Groenewold's theorem shows us 
-that such a rule cannot hold for all functions of the dynamical variables). 
-To obtain a quantised field theory we consider the field theoretic poisson brackets
+rule (${\{A, B \} \rightarrow \frac{1}{i\hbar}[\hat{A}, \hat{B}]}$)~\cite{dirac1958}
+allows us quantise the canonical structure of
+classical mechanics (although Groenewold's theorem shows us 
+that such a rule cannot hold for all functions of the dynamical variables~\cite{GROENEWOLD}). 
+To obtain a quantised field theory we consider the field-theoretic poisson brackets
 \begin{equation}
   {\{ \phi_n(z), \phi_m(w) \}}_f = 0 = {\{ \pi_n(z), \pi_m(w) \}}_f
 \end{equation}
@@ -411,9 +415,7 @@ field operators acting on a Fock space
 \end{equation}
 However, just like Dirac's rule this procedure does not always produce a consistent quantum
 theory and in the case of quantising the Dirac Lagrangian we require the analogous anti-commutation
-relations because of the spin-statistics theorem.
-In principle, commutation relations are axioms of any quantum theory
-chosen to reproduce experimental observations.
+relations because of the spin-statistics theorem~\cite{SpinStat}.
 
 
 \subsection{Fock Space}

@@ -1,3 +1,55 @@
-\begin{thebibliography}{}
 
-\end{thebibliography}
+\providecommand{\href}[2]{#2}\begingroup\raggedright\begin{thebibliography}{10}
+
+\bibitem{LA&LI-Mech-I}
+L.~Landau and E.~Lifshitz, \emph{\href{https://doi.org/10.1016/B978-0-08-050347-9.50006-X}{The Equations of Motion}},  in \emph{Mechanics}, vol.~1, (Oxford), pp.~1--12, Butterworth-Heinemann (1976).
+
+\bibitem{ClassField}
+W.~Greiner and J.~Reinhardt, \emph{\href{10.1007/978-3-642-61485-9_2}{Classical Field Theory}},  in \emph{Field Quantization}, (Heidelberg), pp.~31--54, Springer Berlin Heidelberg (1996).
+
+\bibitem{LA&LI-Mech-VII}
+L.~Landau and E.~Lifshitz, \emph{\href{https://doi.org/10.1016/B978-0-08-050347-9.50012-5}{The Canonical Equations}},  in \emph{Mechanics}, vol.~1, (Oxford), pp.~131--167, Butterworth-Heinemann (1976).
+
+\bibitem{LocalSymm}
+J.~Lee and R.M.~Wald, \emph{Local symmetries and constraints}, \href{https://doi.org/10.1063/1.528801}{\emph{J. Math. Phys} {\bfseries 31} (1990) 725}.
+
+\bibitem{Noether1918}
+E.~Noether, \emph{Invariante variationsprobleme}, \href{https://doi.org/10.1007/978-3-642-39990-9_13}{\emph{Nachrichten von der Gesellschaft der Wissenschaften zu Göttingen, Mathematisch-Physikalische Klasse} {\bfseries 1918} (1918) 235}.
+
+\bibitem{NoetherTran}
+E.~Noether, \emph{Invariant variation problems}, \href{https://doi.org/10.1080/00411457108231446}{\emph{Transport Theory and Statistical Physics} {\bfseries 1} (1971) 186}.
+
+\bibitem{calcvar}
+J.~Jost and X.~Li-Jost, \emph{Calculus of Variations}, Cambridge Studies in Advanced Mathematics, Cambridge University Press, Cambridge (1998).
+
+\bibitem{Noeth2Ward}
+S.G.~Avery and B.U.W.~Schwab, \emph{Noether's second theorem and ward identities for gauge symmetries}, \href{https://doi.org/10.1007/JHEP02(2016)031}{\emph{J. High Energy Phys.} {\bfseries 2016} (2016) 31}.
+
+\bibitem{SuperPot}
+G.~Barnich and F.~Brandt, \emph{Covariant theory of asymptotic symmetries, conservation laws and central charges}, \href{https://doi.org/10.1016/S0550-3213(02)00251-1}{\emph{Nucl. Phys. B.} {\bfseries 633} (2002) 3}.
+
+\bibitem{Klein1926}
+O.~Klein, \emph{Quantentheorie und f{\"u}nfdimensionale relativit{\"a}tstheorie}, \href{https://doi.org/10.1007/BF01397481}{\emph{Zeitschrift f{\"u}r Physik} {\bfseries 37} (1926) 895}.
+
+\bibitem{Gordon1926}
+W.~Gordon, \emph{Der comptoneffekt nach der schr{\"o}dingerschen theorie}, \href{https://doi.org/10.1007/BF01390840}{\emph{Zeitschrift f{\"u}r Physik} {\bfseries 40} (1926) 117}.
+
+\bibitem{dirac1958}
+P.A.M.~Dirac, \emph{\href{https://cds.cern.ch/record/102829}{The Principles of Quantum Mechanics}}, Clarendon Press, Oxford, 4~ed. (1958).
+
+\bibitem{Schwinger}
+J.~Schwinger, \emph{Quantum electrodynamics. i. a covariant formulation}, \href{https://doi.org/10.1103/PhysRev.74.1439}{\emph{Phys. Rev.} {\bfseries 74} (1948) 1439}.
+
+\bibitem{Weyl}
+H.~Weyl, \emph{{Elektron und gravitation}}, \href{https://doi.org/10.1007/BF01339504}{\emph{Z. Phys.} {\bfseries 56} (1929) 330}.
+
+\bibitem{Holethry}
+P.A.M.~Dirac, \emph{A theory of electrons and protons}, \href{https://doi.org/10.1098/rspa.1930.0013}{\emph{Proc. Roy. Soc. Lond. A} {\bfseries 126} (1930) 360}.
+
+\bibitem{GROENEWOLD}
+H.~Groenewold, \emph{On the principles of elementary quantum mechanics}, \href{https://doi.org/https://doi.org/10.1016/S0031-8914(46)80059-4}{\emph{Physica} {\bfseries 12} (1946) 405}.
+
+\bibitem{SpinStat}
+W.~Pauli, \emph{On the connection between spin and statistics}, \href{https://doi.org/10.1143/ptp/5.4.526}{\emph{Prog. Theor. Exp. Phys} {\bfseries 5} (1950) 526}.
+
+\end{thebibliography}\endgroup

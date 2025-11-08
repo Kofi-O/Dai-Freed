@@ -5,7 +5,7 @@
 \contentsline {subsection}{\numberline {2.3}Noether's Second Theorem}{6}{subsection.2.3}%
 \contentsline {section}{\numberline {3}The Dirac Lagrangian}{7}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Gauging the vector symmetry}{7}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}The Axial symmetry}{8}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.2}Gauging the axial symmetry}{8}{subsection.3.2}%
 \contentsline {section}{\numberline {4}Quantum Field Theory}{9}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Second Quantisation}{9}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Fock Space}{10}{subsection.4.2}%

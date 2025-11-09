@@ -17,7 +17,7 @@
 \contentsline {section}{\numberline {6}Generalising the Path Integral to Quantum Field Theory}{13}{section.6}%
 \contentsline {section}{\numberline {7}Anomalies in QFT}{13}{section.7}%
 \contentsline {subsection}{\numberline {7.1}Symmetries \& Slavnov-Taylor identities}{13}{subsection.7.1}%
-\contentsline {subsection}{\numberline {7.2}The Path Integral measure}{15}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.2}The Path Integral measure \& Fujikawa's method}{15}{subsection.7.2}%
 \contentsline {subsection}{\numberline {7.3}Atiyah–Singer index Theorem}{16}{subsection.7.3}%
 \contentsline {subsection}{\numberline {7.4}Anomalies as obstructions to gauging}{18}{subsection.7.4}%
-\contentsline {section}{References}{20}{section*.4}%
+\contentsline {section}{References}{21}{section*.4}%

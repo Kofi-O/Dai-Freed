@@ -2,51 +2,46 @@ This is BibTeX, Version 0.99d (TeX Live 2023/Debian)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: report.aux
 The style file: JHEP.bst
-Illegal, another \bibstyle command---line 53 of file report.aux
- : \bibstyle
- :          {unsrt}
-I'm skipping whatever remains of this command
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: reportNotes.bib
-You've used 17 entries,
+You've used 31 entries,
             2316 wiz_defined-function locations,
-            691 strings with 6307 characters,
-and the built_in function-call counts, 6081 in all, are:
-= -- 649
-> -- 120
+            808 strings with 8482 characters,
+and the built_in function-call counts, 11443 in all, are:
+= -- 1238
+> -- 237
 < -- 0
-+ -- 41
-- -- 24
-* -- 477
-:= -- 788
-add.period$ -- 17
-call.type$ -- 17
-change.case$ -- 16
++ -- 79
+- -- 48
+* -- 903
+:= -- 1478
+add.period$ -- 31
+call.type$ -- 31
+change.case$ -- 30
 chr.to.int$ -- 0
-cite$ -- 17
-duplicate$ -- 426
-empty$ -- 593
-format.name$ -- 72
-if$ -- 1577
+cite$ -- 31
+duplicate$ -- 808
+empty$ -- 1083
+format.name$ -- 144
+if$ -- 2976
 int.to.chr$ -- 0
-int.to.str$ -- 17
-missing$ -- 60
-newline$ -- 55
-num.names$ -- 17
-pop$ -- 59
+int.to.str$ -- 31
+missing$ -- 114
+newline$ -- 97
+num.names$ -- 31
+pop$ -- 100
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 249
+skip$ -- 482
 stack$ -- 0
-substring$ -- 397
-swap$ -- 125
+substring$ -- 744
+swap$ -- 243
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 71
-width$ -- 19
-write$ -- 177
-(There was 1 error message)
+while$ -- 133
+width$ -- 33
+write$ -- 317

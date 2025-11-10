@@ -241,10 +241,12 @@ the superpotential is electromagnetic field tensor and
 In quantum mechanics the Schrodinger equation is not Lorentz invariant and is thus
 incompatible with special relativity. A generalisation of the relativistic
 dispersion relation using Hamiltonian and momentum operators
-for free particles leads to the Klein-Gordon equation~\cite{Klein1926, Gordon1926}.
+for free particles leads to the Klein-Gordon
+equation\footnote{$(\square + m^2)\psi = 0$}~\cite{Klein1926, Gordon1926}.
 However, the Klein-Gordon equation is a second order partial differential equation and
 subsequently does not uniquely determine time-evolution of the wavefunction.
-Alternatively, by finding the half-iterate of d'Alembert operator the 
+Alternatively, by finding the half-iterate of d'Alembert
+operator\footnote{$\square \coloneq \partial^2_t - \nabla^2$}~the 
 Klein-Gordon equation simplifies to a first order partial differential equation;
 the Dirac equation~\cite{dirac1958}
 \begin{equation}
@@ -397,20 +399,20 @@ classical mechanics (although Groenewold's theorem shows us
 that such a rule cannot hold for all functions of the dynamical variables~\cite{GROENEWOLD}). 
 To obtain a quantised field theory we consider the field-theoretic poisson brackets
 \begin{equation}
-  {\{ \phi_n(z), \phi_m(w) \}}_f = 0 = {\{ \pi_n(z), \pi_m(w) \}}_f
+  {\{ \phi_n(z), \phi_m(w) \}}_f = 0 = {\{ \pi_n(z), \pi_m(w) \}}_f,
 \end{equation}
 \begin{equation}
-  {\{\phi_n(z), \pi_m(w) \}}_f = \delta_{nm}\delta^{(3)}(\vec{z} - \vec{w})
+  {\{\phi_n(z), \pi_m(w) \}}_f = \delta_{nm}\delta^{(3)}(\vec{z} - \vec{w}).
 \end{equation}
 Which are quantised to the canonical commutation relations for the dynamical
 field operators acting on a Fock space~\cite{FockSpace}
 \begin{equation}
   {[\hat{\phi}_n(z), \hat{\phi}_m(w) ]} = 0
-  = {[\hat{\pi}_n(z), \hat{\pi}_m(w) ]}
+  = {[\hat{\pi}_n(z), \hat{\pi}_m(w) ]},
 \end{equation}
 \begin{equation}
   {[ \hat{\phi}_n(z), \hat{\pi}_m(w) ]}
-  = i\hbar\delta_{nm}\delta^{(3)}(\vec{z} - \vec{w})
+  = i\hbar\delta_{nm}\delta^{(3)}(\vec{z} - \vec{w}).
 \end{equation}
 However, just like Dirac's rule this procedure does not always produce a consistent quantum
 theory. In the case of fermionic fields canonical quantisation
@@ -452,138 +454,6 @@ another is
 which generalises to transitions between arbitrary quantum states.
 Hence in quantum field theory the study of probabilities is
 characterised by vacuum expectation values of operators and their compositions.
-
-\newpage
-
-\section{Path Integral Formulation of Quantum Mechanics}
-
-\subsection{The Propagator}
-In quantum mechanics, the propagator is the probability 
-amplitude of observing a position $x_n$ at time $t_n$, given 
-the particle is at postion $x_1$ at time $t_1$. This can be 
-written as the scalar product of the two quantum states,
-\begin{equation} 
-K(x',t';x,t) := \langle x't'|xt \rangle .
-\label{propagator}
-\end{equation}
-
-We can rewrite this propagator as an integral over all 
-possible paths the particle can take. We call this the 
-Feynman path integral.
-
-First, we discretise the time between $t_n$ and $t$ as
-\[ t_{n+1} := t'>t_{n}>t_{n-1}>...>t_2>t_1>t =: t_0 ,\]
-giving $n+1$ equal peices $\Delta t = t_j-t_{j-1}$ for 
-$1 \leq j \leq n+1$.
-
-Since position eigenstates are complete, we have
-\begin{equation} 
-\int dx_j |x_jt_j \rangle \langle x_jt_j | = \mathbb{I},
-\end{equation}
-meaning we can rewite \eqref{propagator} as
-\begin{align} 
-K(x',t';x,t) =
-\int dx_{n}dx_{n-1}...dx_1 
-&\langle x_{n+1}t_{n+1}|x_{n}t_{n} \rangle
-\langle x_{n}t_{n}|x_{n-1}t_{n-1} \rangle
-... \notag \\
-&...\langle x_{2}t_{2}|x_{1}t_{1} \rangle
-\langle x_{1}t_{1}|x_{0}t_{0} \rangle .
-\label{pathint}
-\end{align}
-
-This can be thought of as integrating over all possible 
-paths, as depicted in Figure \ref{figpaths}.
-
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.4\textwidth]{paths.jpeg}
-\captionsetup{width=0.6\textwidth}
-\caption{Three possible paths from $(x,t)$ to $(x',t')$ with discretised time interval.}
-\label{figpaths}
-\end{figure}
-
-Dirac and Feynman cite(dirac, feynman) showed that for 
-small $\Delta t$ the path of a particle is determined 
-by the classical action, S, via the following,
-\begin{equation}
-\langle x_jt_j | x_{j-1}t_{j-1} \rangle
-=
-A \ exp \left\{\frac{i}{h}S(j,j-1)\right\}
-\label{pathofsmall}
-\end{equation}
-where $A$ is a normalisation constant.
-
-$S$ is the classical action determined by the time integral 
-of the Lagrangian. As we let $\Delta t \longrightarrow 0$ we 
-can approximate the path as a straight line, allowing us to 
-calculate the Lagrangian, and hence the action.
-\begin{align}
-    S(j,j-1) &= \int^{t_j}_{t_{j-1}} dt L_{classical}(x, \dot{x}) \notag \\
-    &= \int^{t_j}_{t_{j-1}} dt \left[ \frac{\mu \dot{x}^2}{2} - V(x) \right] \notag \\
-    &= \Delta t \left[ \frac{\mu}{2} \left(\frac{x_j - x_{j-1}}{\Delta t} \right)^2 
-    - V \left(\frac{x_j + x_{j-1}}{2} \right) \right] \\
-    &are these second and third lines neccessary? \notag
-\end{align}
-Note that one can show $A = \left(\frac{\mu}{2 \pi \hbar i \Delta t} \right)^{\frac{1}{2}}$.
-
-Subbing \eqref{pathofsmall} into \eqref{pathint} and 
-taking the limit as $N \longrightarrow \infty$ and 
-$\Delta t \longrightarrow 0$ gives
-\begin{align}
-K(x',t';x,t) &= \lim_{\substack{n \to \infty \\ \Delta t \to 0}} \left[ \left(\frac{\mu}{2 \pi \hbar i \Delta t} \right)^{\frac{n+1}{2}}
-\int dx_{n}dx_{n-1}...dx_1 \prod_{j=1}^{n}exp \left\{\frac{i}{h}S(j,j-1)\right\} \right] \notag\\
-&= \lim_{\substack{n \to \infty \\ \Delta t \to 0}} \left[ \left(\frac{\mu}{2 \pi \hbar i \Delta t} \right)^{\frac{n+1}{2}}
-\int dx_{n}dx_{n-1}...dx_1 \ exp \left\{ \frac{i}{h} \sum_{j=1}^n S(j,j-1)\right\} \right] \notag\\
-&= \lim_{\substack{n \to \infty \\ \Delta t \to 0}} \left[ \left(\frac{\mu}{2 \pi \hbar i \Delta t} \right)^{\frac{n+1}{2}}
-\int dx_{n}dx_{n-1}...dx_1 \ exp \left\{ \frac{i}{h} \sum_{j=1}^n \int_{j-1}^{j} L_{clasical}(x, \dot{x})\right\} \right] \notag\\
-&= \lim_{\substack{n \to \infty \\ \Delta t \to 0}} \left(\frac{\mu}{2 \pi \hbar i \Delta t} \right)^{\frac{n+1}{2}}
-\int dx_{n}dx_{n-1}...dx_1 \ exp \left\{ \frac{i}{h} \sum_{j=1}^n \int_{t_0}^{n+1} L_{clasical}(x, \dot{x})\right\}
-\\need to fix this equation
-\end{align}
-
-\begin{prop}
-The Feynman path integral is equivalent to Schrödinger's theory.
-\end{prop}
-
-\subsection{The Partition Function}
-We consider a system that evolves from a vacuum state at $t \to -\infty$ back to 
-a vacuum state at $t \to \infty$, in the 
-presence of a source. A vacuum state is a groundstate with zero quantum number (what?). 
-
-The source is introduced 
-in the Lagrangian by 
-\begin{equation}
-L \to L + \hbar J(t)x(t),
-\end{equation}
-where $J(t)$ is the source and $x(t)$ is the path.
-
-We define the partition function as the transition amplitude in the presence of this source,
-\begin{equation}
-Z[J]:= \langle 0,-\infty ; 0, \infty \rangle ^J,
-\end{equation}
-which one can prove is equivalent to 
-\begin{equation}
-Z[J]= \int d[x(t)] exp\left\{\frac{i}{\hbar}\int^{\infty}_{-\infty}dt (L + \hbar J(t) x(t) + \frac{1}{2} i \epsilon x^2) \right\}.
-\end{equation}
-what is epsilon?
-
-
-
-\subsection{Time Ordered Products}
-AKA greens functions
-\subsection{Functional Derivatives of the Partition Function}
-This is why the partition function is aolso called generating functional
-
-\section{Generalising the Path Integral to Quantum Field Theory}
-In the same way we generalised classical mechanics to 
-classical field theory in section ---, we can generalise 
-quantum mechanics to quantum field theory. That is, instead 
-of considering trajectories of a particle x(t), we
-
-maybe talk about why deriving the PI approach to QFT is difficult
-
-talk about how generating functional generalises and how time ordered products generalise to operators I think?
 
 \section{Anomalies in QFT}
 
@@ -689,7 +559,8 @@ and similarly for the adjoint spinor. Thus the path integral measure transforms 
   \mathcal{D}\psi\mathcal{D}\bar{\psi},
 \end{equation}
 and we see the measure is invariant; the vector symmetry is retained
-by the quantum theory and the correlators are gauge invariant.
+by the quantum theory and the correlators are gauge invariant
+by the Slavnov–Taylor identities.
 However, this is not the case for the axial transformation; 
 the axial symmetry is `anomalous'. The following is an
 outline of Fujikawa's method for the existence of the axial anomaly~\cite{Fujikawa}.
@@ -822,7 +693,8 @@ we can map our problem from $S^4$ to $\mathbb{R}^4$
 and $\mathrm{ch}(F)$ coincides with the Dirac operator's
 index density in Euclidean space if the gauge fields $A_\mu$
 obey \textcolor{red}{eqn7.38}~\cite{JackiwRebbi1977,Belavin}.
-Subsequently, we identify the axial anomaly in Euclidean space as 
+Using antisymmetry of the wedge product we identify the
+axial anomaly in Euclidean space as 
 \begin{equation}
   \partial_\mu j^\mu_5 - 2im\bar{\psi}\gamma^5\psi =
   \mathcal{A}[A_\mu] = \frac{-ie^2}{16\pi^2}

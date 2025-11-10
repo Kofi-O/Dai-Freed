@@ -6,42 +6,42 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: reportNotes.bib
 You've used 31 entries,
             2316 wiz_defined-function locations,
-            808 strings with 8482 characters,
-and the built_in function-call counts, 11443 in all, are:
-= -- 1238
+            808 strings with 8454 characters,
+and the built_in function-call counts, 11569 in all, are:
+= -- 1254
 > -- 237
 < -- 0
 + -- 79
 - -- 48
-* -- 903
-:= -- 1478
+* -- 915
+:= -- 1493
 add.period$ -- 31
 call.type$ -- 31
-change.case$ -- 30
+change.case$ -- 31
 chr.to.int$ -- 0
 cite$ -- 31
-duplicate$ -- 808
-empty$ -- 1083
+duplicate$ -- 815
+empty$ -- 1095
 format.name$ -- 144
-if$ -- 2976
+if$ -- 3008
 int.to.chr$ -- 0
 int.to.str$ -- 31
-missing$ -- 114
+missing$ -- 113
 newline$ -- 97
 num.names$ -- 31
-pop$ -- 100
+pop$ -- 99
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 482
+skip$ -- 490
 stack$ -- 0
-substring$ -- 744
-swap$ -- 243
+substring$ -- 760
+swap$ -- 247
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 133
+while$ -- 136
 width$ -- 33
-write$ -- 317
+write$ -- 319

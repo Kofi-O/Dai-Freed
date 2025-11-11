@@ -13,7 +13,8 @@
 \usepackage{pgfplots,siunitx}
 \usepackage[outdir=./]{epstopdf}
 \usepackage{slashed}
-\usepackage{caption}
+\usepackage{relsize}
+
 
 \sisetup{detect-all}
 \pgfplotsset{compat=1.18}
@@ -169,11 +170,12 @@ Noether's first theorem~\cite{Noether1918,NoetherTran}; an
 infinitesimal transformation $\vartheta(\epsilon)$ is a symmetry
 of the Lagrangian if and only if 
 \begin{equation}
-  j^\mu(\epsilon) \coloneq \theta^\mu
-  - \epsilon\Lambda^\mu, \quad \partial_\mu j^\mu = - \delta_\epsilon\phi_k E_k \approx 0.
+  \epsilon j^\mu \coloneq \theta^\mu - \epsilon\Lambda^\mu,
+  \quad \epsilon\partial_\mu j^\mu = - \delta_\epsilon\phi_k E_k \approx 0.
 \end{equation}
 Where we use the summation convention for the field indices hereafter
-and the on-shell divergence free quantity $j^\mu$ is called the conserved Noether current.
+and the on-shell divergence-free quantity $j^\mu$ is called the conserved
+Noether current\footnote{n.b. $j^\mu$ is $\epsilon$-independent}.
 This easily generalises to local symmetries: spacetime dependent generators
 $\vartheta_k(\phi, x)$.
 
@@ -181,23 +183,23 @@ $\vartheta_k(\phi, x)$.
 Noether's second theorem shows that a local symmetry introduces off-shell constraints
 on the equations of motion and leads to Noether current identities which are
 crucial for gauge theories. Under
-local infinitesimal symmetries $R_\xi$ of the form
+local infinitesimal symmetries (gauge symmetries) $R_\xi$ of the form
 \begin{equation}
    \phi_n \mapsto \phi_n + \delta_\xi\phi_n + \mathcal{O}(\xi^2);
    \quad \delta_\xi\phi_n = \sum_{m=0}{R^{\mu_1 \cdots \mu_m}_n(\phi_k)
-   \partial_{\mu_1}\cdots\partial_{\mu_m} \xi(x)},
+   \partial_{\mu_1}\cdots\partial_{\mu_m} \xi\lambda(x)},
 \end{equation}
 the action shifts by
 \begin{equation}
   \delta_\xi S = \int{d^4x\, \delta_\xi\phi_n E_n + \partial_\mu\theta^\mu}.
 \end{equation}
-If $\xi(x)$ is a compactly supported smooth function, the boundary term vanishes and we have
+If $\lambda(x)$ is a compactly supported smooth function, the boundary term vanishes and we have
 \begin{equation}
   \int{d^4x\, \delta_\xi\phi_n E_n} = 0,
 \end{equation}
 and integration by parts leads to 
 \begin{equation}
-  \int{d^4x\, \xi(x)\Delta(E) } = 0; \quad
+  \int{d^4x\, \lambda(x)\Delta(E) } = 0; \quad
   \Delta(E) \coloneq \sum_{m=0}{ {(-1)}^m \partial_{\mu_1}\cdots\partial_{\mu_m}
   [R^{\mu_1 \cdots \mu_m}_n(\phi_k) E_n] }. 
 \end{equation}
@@ -209,7 +211,7 @@ determined by the theory hence we conclude some degrees of freedom are gauge.
 Using the surface term $S^\mu$ from integration by parts we find an expression
 similar to \textcolor{red}{eq2.17}
 \begin{equation}
- \delta_\xi\phi_n E_n = \partial_\mu S^\mu(E_k, \xi),
+ \delta_\xi\phi_n E_n = \xi\partial_\mu S^\mu(E_k, \lambda),
 \end{equation}
 with the important difference that $S^\mu$ vanishes on-shell. The
 quantity $j^\mu + S^\mu$ is divergence-free off-shell, subsequently
@@ -218,11 +220,11 @@ Noether's second theorem~\cite{Noether1918, NoetherTran, Noeth2Ward, SuperPot};
 on-shell the canonical Noether current $j^\mu$ is
 the divergence of a two-form
 \begin{equation}
-  j^\mu(\xi) = -S^\mu(E_k, \xi) + \partial_\nu \kappa^{\mu\nu}(\xi)
-  \approx \partial_\nu \kappa^{\mu\nu}(\xi);
-  \quad \kappa^{\mu\nu}(\xi) = -\kappa^{\nu\mu}(\xi),
+  j^\mu = -S^\mu(E_k, \lambda) + \partial_\nu \kappa^{\mu\nu}
+  \approx \partial_\nu \kappa^{\mu\nu};
+  \quad \kappa^{\mu\nu} = -\kappa^{\nu\mu},
 \end{equation}
-the anti-symmetric two-form $\kappa^{\mu\nu}$ is called a superpotential.
+the antisymmetric two-form $\kappa^{\mu\nu}$ is called a superpotential.
 Although the superpotential is arbitrary ($\kappa^{\mu\nu}$
 is determined up to addition by a divergence-free quantity) 
 it can be uniquely determined if
@@ -261,7 +263,7 @@ This Lagrangian admits a global $\mathrm{U}(1)$ symmetry called the vector symme
 \begin{equation}
   \psi \mapsto e^{i\vartheta}\psi, \quad \bar{\psi} \mapsto \bar{\psi}e^{-i\vartheta}.
 \end{equation}
-This symmetry corresponds to a conserved current, namely the vector current,
+This symmetry corresponds to a conserved current, called the vector current,
 via Noether's first theorem
 \begin{equation}
   j^\mu = \bar{\psi}\gamma^\mu\psi.
@@ -455,9 +457,9 @@ which generalises to transitions between arbitrary quantum states.
 Hence in quantum field theory the study of probabilities is
 characterised by vacuum expectation values of operators and their compositions.
 
-\section{Anomalies in QFT}
+\section{Symmetries in QFT}
 
-\subsection{Symmetries \& Slavnov-Taylor identities}
+\subsection{Slavnov-Taylor identities}
 We now extend our investigation of symmetries from classical fields to a
 quantised theory. Suppose the classical action admits a local symmetry
 such that the path integral measure is invariant
@@ -495,7 +497,9 @@ Thus the effective quantum action is invariant under the transformations
   \varphi_\mu \mapsto \varphi_\mu + \epsilon\!\braket{\vartheta_\mu(\phi, x)}_J,
 \end{equation}
 such a relation is called a Slavnov-Taylor identity~\cite{Slavnov, Taylor, Slavnov–Taylor}.
-If the transformation is a linear symmetry such that
+If the transformation is linear in the
+fields\footnote{i.e. linear $R^\mu_n(\phi_k)$ in
+\textcolor{red}{eqn2.18}} such that
 \begin{equation}
   \vartheta_\mu = \Theta_\mu[\phi, x] = \alpha_\mu(x) +
   \int{d^4y\,\beta^\nu_\mu(x, y)\phi_\nu(y) },
@@ -518,7 +522,63 @@ quantum theory inherits the classical symmetry
 and it is impossible to violate the symmetry via quantum effects
 like loop diagrams because the corresponding correlators are invariant~\cite{Slavnov–Taylor}.
 
+\subsection{Ward-Takahashi identities}
 
+
+The classical conservation laws for Noether currents present in quantum mechanics
+have a quantum field theoretic analogue, the Ward-Takahashi identities. The conservation
+of classical fields induces analogous relations for the correlation functions of the 
+corresponding field operators.
+Consider a bounded functional of the fields $F[\phi]$ and its VEV
+\begin{equation}
+  \braket{F[\phi]} = \frac{1}{Z}\int{\mathcal{D}\phi'\,F[\phi']e^{iS[\phi']}},
+  \quad \phi' = \phi + \delta_\epsilon\phi,
+\end{equation}
+which follows from relabeling the variable of integration. Suppose
+the field transformation preserves the path integral measure
+with $\delta_\epsilon\phi= \epsilon\lambda(\phi,x)$, then
+taking the functional taylor expansion leads to
+\begin{equation}
+  \braket{F[\phi]} = \frac{1}{Z}\int{\mathcal{D}\phi\,\left(F[\phi] +
+    \frac{\delta F[\phi]}{\delta\phi}\epsilon\lambda +\mathcal{O}(\epsilon^2) \right)
+    \exp{\left[ iS{[\phi]} + i\frac{\delta S[\phi]}{\delta\phi}\epsilon\lambda
+  + \mathcal{O}(\epsilon^2) \right]}},
+\end{equation}
+\begin{equation}
+  \braket{F[\phi]} = \frac{1}{Z}\int{\mathcal{D}\phi\,
+    \left(F[\phi] + \frac{\delta F[\phi]}{\delta\phi}\epsilon\lambda \right)
+    \left(1 + i\frac{\delta S[\phi]}{\delta\phi}\epsilon\lambda\right)e^{iS[\phi]} }
+    + \mathcal{O}(\epsilon^2),
+\end{equation}
+and to first-order in $\epsilon$ we have
+\begin{equation}
+ \int{\mathcal{D}\phi\,\lambda(\phi,x) \left(
+    \frac{\delta F[\phi]}{\delta\phi} +
+    iF[\phi]\frac{\delta S[\phi]}{\delta\phi} \right)e^{iS[\phi]} } = 0.
+\end{equation}
+Since $\lambda(\phi,x)$ is smooth and arbitrary this implies the
+Dyson-Schwinger equation
+\begin{equation}
+  \Braket{\frac{\delta F[\phi]}{\delta\phi}} = -i\Braket{F[\phi]\frac{\delta S[\phi]}{\delta\phi}}.
+\end{equation}
+
+Suppose we promote a classically conserved current to a field operator $\hat{\jmath}^\mu(x)$
+and the operators $\{\hat{\mathcal{O}}_i(z_i)\}$ are functions of spacetime. The 
+derivative of the correlator is [WE SUPPRESS THE HATS IN THE CORRELATOR
+TO INDICATE A TIME-ORDERED PROD][ADD PROOF L8R]
+\begin{equation}
+  \partial^x_{\mu}\!\Braket{j^\mu(x)\prod^n_{i=1}{\!\mathcal{O}_i(z_i)}} = 
+  \Braket{\partial^x_{\mu}j^\mu(x) \prod^n_{i=1}{\!\mathcal{O}_i(z_i)}} + 
+  \mathlarger{\mathlarger{\sum}}_{k = 1}^{n}{ \delta(x_0 - z_{k_0})
+    \!\Braket{\left[j^0(x), \mathcal{O}_k(z_k)\right]\prod^n_{i\neq k}{\!\mathcal{O}_i(z_i)} } }
+\end{equation}
+Applying the classical conservation law for the current we have
+the Ward-Takahashi identity
+\begin{equation}
+  \partial^x_{\mu}\!\Braket{j^\mu(x)\prod^n_{i=1}{\mathcal{O}_i(z_i)}} = 0; \quad x \neq z_k
+\end{equation}
+
+\section{Anomalies in QFT}
 
 \subsection{The Path Integral measure \& Fujikawa's method}
 

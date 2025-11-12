@@ -507,17 +507,19 @@ fields\footnote{i.e. linear $R^\mu_n(\phi_k)$ in
 the transformation Jacobian becomes field independent
 \begin{equation}
   K_{\mu\nu} = \frac{\delta}{\delta\phi_\nu(y)}(\phi_\mu +\epsilon\Theta_\mu[\phi, x])
-  = \delta_{\mu\nu}\delta^{(4)}(x - y) + \epsilon\beta^\nu_\mu(x, y).
+  = \delta_{\mu\nu}\delta^{(4)}(x - y) + \epsilon\beta^\nu_\mu(x, y),
 \end{equation}
- Moreover, we have
-$\braket{\Theta_\mu[\phi, x]}_J = \Theta_\mu[\varphi, x]$ which implies
-the effective quantum action is invariant under the same transformation as the 
+and can be brought out of the path integral.
+Thus even if the path integral measure is not invariant 
+the normalised correlators will be, granted the Jacobian is non-singular.
+Moreover, we have $\braket{\Theta_\mu[\phi, x]}_J = \Theta_\mu[\varphi, x]$
+which implies the effective quantum action is
+invariant under the same transformation as the 
 classical action, namely,
 \begin{equation}
   \varphi_\mu \mapsto \varphi_\mu + \epsilon\Theta_\mu[\varphi, x],
 \end{equation}
-is a symmetry of $\Gamma[\varphi]$ so the normalised one-particle
-irreducible correlators are invariant. In this case, the
+is a symmetry of $\Gamma[\varphi]$. In this case, the
 quantum theory inherits the classical symmetry
 and it is impossible to violate the symmetry via quantum effects
 like loop diagrams because the corresponding correlators are invariant~\cite{Slavnov–Taylor}.
@@ -567,14 +569,15 @@ Suppose the classical Noether current $j^\mu(x)$ has an analogue $\hat{\jmath}^\
 in the operator formalism and the operators
 $\{\hat{\mathcal{V}}_i(z_i)\}$ are functions of spacetime. The 
 derivative of their correlator is [WE SUPPRESS THE HATS IN THE CORRELATOR
-TO INDICATE A TIME-ORDERED PROD][ADD PROOF L8R]
+TO INDICATE A TIME-ORDERED PROD]
 \begin{equation}
   \partial^x_{\mu}\!\Braket{j^\mu(x)\prod^n_{i=1}{\!\mathcal{V}_i(z_i)}} = 
   \Braket{\partial^x_{\mu}j^\mu(x) \prod^n_{i=1}{\!\mathcal{V}_i(z_i)}} + 
   \mathlarger{\mathlarger{\sum}}_{k = 1}^{n}{ \delta(x_0 - z_{k_0})
     \!\Braket{\left[j^0(x), \mathcal{V}_k(z_k)\right]\prod^n_{i\neq k}{\!\mathcal{V}_i(z_i)} } }.
 \end{equation}
-where we define the commutator in the time-ordered product as
+where we define the commutator in the time-ordered product
+(time-ordered with respect to the second argument) as
 \begin{equation}
   [j(x),\mathcal{A}_m(y_m) ] \coloneq
   \Theta(y_{\alpha_0} - x_0)j(x)\mathcal{A}_m(y_m) -
@@ -583,9 +586,9 @@ where we define the commutator in the time-ordered product as
 \begin{equation}
   \mathcal{T}\prod_{i=1}^n{\hat{\mathcal{A}}_i} =
   \cdots \hat{\mathcal{A}}_{\alpha}(y_\alpha) \hat{\mathcal{A}}_m(y_m)
-  \hat{\mathcal{A}}_{\beta}(y_\beta) \cdots.
+  \hat{\mathcal{A}}_{\beta}(y_\beta) \cdots,
 \end{equation}
-\textcolor{red}{See appendix for proof}.
+using the Heaviside function $\Theta$. \textcolor{red}{See appendix for proof}.
 The Noether current is only conserved on-shell so we cannot apply
 current conservation to the second term (the path integral
 is taken over all field configurations). Assuming that
@@ -613,13 +616,23 @@ leads to\footnote{n.b. \textcolor{red}{eqn2.17}$ \implies \partial^x_\mu j^\mu =
   \prod_{i \neq k}^n{\mathcal{V}_i(z_i)}} },
 \end{equation}
 via the fundamental lemma of the calculus of variations.
-These delta function terms are called Schwinger/contact terms 
+The delta function terms are called Schwinger/contact terms 
 and in the case that none of the insertion times coincide we have 
 the Ward-Takahashi identity
 \begin{equation}
   \partial^x_{\mu}\!\Braket{j^\mu(x)\prod^n_{i=1}{\mathcal{V}_i(z_i)}} = 0;
   \quad x_0 \neq z_{i_0}.
 \end{equation}
+These correlators can be computed perturbatively, and in the case
+of the axial current $j^\mu_5$, the three-point function corresponding
+to triangle Feynman diagrams violates the Ward-Takahashi identity
+suggesting that the axial symmetry is not present in the quantum theory.
+Similarly, the Slavnov–Taylor identities imply it is a symmetry of
+the quantum theory if the path integral Jacobian is non-singular
+because the axial transformation is linear in the dirac fields.
+Thus for the class of symmetries linear in the dynamical fields
+in \textcolor{red}{eqn5.8} a singular path integral Jacobian
+characterises the presence of an anomaly.
 
 \section{Anomalies in QFT}
 

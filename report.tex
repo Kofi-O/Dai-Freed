@@ -561,21 +561,47 @@ Dyson-Schwinger equation
 \begin{equation}
   \Braket{\frac{\delta F[\phi]}{\delta\phi}} = -i\Braket{F[\phi]\frac{\delta S[\phi]}{\delta\phi}}.
 \end{equation}
-
-Suppose we promote a classically conserved current to a field operator $\hat{\jmath}^\mu(x)$
-and the operators $\{\hat{\mathcal{O}}_i(z_i)\}$ are functions of spacetime. The 
-derivative of the correlator is [WE SUPPRESS THE HATS IN THE CORRELATOR
+Suppose the classical Noether current $j^\mu(x)$ has an analogue $\hat{\jmath}^\mu(x)$
+in the operator formalism and the operators
+$\{\hat{\mathcal{V}}_i(z_i)\}$ are functions of spacetime. The 
+derivative of their correlator is [WE SUPPRESS THE HATS IN THE CORRELATOR
 TO INDICATE A TIME-ORDERED PROD][ADD PROOF L8R]
 \begin{equation}
-  \partial^x_{\mu}\!\Braket{j^\mu(x)\prod^n_{i=1}{\!\mathcal{O}_i(z_i)}} = 
-  \Braket{\partial^x_{\mu}j^\mu(x) \prod^n_{i=1}{\!\mathcal{O}_i(z_i)}} + 
+  \partial^x_{\mu}\!\Braket{j^\mu(x)\prod^n_{i=1}{\!\mathcal{V}_i(z_i)}} = 
+  \Braket{\partial^x_{\mu}j^\mu(x) \prod^n_{i=1}{\!\mathcal{V}_i(z_i)}} + 
   \mathlarger{\mathlarger{\sum}}_{k = 1}^{n}{ \delta(x_0 - z_{k_0})
-    \!\Braket{\left[j^0(x), \mathcal{O}_k(z_k)\right]\prod^n_{i\neq k}{\!\mathcal{O}_i(z_i)} } }
+    \!\Braket{\left[j^0(x), \mathcal{V}_k(z_k)\right]\prod^n_{i\neq k}{\!\mathcal{V}_i(z_i)} } }.
 \end{equation}
-Applying the classical conservation law for the current we have
+The Noether current is only conserved on-shell so we cannot apply
+current conservation to the second term (the path integral
+is taken over all field configurations). Assuming that
+the symmetry corresponding to $j^\mu$ leaves the path integral
+measure invariant and transforms $\mathcal{V}_i$ as
+\begin{equation}
+  \mathcal{V}_i(\phi) \mapsto \mathcal{V}_i(\phi) + \delta_\epsilon\mathcal{V}_i(\phi)
+  + \mathcal{O}(\epsilon^2); \quad \delta_\epsilon\mathcal{V}_i =
+  \frac{\partial\mathcal{V}_i}{\partial\phi}\delta_\epsilon\phi
+\end{equation}
+using the Dyson-Schwinger equation with $F[\phi] = \prod_i{\mathcal{V}_i}$
+and \textcolor{red}{eq2.19} we have to first order in $\epsilon$
+\begin{equation}
+  \Braket{\int{d^4x\,\epsilon\partial^x_\mu j^\mu(x)}\prod^n_{i=1}{\mathcal{V}_i(z_i)}} =
+  -i\mathlarger{\mathlarger{\sum}}_{k =1}^n{\Braket{\delta_\epsilon\mathcal{V}_k(z_k)
+  \prod_{i \neq k}^n{\mathcal{V}_i(z_i)}}}
+\end{equation}
+interchanging the spacetime and path integrals we have
+\begin{equation}
+  \Braket{ \partial^x_\mu j^\mu(x)\prod^n_{i=1}{\mathcal{V}_i(z_i)} } = 
+  -i\mathlarger{\mathlarger{\sum}}_{k=1}^n{\delta^{(4)}(x - z_k)
+    \Braket{ \lambda(\phi, z_k)\frac{\partial\mathcal{V}_k}{\partial\phi}(z_k)
+  \prod_{i \neq k}^n{\mathcal{V}_i(z_i)}} }.
+\end{equation}
+These delta function terms are called Schwinger/contact terms 
+and in the case that none of the insertion points coincide we have 
 the Ward-Takahashi identity
 \begin{equation}
-  \partial^x_{\mu}\!\Braket{j^\mu(x)\prod^n_{i=1}{\mathcal{O}_i(z_i)}} = 0; \quad x \neq z_k
+  \partial^x_{\mu}\!\Braket{j^\mu(x)\prod^n_{i=1}{\mathcal{V}_i(z_i)}} = 0;
+  \quad x_0 \neq z_{k_0}
 \end{equation}
 
 \section{Anomalies in QFT}

@@ -67,6 +67,24 @@ J.~Taylor, \emph{Ward identities and charge renormalization of the yang-mills fi
 \bibitem{Slavnov–Taylor}
 M.~D\"{u}tsch, \emph{Slavnov–taylor identities from the causal point of view}, \href{https://doi.org/10.1142/S0217751X97001699}{\emph{Int. J. Mod. Phys. A} {\bfseries 12} (1997) 3205}.
 
+\bibitem{DysonDSE}
+F.J.~Dyson, \emph{The $s$ matrix in quantum electrodynamics}, \href{https://doi.org/10.1103/PhysRev.75.1736}{\emph{Phys. Rev.} {\bfseries 75} (1949) 1736}.
+
+\bibitem{SchwingerDSE}
+J.~Schwinger, \emph{On the green’s functions of quantized fields. i}, \href{https://doi.org/10.1073/pnas.37.7.452}{\emph{Proc. Natl. Acad. Sci. U.S.A.} {\bfseries 37} (1951) 452}.
+
+\bibitem{WardWTI}
+J.C.~Ward, \emph{An identity in quantum electrodynamics}, \href{https://doi.org/10.1103/PhysRev.78.182}{\emph{Phys. Rev.} {\bfseries 78} (1950) 182}.
+
+\bibitem{TakahashiWTI}
+Y.~Takahashi, \emph{On the generalized ward identity}, \href{https://doi.org/10.1007/BF02832514}{\emph{Il Nuovo Cimento (1955-1965)} {\bfseries 6} (1957) 371}.
+
+\bibitem{Adler}
+S.L.~Adler, \emph{Axial-vector vertex in spinor electrodynamics}, \href{https://doi.org/10.1103/PhysRev.177.2426}{\emph{Phys. Rev.} {\bfseries 177} (1969) 2426}.
+
+\bibitem{Bell-Jackiw}
+J.S.~Bell and R.~Jackiw, \emph{A pcac puzzle: $\pi^0${\textrightarrow}$\gamma$$\gamma$ in the $\sigma$-model}, \href{https://doi.org/10.1007/BF02823296}{\emph{Il Nuovo Cimento A (1965-1970)} {\bfseries 60} (1969) 47}.
+
 \bibitem{Fujikawa}
 K.~Fujikawa and H.~Suzuki, \emph{\href{https://doi.org/10.1093/acprof:oso/9780198529132.003.0005}{The Jacobian in path integrals and quantum anomalies}},  in \emph{Path Integrals and Quantum Anomalies}, (Oxford), Clarendon Press (2004).
 

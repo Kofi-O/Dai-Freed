@@ -452,8 +452,8 @@ over Euclidean space, after which we transform the time axis
 back to $\mathbb{R}$ via analytic continuation. In Euclidean 
 space we have
 \begin{equation}
-Z[J] = \int{\mathcal{D}\phi\,\exp{\left[-S_E[\phi] + \int{d^4{x_E}\,J(x)\phi(x)}\right] }},
-  \quad Z[J] = e^{-W_E[J]}.
+  Z[J] = \int{\mathcal{D}\phi\,\exp{\left[-S_E[\phi] +
+  \int{d^4{x_E}\,J(x)\phi(x)}\right] }}, \quad Z[J] = e^{-W_E[J]}.
 \end{equation}
 
 
@@ -542,10 +542,10 @@ like loop diagrams because the corresponding correlators are invariant~\cite{Sla
 
 \subsection{Ward-Takahashi identities}
 
-The classical conservation laws for Noether currents present in quantum mechanics
-have a quantum field theoretic analogue, the Ward-Takahashi identities. The conservation
-of classical fields induces analogous relations for the correlation functions of the 
-corresponding field operators.
+The classical conservation laws for Noether currents present in classical field theory
+have an analogue in the quantum theory, the Ward-Takahashi identities.
+Noether's first theorem in the classical theory induces
+conservation relations for correlators in the quantum field theory.
 Consider a bounded functional of the fields $F[\phi]$ and its vacuum expectation value
 \begin{equation}
   \braket{F[\phi]} = \frac{1}{Z[0]}\int{\mathcal{D}\phi'\,F[\phi']e^{iS[\phi']}},
@@ -576,7 +576,7 @@ and to first-order in $\epsilon$ we have
     iF[\phi]\frac{\delta S[\phi]}{\delta\phi} \right)e^{iS[\phi]} } = 0.
 \end{equation}
 Since $\lambda(\phi,x)$ is smooth and arbitrary this implies the
-Dyson-Schwinger equation
+Dyson-Schwinger equation~\cite{DysonDSE,SchwingerDSE}
 \begin{equation}
   \Braket{\frac{\delta F[\phi]}{\delta\phi}} = -i\Braket{F[\phi]\frac{\delta S[\phi]}{\delta\phi}}.
 \end{equation}
@@ -632,15 +632,16 @@ leads to\footnote{n.b. \textcolor{red}{eqn2.17}$ \implies \partial^x_\mu j^\mu =
 via the fundamental lemma of the calculus of variations.
 The delta function terms are called Schwinger/contact terms 
 and in the case that none of the insertion times coincide we have 
-the Ward-Takahashi identity
+the Ward-Takahashi identity~\cite{WardWTI,TakahashiWTI}
 \begin{equation}
   \partial^x_{\mu}\!\Braket{j^\mu(x)\prod^n_{i=1}{\mathcal{V}_i(z_i)}} = 0;
   \quad x_0 \neq z_{i_0}.
 \end{equation}
 These correlators can be computed perturbatively, and in the case
 of the axial current $j^\mu_5$, the three-point function corresponding
-to triangle Feynman diagrams violates the Ward-Takahashi identity
-suggesting that the axial symmetry is not present in the quantum theory.
+to triangle Feynman diagrams violates the Ward-Takahashi identity;
+the Adler–Bell–Jackiw anomaly~\cite{Adler,Bell-Jackiw}.
+This suggests that the axial symmetry is not present in the quantum theory.
 Similarly, the Slavnov–Taylor identities imply it is a symmetry of
 the quantum theory if the path integral Jacobian is non-singular
 because the axial transformation is linear in the dirac fields.
@@ -654,7 +655,8 @@ characterises the presence of an anomaly.
 
 We shall now study transformations which are not necessarily symmetries
 of the path integral measure, to this end we must introduce a more
-precise notion of the path integral for fermionic fields.
+precise notion of the path integral for fermionic fields using
+Berezin's formal integration of Grassmann (anti-commuting) variables.
 We decompose the Dirac spinor and its adjoint using an orthonormal basis $\{ \phi_n(x) \}$ of
 the Dirac operator's eigenfunctions and the independent Grassmann variables 
 $\theta_n$ and $\bar{\xi}_m$
@@ -664,8 +666,8 @@ $\theta_n$ and $\bar{\xi}_m$
 \begin{equation}
   \bar{\psi} = \sum_m{\bar{\xi}_m\phi^{\dagger}_m(x)} = \sum_m{\bar{\xi}_m\!\braket{m|x}}.
   \end{equation}
-Hence the path integral measure can be seen as a transformation of a Grassmann measure
-under a change of variables
+Hence the path integral `measure' can be seen as a
+Berezin integral `measure' under a coordinate transformation
 \begin{equation}
   \theta \mapsto \theta_n\braket{x|n},\quad
   \bar{\xi} \mapsto \bar{\xi}_m\braket{m|x},

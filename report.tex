@@ -37,7 +37,7 @@
     \centering
     {\huge \bfseries Symmetries in Classical and Quantum Field Theory \par}
     \vspace{1cm}
-    {\Large \itshape E. Arnold \& K. Okyere\par}
+    {\Large \itshape K. Okyere \& E. Arnold}
     \vfill
     {\Large October 2025 \par}
     {\Large Undergraduate Summer Research Project \par}
@@ -384,7 +384,8 @@ inconsistent and predicts particles with negative energy which require
 peculiar interpretations to reconcile like Dirac's infamous hole theory~\cite{Holethry}.
 To proceed to a quantum theory of particle interactions we must promote the dynamical fields
 to field operators; second quantisation. We shall see how this shift to
-a quantised field theory affects our calculation of expectation values and probabilities.
+a quantised field theory affects our calculation of expectation values and probabilities
+via the path integral.
 
 \subsection{Second Quantisation}
 In classical mechanics, the canonical transformations are exactly those which preserve the symplectic 
@@ -419,43 +420,42 @@ field operators acting on a Fock space~\cite{FockSpace}
 However, just like Dirac's rule this procedure does not always produce a consistent quantum
 theory. In the case of fermionic fields canonical quantisation
 produces negative energy states~\cite{NtveEnrgy}; we require anti-commutation
-relations because of the spin-statistics theorem~\cite{SpinStat}.
+relations (because of the spin-statistics theorem~\cite{SpinStat})
+in natural units
+\begin{equation}
+  {[\hat{\psi}_n(z), \hat{\psi}_m^\dagger(w)]}_{+} = \delta_{nm}\delta^{(3)}(\vec{z} - \vec{w}).
+\end{equation}
 
+\subsection{The path integral}
+In a quantised field theory the path integral can be used to
+express expectation values of operators and their compositions
+\begin{equation}
+  \int{\mathcal{D}\phi\,\left\{\varphi_1(x_1) \cdots \varphi_n(x_n)\right\}e^{iS[\phi]}} \propto
+  \braket{{\varphi_1(x_1) \cdots \varphi_n(x_n)}} \coloneq
+  \braket{0|\mathcal{T}\{\hat{\varphi}_1(x_1) \cdots \hat{\varphi}_n(x_n)\}|0},
+\end{equation}
+where $\mathcal{T}$ is the time-ordering operator and we normalise probability
+amplitudes using the partition function
+\begin{equation}
+  Z[J] = \int{\mathcal{D}\phi\,\exp{\left[iS[\phi] + i\int{d^4x\, J(x)\phi(x) }\right]} },
+\end{equation}
+\begin{equation}
+  \frac{1}{Z[0]}\int{\mathcal{D}\phi\,\varphi(x)e^{iS[\phi]}} = \braket{\varphi(x)},
+\end{equation}
+and define the `quantum action' via
+\begin{equation}
+  W[J] \coloneq -i\log{Z[J]}.
+\end{equation}
+To preform calculations with the path integral we must
+perform a wick transformation so that the Lagrangian is integrated 
+over Euclidean space, after which we transform the time axis 
+back to $\mathbb{R}$ via analytic continuation. In Euclidean 
+space we have
+\begin{equation}
+Z[J] = \int{\mathcal{D}\phi\,\exp{\left[-S_E[\phi] + \int{d^4{x_E}\,J(x)\phi(x)}\right] }},
+  \quad Z[J] = e^{-W_E[J]}.
+\end{equation}
 
-\subsection{Fock Space}
-After second quantisation in general we obtain an expression for the Hamiltonian operator
-in terms of various creation and annihilation operators (e.g. $a^{r\dagger}_{\vec{p}_1},
-b^{s\dagger}_{\vec{p}_2}, \dots$ and $a^{r}_{\vec{p}_1}, b^{s}_{\vec{p}_2}, \dots$ 
-respectively). Subsequently we define the vacuum state to be annihilated by
-all particle annihilation operators
-\begin{equation}
-  {a^{r}_{\vec{p}_1}}\!\!\ket{0} = b^{r}_{\vec{p}_1}\!\!\ket{0} = \dotsi = 0
-\end{equation}
-The indistinguishable $n$-particle state is given by 
-\begin{equation}
-  a^{r_1\dagger}_{\vec{p}_1}a^{r_2\dagger}_{\vec{p}_2}\dotsi
-  a^{r_n\dagger}_{\vec{p}_n}\!\!\ket{0} =
-  \ket{r_1, \vec{p}_1; r_2, \vec{p}_2; \dots; r_n, \vec{p}_n} \in H^{\otimes n}
-\end{equation}
-\begin{equation}
-  H^{\otimes n} \coloneq \bigotimes_{k=1}^{n}{H}
-\end{equation}
-Where $H^{\otimes n}$ is the $n$-particle Hilbert space ($H^0 = \mathbb{C}$ 
-corresponds to the vacuum),
-and an arbitrary quantum state is an element of the Fock space
-\begin{equation}
-  F(H) \coloneq \bigoplus_{n=0}^{\infty}{H^{\otimes n}}
-\end{equation}
-Thus the probability amplitude of a state transitioning from one particle to 
-another is
-\begin{equation}
-  \braket{r_2, \vec{p}_2|r_1, \vec{p}_1} =
-  \Braket{0|a^{r_2}_{\vec{p}_2}a^{r_1\dagger}_{\vec{p}_1}|0} \coloneq 
-  \Braket{a^{r_2}_{\vec{p}_2}a^{r_1\dagger}_{\vec{p}_1}}
-\end{equation}
-which generalises to transitions between arbitrary quantum states.
-Hence in quantum field theory the study of probabilities is
-characterised by vacuum expectation values of operators and their compositions.
 
 \section{Symmetries in QFT}
 
@@ -464,7 +464,8 @@ We now extend our investigation of symmetries from classical fields to a
 quantised theory. Suppose the classical action admits a local symmetry
 such that the path integral measure is invariant
 \begin{equation}
-  \phi_\mu \mapsto \phi_\mu + \epsilon\vartheta_\mu(\phi, x),
+  \phi_\mu \mapsto \phi_\mu + \delta_\epsilon\phi_\mu +
+  \mathcal{O}(\epsilon^2); \quad \delta_\epsilon\phi_\mu = \epsilon\vartheta_\mu(\phi, x),
 \end{equation}
 \begin{equation}
   \mathcal{D}\phi \mapsto
@@ -473,12 +474,23 @@ such that the path integral measure is invariant
 \end{equation}
 where $K_{\mu\nu} = \frac{\partial \phi'_{\mu}(x)}{\partial \phi_\nu(y)}$ is the 
 transformation Jacobian. Thus the partition function $Z[J]$ is invariant
-and for a source $J^\mu$ corresponding to $\phi_\mu$ we can write
+and for a source $J^\mu$ corresponding to $\phi_\mu$, and 
+in Euclidean space we can write
+\begin{equation}
+  Z[J] = \int{\mathcal{D}\phi\,\exp{\left[-S[\phi]
+    + \int{d^4x\, J^\mu(x)(\phi_\mu(x) + \delta_\epsilon\phi_\mu
+    +\mathcal{O}(\epsilon^2) )}\right]} },
+\end{equation}
+\begin{equation}
+  Z[J] = \int{\mathcal{D}\phi\,\left\{ 1 + \int{d^4x\,J^\mu(x)\delta_\epsilon\phi_\mu
+    + \mathcal{O}(\epsilon^2)} \right\}
+  \exp{\left[-S[\phi] + \int{d^4\,J^\mu(x)\phi_\mu(x)}\right]} },
+\end{equation}
+and after interchanging the spacetime and path integrals we have
 \begin{equation}
   \int{d^4x\,J^\mu(x)\!\braket{\vartheta_\mu(\phi, x)}}_J = 0.
 \end{equation}
-The quantum action is $W[J] = -i\ln{Z[J]}$, and 
-we define the effective quantum action as the Legendre transform
+We define the effective quantum action as the Legendre transform
 \begin{equation}
   \Gamma[\varphi] = W[J] - \int{d^4x\,J^\mu(x)\varphi_\mu(x)}; \quad 
   \quad \varphi_\mu \coloneq \braket{\phi_\mu}_J.
@@ -487,8 +499,8 @@ Taking the functional derivative we obtain
 \begin{equation}
   J^\mu(x) = - \frac{\delta \Gamma[\varphi]}{\delta \varphi_\mu(x)},
 \end{equation}
-after using \textcolor{red}{eqn7.3} and the definition of a functional derivative 
-we have
+and after using \textcolor{red}{eqn7.3} and the definition
+of a functional derivative we have
 \begin{equation}
   \delta\Gamma[\varphi_\mu;\braket{\vartheta_\mu(\phi, x)}_J] = 0.
 \end{equation}
@@ -512,7 +524,11 @@ the transformation Jacobian becomes field independent
 and can be brought out of the path integral.
 Thus even if the path integral measure is not invariant 
 the normalised correlators will be, granted the Jacobian is non-singular.
-Moreover, we have $\braket{\Theta_\mu[\phi, x]}_J = \Theta_\mu[\varphi, x]$
+Moreover, we have
+\begin{equation}
+\braket{\Theta_\mu[\phi, x]}_J = \alpha_\mu(x) +
+\int{d^4y\,\beta^\nu_\mu(x, y)\braket{\phi_\nu(y)}_J } = \Theta_\mu[\varphi, x],
+\end{equation}
 which implies the effective quantum action is
 invariant under the same transformation as the 
 classical action, namely,
@@ -526,30 +542,29 @@ like loop diagrams because the corresponding correlators are invariant~\cite{Sla
 
 \subsection{Ward-Takahashi identities}
 
-
 The classical conservation laws for Noether currents present in quantum mechanics
 have a quantum field theoretic analogue, the Ward-Takahashi identities. The conservation
 of classical fields induces analogous relations for the correlation functions of the 
 corresponding field operators.
-Consider a bounded functional of the fields $F[\phi]$ and its VEV
+Consider a bounded functional of the fields $F[\phi]$ and its vacuum expectation value
 \begin{equation}
-  \braket{F[\phi]} = \frac{1}{Z}\int{\mathcal{D}\phi'\,F[\phi']e^{iS[\phi']}},
+  \braket{F[\phi]} = \frac{1}{Z[0]}\int{\mathcal{D}\phi'\,F[\phi']e^{iS[\phi']}},
 \end{equation}
 \begin{equation}
   \quad \phi' = \phi + \delta_\epsilon\phi +\mathcal{O}(\epsilon^2);
-  \quad \delta_\epsilon\phi = \epsilon\lambda(\phi,x)
+  \quad \delta_\epsilon\phi = \epsilon\lambda(\phi,x),
 \end{equation}
 which follows from relabeling the variable of integration. Suppose
 the field transformation preserves the path integral measure, then
 taking the functional taylor expansion leads to
 \begin{equation}
-  \braket{F[\phi]} = \frac{1}{Z}\int{\mathcal{D}\phi\,\left(F[\phi] +
+  \braket{F[\phi]} = \frac{1}{Z[0]}\int{\mathcal{D}\phi\,\left(F[\phi] +
     \frac{\delta F[\phi]}{\delta\phi}\epsilon\lambda +\mathcal{O}(\epsilon^2) \right)
     \exp{\left[ iS{[\phi]} + i\frac{\delta S[\phi]}{\delta\phi}\epsilon\lambda
   + \mathcal{O}(\epsilon^2) \right]}},
 \end{equation}
 \begin{equation}
-  \braket{F[\phi]} = \frac{1}{Z}\int{\mathcal{D}\phi\,
+  \braket{F[\phi]} = \frac{1}{Z[0]}\int{\mathcal{D}\phi\,
     \left(F[\phi] + \frac{\delta F[\phi]}{\delta\phi}\epsilon\lambda \right)
     \left(1 + i\frac{\delta S[\phi]}{\delta\phi}\epsilon\lambda\right)e^{iS[\phi]} }
     + \mathcal{O}(\epsilon^2),
@@ -568,13 +583,12 @@ Dyson-Schwinger equation
 Suppose the classical Noether current $j^\mu(x)$ has an analogue $\hat{\jmath}^\mu(x)$
 in the operator formalism and the operators
 $\{\hat{\mathcal{V}}_i(z_i)\}$ are functions of spacetime. The 
-derivative of their correlator is [WE SUPPRESS THE HATS IN THE CORRELATOR
-TO INDICATE A TIME-ORDERED PROD]
+derivative of their correlator is
 \begin{equation}
   \partial^x_{\mu}\!\Braket{j^\mu(x)\prod^n_{i=1}{\!\mathcal{V}_i(z_i)}} = 
   \Braket{\partial^x_{\mu}j^\mu(x) \prod^n_{i=1}{\!\mathcal{V}_i(z_i)}} + 
   \mathlarger{\mathlarger{\sum}}_{k = 1}^{n}{ \delta(x_0 - z_{k_0})
-    \!\Braket{\left[j^0(x), \mathcal{V}_k(z_k)\right]\prod^n_{i\neq k}{\!\mathcal{V}_i(z_i)} } }.
+    \!\Braket{\left[j^0(x), \mathcal{V}_k(z_k)\right]\prod^n_{i\neq k}{\!\mathcal{V}_i(z_i)} } },
 \end{equation}
 where we define the commutator in the time-ordered product
 (time-ordered with respect to the second argument) as
@@ -597,7 +611,7 @@ measure invariant and transforms $\mathcal{V}_i$ as
 \begin{equation}
   \mathcal{V}_i(\phi) \mapsto \mathcal{V}_i(\phi) + \delta_\epsilon\mathcal{V}_i(\phi)
   + \mathcal{O}(\epsilon^2); \quad \delta_\epsilon\mathcal{V}_i =
-  \frac{\partial\mathcal{V}_i}{\partial\phi}\delta_\epsilon\phi
+  \frac{\partial\mathcal{V}_i}{\partial\phi}\delta_\epsilon\phi,
 \end{equation}
 using the Dyson-Schwinger equation with $F[\phi] = \prod_i{\mathcal{V}_i}$
 and \textcolor{red}{eq2.19} we have to first-order in $\epsilon$

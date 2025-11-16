@@ -1,59 +1,81 @@
 \documentclass[11pt, a4paper]{article}
 
 \usepackage{jheppub}
-
-\setlength{\parskip}{1em}
-\usepackage{indentfirst}
+\allowdisplaybreaks
 
 \usepackage{hyperref}
 %\hypersetup{colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue}
 \usepackage{amsmath,amsfonts,amssymb,amsthm,natbib,graphicx,mathtools,mathrsfs}
 \usepackage{braket}
 \usepackage{enumitem}
-\usepackage{pgfplots,siunitx}
 \usepackage[outdir=./]{epstopdf}
 \usepackage{slashed}
 \usepackage{relsize}
 
 
-\sisetup{detect-all}
-\pgfplotsset{compat=1.18}
-
-\theoremstyle{definition}
-\newtheorem{defn}{Definition}[section]
-\newtheorem{rmk}[defn]{Remark}
-%\newtheorem{note}[defn]{Note}
-\newtheorem{notation}[defn]{Notation}
-
-\theoremstyle{plain}
-\newtheorem{lemma}[defn]{Lemma}
-\newtheorem{prop}[defn]{Proposition}
-\newtheorem{thm}[defn]{Theorem}
-
-
 \begin{document}
 
-\begin{titlepage}
-    \centering
-    {\huge \bfseries Symmetries in Classical and Quantum Field Theory \par}
-    \vspace{1cm}
-    {\Large \itshape K. Okyere \& E. Arnold}
-    \vfill
-    {\Large November 2025 \par}
-    {\Large Undergraduate Research Project \par}
-    {\Large Durham University \par}
-\end{titlepage}
+\title{Symmetries in Classical and Quantum Field Theory}
 
-\section*{Abstract}
-Abstract here
-\newpage
+\author{K. Okyere,}
+\author{E. Arnold}
+\emailAdd{kofi.s.okyere@gmail.com}
+\emailAdd{ethan.arnold@gmx.com}
 
-\tableofcontents
-\newpage
+
+\abstract{
+In this work, we detail the effect of continuous symmetries on classical gauge theories
+namely, Noether's theorems, before gauging the Dirac Lagrangian's 
+axial symmetry to obtain a quantum electrodynamical analogue of the
+interaction between massless Dirac fermions and a $\mathrm{U}(1)$ axial boson;
+an `axial theory'.
+Subsequently, we investigate the effect of a classical theory's symmetries
+on the quantum field theory (QFT) via Slavnov-Taylor and Ward-Takahashi identities,
+and we find that, for the class of symmetries with infinitesimal generators
+linear in the dynamical fields, a singular path integral Jacobian matrix
+characterises the presence of an anomaly in the quantised theory. Moreover,
+anomalies can be seen as topological invariants of a QFT, and gauging an
+anomalous `linear' symmetry results in a violation of unitarity;
+an inconsistent quantum theory. In the case of the `axial theory',
+we compute the anomaly explicitly.}
+
+\maketitle
+
+
 
 \section{Introduction}
 
-\section{Symmetries in Classical field theory}
+The study of continuous symmetries in dynamical systems has long been
+used by theorists to constrain possible Lagrangians. To this end, the seminal
+results in classical field theory are Noether's first and second theorems\cite{Noether1918}, 
+which reveal the correspondence between quantities conserved on-shell and 
+infinitesimal symmetries. Moreover, the analysis of local (gauge) symmetries
+has produced incredibly successful gauge theories such as quantum electrodynamics\cite{Schwinger},
+which can be seen as resultant from `gauged' symmetries. In this vein, we show that gauging the
+axial symmetry of the Dirac Lagrangian results in a 
+well-formulated classical gauge theory; an `axial theory' with a 
+$\mathrm{U}(1)$ axial boson.
+
+Thereafter, we investigate the effect of symmetries of the classical action
+on QFT via the quantum field-theoretic analogue of Noether's theorems; the
+Slavnov–Taylor and Ward-Takahashi identities~\cite{Slavnov,Taylor,Slavnov–Taylor,WardWTI,TakahashiWTI}.
+Anomalous symmetries are symmetries of the classical theory that are violated by quantum processes in
+a QFT\@. In particular, the axial symmetry is famously violated
+by triangle feynman diagrams (the Adler-Bell-Jackiw anomaly~\cite{Adler,Bell-Jackiw}) and can be 
+viewed as a topological invariant of QFT via the Atiyah-Singer index
+theorem~\cite{Atiyah-Singer}. Using the Slavnov–Taylor identities, we find that it is 
+necessary and sufficient for an anomalous symmetry
+with infinitesimal generators linear in the dynamical fields to have
+a singular path integral Jacobian, and gauging such symmetries
+produces a gauge-variant partition function; an inconsistent quantum theory.
+
+Finally, we compute the gauge-variance of the `axial theory' partition function
+using Fujikawa's method~\cite{Fujikawa}(although a topological
+approach is possible~\cite{AlvarezGuameNon-AB}),
+demonstrating an inconsistency in the quantum theory and thus
+a $\mathrm{U}(1)$ axial boson coupled to Dirac fermions does not exist.
+
+\section{Symmetries in Classical Gauge theory}
 
 \subsection{Classical field theory}
 In classical mechanics we consider a countable set of particles
@@ -156,7 +178,7 @@ A transformation is called a global symmetry if its effect on the Lagrangian den
 This transformation changes the action by a surface term and the Euler-Lagrange equations
 are invariant. Using a Taylor expansion of the Lagrangian density under $\vartheta(\epsilon)$
 we find that
-\begin{equation}
+\begin{equation}\label{eq:6}
   \delta_\epsilon\mathcal{L} = \sum_k{\delta_\epsilon\phi_k E_k} + \partial_\mu\theta^\mu,
 \end{equation}
 \begin{equation}
@@ -166,10 +188,10 @@ we find that
 Where $E_k$ are the Euler-Lagrange derivatives and $\theta^\mu$ is
 the symplectic potential density~\cite{LocalSymm}.
 By considering the shift in the action we arrive at
-Noether's first theorem~\cite{Noether1918,NoetherTran}; an 
+Noether's first theorem~\cite{Noether1918}; an 
 infinitesimal transformation $\vartheta(\epsilon)$ is a symmetry
 of the Lagrangian if and only if 
-\begin{equation}
+\begin{equation}\label{eq:1}
   \epsilon j^\mu \coloneq \theta^\mu - \epsilon\Lambda^\mu,
   \quad \epsilon\partial_\mu j^\mu = - \delta_\epsilon\phi_k E_k \approx 0.
 \end{equation}
@@ -189,8 +211,8 @@ which can be seen as the independent conservation relations of
 four Noether currents. By Noether's first theorem the transformations corresponding to
 these Noether currents are the global symmetries
 \begin{equation}
-  \phi_n(x^\mu) \mapsto \phi_n(x^\mu + \epsilon^\mu) = \phi_n(x^\mu)
-  + \epsilon^\mu\partial_\mu\phi_n\big{|}_{x^\mu} + \mathcal{O}(\epsilon^2), 
+  \phi_n(x^\mu) \mapsto \phi_n(x^\mu + \epsilon) = \phi_n(x^\mu)
+  + \epsilon\partial_\mu\phi_n\big{|}_{x^\mu} + \mathcal{O}(\epsilon^2), 
 \end{equation}
 and it is clear that translation invariance of the equations of motion (for spacetime independent 
 Lagrangians) is a direct corollary of Noether's first theorem.
@@ -199,8 +221,8 @@ Lagrangians) is a direct corollary of Noether's first theorem.
 Noether's second theorem shows that a local symmetry introduces off-shell constraints
 on the equations of motion and leads to Noether current identities which are
 crucial for gauge theories. Under
-local infinitesimal symmetries (gauge symmetries) $R_\xi$ of the form
-\begin{equation}
+local infinitesimal symmetries (gauge symmetries), $R_\xi$, of the form
+\begin{equation}\label{eq:5}
    \phi_n \mapsto \phi_n + \delta_\xi\phi_n + \mathcal{O}(\xi^2);
    \quad \delta_\xi\phi_n = \sum_{m=0}{R^{\mu_1 \cdots \mu_m}_n(\phi_k)
    \partial_{\mu_1}\cdots\partial_{\mu_m} \xi\lambda(x)},
@@ -220,22 +242,21 @@ and integration by parts leads to
   [R^{\mu_1 \cdots \mu_m}_n(\phi_k) E_n] }. 
 \end{equation}
 By the fundamental lemma of the calculus of variations~\cite{calcvar} we obtain the 
-off-shell constraint $\Delta(E) = 0$. Thus the 
-equations of motion are not all independent and the Euler-Lagrange equations
-($E_n = 0$) are under-determined. However, observables must be uniquely
-determined by the theory hence we conclude some degrees of freedom are gauge.
-Using the surface term $S^\mu$ from integration by parts we find an expression
-similar to \textcolor{red}{eq2.17}
+off-shell constraint $\Delta(E) = 0$. Thus the equations of motion are not
+all independent and the Euler-Lagrange equations ($E_n = 0$)
+are under-determined. However, observables must be uniquely determined
+by the theory hence we conclude some degrees of freedom are gauge. Using
+the surface term $S^\mu$ from integration by parts we find an expression similar to~\eqref{eq:1}
 \begin{equation}
  \delta_\xi\phi_n E_n = \xi\partial_\mu S^\mu(E_k, \lambda),
 \end{equation}
 with the important difference that $S^\mu$ vanishes on-shell. The
 quantity $j^\mu + S^\mu$ is divergence-free off-shell, subsequently
 by the Poincaré lemma we obtain
-Noether's second theorem~\cite{Noether1918, NoetherTran, Noeth2Ward, SuperPot};
+Noether's second theorem~\cite{Noether1918, Noeth2Ward, SuperPot};
 on-shell the canonical Noether current $j^\mu$ is
 the divergence of a rank-2 tensor
-\begin{equation}
+\begin{equation}\label{eq:2}
   j^\mu = -S^\mu(E_k, \lambda) + \partial_\nu \kappa^{\mu\nu}
   \approx \partial_\nu \kappa^{\mu\nu};
   \quad \kappa^{\mu\nu} = -\kappa^{\nu\mu},
@@ -246,10 +267,11 @@ is determined up to addition by a divergence-free quantity)
 it can be uniquely determined if
 one demands the superpotential obeys additional constraints
 (such as asymptotic conservation)~\cite{SuperPot}. In the case of electrodynamics
-the superpotential is electromagnetic field tensor and
-\textcolor{red}{eq2.23} becomes Maxwell's equations
+the superpotential is electromagnetic field tensor and~\eqref{eq:2}
+becomes Maxwell's equations
 \begin{equation}
-  J^\mu = \partial_\nu F^{\nu\mu}, \quad F_{\mu\nu} = \partial_{\mu}A_{\nu} - \partial_{\nu}A_{\mu}.
+  J^\mu \approx \partial_\nu F^{\nu\mu},
+  \quad F_{\mu\nu} = \partial_{\mu}A_{\nu} - \partial_{\nu}A_{\mu}.
 \end{equation}
 
 
@@ -291,7 +313,7 @@ to the infinitesimal parameter
 \end{equation}
 However, the Lagrangian is not invariant under such a transformation so we introduce a
 derivative operator which transforms covariantly
-\begin{equation}
+\begin{equation}\label{eq:3}
   D_\mu \coloneq \partial_\mu + ie\Pi_\mu,
 \end{equation}
 \begin{equation}
@@ -359,7 +381,7 @@ and a Noether current
 \end{equation}
 We now proceed à la Schwinger, gauging the axial symmetry by promoting $\partial_\mu$
 to a covariant derivative $\widetilde{D}_\mu$
-as in \textcolor{red}{eq3.6} and determining the required gauge transformation
+as in~\eqref{eq:3} (with $q=e$) and determining the required gauge transformation
 \begin{equation}
   {\mathcal{L}_{D}|}_{m=0} = \bar{\psi}(i\gamma^\mu \partial_\mu)\psi
   - q\bar{\psi}\gamma^\mu\Pi_\mu\psi,
@@ -386,7 +408,7 @@ Thus we have constructed a classical gauge theory of massless Dirac fermions
   \mathcal{L}_\mathrm{A} =  - \frac{1}{4}\mathrm{Tr}({K_{\mu\nu}K^{\mu\nu}}) 
   + \bar{\psi}i\widetilde{\slashed{D}}\psi,
 \end{equation}
-\begin{equation}
+\begin{equation}\label{eq:9}
   \mathcal{L}_\mathrm{A} =  - \frac{1}{4}\mathrm{Tr}({K_{\mu\nu}K^{\mu\nu}})
   - q\bar{\psi}\gamma^\mu\Pi_\mu\psi
   + \bar{\psi}(i\gamma^\mu \partial_\mu)\psi.
@@ -526,7 +548,7 @@ in Euclidean space we can write
   \exp{\left[-S[\phi] + \int{d^4\,J^\mu(x)\phi_\mu(x)}\right]} },
 \end{equation}
 and after interchanging the spacetime and path integrals we have
-\begin{equation}
+\begin{equation}\label{eq:4}
   \int{d^4x\,J^\mu(x)\!\braket{\vartheta_\mu(\phi, x)}}_J = 0.
 \end{equation}
 We define the effective quantum action as the Legendre transform
@@ -538,7 +560,7 @@ Taking the functional derivative we obtain
 \begin{equation}
   J^\mu(x) = - \frac{\delta \Gamma[\varphi]}{\delta \varphi_\mu(x)},
 \end{equation}
-and after using \textcolor{red}{eqn7.3} and the definition
+and after using~\eqref{eq:4} and the definition
 of a functional derivative we have
 \begin{equation}
   \delta\Gamma[\varphi_\mu;\braket{\vartheta_\mu(\phi, x)}_J] = 0.
@@ -549,9 +571,8 @@ Thus the effective quantum action is invariant under the transformations
 \end{equation}
 such a relation is called a Slavnov-Taylor identity~\cite{Slavnov, Taylor, Slavnov–Taylor}.
 If the transformation is linear in the
-fields\footnote{i.e. linear $R^\mu_n(\phi_k)$ in
-\textcolor{red}{eqn2.18}} such that
-\begin{equation}
+fields\footnote{i.e. linear $R^\mu_n(\phi_k)$ in~\eqref{eq:5}} such that
+\begin{equation}\label{eq:7}
   \vartheta_\mu = \Theta_\mu[\phi, x] = \alpha_\mu(x) +
   \int{d^4y\,\beta^\nu_\mu(x, y)\phi_\nu(y) },
 \end{equation}
@@ -623,12 +644,12 @@ Suppose the classical Noether current $j^\mu(x)$ has an analogue $\hat{\jmath}^\
 in the operator formalism and the operators
 $\{\hat{\mathcal{V}}_i(z_i)\}$ are functions of spacetime. The 
 derivative of their correlator is
-\begin{equation}
+\begin{multline}
   \partial^x_{\mu}\!\Braket{j^\mu(x)\prod^n_{i=1}{\!\mathcal{V}_i(z_i)}} = 
-  \Braket{\partial^x_{\mu}j^\mu(x) \prod^n_{i=1}{\!\mathcal{V}_i(z_i)}} + 
+  \Braket{\partial^x_{\mu}j^\mu(x) \prod^n_{i=1}{\!\mathcal{V}_i(z_i)}} \\ + 
   \mathlarger{\mathlarger{\sum}}_{k = 1}^{n}{ \delta(x_0 - z_{k_0})
     \!\Braket{\left[j^0(x), \mathcal{V}_k(z_k)\right]\prod^n_{i\neq k}{\!\mathcal{V}_i(z_i)} } },
-\end{equation}
+\end{multline}
 where we define the commutator in the time-ordered product
 (time-ordered with respect to the second argument) as
 \begin{equation}
@@ -653,7 +674,7 @@ measure invariant and transforms $\mathcal{V}_i$ as
   \frac{\partial\mathcal{V}_i}{\partial\phi}\delta_\epsilon\phi,
 \end{equation}
 using the Dyson-Schwinger equation with $F[\phi] = \prod_i{\mathcal{V}_i}$
-and \textcolor{red}{eq2.19} we have to first-order in $\epsilon$
+and~\eqref{eq:6} we have to first-order in $\epsilon$
 \begin{equation}
   \Braket{\int{d^4x\,\epsilon\partial^x_\mu j^\mu(x)}\prod^n_{i=1}{\mathcal{V}_i(z_i)}} =
   -i\mathlarger{\mathlarger{\sum}}_{k =1}^n{\Braket{\delta_\epsilon\mathcal{V}_k(z_k)
@@ -661,7 +682,7 @@ and \textcolor{red}{eq2.19} we have to first-order in $\epsilon$
 \end{equation}
 Demanding the generator $\lambda(\phi, x)$ is smooth and compactly
 supported and interchanging the spacetime and path integrals
-leads to\footnote{n.b. \textcolor{red}{eqn2.17}$ \implies \partial^x_\mu j^\mu = -\lambda E$}
+leads to\footnote{n.b.\,\eqref{eq:1}$ \implies \partial^x_\mu j^\mu = -\lambda E$}
 \begin{equation}
   \Braket{ \partial^x_\mu j^\mu(x)\prod^n_{i=1}{\mathcal{V}_i(z_i)} } = 
   -i\mathlarger{\mathlarger{\sum}}_{k=1}^n{\delta^{(4)}(x - z_k)
@@ -685,7 +706,7 @@ Similarly, the Slavnov–Taylor identities imply it is a symmetry of
 the quantum theory if the path integral Jacobian is non-singular
 because the axial transformation is linear in the dirac fields.
 Thus for the class of symmetries linear in the dynamical fields
-in \textcolor{red}{eqn5.8} a singular path integral Jacobian
+in~\eqref{eq:7} a singular path integral Jacobian
 characterises the presence of an anomaly.
 
 \section{Anomalies in QFT}
@@ -757,7 +778,7 @@ we find that the path integral measure changes by the Jacobian
   J[\vartheta] = \exp{\left[-2\mathrm{Tr}\left(i
   \int{d^4x\,  \vartheta(x)\phi_{n}^{\dagger}(x)\gamma^5\phi_m(x)} \right) \right]},
 \end{equation}
-\begin{equation}
+\begin{equation}\label{eq:10}
   J[\vartheta] = \exp{\left[ -2i
   \int{d^4x\,\vartheta(x) \sum_n{\phi_{n}^{\dagger}(x)\gamma^5\phi_n(x)}} \right]}.
 \end{equation}
@@ -855,7 +876,7 @@ constant and $\hat{A}(\Omega) = 1$. Thus the index becomes
   = \frac{1}{2!}{\left(\frac{i}{2\pi}\right)}^2 \int_{S^4}{\mathrm{Tr}(F^2)}.
 \end{equation}
 Assuming that the action due to the Maxwell Lagrangian is finite
-\begin{equation}
+\begin{equation}\label{eq:8}
   \int_{S^4}{d^4x\, F_{\mu\nu}F^{\mu\nu}} < \infty \iff 
   A_\mu\big|_{S^4} \xrightarrow{x \rightarrow \infty} - \frac{i}{e}g^{-1}\partial_{\mu}g\big|_{S^4};
   \quad g(x)\in \mathrm{U}(1),
@@ -863,7 +884,7 @@ Assuming that the action due to the Maxwell Lagrangian is finite
 we can map our problem from $S^4$ to $\mathbb{R}^4$
 and $\mathrm{ch}(F)$ coincides with the Dirac operator's
 index density in Euclidean space if the gauge fields $A_\mu$
-obey \textcolor{red}{eqn7.38}~\cite{JackiwRebbi1977,Belavin}.
+obey~\eqref{eq:8}~\cite{JackiwRebbi1977,Belavin}.
 Using antisymmetry of the wedge product we identify the
 axial anomaly in Euclidean space as 
 \begin{equation}
@@ -874,13 +895,20 @@ axial anomaly in Euclidean space as
 
 \subsection{Anomalies as obstructions to gauging}
 
+We have seen that a singular path integral Jacobian is a necessary and 
+sufficient condition for anomalous linear symmetries.
+In the general case, gauging such a symmetry will
+produce a gauge-variant partition function because constructing a gauge invariant
+classical action ensures the shift in the measure changes the partition function.
+This gauge symmetry breaking is tantamount to a violation of unitarity\footnote{i.e probability
+non-conservation} and is fatal for any quantum theory.
+
 We now study the effect of gauging an anomalous symmetries in the case of
 the Dirac Lagrangian's axial symmetry. Using Fujikawa's method~\cite{Fujikawa}
-we shall calculate the anomaly for a quantum theory with Lagrangian
-\textcolor{red}{eq3.22} although a topological approach analogous to
+we shall calculate the anomaly for the `axial theory' although a topological approach analogous to
 the previous section is possible using the Atiyah–Singer Families
 index theorem~\cite{AlvarezGuameNon-AB,Sumitani1984,FamiliesIndex}. For the theory of massless
-Dirac fermions coupling to a $\mathrm{U}(1)$ axial gauge field in \textcolor{red}{eq3.22}, 
+Dirac fermions coupling to a $\mathrm{U}(1)$ axial boson in~\eqref{eq:9}, 
 the path integral in Euclidean space is 
 \begin{equation}
   \int{\mathcal{D}\psi\mathcal{D}\bar{\psi}\,
@@ -893,7 +921,7 @@ the path integral under a gauge transformation is from the Jacobian
     \int{\mathcal{D}\psi'\mathcal{D}\bar{\psi}'\, e^{-S[\psi',\bar{\psi}']} } =
     \int{\mathcal{D}\psi\mathcal{D}\bar{\psi}\, J[\vartheta] e^{-S[\psi,\bar{\psi}]} },
 \end{equation}
-where the Jacobian takes the same form as in \textcolor{red}{eq9.23} for an orthonormal
+where the Jacobian takes the same form as in~\eqref{eq:10} for an orthonormal
 basis of eigenfunctions $\{ \phi_n(x)\}$ of the operator $\widetilde{\slashed{D}}$.
 We now proceed via Fujikawa's method of gauge-invariant mode cut-off
 to calculate the Jacobian by introducing a smooth regulator $f(x)$ with
@@ -962,16 +990,10 @@ J[\vartheta] = \exp{\left[ \int{d^4x\, \frac{-iq^2}{16\pi^2}
       \vartheta(x)} \right]},
 \end{equation}
 thus there is gauge-variance in the path integral measure and the quantum theory
-is inconsistent. In the general case, gauging an anomalous symmetry will
-produce an inconsistent quantum theory as constructing a gauge invariant
-classical action ensures the shift in the measure makes the path integral
-change under a gauge transformation.
+is inconsistent. 
 
 
-
-\newpage
 \bibliographystyle{JHEP}
 \bibliography{reportNotes}
-\addcontentsline{toc}{section}{References}
 
 \end{document}

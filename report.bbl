@@ -1,6 +1,42 @@
 
 \providecommand{\href}[2]{#2}\begingroup\raggedright\begin{thebibliography}{10}
 
+\bibitem{Noether1918}
+E.~Noether, \emph{Invariante variationsprobleme}, \href{https://doi.org/10.1007/978-3-642-39990-9_13}{\emph{Nachrichten von der Gesellschaft der Wissenschaften zu Göttingen, Mathematisch-Physikalische Klasse} {\bfseries 1918} (1918) 235}.
+
+\bibitem{Schwinger}
+J.~Schwinger, \emph{Quantum electrodynamics. i. a covariant formulation}, \href{https://doi.org/10.1103/PhysRev.74.1439}{\emph{Phys. Rev.} {\bfseries 74} (1948) 1439}.
+
+\bibitem{Slavnov}
+A.A.~Slavnov, \emph{Ward identities in gauge theories}, \href{https://doi.org/10.1007/BF01090719}{\emph{Theor. Math. Phys.} {\bfseries 10} (1972) 99}.
+
+\bibitem{Taylor}
+J.~Taylor, \emph{Ward identities and charge renormalization of the yang-mills field}, \href{https://doi.org/https://doi.org/10.1016/0550-3213(71)90297-5}{\emph{Nucl. Phys. B} {\bfseries 33} (1971) 436}.
+
+\bibitem{Slavnov–Taylor}
+M.~D\"{u}tsch, \emph{Slavnov–taylor identities from the causal point of view}, \href{https://doi.org/10.1142/S0217751X97001699}{\emph{Int. J. Mod. Phys. A} {\bfseries 12} (1997) 3205}.
+
+\bibitem{WardWTI}
+J.C.~Ward, \emph{An identity in quantum electrodynamics}, \href{https://doi.org/10.1103/PhysRev.78.182}{\emph{Phys. Rev.} {\bfseries 78} (1950) 182}.
+
+\bibitem{TakahashiWTI}
+Y.~Takahashi, \emph{On the generalized ward identity}, \href{https://doi.org/10.1007/BF02832514}{\emph{Il Nuovo Cimento (1955-1965)} {\bfseries 6} (1957) 371}.
+
+\bibitem{Adler}
+S.L.~Adler, \emph{Axial-vector vertex in spinor electrodynamics}, \href{https://doi.org/10.1103/PhysRev.177.2426}{\emph{Phys. Rev.} {\bfseries 177} (1969) 2426}.
+
+\bibitem{Bell-Jackiw}
+J.S.~Bell and R.~Jackiw, \emph{A pcac puzzle: $\pi^0${\textrightarrow}$\gamma$$\gamma$ in the $\sigma$-model}, \href{https://doi.org/10.1007/BF02823296}{\emph{Il Nuovo Cimento A (1965-1970)} {\bfseries 60} (1969) 47}.
+
+\bibitem{Atiyah-Singer}
+M.F.~Atiyah and I.M.~Singer, \emph{The index of elliptic operators: I}, \href{https://doi.org/10.2307/1970715}{\emph{Ann. Math.} {\bfseries 87} (1968) 484}.
+
+\bibitem{Fujikawa}
+K.~Fujikawa and H.~Suzuki, \emph{\href{https://doi.org/10.1093/acprof:oso/9780198529132.003.0005}{The Jacobian in path integrals and quantum anomalies}},  in \emph{Path Integrals and Quantum Anomalies}, (Oxford), Clarendon Press (2004).
+
+\bibitem{AlvarezGuameNon-AB}
+L.~Alvarez-Gaumé and P.~Ginsparg, \emph{The topological meaning of non-abelian anomalies}, \href{https://doi.org/https://doi.org/10.1016/0550-3213(84)90487-5}{\emph{Nucl. Phys. B} {\bfseries 243} (1984) 449}.
+
 \bibitem{LA&LI-Mech-I}
 L.~Landau and E.~Lifshitz, \emph{\href{https://doi.org/10.1016/B978-0-08-050347-9.50006-X}{The Equations of Motion}},  in \emph{Mechanics}, vol.~1, (Oxford), pp.~1--12, Butterworth-Heinemann (1976).
 
@@ -12,12 +48,6 @@ L.~Landau and E.~Lifshitz, \emph{\href{https://doi.org/10.1016/B978-0-08-050347-
 
 \bibitem{LocalSymm}
 J.~Lee and R.M.~Wald, \emph{Local symmetries and constraints}, \href{https://doi.org/10.1063/1.528801}{\emph{J. Math. Phys.} {\bfseries 31} (1990) 725}.
-
-\bibitem{Noether1918}
-E.~Noether, \emph{Invariante variationsprobleme}, \href{https://doi.org/10.1007/978-3-642-39990-9_13}{\emph{Nachrichten von der Gesellschaft der Wissenschaften zu Göttingen, Mathematisch-Physikalische Klasse} {\bfseries 1918} (1918) 235}.
-
-\bibitem{NoetherTran}
-E.~Noether, \emph{Invariant variation problems}, \href{https://doi.org/10.1080/00411457108231446}{\emph{Transport Theor. Stat. Phys.} {\bfseries 1} (1971) 186}.
 
 \bibitem{calcvar}
 J.~Jost and X.~Li-Jost, \emph{\href{https://books.google.co.uk/books?id=QN8Iw7fUA-8C}{The classical theory}},  in \emph{Calculus of Variations}, Cambridge Studies in Advanced Mathematics, (Cambridge), pp.~4--8, Cambridge University Press (1998).
@@ -36,9 +66,6 @@ W.~Gordon, \emph{Der comptoneffekt nach der schr{\"o}dingerschen theorie}, \href
 
 \bibitem{dirac1958}
 P.A.M.~Dirac, \emph{\href{https://cds.cern.ch/record/102829}{The Principles of Quantum Mechanics}}, Clarendon Press, Oxford, 4~ed. (1958).
-
-\bibitem{Schwinger}
-J.~Schwinger, \emph{Quantum electrodynamics. i. a covariant formulation}, \href{https://doi.org/10.1103/PhysRev.74.1439}{\emph{Phys. Rev.} {\bfseries 74} (1948) 1439}.
 
 \bibitem{Weyl}
 H.~Weyl, \emph{{Elektron und gravitation}}, \href{https://doi.org/10.1007/BF01339504}{\emph{Z. Phys.} {\bfseries 56} (1929) 330}.
@@ -61,41 +88,14 @@ W.~Pauli, \emph{On dirac's new method of field quantization}, \href{https://doi.
 \bibitem{SpinStat}
 W.~Pauli, \emph{On the connection between spin and statistics}, \href{https://doi.org/10.1143/ptp/5.4.526}{\emph{Prog. Theor. Exp. Phys.} {\bfseries 5} (1950) 526}.
 
-\bibitem{Slavnov}
-A.A.~Slavnov, \emph{Ward identities in gauge theories}, \href{https://doi.org/10.1007/BF01090719}{\emph{Theor. Math. Phys.} {\bfseries 10} (1972) 99}.
-
-\bibitem{Taylor}
-J.~Taylor, \emph{Ward identities and charge renormalization of the yang-mills field}, \href{https://doi.org/https://doi.org/10.1016/0550-3213(71)90297-5}{\emph{Nucl. Phys. B} {\bfseries 33} (1971) 436}.
-
-\bibitem{Slavnov–Taylor}
-M.~D\"{u}tsch, \emph{Slavnov–taylor identities from the causal point of view}, \href{https://doi.org/10.1142/S0217751X97001699}{\emph{Int. J. Mod. Phys. A} {\bfseries 12} (1997) 3205}.
-
 \bibitem{DysonDSE}
 F.J.~Dyson, \emph{The $s$ matrix in quantum electrodynamics}, \href{https://doi.org/10.1103/PhysRev.75.1736}{\emph{Phys. Rev.} {\bfseries 75} (1949) 1736}.
 
 \bibitem{SchwingerDSE}
 J.~Schwinger, \emph{On the green’s functions of quantized fields. i}, \href{https://doi.org/10.1073/pnas.37.7.452}{\emph{Proc. Natl. Acad. Sci. U.S.A.} {\bfseries 37} (1951) 452}.
 
-\bibitem{WardWTI}
-J.C.~Ward, \emph{An identity in quantum electrodynamics}, \href{https://doi.org/10.1103/PhysRev.78.182}{\emph{Phys. Rev.} {\bfseries 78} (1950) 182}.
-
-\bibitem{TakahashiWTI}
-Y.~Takahashi, \emph{On the generalized ward identity}, \href{https://doi.org/10.1007/BF02832514}{\emph{Il Nuovo Cimento (1955-1965)} {\bfseries 6} (1957) 371}.
-
-\bibitem{Adler}
-S.L.~Adler, \emph{Axial-vector vertex in spinor electrodynamics}, \href{https://doi.org/10.1103/PhysRev.177.2426}{\emph{Phys. Rev.} {\bfseries 177} (1969) 2426}.
-
-\bibitem{Bell-Jackiw}
-J.S.~Bell and R.~Jackiw, \emph{A pcac puzzle: $\pi^0${\textrightarrow}$\gamma$$\gamma$ in the $\sigma$-model}, \href{https://doi.org/10.1007/BF02823296}{\emph{Il Nuovo Cimento A (1965-1970)} {\bfseries 60} (1969) 47}.
-
 \bibitem{BerezinBook}
 F.~Berezin, \emph{\href{https://doi.org/10.1016/B978-0-12-089450-5.50007-9}{Chapter I - Generating Functionals}},  in \emph{The Method of Second Quantization}, vol.~24 of \emph{Pure and Applied Physics}, pp.~49--77, Academic Press (1966).
-
-\bibitem{Fujikawa}
-K.~Fujikawa and H.~Suzuki, \emph{\href{https://doi.org/10.1093/acprof:oso/9780198529132.003.0005}{The Jacobian in path integrals and quantum anomalies}},  in \emph{Path Integrals and Quantum Anomalies}, (Oxford), Clarendon Press (2004).
-
-\bibitem{Atiyah-Singer}
-M.F.~Atiyah and I.M.~Singer, \emph{The index of elliptic operators: I}, \href{https://doi.org/10.2307/1970715}{\emph{Ann. Math.} {\bfseries 87} (1968) 484}.
 
 \bibitem{AST-Alvarez-Gaume}
 L.~Alvarez-Gaume, \emph{A note on the atiyah-singer index theorem}, \href{https://doi.org/10.1088/0305-4470/16/18/018}{\emph{J. Phys. A: Math. Gen.} {\bfseries 16} (1983) 4177}.
@@ -108,9 +108,6 @@ R.~Jackiw and C.~Rebbi, \emph{Spinor analysis of yang-mills theory}, \href{https
 
 \bibitem{Belavin}
 A.~Belavin, A.~Polyakov, A.~Schwartz and Y.~Tyupkin, \emph{Pseudoparticle solutions of the yang-mills equations}, \href{https://doi.org/https://doi.org/10.1016/0370-2693(75)90163-X}{\emph{Phys. Lett. B} {\bfseries 59} (1975) 85}.
-
-\bibitem{AlvarezGuameNon-AB}
-L.~Alvarez-Gaumé and P.~Ginsparg, \emph{The topological meaning of non-abelian anomalies}, \href{https://doi.org/https://doi.org/10.1016/0550-3213(84)90487-5}{\emph{Nucl. Phys. B} {\bfseries 243} (1984) 449}.
 
 \bibitem{Sumitani1984}
 T.~Sumitani, \emph{Chiral anomalies and the generalised index theorem}, \href{https://doi.org/10.1088/0305-4470/17/14/016}{\emph{J. Phys. A: Math. Gen.} {\bfseries 17} (1984) L811}.

@@ -4,37 +4,36 @@ The top-level auxiliary file: report.aux
 The style file: JHEP.bst
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: reportNotes.bib
-Warning--empty author in BerezinBook
 You've used 39 entries,
             2316 wiz_defined-function locations,
             876 strings with 9740 characters,
-and the built_in function-call counts, 14714 in all, are:
-= -- 1598
-> -- 296
+and the built_in function-call counts, 14705 in all, are:
+= -- 1599
+> -- 295
 < -- 0
 + -- 99
 - -- 60
-* -- 1165
-:= -- 1889
+* -- 1159
+:= -- 1890
 add.period$ -- 39
 call.type$ -- 39
 change.case$ -- 39
 chr.to.int$ -- 0
-cite$ -- 40
+cite$ -- 39
 duplicate$ -- 1034
-empty$ -- 1388
+empty$ -- 1387
 format.name$ -- 180
-if$ -- 3832
+if$ -- 3831
 int.to.chr$ -- 0
 int.to.str$ -- 39
 missing$ -- 143
 newline$ -- 121
-num.names$ -- 40
-pop$ -- 125
+num.names$ -- 39
+pop$ -- 124
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 632
+skip$ -- 633
 stack$ -- 0
 substring$ -- 982
 swap$ -- 320
@@ -42,8 +41,7 @@ text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 1
+warning$ -- 0
 while$ -- 172
 width$ -- 41
-write$ -- 399
-(There was 1 warning)
+write$ -- 400

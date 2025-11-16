@@ -177,7 +177,23 @@ Where we use the summation convention for the field indices hereafter
 and the on-shell divergence-free quantity $j^\mu$ is called the conserved
 Noether current\footnote{n.b. $j^\mu$ is $\epsilon$-independent}.
 This easily generalises to local symmetries: spacetime dependent generators
-$\vartheta_k(\phi, x)$.
+$\vartheta_k(\phi, x)$. Moreover, a Lagrangian with no
+explicit spacetime dependence implies that the canonical energy-momentum
+tensor obeys divergence relations on-shell 
+\begin{equation}
+  {T^\mu}_\nu = \frac{\partial \mathcal{L}}{\partial(\partial_\mu{\phi_k})} 
+  \partial_\nu\phi_k -\delta^\mu_\nu\mathcal{L},
+  \quad \partial_\mu {T^\mu}_\nu \approx 0,
+\end{equation}
+which can be seen as the independent conservation relations of
+four Noether currents. By Noether's first theorem the transformations corresponding to
+these Noether currents are the global symmetries
+\begin{equation}
+  \phi_n(x^\mu) \mapsto \phi_n(x^\mu + \epsilon^\mu) = \phi_n(x^\mu)
+  + \epsilon^\mu\partial_\mu\phi_n\big{|}_{x^\mu} + \mathcal{O}(\epsilon^2), 
+\end{equation}
+and it is clear that translation invariance of the equations of motion (for spacetime independent 
+Lagrangians) is a direct corollary of Noether's first theorem.
 
 \subsection{Noether's second theorem}
 Noether's second theorem shows that a local symmetry introduces off-shell constraints
@@ -218,13 +234,13 @@ quantity $j^\mu + S^\mu$ is divergence-free off-shell, subsequently
 by the Poincaré lemma we obtain
 Noether's second theorem~\cite{Noether1918, NoetherTran, Noeth2Ward, SuperPot};
 on-shell the canonical Noether current $j^\mu$ is
-the divergence of a two-form
+the divergence of a rank-2 tensor
 \begin{equation}
   j^\mu = -S^\mu(E_k, \lambda) + \partial_\nu \kappa^{\mu\nu}
   \approx \partial_\nu \kappa^{\mu\nu};
   \quad \kappa^{\mu\nu} = -\kappa^{\nu\mu},
 \end{equation}
-the antisymmetric two-form $\kappa^{\mu\nu}$ is called a superpotential.
+the antisymmetric tensor $\kappa^{\mu\nu}$ is called a superpotential.
 Although the superpotential is arbitrary ($\kappa^{\mu\nu}$
 is determined up to addition by a divergence-free quantity) 
 it can be uniquely determined if
@@ -353,28 +369,42 @@ as in \textcolor{red}{eq3.6} and determining the required gauge transformation
   - \frac{1}{q}\partial_\mu\vartheta\gamma^5.
 \end{equation}
 Now we must add a kinetic term to the Lagrangian to determine the dynamics 
-of the matrix-valued gauge field. Such a term must be gauge-invariant to preserve
+of the matrix-valued gauge field\footnote{n.b. $\Pi^{ab}_\mu$ has two
+internal indices and one spacetime index}.
+Such a term must be gauge-invariant to preserve
 the $\mathrm{U}(1)$ symmetry. We find a Lagrangian analogous to the Maxwell Lagrangian
 \begin{equation}
-  \mathcal{L}_\Pi = - \frac{1}{4}\mathrm{Tr}(\Gamma_{\mu\nu}\Gamma^{\mu\nu}),
+  \mathcal{L}_\Pi = - \frac{1}{4}\mathrm{Tr}({K_{\mu\nu}K^{\mu\nu}}),
 \end{equation}
-with field strength
+where the trace is taken over the internal indices and
 \begin{equation}
-  \Gamma_{\mu\nu} = \partial_\mu\Pi_\nu - \partial_\nu\Pi_\mu +iq[\Pi_\mu, \Pi_\nu],
+  K_{\mu\nu} = \partial_\mu\Pi_\nu - \partial_\nu\Pi_\mu +iq[\Pi_\mu, \Pi_\nu],
 \end{equation}
 has the required gauge-invariance and is Lorentz invariant.
-Thus we have constructed a classical theory describing the interaction between
-massless dirac fermions and an axial gauge boson
+Thus we have constructed a classical gauge theory of massless Dirac fermions
 \begin{equation}
-  \mathcal{L}_\mathrm{A} =  - \frac{1}{4}\mathrm{Tr}(\Gamma_{\mu\nu}\Gamma^{\mu\nu}) 
+  \mathcal{L}_\mathrm{A} =  - \frac{1}{4}\mathrm{Tr}({K_{\mu\nu}K^{\mu\nu}}) 
   + \bar{\psi}i\widetilde{\slashed{D}}\psi,
 \end{equation}
 \begin{equation}
-  \mathcal{L}_\mathrm{A} =  - \frac{1}{4}\mathrm{Tr}(\Gamma_{\mu\nu}\Gamma^{\mu\nu}) 
+  \mathcal{L}_\mathrm{A} =  - \frac{1}{4}\mathrm{Tr}({K_{\mu\nu}K^{\mu\nu}})
   - q\bar{\psi}\gamma^\mu\Pi_\mu\psi
   + \bar{\psi}(i\gamma^\mu \partial_\mu)\psi.
 \end{equation}
-
+By direct computation we find that the canonical energy-momentum tensor for this theory is
+\begin{equation}
+  {T^\mu}_\nu = i\bar{\psi}\gamma^\mu\partial_\nu\psi
+  + \mathrm{Tr}(K^{\kappa\mu}\partial_\nu\Pi_\kappa) - \delta^\mu_\nu \mathcal{L}_\mathrm{A},
+\end{equation}
+which is not gauge-invariant. However, using the procedure for interacting gauge theories
+in~\cite{energy–momentum-tensor} we construct an improved energy-momentum tensor
+\begin{equation}
+ \widetilde{T}^\mu{}_\nu = i\bar{\psi}\gamma^\mu\widetilde{D}_\nu\psi
+ + \mathrm{Tr}(K_{\kappa\mu}K^{\nu\kappa}) - \delta^\mu_\nu\mathcal{L}_\mathrm{A},
+\end{equation}
+which is clearly gauge-invariant. Thus gauging the axial symmetry results in a 
+well formulated classical gauge theory of an axial boson and massless Dirac
+fermions.
 
 \section{Quantum Field Theory}
 
@@ -405,7 +435,7 @@ To obtain a quantised field theory we consider the field-theoretic poisson brack
   {\{ \phi_n(z), \phi_m(w) \}}_f = 0 = {\{ \pi_n(z), \pi_m(w) \}}_f,
 \end{equation}
 \begin{equation}
-  {\{\phi_n(z), \pi_m(w) \}}_f = \delta_{nm}\delta^{(3)}(\vec{z} - \vec{w}).
+  {\{\phi_n(z), \pi_m(w) \}}_f = \delta^n_m\delta^{(3)}(\vec{z} - \vec{w}).
 \end{equation}
 Which are quantised to the canonical commutation relations for the dynamical
 field operators acting on a Fock space~\cite{FockSpace}
@@ -415,16 +445,25 @@ field operators acting on a Fock space~\cite{FockSpace}
 \end{equation}
 \begin{equation}
   {[ \hat{\phi}_n(z), \hat{\pi}_m(w) ]}
-  = i\hbar\delta_{nm}\delta^{(3)}(\vec{z} - \vec{w}).
+  = i\hbar\delta^n_m\delta^{(3)}(\vec{z} - \vec{w}),
 \end{equation}
+where the classical field $\phi(z)$ is an eigenvalue of
+the operator $\hat{\phi}(z)$.
 However, just like Dirac's rule this procedure does not always produce a consistent quantum
 theory. In the case of fermionic fields canonical quantisation
-produces negative energy states~\cite{NtveEnrgy}; we require anti-commutation
+produces states with negative probability and a Hamiltonian 
+unbounded below~\cite{NtveEnrgy}; we require anti-commutation
 relations (because of the spin-statistics theorem~\cite{SpinStat})
-in natural units
+in natural units\footnote{n.b. the momentum conjugate to $\psi_\alpha$ is 
+$i\psi^\dagger_\alpha$}
 \begin{equation}
-  {[\hat{\psi}_n(z), \hat{\psi}_m^\dagger(w)]}_{+} = \delta_{nm}\delta^{(3)}(\vec{z} - \vec{w}).
+  {[\hat{\psi}_\alpha(z), \hat{\psi}_\beta^\dagger(w)]}_{+}
+  = \delta^\alpha_\beta\delta^{(3)}(\vec{z} - \vec{w}),
 \end{equation}
+where the unwritten anticommutators vanish.
+This implies the Dirac spinors are Grassmann (anticommuting)
+variables\footnote{n.b. $\phi^2$ is an eigenvalue of $\hat{\phi}^2 = 0$}
+and we require Berezin's notion of calculus on a Grassmann algebra.
 
 \subsection{The path integral}
 In a quantised field theory the path integral can be used to
@@ -472,7 +511,7 @@ such that the path integral measure is invariant
   \mathcal{D}\phi\,\det\!{\left(\frac{\partial \phi'_{\mu}(x)}{\partial \phi_\nu(y)}\right)}
   = \mathcal{D}\phi
 \end{equation}
-where $K_{\mu\nu} = \frac{\partial \phi'_{\mu}(x)}{\partial \phi_\nu(y)}$ is the 
+where $B_{\mu\nu} = \frac{\partial \phi'_{\mu}(x)}{\partial \phi_\nu(y)}$ is the 
 transformation Jacobian. Thus the partition function $Z[J]$ is invariant
 and for a source $J^\mu$ corresponding to $\phi_\mu$, and 
 in Euclidean space we can write
@@ -518,7 +557,7 @@ fields\footnote{i.e. linear $R^\mu_n(\phi_k)$ in
 \end{equation}
 the transformation Jacobian becomes field independent
 \begin{equation}
-  K_{\mu\nu} = \frac{\delta}{\delta\phi_\nu(y)}(\phi_\mu +\epsilon\Theta_\mu[\phi, x])
+  B_{\mu\nu} = \frac{\delta}{\delta\phi_\nu(y)}(\phi_\mu +\epsilon\Theta_\mu[\phi, x])
   = \delta_{\mu\nu}\delta^{(4)}(x - y) + \epsilon\beta^\nu_\mu(x, y),
 \end{equation}
 and can be brought out of the path integral.
@@ -656,7 +695,7 @@ characterises the presence of an anomaly.
 We shall now study transformations which are not necessarily symmetries
 of the path integral measure, to this end we must introduce a more
 precise notion of the path integral for fermionic fields using
-Berezin's formal integration of Grassmann (anti-commuting) variables.
+Berezin's formal integration of Grassmann variables~\cite{BerezinBook}.
 We decompose the Dirac spinor and its adjoint using an orthonormal basis $\{ \phi_n(x) \}$ of
 the Dirac operator's eigenfunctions and the independent Grassmann variables 
 $\theta_n$ and $\bar{\xi}_m$
@@ -846,7 +885,7 @@ the path integral in Euclidean space is
 \begin{equation}
   \int{\mathcal{D}\psi\mathcal{D}\bar{\psi}\,
     \exp{\left[- \int{d^4x\, \bar{\psi}i\widetilde{\slashed{D}}\psi
-  -\frac{1}{4}\mathrm{Tr}(\Gamma_{\mu\nu}\Gamma^{\mu\nu})} \right]}}.
+  -\frac{1}{4}\mathrm{Tr}(K_{\mu\nu}K^{\mu\nu})} \right]}}.
 \end{equation}
 The classical action is gauge-invariant by construction, thus the only change in
 the path integral under a gauge transformation is from the Jacobian
@@ -888,7 +927,7 @@ Now we compute the series using momentum space
 \begin{equation}
   =  \int{\frac{d^4k}{(2\pi)^4}\, \mathrm{Tr}\left\{
       \gamma^5 f\left( \frac{(\widetilde{D}_\mu +ik_\mu)(\widetilde{D}^\mu +ik^\mu)}{M^2}
-        + \frac{iq [\gamma^\mu,\gamma^\nu ]\Gamma_{\mu\nu} }{4M^2} \right)  \right\} }, 
+        + \frac{iq [\gamma^\mu,\gamma^\nu ]K_{\mu\nu} }{4M^2} \right)  \right\} }, 
 \end{equation}
 where we have used the identities
 \begin{equation}
@@ -897,7 +936,7 @@ where we have used the identities
 \end{equation}
 \begin{equation}
   \widetilde{\slashed{D}}{}^2 = \widetilde{D}_\mu \widetilde{D}^\mu
-  + \frac{iq}{4}[\gamma^\mu, \gamma^\nu]\Gamma_{\mu\nu},
+  + \frac{iq}{4}[\gamma^\mu, \gamma^\nu]K_{\mu\nu},
 \end{equation}
 \begin{equation}
   e^{-ikx}f(\partial_\mu)e^{ikx} = f(\partial_\mu +ik_\mu).
@@ -907,19 +946,19 @@ Now we rescale the momenta via $k_\mu \rightarrow Mk_\mu$ and the series becomes
   M^4 \int{\frac{d^4k}{(2\pi)^4}\, \mathrm{Tr}\left\{
       \gamma^5 f\left( \frac{ \widetilde{D}_\mu \widetilde{D}^\mu
         + 2iMk_\mu \widetilde{D}^\mu}{M^2} -k^2
-        + \frac{iq [\gamma^\mu,\gamma^\nu ]\Gamma_{\mu\nu} }{4M^2} \right)  \right\} }, 
+        + \frac{iq [\gamma^\mu,\gamma^\nu ]K_{\mu\nu} }{4M^2} \right)  \right\} }, 
 \end{equation}
 expanding the Taylor series of $f(x)$ about $-k^2 = - k_\mu k^\mu$, and using the trace 
 properties of the gamma matrices the only term non-vanishing in
 the limit $M \rightarrow \infty$ is the term quadratic in $\Gamma_{\mu\nu}$ 
 \begin{equation}
-  \frac{M^4q^2}{2!M^4}\mathrm{Tr}(\epsilon^{\mu\nu\rho\sigma}\Gamma_{\mu\nu}\Gamma_{\rho\sigma})
+  \frac{M^4q^2}{2!M^4}\mathrm{Tr}(\epsilon^{\mu\nu\rho\sigma}K_{\mu\nu}K_{\rho\sigma})
   \int{\frac{d^4k}{(2\pi)^4}f''(-k^2) },
 \end{equation}
 and we have 
 \begin{equation}
 J[\vartheta] = \exp{\left[ \int{d^4x\, \frac{-iq^2}{16\pi^2}
-      \mathrm{Tr}(\epsilon^{\mu\nu\rho\sigma}\Gamma_{\mu\nu}\Gamma_{\rho\sigma})
+      \mathrm{Tr}(\epsilon^{\mu\nu\rho\sigma}K_{\mu\nu}K_{\rho\sigma})
       \vartheta(x)} \right]},
 \end{equation}
 thus there is gauge-variance in the path integral measure and the quantum theory

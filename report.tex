@@ -70,7 +70,7 @@ a singular path integral Jacobian, and gauging such symmetries
 produces a gauge-variant partition function; an inconsistent quantum theory.
 
 Finally, we compute the gauge-variance of the `axial theory' partition function
-using Fujikawa's method~\cite{Fujikawa}(although a topological
+using Fujikawa's method~\cite{Fujikawa2}(although a topological
 approach is possible~\cite{AlvarezGuameNon-AB}),
 demonstrating an inconsistency in the quantum theory and thus
 a $\mathrm{U}(1)$ axial boson coupled to Dirac fermions does not exist.
@@ -224,7 +224,7 @@ crucial for gauge theories. Under
 local infinitesimal symmetries (gauge symmetries), $R_\xi$, of the form
 \begin{equation}\label{eq:5}
    \phi_n \mapsto \phi_n + \delta_\xi\phi_n + \mathcal{O}(\xi^2);
-   \quad \delta_\xi\phi_n = \sum_{m=0}{R^{\mu_1 \cdots \mu_m}_n(\phi_k)
+   \quad \delta_\xi\phi_n = \sum^N_{m=0}{R^{\mu_1 \cdots \mu_m}_n(\phi_k)
    \partial_{\mu_1}\cdots\partial_{\mu_m} \xi\lambda(x)},
 \end{equation}
 the action shifts by
@@ -238,7 +238,7 @@ If $\lambda(x)$ is a compactly supported smooth function, the boundary term vani
 and integration by parts leads to 
 \begin{equation}
   \int{d^4x\, \lambda(x)\Delta(E) } = 0; \quad
-  \Delta(E) \coloneq \sum_{m=0}{ {(-1)}^m \partial_{\mu_1}\cdots\partial_{\mu_m}
+  \Delta(E) \coloneq \sum^N_{m=0}{ {(-1)}^m \partial_{\mu_1}\cdots\partial_{\mu_m}
   [R^{\mu_1 \cdots \mu_m}_n(\phi_k) E_n] }. 
 \end{equation}
 By the fundamental lemma of the calculus of variations~\cite{calcvar} we obtain the 
@@ -285,8 +285,8 @@ for free particles leads to the Klein-Gordon
 equation\footnote{$(\square + m^2)\psi = 0$}~\cite{Klein1926, Gordon1926}.
 However, the Klein-Gordon equation is a second order partial differential equation and
 subsequently does not uniquely determine time-evolution of the wavefunction.
-Alternatively, by finding the half-iterate of d'Alembert
-operator\footnote{$\square \coloneq \partial^2_t - \nabla^2$}~the 
+Alternatively, by finding the half-iterate of the d'Alembert
+operator\footnote{$\square \coloneq \partial^2_t - \nabla^2$}, the 
 Klein-Gordon equation simplifies to a first order partial differential equation;
 the Dirac equation~\cite{dirac1958}
 \begin{equation}
@@ -485,14 +485,15 @@ $i\psi^\dagger_\alpha$}
 where the unwritten anticommutators vanish.
 This implies the Dirac spinors are Grassmann (anticommuting)
 variables\footnote{n.b. $\phi^2$ is an eigenvalue of $\hat{\phi}^2 = 0$}
-and we require Berezin's notion of calculus on a Grassmann algebra.
+and we require Berezin's notion of calculus on a Grassmann algebra~\cite{BerezinBook}
+to define integrals over these fields.
 
 \subsection{The path integral}
 In a quantised field theory the path integral can be used to
 express expectation values of operators and their compositions
 \begin{equation}
   \int{\mathcal{D}\phi\,\left\{\varphi_1(x_1) \cdots \varphi_n(x_n)\right\}e^{iS[\phi]}} \propto
-  \braket{{\varphi_1(x_1) \cdots \varphi_n(x_n)}} \coloneq
+  \braket{{\varphi_1(x_1) \cdots \varphi_n(x_n)}} =
   \braket{0|\mathcal{T}\{\hat{\varphi}_1(x_1) \cdots \hat{\varphi}_n(x_n)\}|0},
 \end{equation}
 where $\mathcal{T}$ is the time-ordering operator and we normalise probability
@@ -755,7 +756,7 @@ by the quantum theory and the correlators are gauge invariant
 by the Slavnov–Taylor identities.
 However, this is not the case for the axial transformation; 
 the axial symmetry is `anomalous'. The following is an
-outline of Fujikawa's method for the existence of the axial anomaly~\cite{Fujikawa}.
+outline of Fujikawa's method for the existence of the axial anomaly~\cite{Fujikawa,Fujikawa2}.
 Under the axial transformation where the Grassmann variables transform as
 \begin{equation}
   \theta_n' = \sum_m{C_{nm} \theta_m}, \quad \bar{\xi}_n' = \sum_m{C_{nm} \bar{\xi}_m},
@@ -904,7 +905,7 @@ This gauge symmetry breaking is tantamount to a violation of unitarity\footnote{
 non-conservation} and is fatal for any quantum theory.
 
 We now study the effect of gauging an anomalous symmetries in the case of
-the Dirac Lagrangian's axial symmetry. Using Fujikawa's method~\cite{Fujikawa}
+the Dirac Lagrangian's axial symmetry. Using Fujikawa's method~\cite{Fujikawa,Fujikawa2}
 we shall calculate the anomaly for the `axial theory' although a topological approach analogous to
 the previous section is possible using the Atiyah–Singer Families
 index theorem~\cite{AlvarezGuameNon-AB,Sumitani1984,FamiliesIndex}. For the theory of massless

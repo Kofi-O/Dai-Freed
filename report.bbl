@@ -31,8 +31,8 @@ J.S.~Bell and R.~Jackiw, \emph{A pcac puzzle: $\pi^0${\textrightarrow}$\gamma$$\
 \bibitem{Atiyah-Singer}
 M.F.~Atiyah and I.M.~Singer, \emph{The index of elliptic operators: I}, \href{https://doi.org/10.2307/1970715}{\emph{Ann. Math.} {\bfseries 87} (1968) 484}.
 
-\bibitem{Fujikawa}
-K.~Fujikawa and H.~Suzuki, \emph{\href{https://doi.org/10.1093/acprof:oso/9780198529132.003.0005}{The Jacobian in path integrals and quantum anomalies}},  in \emph{Path Integrals and Quantum Anomalies}, (Oxford), Clarendon Press (2004).
+\bibitem{Fujikawa2}
+K.~Fujikawa, \emph{Path integral for gauge theories with fermions}, \href{https://doi.org/10.1103/PhysRevD.21.2848}{\emph{Phys. Rev. D} {\bfseries 21} (1980) 2848}.
 
 \bibitem{AlvarezGuameNon-AB}
 L.~Alvarez-Gaumé and P.~Ginsparg, \emph{The topological meaning of non-abelian anomalies}, \href{https://doi.org/https://doi.org/10.1016/0550-3213(84)90487-5}{\emph{Nucl. Phys. B} {\bfseries 243} (1984) 449}.
@@ -88,14 +88,17 @@ W.~Pauli, \emph{On dirac's new method of field quantization}, \href{https://doi.
 \bibitem{SpinStat}
 W.~Pauli, \emph{On the connection between spin and statistics}, \href{https://doi.org/10.1143/ptp/5.4.526}{\emph{Prog. Theor. Exp. Phys.} {\bfseries 5} (1950) 526}.
 
+\bibitem{BerezinBook}
+F.~Berezin, \emph{\href{https://doi.org/10.1016/B978-0-12-089450-5.50007-9}{Chapter I - Generating Functionals}},  in \emph{The Method of Second Quantization}, vol.~24 of \emph{Pure and Applied Physics}, pp.~49--77, Academic Press (1966).
+
 \bibitem{DysonDSE}
 F.J.~Dyson, \emph{The $s$ matrix in quantum electrodynamics}, \href{https://doi.org/10.1103/PhysRev.75.1736}{\emph{Phys. Rev.} {\bfseries 75} (1949) 1736}.
 
 \bibitem{SchwingerDSE}
 J.~Schwinger, \emph{On the green’s functions of quantized fields. i}, \href{https://doi.org/10.1073/pnas.37.7.452}{\emph{Proc. Natl. Acad. Sci. U.S.A.} {\bfseries 37} (1951) 452}.
 
-\bibitem{BerezinBook}
-F.~Berezin, \emph{\href{https://doi.org/10.1016/B978-0-12-089450-5.50007-9}{Chapter I - Generating Functionals}},  in \emph{The Method of Second Quantization}, vol.~24 of \emph{Pure and Applied Physics}, pp.~49--77, Academic Press (1966).
+\bibitem{Fujikawa}
+K.~Fujikawa and H.~Suzuki, \emph{\href{https://doi.org/10.1093/acprof:oso/9780198529132.003.0005}{The Jacobian in path integrals and quantum anomalies}},  in \emph{Path Integrals and Quantum Anomalies}, (Oxford), Clarendon Press (2004).
 
 \bibitem{AST-Alvarez-Gaume}
 L.~Alvarez-Gaume, \emph{A note on the atiyah-singer index theorem}, \href{https://doi.org/10.1088/0305-4470/16/18/018}{\emph{J. Phys. A: Math. Gen.} {\bfseries 16} (1983) 4177}.

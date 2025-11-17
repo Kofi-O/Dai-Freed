@@ -37,6 +37,9 @@ K.~Fujikawa, \emph{Path integral for gauge theories with fermions}, \href{https:
 \bibitem{AlvarezGuameNon-AB}
 L.~Alvarez-Gaumé and P.~Ginsparg, \emph{The topological meaning of non-abelian anomalies}, \href{https://doi.org/https://doi.org/10.1016/0550-3213(84)90487-5}{\emph{Nucl. Phys. B} {\bfseries 243} (1984) 449}.
 
+\bibitem{Sumitani1984}
+T.~Sumitani, \emph{Chiral anomalies and the generalised index theorem}, \href{https://doi.org/10.1088/0305-4470/17/14/016}{\emph{J. Phys. A: Math. Gen.} {\bfseries 17} (1984) L811}.
+
 \bibitem{LA&LI-Mech-I}
 L.~Landau and E.~Lifshitz, \emph{\href{https://doi.org/10.1016/B978-0-08-050347-9.50006-X}{The Equations of Motion}},  in \emph{Mechanics}, vol.~1, (Oxford), pp.~1--12, Butterworth-Heinemann (1976).
 
@@ -111,9 +114,6 @@ R.~Jackiw and C.~Rebbi, \emph{Spinor analysis of yang-mills theory}, \href{https
 
 \bibitem{Belavin}
 A.~Belavin, A.~Polyakov, A.~Schwartz and Y.~Tyupkin, \emph{Pseudoparticle solutions of the yang-mills equations}, \href{https://doi.org/https://doi.org/10.1016/0370-2693(75)90163-X}{\emph{Phys. Lett. B} {\bfseries 59} (1975) 85}.
-
-\bibitem{Sumitani1984}
-T.~Sumitani, \emph{Chiral anomalies and the generalised index theorem}, \href{https://doi.org/10.1088/0305-4470/17/14/016}{\emph{J. Phys. A: Math. Gen.} {\bfseries 17} (1984) L811}.
 
 \bibitem{FamiliesIndex}
 M.F.~Atiyah and I.M.~Singer, \emph{The index of elliptic operators: Iv}, \href{https://doi.org/0.2307/1970756}{\emph{Ann. Math.} {\bfseries 93} (1971) 119}.

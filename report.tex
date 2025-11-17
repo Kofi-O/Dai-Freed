@@ -70,9 +70,9 @@ a singular path integral Jacobian, and gauging such symmetries
 produces a gauge-variant partition function; an inconsistent quantum theory.
 
 Finally, we compute the gauge-variance of the `axial theory' partition function
-using Fujikawa's method~\cite{Fujikawa2}(although a topological
-approach is possible~\cite{AlvarezGuameNon-AB}),
-demonstrating an inconsistency in the quantum theory and thus
+using Fujikawa's method~\cite{Fujikawa2}, although a topological
+approach is possible (cf.~\cite{AlvarezGuameNon-AB,Sumitani1984}), and
+demonstrate an inconsistency in the quantum theory. Hence
 a $\mathrm{U}(1)$ axial boson coupled to Dirac fermions does not exist.
 
 \section{Symmetries in Classical Gauge theory}
@@ -271,7 +271,7 @@ the superpotential is electromagnetic field tensor and~\eqref{eq:2}
 becomes Maxwell's equations
 \begin{equation}
   J^\mu \approx \partial_\nu F^{\nu\mu},
-  \quad F_{\mu\nu} = \partial_{\mu}A_{\nu} - \partial_{\nu}A_{\mu}.
+  \quad F_{\mu\nu} \coloneq \partial_{\mu}A_{\nu} - \partial_{\nu}A_{\mu}.
 \end{equation}
 
 
@@ -508,7 +508,7 @@ and define the `quantum action' via
 \begin{equation}
   W[J] \coloneq -i\log{Z[J]}.
 \end{equation}
-To preform calculations with the path integral we must
+To perform calculations with the path integral we must
 perform a wick transformation so that the Lagrangian is integrated 
 over Euclidean space, after which we transform the time axis 
 back to $\mathbb{R}$ via analytic continuation. In Euclidean 
@@ -854,8 +854,10 @@ projected onto the positive chirality subspace
 \end{equation}
 By the Atiyah–Singer index theorem this coincides with the Dirac operator's 
 topological index on a compact manifold~\cite{Atiyah-Singer}.
+This implies that the axial anomaly is a topological invariant of the quantum theory
+and no regularisation procedure can restore the axial symmetry.
 On a 4-dimensional compact manifold $\Omega$ without boundary and
-Riemannian curvature $R$ this index is~\cite{AST-Alvarez-Gaume,DiffGeomGauge}
+Riemannian curvature $R$ the topological index is~\cite{AST-Alvarez-Gaume,DiffGeomGauge}
 \begin{equation}
   \mathrm{index}(\slashed{D}_+ ) =  \int_{\Omega}{\hat{A}(\Omega)\mathrm{ch}(F)},
 \end{equation}
@@ -907,9 +909,9 @@ non-conservation} and is fatal for any quantum theory.
 We now study the effect of gauging an anomalous symmetries in the case of
 the Dirac Lagrangian's axial symmetry. Using Fujikawa's method~\cite{Fujikawa,Fujikawa2}
 we shall calculate the anomaly for the `axial theory' although a topological approach analogous to
-the previous section is possible using the Atiyah–Singer Families
-index theorem~\cite{AlvarezGuameNon-AB,Sumitani1984,FamiliesIndex}. For the theory of massless
-Dirac fermions coupling to a $\mathrm{U}(1)$ axial boson in~\eqref{eq:9}, 
+the previous section is possible (cf.~\cite{AlvarezGuameNon-AB,Sumitani1984})
+using the Atiyah–Singer Families index theorem~\cite{FamiliesIndex}.
+For the theory of massless Dirac fermions coupling to a $\mathrm{U}(1)$ axial boson in~\eqref{eq:9}, 
 the path integral in Euclidean space is 
 \begin{equation}
   \int{\mathcal{D}\psi\mathcal{D}\bar{\psi}\,
@@ -990,8 +992,28 @@ J[\vartheta] = \exp{\left[ \int{d^4x\, \frac{-iq^2}{16\pi^2}
       \mathrm{Tr}(\epsilon^{\mu\nu\rho\sigma}K_{\mu\nu}K_{\rho\sigma})
       \vartheta(x)} \right]},
 \end{equation}
-thus there is gauge-variance in the path integral measure and the quantum theory
+thus there is gauge-variance in the path integral and the quantum theory
 is inconsistent. 
+
+\section{Conclusion}
+
+In this work, we have shown the connection between symmetries in classical
+and quantum field theories, namely, Noether's theorem's in the classical
+theory induce the Ward-Takahashi identities in the quantum theory.
+Additionally, we have given a characterisation
+of anomalies in the case of linear symmetries as corresponding to
+singular path integral Jacobians and demonstrate the failure inherit to
+gauging an anomalous `linear' symmetry. Moreover, we have shown
+that the axial symmetry admits a well-formulated classical gauge theory
+but the axial anomaly breaks gauge symmetry in the quantum theory.
+Due to the topological nature of the axial anomaly, such a violation
+of unitarity is irrecoverable and a $\mathrm{U}(1)$ axial boson 
+coupled to Dirac fermions does not exist.
+
+\appendix
+\section{N-point function derivative}
+
+
 
 
 \bibliographystyle{JHEP}

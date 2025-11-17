@@ -16,3 +16,5 @@
 \contentsline {subsection}{\numberline {6.1}The Path Integral measure \& Fujikawa's method}{12}{subsection.6.1}%
 \contentsline {subsection}{\numberline {6.2}Atiyah–Singer index Theorem}{14}{subsection.6.2}%
 \contentsline {subsection}{\numberline {6.3}Anomalies as obstructions to gauging}{15}{subsection.6.3}%
+\contentsline {section}{\numberline {7}Conclusion}{17}{section.7}%
+\contentsline {section}{\numberline {A}N-point function derivative}{17}{appendix.A}%

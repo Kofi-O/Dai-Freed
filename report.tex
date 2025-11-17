@@ -643,25 +643,25 @@ Dyson-Schwinger equation~\cite{DysonDSE,SchwingerDSE}
 \end{equation}
 Suppose the classical Noether current $j^\mu(x)$ has an analogue $\hat{\jmath}^\mu(x)$
 in the operator formalism and the operators
-$\{\hat{\mathcal{V}}_i(z_i)\}$ are functions of spacetime. The 
+$\{\widehat{\mathcal{V}}_i(z_i)\}$ are functions of spacetime. The 
 derivative of their correlator is
-\begin{multline}
+\begin{multline}\label{eq:11}
   \partial^x_{\mu}\!\Braket{j^\mu(x)\prod^n_{i=1}{\!\mathcal{V}_i(z_i)}} = 
   \Braket{\partial^x_{\mu}j^\mu(x) \prod^n_{i=1}{\!\mathcal{V}_i(z_i)}} \\ + 
   \mathlarger{\mathlarger{\sum}}_{k = 1}^{n}{ \delta(x_0 - z_{k_0})
-    \!\Braket{\left[j^0(x), \mathcal{V}_k(z_k)\right]\prod^n_{i\neq k}{\!\mathcal{V}_i(z_i)} } },
+  \!\Braket{{\left[j^0(x), \mathcal{V}_k(z_k)\right]}_{z_k}\prod^n_{i\neq k}{\!\mathcal{V}_i(z_i)} } },
 \end{multline}
 where we define the commutator in the time-ordered product
-(time-ordered with respect to the second argument) as
-\begin{equation}
-  [j(x),\mathcal{A}_m(y_m) ] \coloneq
-  \Theta(y_{\alpha_0} - x_0)j(x)\mathcal{A}_m(y_m) -
-  \Theta( x_0 - y_{\beta_0})\mathcal{A}_m(y_m)j(x);
+(time-ordered with respect to the subscript) as
+\begin{equation}\label{eq:12}
+ {[j(x),\mathcal{A}_m(y_m) ]}_{y_m} \coloneq
+  \Theta(y_{\alpha_0} - x_0)\hat{\jmath}(x)\widehat{\mathcal{A}}_m(y_m) -
+  \Theta( x_0 - y_{\beta_0})\widehat{\mathcal{A}}_m(y_m)\hat{\jmath}(x);
 \end{equation}
 \begin{equation}
-  \mathcal{T}\prod_{i=1}^n{\hat{\mathcal{A}}_i} =
-  \cdots \hat{\mathcal{A}}_{\alpha}(y_\alpha) \hat{\mathcal{A}}_m(y_m)
-  \hat{\mathcal{A}}_{\beta}(y_\beta) \cdots,
+  \mathcal{T}\prod_{i=1}^n{\widehat{\mathcal{A}}_i} =
+  \cdots \widehat{\mathcal{A}}_{\alpha}(y_\alpha) \widehat{\mathcal{A}}_m(y_m)
+  \widehat{\mathcal{A}}_{\beta}(y_\beta) \cdots,
 \end{equation}
 using the Heaviside function $\Theta$. \textcolor{red}{See appendix for proof}.
 The Noether current is only conserved on-shell so we cannot apply
@@ -1012,8 +1012,46 @@ coupled to Dirac fermions does not exist.
 
 \appendix
 \section{N-point function derivative}
-
-
+We now give a proof of~\eqref{eq:11}. Observe that
+\begin{equation}
+  \partial^x_{\mu}\!\Braket{j^\mu(x)\prod^n_{i=1}{\!\mathcal{V}_i(z_i)}} =
+  \partial^x_{\mu}\Braket{0|\mathcal{T}\left\{ \hat{\jmath}^\mu(x)
+  \prod^n_{i=1}{\!\widehat{\mathcal{V}}_i(z_i)} \right\}|0}.
+\end{equation}
+Let the vertex operators have time-ordering
+$\left\{ \widehat{\mathcal{U}}_i(y^i) \right\} =
+\left\{{\widehat{\mathcal{V}}}_i(z_i) \right\}$
+such that $y^i_0 > y^{i+1}_0$, then
+\begin{equation}\label{eq:a1}
+\Braket{0|\mathcal{T}\left\{ \hat{\jmath}^\mu(x)
+  \prod^n_{i=1}{\!\widehat{\mathcal{V}}_i(z_i)} \right\}|0} = 
+  \mathlarger{\sum}^n_{i=0}{ \Theta(y^i_0 - x_0)\Theta(x_0 - y^{i+1}_0)
+    \braket{0|{\widehat{\mathcal{U}}_1\cdots\widehat{\mathcal{U}}_i}\,\hat{\jmath}^\mu(x)
+    {\widehat{\mathcal{U}}_{i+1}\cdots\widehat{\mathcal{U}}_n}|0}},
+\end{equation}
+where we set $y^0_0 = -\infty$. Subsequently, by differentiation
+of the Heaviside functions we have
+\begin{multline}
+  \partial^x_{\mu}\!\Braket{j^\mu(x)\prod^n_{i=1}{\!\mathcal{V}_i(z_i)}} =
+  \Braket{0|\mathcal{T}\left\{\partial^x_{\mu}\hat{\jmath}^\mu(x)
+  \prod^n_{i=1}{\!\widehat{\mathcal{U}}_i(y^i)}\right\}|0} \\ 
+  + \mathlarger{\sum}^n_{i=0}{\left\{\delta(x_0-y^{i+1}_0)\Theta(y^i_0 - x_0) -
+    \delta(x_0-y^{i}_0)\Theta(x_0 - y^{i+1}_0)\right\}
+      \braket{0|{\widehat{\mathcal{U}}_1\cdots\widehat{\mathcal{U}}_i}\,\hat{\jmath}^0(x)
+    {\widehat{\mathcal{U}}_{i+1}\cdots\widehat{\mathcal{U}}_n}|0}
+  }.
+\end{multline}
+After noting that $\delta(x_0 - y^0_0) = 0$ we see that the third term is
+\begin{equation}
+  \mathlarger{\sum}^n_{i=1}{\delta(x_0 - y^i_0)
+    \braket{0|{\widehat{\mathcal{U}}_1\cdots\widehat{\mathcal{U}}_{i-1}}
+    {[j^0(x),\mathcal{U}_i(y^i)]}_{y^i}\,
+    {\widehat{\mathcal{U}}_{i+1}\cdots\widehat{\mathcal{U}}_n}|0} },
+\end{equation}
+using the notation in~\eqref{eq:12}. Each term in the sum is clearly a time-ordered
+product of the correlator and the $\mathcal{U}_i$ operators. Seeing 
+that the time-ordered product with and $\mathcal{U}_i$ and $\mathcal{V}_i$ coincide,
+it is clear that~\eqref{eq:a1} can be written as~\eqref{eq:11}.
 
 
 \bibliographystyle{JHEP}

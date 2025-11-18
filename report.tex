@@ -104,7 +104,7 @@ in configuration space, $\vec{\Phi}(\vec{x}, t)$, the classical action becomes
 \end{equation}
 Using Hamilton's principle~\cite{LA&LI-Mech-VII} ($\delta S[\vec{\Phi}; \vec{\rho} ] = 0,
 \forall\vec{\rho} \in C_{0}^{\infty})$\footnote{$\delta{S}$ is a Gateaux derivative,
-and $\vec{\rho}$ vanishes at the endpoints of $\vec{\Phi}$}
+and $\vec{\rho}$ vanishes at the endpoints of $\vec{\Phi}$.}
 we obtain the field-theoretic Euler-Lagrange equations 
 \begin{equation}
   \frac{\partial \mathcal{L}}{\partial \phi_k}
@@ -147,7 +147,7 @@ where we use the functional derivative identify
 \end{equation}
 To begin second quantisation we will also require the notion of a field-theoretic poisson bracket.
 Given two functionals, $F$ and $G$, of the dynamical
-fields given by\footnote{n.b. $K({x}) = \int{d{y}\,[K({y}) \delta(x - y)]}$}  
+fields given by\footnote{n.b. $K({x}) = \int{d{y}\,[K({y}) \delta(x - y)]}$.}  
 \begin{equation}
   F = \int{d^3\vec{x}\, \mathcal{F}(\pi_k, \phi_k, \vec{x}, t)}, \quad
   G = \int{d^3\vec{x}\, \mathcal{G}(\pi_k, \phi_k, \vec{x}, t)},
@@ -197,7 +197,7 @@ of the Lagrangian if and only if
 \end{equation}
 Where we use the summation convention for the field indices hereafter
 and the on-shell divergence-free quantity $j^\mu$ is called the conserved
-Noether current\footnote{n.b. $j^\mu$ is $\epsilon$-independent}.
+Noether current\footnote{n.b. $j^\mu$ is $\epsilon$-independent.}.
 This easily generalises to local symmetries: spacetime dependent generators
 $\vartheta_k(\phi, x)$. Moreover, a Lagrangian with no
 explicit spacetime dependence implies that the canonical energy-momentum
@@ -283,11 +283,11 @@ In quantum mechanics the Schrodinger equation is not Lorentz invariant and is th
 incompatible with special relativity. A generalisation of the relativistic
 dispersion relation using Hamiltonian and momentum operators
 for free particles leads to the Klein-Gordon
-equation\footnote{$(\square + m^2)\psi = 0$}~\cite{Klein1926, Gordon1926}.
+equation\footnote{$(\square + m^2)\psi = 0$.}~\cite{Klein1926, Gordon1926}.
 However, the Klein-Gordon equation is a second order partial differential equation and
 subsequently does not uniquely determine time-evolution of the wavefunction.
 Alternatively, by finding the half-iterate of the d'Alembert
-operator\footnote{$\square \coloneq \partial^2_t - \nabla^2$}, the 
+operator\footnote{$\square \coloneq \partial^2_t - \nabla^2$.}, the 
 Klein-Gordon equation simplifies to a first order partial differential equation;
 the Dirac equation~\cite{dirac1958}
 \begin{equation}
@@ -382,18 +382,22 @@ and a Noether current
 \end{equation}
 We now proceed à la Schwinger, gauging the axial symmetry by promoting $\partial_\mu$
 to a covariant derivative $\widetilde{D}_\mu$
-as in~\eqref{eq:3} (with $q=e$) and determining the required gauge transformation
+as in~\eqref{eq:3} (with $q=e$) and determining the required
+gauge transformation
 \begin{equation}
   {\mathcal{L}_{D}|}_{m=0} = \bar{\psi}(i\gamma^\mu \partial_\mu)\psi
   - q\bar{\psi}\gamma^\mu\Pi_\mu\psi,
 \end{equation}
-\begin{equation}
+\begin{equation}\label{eq:13}
   \Pi_\mu \mapsto e^{i\vartheta\gamma^5}\Pi_\mu e^{-i\vartheta\gamma^5} 
   - \frac{1}{q}\partial_\mu\vartheta\gamma^5.
 \end{equation}
+This is not the only way to gauge the axial symmetry;
+theories with $\gamma^5$ couplings are a well-studied alternative
+(cf.~\cite{Gamma5coupling}) hence we investigate the implications of~\eqref{eq:13}.
 Now we must add a kinetic term to the Lagrangian to determine the dynamics 
 of the matrix-valued gauge field\footnote{n.b. $\Pi^{ab}_\mu$ has two
-internal indices and one spacetime index}.
+internal indices and one spacetime index.}.
 Such a term must be gauge-invariant to preserve
 the $\mathrm{U}(1)$ symmetry. We find a Lagrangian analogous to the Maxwell Lagrangian
 \begin{equation}
@@ -478,14 +482,14 @@ produces states with negative probability and a Hamiltonian
 unbounded below~\cite{NtveEnrgy}; we require anti-commutation
 relations (because of the spin-statistics theorem~\cite{SpinStat})
 in natural units\footnote{n.b. the momentum conjugate to $\psi_\alpha$ is 
-$i\psi^\dagger_\alpha$}
+$i\psi^\dagger_\alpha$.}
 \begin{equation}
   {[\hat{\psi}_\alpha(z), \hat{\psi}_\beta^\dagger(w)]}_{+}
   = \delta^\alpha_\beta\delta^{(3)}(\vec{z} - \vec{w}),
 \end{equation}
 where the unwritten anticommutators vanish.
 This implies the Dirac spinors are Grassmann (anticommuting)
-variables\footnote{n.b. $\phi^2$ is an eigenvalue of $\hat{\phi}^2 = 0$}
+variables\footnote{n.b. $\phi^2$ is an eigenvalue of $\hat{\phi}^2 = 0$.}
 and we require Berezin's notion of calculus on a Grassmann algebra~\cite{BerezinBook}
 to define integrals over these fields.
 
@@ -573,7 +577,7 @@ Thus the effective quantum action is invariant under the transformations
 \end{equation}
 such a relation is called a Slavnov-Taylor identity~\cite{Slavnov, Taylor, Slavnov–Taylor}.
 If the transformation is linear in the
-fields\footnote{i.e. linear $R^\mu_n(\phi_k)$ in~\eqref{eq:5}} such that
+fields\footnote{i.e. linear $R^\mu_n(\phi_k)$ in~\eqref{eq:5}.} such that
 \begin{equation}\label{eq:7}
   \vartheta_\mu = \Theta_\mu[\phi, x] = \alpha_\mu(x) +
   \int{d^4y\,\beta^\nu_\mu(x, y)\phi_\nu(y) },
@@ -684,7 +688,7 @@ and~\eqref{eq:6} we have to first-order in $\epsilon$
 \end{equation}
 Demanding the generator $\lambda(\phi, x)$ is smooth and compactly
 supported and interchanging the spacetime and path integrals
-leads to\footnote{n.b.\,\eqref{eq:1}$ \implies \partial^x_\mu j^\mu = -\lambda E$}
+leads to\footnote{n.b.\,\eqref{eq:1}$ \implies \partial^x_\mu j^\mu = -\lambda E$.}
 \begin{equation}
   \Braket{ \partial^x_\mu j^\mu(x)\prod^n_{i=1}{\mathcal{V}_i(z_i)} } = 
   -i\mathlarger{\mathlarger{\sum}}_{k=1}^n{\delta^{(4)}(x - z_k)
@@ -795,19 +799,19 @@ via the Jacobian of the path integral measure
 \end{equation}
 under the axial transformation the partition function becomes
 \begin{equation}
-  Z'[A_\mu, \vartheta] = \int{\mathcal{D}\psi'\mathcal{D}\bar{\psi}'\,
+  Z'[A, \vartheta] = \int{\mathcal{D}\psi'\mathcal{D}\bar{\psi}'\,
   \exp{\left[ \int{d^4x\,\bar{\psi}'(i\slashed{D} -m)\psi' -\frac{1}{4}F_{\mu\nu}F^{\mu\nu} } \right]}},
 \end{equation}
 but this is just a relabeling of the integration variables and thus the partition
 function is invariant. Considering the change in the QED lagrangian we have
 \begin{equation}
-  Z[A_\mu, \vartheta] = \int{\mathcal{D}\psi\mathcal{D}\bar{\psi}\,J[\vartheta]
+  Z[A, \vartheta] = \int{\mathcal{D}\psi\mathcal{D}\bar{\psi}\,J[\vartheta]
     \exp{ \left[ \int{d^4x\, \mathcal{L}_{\mathrm{QED}} + \vartheta(x)(\partial_\mu j^\mu_5
 - 2im\bar{\psi}\gamma^5\psi) }  \right] } }.
 \end{equation}
 Thus to first order in $\vartheta(x)$ we have
 \begin{equation}
-   Z[A_\mu, \vartheta] = \int{\mathcal{D}\psi\mathcal{D}\bar{\psi}\, \left\{1 + \int{d^4x\,
+   Z[A, \vartheta] = \int{\mathcal{D}\psi\mathcal{D}\bar{\psi}\, \left\{1 + \int{d^4x\,
      \vartheta(x)(\partial_\mu j^\mu_5 - 2im\bar{\psi}\gamma^5\psi -\mathcal{A})} \right\}
    \exp{\left[ \int{d^4x\, \mathcal{L}_{\mathrm{QED}} } \right]}},
 \end{equation}
@@ -905,7 +909,7 @@ In the general case, gauging such a symmetry will
 produce a gauge-variant partition function because constructing a gauge invariant
 classical action ensures the shift in the measure changes the partition function.
 This gauge symmetry breaking is tantamount to a violation of unitarity\footnote{i.e probability
-non-conservation} and is fatal for any quantum theory.
+non-conservation.} and is fatal for any quantum theory.
 
 We now study the effect of gauging an anomalous symmetries in the case of
 the Dirac Lagrangian's axial symmetry. Using Fujikawa's method~\cite{Fujikawa,Fujikawa2}
@@ -982,7 +986,7 @@ Now we rescale the momenta via $k_\mu \rightarrow Mk_\mu$ and the series becomes
 \end{equation}
 expanding the Taylor series of $f(x)$ about $-k^2 = - k_\mu k^\mu$, and using the trace 
 properties of the gamma matrices the only term non-vanishing in
-the limit $M \rightarrow \infty$ is the term quadratic in $\Gamma_{\mu\nu}$ 
+the limit $M \rightarrow \infty$ is the term quadratic in $K_{\mu\nu}$ 
 \begin{equation}
   \frac{M^4q^2}{2!M^4}\mathrm{Tr}(\epsilon^{\mu\nu\rho\sigma}K_{\mu\nu}K_{\rho\sigma})
   \int{\frac{d^4k}{(2\pi)^4}f''(-k^2) },

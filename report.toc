@@ -1,20 +1,20 @@
-\contentsline {section}{\numberline {1}Introduction}{3}{section.1}%
-\contentsline {section}{\numberline {2}Quantum States}{3}{section.2}%
-\contentsline {section}{\numberline {3}The Heisenburg Picture of Quantum Mechanics}{4}{section.3}%
-\contentsline {section}{\numberline {4}Classical field theory \& Noether's theorem}{5}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Classical field theory}{5}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Noether's Theorem}{6}{subsection.4.2}%
-\contentsline {section}{\numberline {5}The Dirac Lagrangian}{7}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Gauging the vector symmetry}{7}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}The Axial symmetry}{8}{subsection.5.2}%
-\contentsline {section}{\numberline {6}Quantum Field Theory}{9}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Second Quantisation}{9}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Fock Space}{10}{subsection.6.2}%
-\contentsline {section}{\numberline {7}Path Integral Formulation of Quantum Mechanics}{11}{section.7}%
-\contentsline {subsection}{\numberline {7.1}The Propagator}{11}{subsection.7.1}%
-\contentsline {subsection}{\numberline {7.2}The Partition Function}{12}{subsection.7.2}%
-\contentsline {subsection}{\numberline {7.3}Time Ordered Products}{13}{subsection.7.3}%
-\contentsline {subsection}{\numberline {7.4}Functional Derivatives of the Partition Function}{13}{subsection.7.4}%
-\contentsline {section}{\numberline {8}Generalising the Path Integral to Quantum Field Theory}{13}{section.8}%
-\contentsline {section}{\numberline {9}Anomalies in QFT \& violation of Ward identities}{13}{section.9}%
-\contentsline {section}{References}{14}{section*.4}%
+\contentsline {section}{\numberline {1}Introduction}{1}{section.1}%
+\contentsline {section}{\numberline {2}Symmetries in Classical Gauge theory}{2}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Classical field theory}{2}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Noether's first theorem}{3}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Noether's second theorem}{4}{subsection.2.3}%
+\contentsline {section}{\numberline {3}The Dirac Lagrangian}{5}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Gauging the vector symmetry}{5}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Gauging the axial symmetry}{7}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Quantum Field Theory}{8}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Second Quantisation}{8}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}The path integral}{9}{subsection.4.2}%
+\contentsline {section}{\numberline {5}Symmetries in QFT}{9}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Slavnov-Taylor identities}{9}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Ward-Takahashi identities}{11}{subsection.5.2}%
+\contentsline {section}{\numberline {6}Anomalies in QFT}{12}{section.6}%
+\contentsline {subsection}{\numberline {6.1}The Path Integral measure \& Fujikawa's method}{12}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Atiyah–Singer index Theorem}{14}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Anomalies as obstructions to gauging}{15}{subsection.6.3}%
+\contentsline {section}{\numberline {7}Conclusion}{17}{section.7}%
+\contentsline {section}{\numberline {A}N-point function derivative}{17}{appendix.A}%

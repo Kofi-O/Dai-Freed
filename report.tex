@@ -1,161 +1,81 @@
 \documentclass[11pt, a4paper]{article}
 
 \usepackage{jheppub}
+\allowdisplaybreaks
 
-\setlength{\parskip}{1em}
-\usepackage{indentfirst}
-
-\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
-\usepackage{amsmath,amsfonts,amssymb,amsthm,natbib,graphicx,mathtools}
+\usepackage{hyperref}
+%\hypersetup{colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue}
+\usepackage{amsmath,amsfonts,amssymb,amsthm,natbib,graphicx,mathtools,mathrsfs}
 \usepackage{braket}
 \usepackage{enumitem}
-\usepackage{hyperref,pgfplots,siunitx}
 \usepackage[outdir=./]{epstopdf}
 \usepackage{slashed}
-\usepackage{caption}
+\usepackage{relsize}
 
-
-\sisetup{detect-all}
-\pgfplotsset{compat=1.18}
-
-\theoremstyle{definition}
-\newtheorem{defn}{Definition}[section]
-\newtheorem{rmk}[defn]{Remark}
-%\newtheorem{note}[defn]{Note}
-\newtheorem{notation}[defn]{Notation}
-
-\theoremstyle{plain}
-\newtheorem{lemma}[defn]{Lemma}
-\newtheorem{prop}[defn]{Proposition}
-\newtheorem{thm}[defn]{Theorem}
 
 \begin{document}
 
-\begin{titlepage}
-    \centering
-    {\huge \bfseries Local Gauge Anomalies and The Standard Model \par}
-    \vspace{1cm}
-    {\Large \itshape E. Arnold \& K. Okeyre\par}
-    \vfill
-    {\Large October 2025 \par}
-    {\Large Undergraduate Summer Research Project \par}
-    {\Large Durham University \par}
-\end{titlepage}
+\title{Symmetries in Classical and Quantum Field Theory}
 
-\section*{Abstract}
-Abstract here
-\newpage
+\author{K. Okyere,}
+\author{E. Arnold}
+\emailAdd{kofi.s.okyere@gmail.com}
+\emailAdd{ethan.arnold@gmx.com}
 
-\tableofcontents
-\newpage
+
+\abstract{
+In this work, we detail the effect of continuous symmetries on classical gauge theories
+namely, Noether's theorems, before gauging the Dirac Lagrangian's 
+axial symmetry to obtain a quantum electrodynamical analogue of the
+interaction between massless Dirac fermions and a $\mathrm{U}(1)$ axial boson;
+an `axial theory'.
+Subsequently, we investigate the effect of a classical theory's symmetries
+on the quantum field theory (QFT) via Slavnov-Taylor and Ward-Takahashi identities,
+and we find that, for the class of symmetries with infinitesimal generators
+linear in the dynamical fields, a singular path integral Jacobian matrix
+characterises the presence of an anomaly in the quantised theory. Moreover,
+anomalies can be seen as topological invariants of a QFT, and gauging an
+anomalous `linear' symmetry results in a violation of unitarity;
+an inconsistent quantum theory. In the case of the `axial theory',
+we compute the anomaly explicitly.}
+
+\maketitle
+
+
 
 \section{Introduction}
 
-The following report is aimed at undergraduate 
-students familiar with lagrangian mechanics, hamiltonian mechanics,
-quantum mechanics, and topology. For a guide to the expected prerequisite knowledge see \cite{mathphys1, mathphys2, topnotes}.
+The study of continuous symmetries in dynamical systems has long been
+used by theorists to constrain possible Lagrangians. To this end, the seminal
+results in classical field theory are Noether's first and second theorems\cite{Noether1918}, 
+which reveal the correspondence between quantities conserved on-shell and 
+infinitesimal symmetries. Moreover, the analysis of local (gauge) symmetries
+has produced incredibly successful gauge theories such as quantum electrodynamics\cite{Schwinger},
+which can be seen as resultant from `gauged' symmetries. In this vein, we show that gauging the
+axial symmetry of the Dirac Lagrangian results in a 
+well-formulated classical gauge theory; an `axial theory' with a 
+$\mathrm{U}(1)$ axial boson.
 
-[The aim of this report is to offer a gentle 
-introduction to quantum field theory, and offer 
-insight into one example of where topology shows up 
-in theoretical physics.] - CHANGE THIS
+Thereafter, we investigate the effect of symmetries of the classical action
+on QFT via the quantum field-theoretic analogue of Noether's theorems; the
+Slavnov–Taylor and Ward-Takahashi identities~\cite{Slavnov,Taylor,Slavnov–Taylor,WardWTI,TakahashiWTI}.
+Anomalous symmetries are symmetries of the classical theory that are violated by quantum processes in
+a QFT\@. In particular, the axial symmetry is famously violated
+by triangle feynman diagrams (the Adler-Bell-Jackiw anomaly~\cite{Adler,Bell-Jackiw}) and can be 
+viewed as a topological invariant of QFT via the Atiyah-Singer index
+theorem~\cite{Atiyah-Singer}. Using the Slavnov–Taylor identities, we find that it is 
+necessary and sufficient for an anomalous symmetry
+with infinitesimal generators linear in the dynamical fields to have
+a singular path integral Jacobian, and gauging such symmetries
+produces a gauge-variant partition function; an inconsistent quantum theory.
 
-Explain structure of report here. 
+Finally, we compute the gauge-variance of the `axial theory' partition function
+using Fujikawa's method~\cite{Fujikawa2}, although a topological
+approach is possible (cf.~\cite{AlvarezGuameNon-AB,Sumitani1984}), and
+demonstrate an inconsistency in the quantum theory. Hence
+a $\mathrm{U}(1)$ axial boson coupled to Dirac fermions does not exist.
 
-\section{Quantum States}
-
-One should be familiar with the notion of a quantum wavefunction, such as 
-$\psi(x)$, which describes the position of a particle. 
-However, in quantum field theory we deal with a more 
-abstract concept called a quantum state.
-
-\begin{defn}
-Define Hilbert space
-\end{defn}
-
-\begin{notation}
-We use the Bra-Ket notation for vectors in Hilbert space. A 
-vector is written as $| \psi \rangle$ and a covector is 
-written as $\langle \phi |$. We define \[ \langle \phi | \psi \rangle := \langle \phi | (| \psi \rangle) \]
-Given a vector 
-$| \psi \rangle$ the corresponding hermition transpose of 
-this vector is $\langle \psi |$, meaning 
-$|\psi|^2 = \langle \psi | \psi \rangle$.
-\end{notation}
-
-A quantum state is a mathematical entity that embodies all 
-the known information of some given quantum system. There 
-are two types of quantum states, pure and mixed. We will 
-only explain pure quantum states in this section.
-
-A (pure) quantum state is an abstract vector in a complex 
-Hilbert space, denoted by $| \psi \rangle $. This Hilbert 
-space is called our state space and often has infinite 
-dimensions.
-
-Observables of our quantum system correspond to Hermition 
-operators on our state space. The eigenvalues of such an 
-operator are real and correspond to possible observed 
-values. It can be shown that the eigenstates of any 
-Hermition operator form a basis for our state space. This 
-allows us to relate quantum states to the more familiar 
-notion of a quantum wavefunction.
-
-Let $\langle \psi |$ be a quantum state and $\hat{X}$ be the position operator with eigenstates $|x \rangle$. Then $\psi (x) = \langle x | \psi \rangle$. WHY???
-
-
-\section{The Heisenburg Picture of Quantum Mechanics}
-
-One is usually introduced to quantum mechanics in the 
-Schrödinger picture, however, in quantum field theory, 
-it is more natural to consider the Heisenburg picture.
-
-In the Schrödinger picture, the quantum states vary with 
-time. For example, our quantum state may be represented 
-by a wave function $\psi(x,t)$, which evolves in time. 
-Conversely,
-the operators that act on our state space, such as 
-momentum, position, etc, are usually fixed with respect to time. 
-The only exception to this is that the Hamiltonian may include 
-a potential energy term that varies with time. 
-
-Consider a time dependent quantum state 
-$| \psi(t) \rangle$. This state evolves in time 
-according the  Schrodinger equation. One can 
-represent this via a unitary time-evolution operator 
-$U(t,t_0)$ 
-as follows;
-\[ | \psi(t) \rangle = U(t,t_0) | \psi(t_0) \rangle .\]
-
-In the Schrödinger 
-picture, the expectation of a potentially time-dependent hermition operator, $A(t)$, in the 
-state $| \psi(t) \rangle$,  can be written as 
-\[\langle \hat{A}(t) \rangle = \langle \psi(t) | \hat{A}(t) | \psi(t) \rangle.\]
-Choosing some reference time $t_0$ we can rewrite this as
-\[\langle \psi(t_0) | \hat{U}\textsuperscript{\textdagger}(t,t_0) \hat{A}  (t) \hat{U}(t,t_0) | \psi(t_0) \rangle.\]
-If we define 
-\[\hat{A_H}(t) = \hat{U}\textsuperscript{\textdagger}(t,t_0) \hat{A}  (t) \hat{U}(t,t_0) \]
-then we have 
-\[\langle \hat{A}(t) \rangle = \langle \psi(t_0) | \hat{A_H}(t) | \psi(t_0) \rangle.\]
-
-So we notice that we could have obtained this same 
-expectation by considering a constant quantum state 
-$| \psi(t_0) \rangle$ and a new operator that evolves with 
-time. This is the idea behind the Heisenberg picture of 
-quantum mechanics. One interprets the quantum states as 
-being fixed in time, and it is the operators that evolve 
-in time. 
-
-In the Schrödinger picture, the Schrödinger equation 
-governs the time evolution of quantum states. Hence, a 
-natural question is, in the Heisenberg picture, how do the 
-operators evolve in time?
-
-One can derive the following equation
-\[ \frac{d}{dt} \hat{A}_H(t) = \frac{1}{i \hbar} [\hat{A}_H(t), \hat{H}_H(t)] + \left[\frac{d}{dt} \hat{A}_S(t) \right]_H \]
-where the subscripts $S$ and $H$ denote whether we are considering the element in the Schrodinger or Heisenberg picture respectively. 
-
-\section{Classical field theory \& Noether's theorem}
+\section{Symmetries in Classical Gauge theory}
 
 \subsection{Classical field theory}
 In classical mechanics we consider a countable set of particles
@@ -164,450 +84,978 @@ and generalised coordinates $q_i(t)$. These generalised coordinates ${\{ q_i(t) 
 the system's configuration (position in configuration space) and together with the 
 generalised conjugate momenta
 ${\left\{p_i(t) \coloneq \frac{\partial L}{\partial \dot{q}_i} \right\}}_i $ 
-define the system's position in phase space.
-
+define the system's position in phase space~\cite{LA&LI-Mech-I}.
 In classical field theory we generalise this notion of configuration space to a
 continuum with infinite degrees of freedom. The scalar field $\phi(t)$ can be seen as
 the generalised coordinates of a continuum 
 $\left( q_i(t) \xrightarrow{i \rightarrow \vec{x}} \phi(\vec{x}, t) \right)$ and for a system
 of continua the set of scalar fields ${\{ \phi_k(\vec{x}, t) \}}_k$
-specifies the system's configuration.
-
-
+specifies the system's configuration~\cite{ClassField}.
 Subsequently, we generalise the classical Lagrangian $L(q_i(t), \dot{q}_i(t), t)$ via
 \begin{equation}
-  L(t) = \int{d^{3}\vec{x}\,\mathcal{L}(\phi_k(\vec{x}, t),\partial_{\mu}\phi_k(\vec{x}, t), \vec{x}, t)}
+  L(t) = \int{d^{3}\vec{x}\,
+  \mathcal{L}(\phi_k(\vec{x}, t),\partial_{\mu}\phi_k(\vec{x}, t), \vec{x}, t)},
 \end{equation}
-where $\mathcal{L}$ is the Lagrangian density. With respect to some path
+where $\mathcal{L}$ is the Lagrangian density. With respect to a path
 in configuration space, $\vec{\Phi}(\vec{x}, t)$, the classical action becomes 
 \begin{equation}
   S\left[\vec{\Phi}(\vec{x}, t) \right] = \int{dt\,L} 
-  = \int{d^4x\,\mathcal{L}(\phi_k(\vec{x}, t),\partial_{\mu}\phi_k(\vec{x}, t), \vec{x}, t)}
+  = \int{d^4x\,\mathcal{L}(\phi_k(\vec{x}, t),\partial_{\mu}\phi_k(\vec{x}, t), \vec{x}, t)}.
 \end{equation}
-Using Hamilton's principle $\left( \frac{\delta S}{\delta \vec{\Phi} } = 0 \right)$ we obtain
-the Euler-Lagrange equations 
+Using Hamilton's principle~\cite{LA&LI-Mech-VII} ($\delta S[\vec{\Phi}; \vec{\rho} ] = 0,
+\forall\vec{\rho} \in C_{0}^{\infty})$\footnote{$\delta{S}$ is a Gateaux derivative,
+and $\vec{\rho}$ vanishes at the endpoints of $\vec{\Phi}$}
+we obtain the field-theoretic Euler-Lagrange equations 
 \begin{equation}
   \frac{\partial \mathcal{L}}{\partial \phi_k}
-  = \partial_\mu \left[ \frac{\partial \mathcal{L}}{\partial(\partial_\mu{\phi_k}) } \right]
+  \approx \partial_\mu \left[ \frac{\partial \mathcal{L}}{\partial(\partial_\mu{\phi_k}) } \right],
 \end{equation}
-In classical mechanics we define the hamiltonian, $H(p_i(t), q_i(t), t)$, via the
-Legendre transform (IS THIS ACTUALLY THE DEFINITION OF H? ASK INAKI)
+where we use $\approx$ to denote an on-shell equality.
+In Lagrangian systems the Hamiltonian, $H(p_i(t), q_i(t), t)$,
+is characterised by the Legendre transform
 \begin{equation}
-  H = \sum_{i}{p_i(t)\dot{q}_i(t) - L}
+  H = \sum_{i}{p_i(t)\dot{q}_i(t) - L},
 \end{equation}
 to generalise this to field theory we introduce the momentum field conjugate to 
 $\phi_k(\vec{x}, t)$
 \begin{equation}
-  \pi_k(\vec{x}, t) \coloneq \frac{\partial \mathcal{L} }{\partial \dot{\phi}_k} \\
+  \pi_k(\vec{x}, t) \coloneq \frac{\partial \mathcal{L} }{\partial \dot{\phi}_k},
 \end{equation}
 \begin{equation}
   p_i(t) \coloneq \frac{\partial L}{\partial \dot{q}_i} \xrightarrow{i \rightarrow \vec{x}}
   \frac{\partial}{\partial \dot{\phi}_k} \left[ \int{d^3\vec{x}\,\mathcal{L}} \right]
-  = \int{d^3\vec{x}\,\pi_k(\vec{x}, t)}
+  = \int{d^3\vec{x}\,\pi_k(\vec{x}, t)}.
 \end{equation}
 Thus the classical Hamiltonian is generalised to
 \begin{equation}
-  H(t) = \int{d^3\vec{x}\,\mathcal{H}(\pi_k(\vec{x}, t), \phi_k(\vec{x}, t), \vec{x}, t) }
+  H(t) = \int{d^3\vec{x}\,\mathcal{H}(\pi_k(\vec{x}, t), \phi_k(\vec{x}, t), \vec{x}, t) },
 \end{equation}
 \begin{equation}
-  \mathcal{H} = \sum_{k}{\pi_k(\vec{x}, t)\dot{\phi}_k(\vec{x}, t) - \mathcal{L}}
+  \mathcal{H} = \sum_{k}{\pi_k(\vec{x}, t)\dot{\phi}_k(\vec{x}, t) - \mathcal{L}},
 \end{equation}
-where $\mathcal{H}$ is the Hamiltonian density, and Hamilton's equations become
-the Hamiltonian field equations
+where $\mathcal{H}$ is the Hamiltonian density, and the field-theoretic 
+analogue of Hamilton's equations~\cite{LA&LI-Mech-VII} is
+the Hamiltonian field equations~\cite{ClassField}
 \begin{equation}
-  \dot{\phi}_k = \frac{\partial \mathcal{H}}{\partial \pi_k}
-  - \partial_\mu \left[ \frac{\partial \mathcal{H}}{\partial (\partial_\mu \pi_k)} \right],\,
-  \dot{\pi}_k = \partial_\mu \left[ \frac{\partial \mathcal{H}}{\partial (\partial_\mu \phi_k)} \right]
-  - \frac{\partial \mathcal{H}}{\partial \phi_k}
+  \dot{\phi}_k = \frac{\delta \mathcal{H}}{\delta \pi_k}, \quad
+  \dot{\pi}_k = - \frac{\delta \mathcal{H}}{\delta \phi_k},
 \end{equation}
-
-[I tried not to use this notation but the rest will be unreadable if I don't, so I hope this
-does not contradict following variational deriv notation, also use this notation earlier]
+where we use the functional derivative identify 
 \begin{equation}
-  \frac{\delta \mathcal{F}}{\delta g} \coloneq \frac{\partial \mathcal{F}}{\partial g}
-  - \partial_\mu \left[ \frac{\partial \mathcal{F}}{\partial (\partial_\mu g)} \right],
+  \frac{\delta \mathcal{F}}{\delta g} = \frac{\partial \mathcal{F}}{\partial g}
+  - \partial_\mu \left[ \frac{\partial \mathcal{F}}{\partial (\partial_\mu g)} \right].
 \end{equation}
-
-To begin second quantisation we will also require the notion of a field theoretic poisson bracket.
-Given two functionals, $F$ and $G$, of the dynamical fields given by 
+To begin second quantisation we will also require the notion of a field-theoretic poisson bracket.
+Given two functionals, $F$ and $G$, of the dynamical
+fields given by\footnote{n.b. $K({x}) = \int{d{y}\,[K({y}) \delta(x - y)]}$}  
 \begin{equation}
-  F = \int{d^3\vec{x}\, \mathcal{F}(\pi_k, \phi_k, \vec{x}, t)},\,
-  G = \int{d^3\vec{x}\, \mathcal{G}(\pi_k, \phi_k, \vec{x}, t)}
+  F = \int{d^3\vec{x}\, \mathcal{F}(\pi_k, \phi_k, \vec{x}, t)}, \quad
+  G = \int{d^3\vec{x}\, \mathcal{G}(\pi_k, \phi_k, \vec{x}, t)},
 \end{equation}
-We define the poisson bracket
+we define the poisson bracket in field theory via
 \begin{equation}
   {\{F, G \}}_{f} = \int{d^3\vec{x}\,
   \sum_{k}{\left[ \frac{\delta \mathcal{F}}{\delta \phi_k}\frac{\delta \mathcal{G}}{\delta \pi_k} 
-- \frac{\delta \mathcal{G}}{\delta \phi_k}\frac{\delta \mathcal{F}}{\delta \pi_k} \right]}  }
+- \frac{\delta \mathcal{G}}{\delta \phi_k}\frac{\delta \mathcal{F}}{\delta \pi_k} \right]}  }.
 \end{equation}
-Note that $K({x}) = \int{d{y}\,[K({y}) \delta(x - y)]}$
+ 
 
-
-\subsection{Noether's Theorem}
-[From here we should somehow state that $\vec{x}$ is a spatial vector and $x$ is a four-vector]
-
-In classical mechanics Noether's theorem shows the correspondence between global symmetries of 
+\subsection{Noether's first theorem}
+In classical mechanics Noether's first theorem shows the correspondence between global symmetries of 
 the lagrangian and conserved quantities called Noether charges. This generalises to global symmetries
 of the lagrangian density corresponding to conserved Noether currents in classical field theory.
-Consider an infinitesimal field transformation, $\vartheta(\epsilon)$, such that
+Consider an infinitesimal field transformation $\vartheta(\epsilon)$ such that
 \begin{equation}
-  \phi_k \mapsto \phi_k + \epsilon\vartheta_k(\phi_k)
+  \phi_n \mapsto \phi_n + \delta_\epsilon\phi_n + \mathcal{O}(\epsilon^2); \quad 
+  \delta_\epsilon\phi_n = \epsilon\vartheta_n(\phi_k),
 \end{equation}
-where each $\vartheta_k$ may be a function of an arbitrary number of fields $\phi_k$ but
-is independent of spacetime, and we suppress high order terms in $\epsilon$.
-Such a transformation is called a global symmetry if its effect on the Lagrangian density is
+where the generators, $\vartheta_k$, are independent of spacetime.
+A transformation is called a global symmetry if its effect on the Lagrangian density is
 \begin{equation}
   \mathcal{L} \mapsto \mathcal{L} + \epsilon\partial_\mu\Lambda^\mu(\phi_k, x)
+  + \mathcal{O}(\epsilon^2).
 \end{equation}
-This change in the Lagrangian density leaves the Euler-Lagrange equations invariant (add proof L8r).
-Noether's theorem for fields states that a transformation $\vartheta_k(\epsilon)$ is a symmetry
-of the lagrangian if and only if 
+This transformation changes the action by a surface term and the Euler-Lagrange equations
+are invariant. Using a Taylor expansion of the Lagrangian density under $\vartheta(\epsilon)$
+we find that
+\begin{equation}\label{eq:6}
+  \delta_\epsilon\mathcal{L} = \sum_k{\delta_\epsilon\phi_k E_k} + \partial_\mu\theta^\mu,
+\end{equation}
 \begin{equation}
-  j^\mu \coloneq
-  \sum_{k}{\vartheta_k \frac{\partial \mathcal{L}}{\partial (\partial_\mu \phi_k)}}
-  - \Lambda^\mu, \, \partial_\mu j^\mu = 0 
+  \quad \theta^\mu = \sum_k{\delta_\epsilon\phi_k
+  \frac{\partial \mathcal{L}}{\partial(\partial_\mu{\phi_k}) } }.
 \end{equation}
-and the divergence free quantity $j^\mu$ is called the conserved Noether current (add proof L8r).
+Where $E_k$ are the Euler-Lagrange derivatives and $\theta^\mu$ is
+the symplectic potential density~\cite{LocalSymm}.
+By considering the shift in the action we arrive at
+Noether's first theorem~\cite{Noether1918}; an 
+infinitesimal transformation $\vartheta(\epsilon)$ is a symmetry
+of the Lagrangian if and only if 
+\begin{equation}\label{eq:1}
+  \epsilon j^\mu \coloneq \theta^\mu - \epsilon\Lambda^\mu,
+  \quad \epsilon\partial_\mu j^\mu = - \delta_\epsilon\phi_k E_k \approx 0.
+\end{equation}
+Where we use the summation convention for the field indices hereafter
+and the on-shell divergence-free quantity $j^\mu$ is called the conserved
+Noether current\footnote{n.b. $j^\mu$ is $\epsilon$-independent}.
+This easily generalises to local symmetries: spacetime dependent generators
+$\vartheta_k(\phi, x)$. Moreover, a Lagrangian with no
+explicit spacetime dependence implies that the canonical energy-momentum
+tensor obeys divergence relations on-shell 
+\begin{equation}
+  {T^\mu}_\nu = \frac{\partial \mathcal{L}}{\partial(\partial_\mu{\phi_k})} 
+  \partial_\nu\phi_k -\delta^\mu_\nu\mathcal{L},
+  \quad \partial_\mu {T^\mu}_\nu \approx 0,
+\end{equation}
+which can be seen as the independent conservation relations of
+four Noether currents. By Noether's first theorem the transformations corresponding to
+these Noether currents are the global symmetries
+\begin{equation}
+  \phi_n(x^\mu) \mapsto \phi_n(x^\mu + \epsilon) = \phi_n(x^\mu)
+  + \epsilon\partial_\mu\phi_n\big{|}_{x^\mu} + \mathcal{O}(\epsilon^2), 
+\end{equation}
+and it is clear that translation invariance of the equations of motion (for spacetime independent 
+Lagrangians) is a direct corollary of Noether's first theorem.
+
+\subsection{Noether's second theorem}
+Noether's second theorem shows that a local symmetry introduces off-shell constraints
+on the equations of motion and leads to Noether current identities which are
+crucial for gauge theories. Under
+local infinitesimal symmetries (gauge symmetries), $R_\xi$, of the form
+\begin{equation}\label{eq:5}
+   \phi_n \mapsto \phi_n + \delta_\xi\phi_n + \mathcal{O}(\xi^2);
+   \quad \delta_\xi\phi_n = \sum^N_{m=0}{R^{\mu_1 \cdots \mu_m}_n(\phi_k)
+   \partial_{\mu_1}\cdots\partial_{\mu_m} \xi\lambda(x)},
+\end{equation}
+the action shifts by
+\begin{equation}
+  \delta_\xi S = \int{d^4x\, \delta_\xi\phi_n E_n + \partial_\mu\theta^\mu}.
+\end{equation}
+If $\lambda(x)$ is a compactly supported smooth function, the boundary term vanishes and we have
+\begin{equation}
+  \int{d^4x\, \delta_\xi\phi_n E_n} = 0,
+\end{equation}
+and integration by parts leads to 
+\begin{equation}
+  \int{d^4x\, \lambda(x)\Delta(E) } = 0; \quad
+  \Delta(E) \coloneq \sum^N_{m=0}{ {(-1)}^m \partial_{\mu_1}\cdots\partial_{\mu_m}
+  [R^{\mu_1 \cdots \mu_m}_n(\phi_k) E_n] }. 
+\end{equation}
+By the fundamental lemma of the calculus of variations~\cite{calcvar} we obtain the 
+off-shell constraint on the Euler-Lagrange derivatives $\Delta(E) = 0$.
+Thus the equations of motion are not
+all independent and the Euler-Lagrange equations ($E_n = 0$)
+are under-determined. However, observables must be uniquely determined
+by the theory hence we conclude some degrees of freedom are gauge. Using
+the surface term $S^\mu$ from integration by parts we find an expression similar to~\eqref{eq:1}
+\begin{equation}
+ \delta_\xi\phi_n E_n = \xi\partial_\mu S^\mu(E_k, \lambda),
+\end{equation}
+with the important difference that $S^\mu$ vanishes on-shell. The
+quantity $j^\mu + S^\mu$ is divergence-free off-shell, subsequently
+by the Poincaré lemma we obtain
+Noether's second theorem~\cite{Noether1918, Noeth2Ward, SuperPot};
+on-shell the canonical Noether current $j^\mu$ is
+the divergence of a rank-2 tensor
+\begin{equation}\label{eq:2}
+  j^\mu = -S^\mu(E_k, \lambda) + \partial_\nu \kappa^{\mu\nu}
+  \approx \partial_\nu \kappa^{\mu\nu};
+  \quad \kappa^{\mu\nu} = -\kappa^{\nu\mu},
+\end{equation}
+the antisymmetric tensor $\kappa^{\mu\nu}$ is called a superpotential.
+Although the superpotential is arbitrary ($\kappa^{\mu\nu}$
+is determined up to addition by a divergence-free quantity) 
+it can be uniquely determined if
+one demands the superpotential obeys additional constraints
+(such as asymptotic conservation)~\cite{SuperPot}. In the case of electrodynamics
+the superpotential is electromagnetic field tensor and~\eqref{eq:2}
+becomes Maxwell's equations
+\begin{equation}
+  J^\mu \approx \partial_\nu F^{\nu\mu},
+  \quad F_{\mu\nu} \coloneq \partial_{\mu}A_{\nu} - \partial_{\nu}A_{\mu}.
+\end{equation}
+
 
 \section{The Dirac Lagrangian}
-[Introduce dirac eqn as relativistic QM,
-show U(1) global symm. and that gauging this symm leads to QED lagrangian.
-Show we now wish to gauge the axial symm. because of the prev. success but 
-at the quantum level there is an anomaly acting as an obstruction to gauging.
-From here we use natural units.]
 
 \subsection{Gauging the vector symmetry}
-
 In quantum mechanics the Schrodinger equation is not Lorentz invariant and is thus
-incompatible with special relativity. A naive generalisation of the relativistic
+incompatible with special relativity. A generalisation of the relativistic
 dispersion relation using Hamiltonian and momentum operators
 for free particles leads to the Klein-Gordon
-equation. However, the Klein-Gordon equation is a second order partial differential equation and
+equation\footnote{$(\square + m^2)\psi = 0$}~\cite{Klein1926, Gordon1926}.
+However, the Klein-Gordon equation is a second order partial differential equation and
 subsequently does not uniquely determine time-evolution of the wavefunction.
-A more complicated treatment produces the Dirac equation
+Alternatively, by finding the half-iterate of the d'Alembert
+operator\footnote{$\square \coloneq \partial^2_t - \nabla^2$}, the 
+Klein-Gordon equation simplifies to a first order partial differential equation;
+the Dirac equation~\cite{dirac1958}
 \begin{equation}
-  (i \gamma^\mu\partial_\mu - m)\psi(x) = 0
+  (i \gamma^\mu\partial_\mu - m)\psi(x) = 0.
 \end{equation}
-Which corresponds to the Lagrangian density
+We call the corresponding Lagrangian density the Dirac Lagrangian
 \begin{equation}
-  \mathcal{L}_\mathrm{D} = \bar{\psi}(i \gamma^\mu\partial_\mu - m)\psi
+  \mathcal{L}_\mathrm{D} = \bar{\psi}(i \gamma^\mu\partial_\mu - m)\psi,
 \end{equation}
-Where the adjoint bispinor is defined as $\bar{\psi} \coloneq \psi^\dagger\gamma^0$.
+where the adjoint bispinor is defined as $\bar{\psi} \coloneq \psi^\dagger\gamma^0$.
 This Lagrangian admits a global $\mathrm{U}(1)$ symmetry called the vector symmetry
 \begin{equation}
-  \psi \mapsto e^{i\vartheta}\psi, \quad \bar{\psi} \mapsto \bar{\psi}e^{-i\vartheta} 
+  \psi \mapsto e^{i\vartheta}\psi, \quad \bar{\psi} \mapsto \bar{\psi}e^{-i\vartheta}.
 \end{equation}
-This symmetry corresponds to a conserved vector current via Noether's theorem for fields
-[add proof L8R]
+This symmetry corresponds to a conserved current, called the vector current,
+via Noether's first theorem
 \begin{equation}
-  j^\mu = \bar{\psi}\gamma^\mu\psi
+  j^\mu = \bar{\psi}\gamma^\mu\psi.
 \end{equation}
-We now attempt to `gauge' this symmetry by adding spacetime dependence to the 
-parameter
+We now attempt to `gauge' this symmetry by adding spacetime dependence
+to the infinitesimal parameter
 \begin{equation}
-  \psi \mapsto e^{i\vartheta(x)}\psi, \quad \bar{\psi} \mapsto \bar{\psi}e^{-i\vartheta(x)}  
+  \psi \mapsto e^{i\vartheta(x)}\psi, \quad \bar{\psi} \mapsto \bar{\psi}e^{-i\vartheta(x)}.
 \end{equation}
-However, the Lagrangian is not invariant under such a transformation so we introduce the
+However, the Lagrangian is not invariant under such a transformation so we introduce a
 derivative operator which transforms covariantly
-\begin{equation}
-  D_\mu \coloneq \partial_\mu + ie\Pi_\mu
+\begin{equation}\label{eq:3}
+  D_\mu \coloneq \partial_\mu + ie\Pi_\mu,
 \end{equation}
 \begin{equation}
-  D_\mu \psi \mapsto D'_\mu\left[e^{i\vartheta(x)}\psi\right] = e^{i\vartheta(x)}D_\mu\psi
+  D_\mu \psi \mapsto D'_\mu\left[e^{i\vartheta(x)}\psi\right] = e^{i\vartheta(x)}D_\mu\psi.
 \end{equation}
 To satisfy this the gauge field must transform as
 \begin{equation}
-  \Pi_\mu \mapsto \Pi_\mu -\frac{1}{e}\partial_\mu\vartheta(x)
+  \Pi_\mu \mapsto \Pi_\mu -\frac{1}{e}\partial_\mu\vartheta(x),
 \end{equation}
 Thus we have a modified Lagrangian which admits a local $\mathrm{U}(1)$ gauge symmetry
 \begin{equation}
-  \mathcal{L} =  \bar{\psi}(i \gamma^\mu\partial_\mu - m)\psi -e\Pi_\mu j^\mu
+  \mathcal{L} = \bar{\psi}(i\slashed{D} - m)\psi
+  = \bar{\psi}(i \gamma^\mu\partial_\mu - m)\psi -e\Pi_\mu j^\mu,
 \end{equation}
+where $\slashed{D} \coloneq \gamma^\mu D_\mu$ is the Dirac operator.
 This is strikingly similar to the electromagnetic Lagrangian density which
 also has a $\mathrm{U}(1)$ gauge symmetry
 \begin{equation}
-  \mathcal{L}_\mathrm{EM} = -\frac{1}{4}F_{\mu\nu}F^{\mu\nu} -A_\mu J^\mu
+  \mathcal{L}_\mathrm{EM} = -\frac{1}{4}F_{\mu\nu}F^{\mu\nu} -A_\mu J^\mu.
 \end{equation}
-where $A_\mu$, $J^\mu$, and $F^{\mu\nu}$ are the electromagnetic four-potential, four-current,
-and field tensor respectively. Thus we identify $\Pi_\mu = A_\mu$ and $ej^\mu = J^\mu$
+Thus we identify $\Pi_\mu = A_\mu$ and $ej^\mu = J^\mu$
 and arrive at the Lagrangian for quantum electrodynamics.
 \begin{equation}
   \mathcal{L}_\mathrm{QED} = -\frac{1}{4}F_{\mu\nu}F^{\mu\nu} -eA_\mu j^\mu
-    + \bar{\psi}(i \gamma^\mu\partial_\mu - m)\psi
+    + \bar{\psi}(i \gamma^\mu\partial_\mu - m)\psi.
 \end{equation}
+Schwinger arrived at the covariant formulation of quantum electrodynamics
+similarly by constructing a Lagrangian invariant under Lorentz transformations,
+gauge transformations, and charge conjugation~\cite{Schwinger}. 
+However, this is not the end of the story, the massless Dirac equation
+admits another global $\mathrm{U}(1)$ symmetry. In the next sections 
+we construct a gauge-invariant Lagrangian and investigate
+the resultant gauge theory.
 
-[Speak about how QED is an incredibly successful theory of photon-electron interactions]
+\subsection{Gauging the axial symmetry}
 
-
-\subsection{The Axial symmetry}
-
-However, this is not the end of the story. The massless Dirac Lagrangian admits
-another symmetry better seen in the Weyl basis.
+The massless Dirac Lagrangian admits
+another symmetry better seen in the Weyl basis
 \begin{equation}
   \psi =
   \begin{pmatrix} \psi_\mathrm{L} \\ \psi_\mathrm{R} \end{pmatrix}, \quad
   \gamma^{\mu}\partial_\mu =
-  \begin{pmatrix}0 & \sigma^\mu\partial_\mu \\ \bar{\sigma}^{\mu}\partial_\mu & 0 \end{pmatrix}
+  \begin{pmatrix}0 & \sigma^\mu\partial_\mu \\ \bar{\sigma}^{\mu}\partial_\mu & 0 \end{pmatrix}.
 \end{equation}
-Thus the Dirac Lagrangian can be seen as the interaction between two Weyl fermions
-of opposite chirality
+In this basis the Dirac Lagrangian can be seen as the interaction between two Weyl fermions
+of opposite chirality~\cite{Weyl}
 \begin{equation}
   \mathcal{L}_\mathrm{D} = \psi_\mathrm{L}^{\dagger}(i\sigma^\mu\partial_\mu)\psi_\mathrm{L} +
   \psi_\mathrm{R}^{\dagger}(i\bar{\sigma}^\mu\partial_\mu)\psi_\mathrm{R}
-  - m(\psi_\mathrm{L}^{\dagger}\psi_\mathrm{R} + \psi_\mathrm{R}^{\dagger}\psi_\mathrm{L})
+  - m(\psi_\mathrm{L}^{\dagger}\psi_\mathrm{R} + \psi_\mathrm{R}^{\dagger}\psi_\mathrm{L}).
 \end{equation}
 In the massless case the Lagrangian gains a global $\mathrm{U}(1)$ symmetry
 known as the axial symmetry
 \begin{equation}
   \psi_\mathrm{L} \mapsto e^{i\vartheta}\psi_\mathrm{L}, \quad
-  \psi_\mathrm{R} \mapsto e^{-i\vartheta}\psi_\mathrm{R}
+  \psi_\mathrm{R} \mapsto e^{-i\vartheta}\psi_\mathrm{R},
 \end{equation}
 which is equivalent to 
 \begin{equation}
-  \psi \mapsto e^{i\vartheta\gamma^5}\psi
+  \psi \mapsto e^{i\vartheta\gamma^5}\psi,
 \end{equation}
 and a Noether current
 \begin{equation}
-  j^\mu = \bar{\psi}\gamma^\mu\gamma^5\psi, \quad \partial_\mu j^\mu = 2im\bar{\psi}\gamma^5\psi
+  j^\mu_5 = \bar{\psi}\gamma^\mu\gamma^5\psi, \quad \partial_\mu j^\mu_5 = 2im\bar{\psi}\gamma^5\psi.
 \end{equation}
-We now proceed as before, gauging the axial symmetry by promoting $\partial_\mu$
-to a covariant derivative as in (5.6) and determining the required gauge transformation
+We now proceed à la Schwinger, gauging the axial symmetry by promoting $\partial_\mu$
+to a covariant derivative $\widetilde{D}_\mu$
+as in~\eqref{eq:3} (with $q=e$) and determining the required gauge transformation
 \begin{equation}
   {\mathcal{L}_{D}|}_{m=0} = \bar{\psi}(i\gamma^\mu \partial_\mu)\psi
-  - q\bar{\psi}\gamma^\mu\Pi_\mu\psi
+  - q\bar{\psi}\gamma^\mu\Pi_\mu\psi,
 \end{equation}
 \begin{equation}
   \Pi_\mu \mapsto e^{i\vartheta\gamma^5}\Pi_\mu e^{-i\vartheta\gamma^5} 
-  - \frac{1}{q}\partial_\mu\vartheta\gamma^5
+  - \frac{1}{q}\partial_\mu\vartheta\gamma^5.
 \end{equation}
 Now we must add a kinetic term to the Lagrangian to determine the dynamics 
-of the matrix-valued gauge field. Such a term must be gauge-invariant to preserve
+of the matrix-valued gauge field\footnote{n.b. $\Pi^{ab}_\mu$ has two
+internal indices and one spacetime index}.
+Such a term must be gauge-invariant to preserve
 the $\mathrm{U}(1)$ symmetry. We find a Lagrangian analogous to the Maxwell Lagrangian
 \begin{equation}
-  \mathcal{L}_\Pi = - \frac{1}{4}\mathrm{Tr}(\Gamma_{\mu\nu}\Gamma^{\mu\nu})
+  \mathcal{L}_\Pi = - \frac{1}{4}\mathrm{Tr}({K_{\mu\nu}K^{\mu\nu}}),
 \end{equation}
-with field strength
+where the trace is taken over the internal indices and
 \begin{equation}
-  \Gamma_{\mu\nu} = \partial_\mu\Pi_\nu - \partial_\nu\Pi_\mu +q[\Pi_\mu, \Pi_\nu]
+  K_{\mu\nu} = \partial_\mu\Pi_\nu - \partial_\nu\Pi_\mu +iq[\Pi_\mu, \Pi_\nu],
 \end{equation}
-has the required gauge-invariance. Thus we have a theory describing the coupling
-of massless dirac fermions to a mysterious gauge field
+has the required gauge-invariance and is Lorentz invariant.
+Thus we have constructed a classical gauge theory of massless Dirac fermions
 \begin{equation}
-  \mathcal{L} =  - \frac{1}{4}\mathrm{Tr}(\Gamma_{\mu\nu}\Gamma^{\mu\nu}) 
+  \mathcal{L}_\mathrm{A} =  - \frac{1}{4}\mathrm{Tr}({K_{\mu\nu}K^{\mu\nu}}) 
+  + \bar{\psi}i\widetilde{\slashed{D}}\psi,
+\end{equation}
+\begin{equation}\label{eq:9}
+  \mathcal{L}_\mathrm{A} =  - \frac{1}{4}\mathrm{Tr}({K_{\mu\nu}K^{\mu\nu}})
   - q\bar{\psi}\gamma^\mu\Pi_\mu\psi
-  + \bar{\psi}(i\gamma^\mu \partial_\mu)\psi
+  + \bar{\psi}(i\gamma^\mu \partial_\mu)\psi.
 \end{equation}
-
+By direct computation we find that the canonical energy-momentum tensor for this theory is
+\begin{equation}
+  {T^\mu}_\nu = i\bar{\psi}\gamma^\mu\partial_\nu\psi
+  + \mathrm{Tr}(K^{\kappa\mu}\partial_\nu\Pi_\kappa) - \delta^\mu_\nu \mathcal{L}_\mathrm{A},
+\end{equation}
+which is not gauge-invariant. However, using the procedure for interacting gauge theories
+in~\cite{energy–momentum-tensor} we construct an improved energy-momentum tensor
+\begin{equation}
+ \widetilde{T}^\mu{}_\nu = i\bar{\psi}\gamma^\mu\widetilde{D}_\nu\psi
+ + \mathrm{Tr}(K_{\kappa\mu}K^{\nu\kappa}) - \delta^\mu_\nu\mathcal{L}_\mathrm{A},
+\end{equation}
+which is clearly gauge-invariant. Thus gauging the axial symmetry results in a 
+well formulated classical gauge theory of an axial boson and massless Dirac
+fermions.
 
 \section{Quantum Field Theory}
 
 So far we have studied relativistic quantum mechanics, making use of classical
 fields to describe the dynamics of quantum states. However, such a quantum theory is
-inconsistent subsequently predicting negative energy states which require 
-peculiar interpretations to reconcile (Dirac's hole theory). To proceed to a
-quantum theory of particle interactions we must promote the dynamical fields
+inconsistent and predicts particles with negative energy which require 
+peculiar interpretations to reconcile like Dirac's infamous hole theory~\cite{Holethry}.
+To proceed to a quantum theory of particle interactions we must promote the dynamical fields
 to field operators; second quantisation. We shall see how this shift to
-a quantised field theory affects our calculation of expectation values and probabilities.
-
+a quantised field theory affects our calculation of expectation values and probabilities
+via the path integral.
 
 \subsection{Second Quantisation}
 In classical mechanics, the canonical transformations are exactly those which preserve the symplectic 
 structure; invariance of poisson brackets of the dynamical variables ($p_i, q_i$) characterises
-transformations which leave Hamilton's equations unchanged.
+transformations which leave Hamilton's equations unchanged~\cite{LA&LI-Mech-VII}.
 A system's position in phase space specifies its classical state.
-
 However, in quantum mechanics all properties of a system are included in a quantum state, $\ket{\psi}$, 
 inside of a Hilbert space upon which operators corresponding to observables act.
+
 Dirac's famous canonical quantisation
-rule (${\{A, B \} \rightarrow \frac{1}{i\hbar}[\hat{A}, \hat{B}]}$) allows us quantise 
-the canonical structure of classical mechanics (although Groenewold's theorem shows us 
-that such a rule cannot hold for all functions of the dynamical variables). 
-To obtain a quantised field theory we consider the field theoretic poisson brackets
+rule (${\{A, B \} \rightarrow \frac{1}{i\hbar}[\hat{A}, \hat{B}]}$)~\cite{dirac1958}
+allows us quantise the canonical structure of
+classical mechanics (although Groenewold's theorem shows us 
+that such a rule cannot hold for all functions of the dynamical variables~\cite{GROENEWOLD}). 
+To obtain a quantised field theory we consider the field-theoretic poisson brackets
 \begin{equation}
-  {\{ \phi_n(z), \phi_m(w) \}}_f = 0 = {\{ \pi_n(z), \pi_m(w) \}}_f
+  {\{ \phi_n(z), \phi_m(w) \}}_f = 0 = {\{ \pi_n(z), \pi_m(w) \}}_f,
 \end{equation}
 \begin{equation}
-  {\{\phi_n(z), \pi_m(w) \}}_f = \delta_{nm}\delta^{(3)}(\vec{z} - \vec{w})
+  {\{\phi_n(z), \pi_m(w) \}}_f = \delta^n_m\delta^{(3)}(\vec{z} - \vec{w}).
 \end{equation}
 Which are quantised to the canonical commutation relations for the dynamical
-field operators acting on a Fock space
+field operators acting on a Fock space~\cite{FockSpace}
 \begin{equation}
   {[\hat{\phi}_n(z), \hat{\phi}_m(w) ]} = 0
-  = {[\hat{\pi}_n(z), \hat{\pi}_m(w) ]}
+  = {[\hat{\pi}_n(z), \hat{\pi}_m(w) ]},
 \end{equation}
 \begin{equation}
   {[ \hat{\phi}_n(z), \hat{\pi}_m(w) ]}
-  = i\hbar\delta_{nm}\delta^{(3)}(\vec{z} - \vec{w})
+  = i\hbar\delta^n_m\delta^{(3)}(\vec{z} - \vec{w}),
 \end{equation}
+where the classical field $\phi(z)$ is an eigenvalue of
+the operator $\hat{\phi}(z)$.
 However, just like Dirac's rule this procedure does not always produce a consistent quantum
-theory and in the case of quantising the Dirac Lagrangian we require the analogous anti-commutation
-relations because of the spin-statistics theorem.
-In principle, commutation relations are axioms of any quantum theory
-chosen to reproduce experimental observations.
-
-
-\subsection{Fock Space}
-After second quantisation in general we obtain an expression for the Hamiltonian operator
-in terms of various creation and annihilation operators (e.g. $a^{r\dagger}_{\vec{p}_1},
-b^{s\dagger}_{\vec{p}_2}, \dots$ and $a^{r}_{\vec{p}_1}, b^{s}_{\vec{p}_2}, \dots$ 
-respectively). Subsequently we define the vacuum state to be annihilated by
-all particle annihilation operators
+theory. In the case of fermionic fields canonical quantisation
+produces states with negative probability and a Hamiltonian 
+unbounded below~\cite{NtveEnrgy}; we require anti-commutation
+relations (because of the spin-statistics theorem~\cite{SpinStat})
+in natural units\footnote{n.b. the momentum conjugate to $\psi_\alpha$ is 
+$i\psi^\dagger_\alpha$}
 \begin{equation}
-  {a^{r}_{\vec{p}_1}}\!\!\ket{0} = b^{r}_{\vec{p}_1}\!\!\ket{0} = \dotsi = 0
+  {[\hat{\psi}_\alpha(z), \hat{\psi}_\beta^\dagger(w)]}_{+}
+  = \delta^\alpha_\beta\delta^{(3)}(\vec{z} - \vec{w}),
 \end{equation}
-Subsequently an $N$ particle state is
+where the unwritten anticommutators vanish.
+This implies the Dirac spinors are Grassmann (anticommuting)
+variables\footnote{n.b. $\phi^2$ is an eigenvalue of $\hat{\phi}^2 = 0$}
+and we require Berezin's notion of calculus on a Grassmann algebra~\cite{BerezinBook}
+to define integrals over these fields.
+
+\subsection{The path integral}
+In a quantised field theory the path integral can be used to
+express expectation values of operators and their compositions
 \begin{equation}
-  a^{r_1\dagger}_{\vec{p}_1}a^{r_2\dagger}_{\vec{p}_2}\dotsi
-  a^{r_N\dagger}_{\vec{p}_N}\!\!\ket{0} =
-  \ket{r_1, \vec{p}_1; r_2, \vec{p}_2; \dots; r_N, \vec{p}_N}
+  \int{\mathcal{D}\phi\,\left\{\varphi_1(x_1) \cdots \varphi_n(x_n)\right\}e^{iS[\phi]}} \propto
+  \braket{{\varphi_1(x_1) \cdots \varphi_n(x_n)}} =
+  \braket{0|\mathcal{T}\{\hat{\varphi}_1(x_1) \cdots \hat{\varphi}_n(x_n)\}|0},
 \end{equation}
-Thus the probability amplitude of a state transitioning from one particle to 
-another is
+where $\mathcal{T}$ is the time-ordering operator and we normalise probability
+amplitudes using the partition function
 \begin{equation}
-  \braket{r_2, \vec{p}_2|r_1, \vec{p}_1} =
-  \braket{0|a^{r_2}_{\vec{p}_2}a^{r_1\dagger}_{\vec{p}_1}|0}
+  Z[J] = \int{\mathcal{D}\phi\,\exp{\left[iS[\phi] + i\int{d^4x\, J(x)\phi(x) }\right]} },
 \end{equation}
-which generalises to transitions between arbitrary quantum states.
-Thus it becomes clear that in quantum field theory the study of probabilities is
-characterised by vacuum expectation values of operators and their products
-
-\newpage
-
-\section{Path Integral Formulation of Quantum Mechanics}
-
-\subsection{The Propagator}
-In quantum mechanics, the propagator is the probability 
-amplitude of observing a position $x_n$ at time $t_n$, given 
-the particle is at postion $x_1$ at time $t_1$. This can be 
-written as the scalar product of the two quantum states,
-\begin{equation} 
-K(x',t';x,t) := \langle x't'|xt \rangle .
-\label{propagator}
-\end{equation}
-
-We can rewrite this propagator as an integral over all 
-possible paths the particle can take. We call this the 
-Feynman path integral.
-
-First, we discretise the time between $t_n$ and $t$ as
-\[ t_{n+1} := t'>t_{n}>t_{n-1}>...>t_2>t_1>t =: t_0 ,\]
-giving $n+1$ equal peices $\Delta t = t_j-t_{j-1}$ for 
-$1 \leq j \leq n+1$.
-
-Since position eigenstates are complete, we have
-\begin{equation} 
-\int dx_j |x_jt_j \rangle \langle x_jt_j | = \mathbb{I},
-\end{equation}
-meaning we can rewite \eqref{propagator} as
-\begin{align} 
-K(x',t';x,t) =
-\int dx_{n}dx_{n-1}...dx_1 
-&\langle x_{n+1}t_{n+1}|x_{n}t_{n} \rangle
-\langle x_{n}t_{n}|x_{n-1}t_{n-1} \rangle
-... \notag \\
-&...\langle x_{2}t_{2}|x_{1}t_{1} \rangle
-\langle x_{1}t_{1}|x_{0}t_{0} \rangle .
-\label{pathint}
-\end{align}
-
-This can be thought of as integrating over all possible 
-paths, as depicted in Figure \ref{figpaths}.
-
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.4\textwidth]{paths.jpeg}
-\captionsetup{width=0.6\textwidth}
-\caption{Three possible paths from $(x,t)$ to $(x',t')$ with discretised time interval.}
-\label{figpaths}
-\end{figure}
-
-Dirac and Feynman cite(dirac, feynman) showed that for 
-small $\Delta t$ the path of a particle is determined 
-by the classical action, S, via the following,
 \begin{equation}
-\langle x_jt_j | x_{j-1}t_{j-1} \rangle
-=
-A \ exp \left\{\frac{i}{h}S(j,j-1)\right\}
-\label{pathofsmall}
+  \frac{1}{Z[0]}\int{\mathcal{D}\phi\,\varphi(x)e^{iS[\phi]}} = \braket{\varphi(x)},
 \end{equation}
-where $A$ is a normalisation constant.
-
-$S$ is the classical action determined by the time integral 
-of the Lagrangian. As we let $\Delta t \longrightarrow 0$ we 
-can approximate the path as a straight line, allowing us to 
-calculate the Lagrangian, and hence the action.
-\begin{align}
-    S(j,j-1) &= \int^{t_j}_{t_{j-1}} dt L_{classical}(x, \dot{x}) \notag \\
-    &= \int^{t_j}_{t_{j-1}} dt \left[ \frac{\mu \dot{x}^2}{2} - V(x) \right] \notag \\
-    &= \Delta t \left[ \frac{\mu}{2} \left(\frac{x_j - x_{j-1}}{\Delta t} \right)^2 
-    - V \left(\frac{x_j + x_{j-1}}{2} \right) \right] \\
-    &are these second and third lines neccessary? \notag
-\end{align}
-Note that one can show $A = \left(\frac{\mu}{2 \pi \hbar i \Delta t} \right)^{\frac{1}{2}}$.
-
-Subbing \eqref{pathofsmall} into \eqref{pathint} and 
-taking the limit as $N \longrightarrow \infty$ and 
-$\Delta t \longrightarrow 0$ gives
-\begin{align}
-K(x',t';x,t) &= \lim_{\substack{n \to \infty \\ \Delta t \to 0}} \left[ \left(\frac{\mu}{2 \pi \hbar i \Delta t} \right)^{\frac{n+1}{2}}
-\int dx_{n}dx_{n-1}...dx_1 \prod_{j=1}^{n}exp \left\{\frac{i}{h}S(j,j-1)\right\} \right] \notag\\
-&= \lim_{\substack{n \to \infty \\ \Delta t \to 0}} \left[ \left(\frac{\mu}{2 \pi \hbar i \Delta t} \right)^{\frac{n+1}{2}}
-\int dx_{n}dx_{n-1}...dx_1 \ exp \left\{ \frac{i}{h} \sum_{j=1}^n S(j,j-1)\right\} \right] \notag\\
-&= \lim_{\substack{n \to \infty \\ \Delta t \to 0}} \left[ \left(\frac{\mu}{2 \pi \hbar i \Delta t} \right)^{\frac{n+1}{2}}
-\int dx_{n}dx_{n-1}...dx_1 \ exp \left\{ \frac{i}{h} \sum_{j=1}^n \int_{j-1}^{j} L_{clasical}(x, \dot{x})\right\} \right] \notag\\
-&= \lim_{\substack{n \to \infty \\ \Delta t \to 0}} \left(\frac{\mu}{2 \pi \hbar i \Delta t} \right)^{\frac{n+1}{2}}
-\int dx_{n}dx_{n-1}...dx_1 \ exp \left\{ \frac{i}{h} \sum_{j=1}^n \int_{t_0}^{n+1} L_{clasical}(x, \dot{x})\right\}
-\\need to fix this equation
-\end{align}
-
-\begin{prop}
-The Feynman path integral is equivalent to Schrödinger's theory.
-\end{prop}
-
-\subsection{The Partition Function}
-We consider a system that evolves from a vacuum state at $t \to -\infty$ back to 
-a vacuum state at $t \to \infty$, in the 
-presence of a source. A vacuum state is a groundstate with zero quantum number (what?). 
-
-The source is introduced 
-in the Lagrangian by 
+and define the `quantum action' via
 \begin{equation}
-L \to L + \hbar J(t)x(t),
+  W[J] \coloneq -i\log{Z[J]}.
 \end{equation}
-where $J(t)$ is the source and $x(t)$ is the path.
-
-We define the partition function as the transition amplitude in the presence of this source,
+To perform calculations with the path integral we must
+perform a wick transformation so that the Lagrangian is integrated 
+over Euclidean space, after which we transform the time axis 
+back to $\mathbb{R}$ via analytic continuation. In Euclidean 
+space we have
 \begin{equation}
-Z[J]:= \langle 0,-\infty ; 0, \infty \rangle ^J,
+  Z[J] = \int{\mathcal{D}\phi\,\exp{\left[-S_E[\phi] +
+  \int{d^4{x_E}\,J(x)\phi(x)}\right] }}, \quad Z[J] = e^{-W_E[J]}.
 \end{equation}
-which one can prove is equivalent to 
+
+
+\section{Symmetries in QFT}
+
+\subsection{Slavnov-Taylor identities}
+We now extend our investigation of symmetries from classical fields to a
+quantised theory. Suppose the classical action admits a local symmetry
+such that the path integral measure is invariant
 \begin{equation}
-Z[J]= \int d[x(t)] exp\left\{\frac{i}{\hbar}\int^{\infty}_{-\infty}dt (L + \hbar J(t) x(t) + \frac{1}{2} i \epsilon x^2) \right\}.
+  \phi_\mu \mapsto \phi_\mu + \delta_\epsilon\phi_\mu +
+  \mathcal{O}(\epsilon^2); \quad \delta_\epsilon\phi_\mu = \epsilon\vartheta_\mu(\phi, x),
 \end{equation}
-what is epsilon?
+\begin{equation}
+  \mathcal{D}\phi \mapsto
+  \mathcal{D}\phi\,\det\!{\left(\frac{\partial \phi'_{\mu}(x)}{\partial \phi_\nu(y)}\right)}
+  = \mathcal{D}\phi
+\end{equation}
+where $B_{\mu\nu} = \frac{\partial \phi'_{\mu}(x)}{\partial \phi_\nu(y)}$ is the 
+transformation Jacobian. Thus the partition function $Z[J]$ is invariant
+and for a source $J^\mu$ corresponding to $\phi_\mu$, and 
+in Euclidean space we can write
+\begin{equation}
+  Z[J] = \int{\mathcal{D}\phi\,\exp{\left[-S[\phi]
+    + \int{d^4x\, J^\mu(x)(\phi_\mu(x) + \delta_\epsilon\phi_\mu
+    +\mathcal{O}(\epsilon^2) )}\right]} },
+\end{equation}
+\begin{equation}
+  Z[J] = \int{\mathcal{D}\phi\,\left\{ 1 + \int{d^4x\,J^\mu(x)\delta_\epsilon\phi_\mu
+    + \mathcal{O}(\epsilon^2)} \right\}
+  \exp{\left[-S[\phi] + \int{d^4\,J^\mu(x)\phi_\mu(x)}\right]} },
+\end{equation}
+and after interchanging the spacetime and path integrals we have
+\begin{equation}\label{eq:4}
+  \int{d^4x\,J^\mu(x)\!\braket{\vartheta_\mu(\phi, x)}}_J = 0.
+\end{equation}
+We define the effective quantum action as the Legendre transform
+\begin{equation}
+  \Gamma[\varphi] = W[J] - \int{d^4x\,J^\mu(x)\varphi_\mu(x)}; \quad 
+  \quad \varphi_\mu \coloneq \braket{\phi_\mu}_J.
+\end{equation}
+Taking the functional derivative we obtain
+\begin{equation}
+  J^\mu(x) = - \frac{\delta \Gamma[\varphi]}{\delta \varphi_\mu(x)},
+\end{equation}
+and after using~\eqref{eq:4} and the definition
+of a functional derivative we have
+\begin{equation}
+  \delta\Gamma[\varphi_\mu;\braket{\vartheta_\mu(\phi, x)}_J] = 0.
+\end{equation}
+Thus the effective quantum action is invariant under the transformations
+\begin{equation}
+  \varphi_\mu \mapsto \varphi_\mu + \epsilon\!\braket{\vartheta_\mu(\phi, x)}_J,
+\end{equation}
+such a relation is called a Slavnov-Taylor identity~\cite{Slavnov, Taylor, Slavnov–Taylor}.
+If the transformation is linear in the
+fields\footnote{i.e. linear $R^\mu_n(\phi_k)$ in~\eqref{eq:5}} such that
+\begin{equation}\label{eq:7}
+  \vartheta_\mu = \Theta_\mu[\phi, x] = \alpha_\mu(x) +
+  \int{d^4y\,\beta^\nu_\mu(x, y)\phi_\nu(y) },
+\end{equation}
+the transformation Jacobian becomes field independent
+\begin{equation}
+  B_{\mu\nu} = \frac{\delta}{\delta\phi_\nu(y)}(\phi_\mu +\epsilon\Theta_\mu[\phi, x])
+  = \delta_{\mu\nu}\delta^{(4)}(x - y) + \epsilon\beta^\nu_\mu(x, y),
+\end{equation}
+and can be brought out of the path integral.
+Thus even if the path integral measure is not invariant 
+the normalised correlators will be, granted the Jacobian is non-singular.
+Moreover, we have
+\begin{equation}
+\braket{\Theta_\mu[\phi, x]}_J = \alpha_\mu(x) +
+\int{d^4y\,\beta^\nu_\mu(x, y)\braket{\phi_\nu(y)}_J } = \Theta_\mu[\varphi, x],
+\end{equation}
+which implies the effective quantum action is
+invariant under the same transformation as the 
+classical action, namely,
+\begin{equation}
+  \varphi_\mu \mapsto \varphi_\mu + \epsilon\Theta_\mu[\varphi, x],
+\end{equation}
+is a symmetry of $\Gamma[\varphi]$. In this case, the
+quantum theory inherits the classical symmetry
+and it is impossible to violate the symmetry via quantum effects
+like loop diagrams because the corresponding correlators are invariant~\cite{Slavnov–Taylor}.
+
+\subsection{Ward-Takahashi identities}
+
+The classical conservation laws for Noether currents present in classical field theory
+have an analogue in the quantum theory, the Ward-Takahashi identities.
+Noether's first theorem in the classical theory induces
+conservation relations for correlators in the quantum field theory.
+Consider a bounded functional of the fields $F[\phi]$ and its vacuum expectation value
+\begin{equation}
+  \braket{F[\phi]} = \frac{1}{Z[0]}\int{\mathcal{D}\phi'\,F[\phi']e^{iS[\phi']}},
+\end{equation}
+\begin{equation}
+  \quad \phi' = \phi + \delta_\epsilon\phi +\mathcal{O}(\epsilon^2);
+  \quad \delta_\epsilon\phi = \epsilon\lambda(\phi,x),
+\end{equation}
+which follows from relabeling the variable of integration. Suppose
+the field transformation preserves the path integral measure, then
+taking the functional taylor expansion leads to
+\begin{equation}
+  \braket{F[\phi]} = \frac{1}{Z[0]}\int{\mathcal{D}\phi\,\left(F[\phi] +
+    \frac{\delta F[\phi]}{\delta\phi}\epsilon\lambda +\mathcal{O}(\epsilon^2) \right)
+    \exp{\left[ iS{[\phi]} + i\frac{\delta S[\phi]}{\delta\phi}\epsilon\lambda
+  + \mathcal{O}(\epsilon^2) \right]}},
+\end{equation}
+\begin{equation}
+  \braket{F[\phi]} = \frac{1}{Z[0]}\int{\mathcal{D}\phi\,
+    \left(F[\phi] + \frac{\delta F[\phi]}{\delta\phi}\epsilon\lambda \right)
+    \left(1 + i\frac{\delta S[\phi]}{\delta\phi}\epsilon\lambda\right)e^{iS[\phi]} }
+    + \mathcal{O}(\epsilon^2),
+\end{equation}
+and to first-order in $\epsilon$ we have
+\begin{equation}
+ \int{\mathcal{D}\phi\,\lambda(\phi,x) \left(
+    \frac{\delta F[\phi]}{\delta\phi} +
+    iF[\phi]\frac{\delta S[\phi]}{\delta\phi} \right)e^{iS[\phi]} } = 0.
+\end{equation}
+Since $\lambda(\phi,x)$ is smooth and arbitrary this implies the
+Dyson-Schwinger equation~\cite{DysonDSE,SchwingerDSE}
+\begin{equation}
+  \Braket{\frac{\delta F[\phi]}{\delta\phi}} = -i\Braket{F[\phi]\frac{\delta S[\phi]}{\delta\phi}}.
+\end{equation}
+Suppose the classical Noether current $j^\mu(x)$ has an analogue $\hat{\jmath}^\mu(x)$
+in the operator formalism and the operators
+$\{\widehat{\mathcal{V}}_i(z_i)\}$ are functions of spacetime. The 
+derivative of their correlator is
+\begin{multline}\label{eq:11}
+  \partial^x_{\mu}\!\Braket{j^\mu(x)\prod^n_{i=1}{\!\mathcal{V}_i(z_i)}} = 
+  \Braket{\partial^x_{\mu}j^\mu(x) \prod^n_{i=1}{\!\mathcal{V}_i(z_i)}} \\ + 
+  \mathlarger{\mathlarger{\sum}}_{k = 1}^{n}{ \delta(x_0 - z_{k_0})
+  \!\Braket{{\left[j^0(x), \mathcal{V}_k(z_k)\right]}_{z_k}\prod^n_{i\neq k}{\!\mathcal{V}_i(z_i)} } },
+\end{multline}
+where we define the commutator in the time-ordered product
+(time-ordered with respect to the subscript) as
+\begin{equation}\label{eq:12}
+ {[j(x),\mathcal{A}_m(y_m) ]}_{y_m} \coloneq
+  \Theta(y_{\alpha_0} - x_0)\hat{\jmath}(x)\widehat{\mathcal{A}}_m(y_m) -
+  \Theta( x_0 - y_{\beta_0})\widehat{\mathcal{A}}_m(y_m)\hat{\jmath}(x);
+\end{equation}
+\begin{equation}
+  \mathcal{T}\prod_{i=1}^n{\widehat{\mathcal{A}}_i} =
+  \cdots \widehat{\mathcal{A}}_{\alpha}(y_\alpha) \widehat{\mathcal{A}}_m(y_m)
+  \widehat{\mathcal{A}}_{\beta}(y_\beta) \cdots,
+\end{equation}
+using the Heaviside function $\Theta$ (see appendix for proof).
+The Noether current is only conserved on-shell so we cannot apply
+current conservation to the second term (the path integral
+is taken over all field configurations). Assuming that
+the symmetry corresponding to $j^\mu$ leaves the path integral
+measure invariant and transforms $\mathcal{V}_i$ as
+\begin{equation}
+  \mathcal{V}_i(\phi) \mapsto \mathcal{V}_i(\phi) + \delta_\epsilon\mathcal{V}_i(\phi)
+  + \mathcal{O}(\epsilon^2); \quad \delta_\epsilon\mathcal{V}_i =
+  \frac{\partial\mathcal{V}_i}{\partial\phi}\delta_\epsilon\phi,
+\end{equation}
+using the Dyson-Schwinger equation with $F[\phi] = \prod_i{\mathcal{V}_i}$
+and~\eqref{eq:6} we have to first-order in $\epsilon$
+\begin{equation}
+  \Braket{\int{d^4x\,\epsilon\partial^x_\mu j^\mu(x)}\prod^n_{i=1}{\mathcal{V}_i(z_i)}} =
+  -i\mathlarger{\mathlarger{\sum}}_{k =1}^n{\Braket{\delta_\epsilon\mathcal{V}_k(z_k)
+  \prod_{i \neq k}^n{\mathcal{V}_i(z_i)}}}.
+\end{equation}
+Demanding the generator $\lambda(\phi, x)$ is smooth and compactly
+supported and interchanging the spacetime and path integrals
+leads to\footnote{n.b.\,\eqref{eq:1}$ \implies \partial^x_\mu j^\mu = -\lambda E$}
+\begin{equation}
+  \Braket{ \partial^x_\mu j^\mu(x)\prod^n_{i=1}{\mathcal{V}_i(z_i)} } = 
+  -i\mathlarger{\mathlarger{\sum}}_{k=1}^n{\delta^{(4)}(x - z_k)
+    \Braket{ \lambda(\phi, x)\frac{\partial\mathcal{V}_k}{\partial\phi}(z_k)
+  \prod_{i \neq k}^n{\mathcal{V}_i(z_i)}} },
+\end{equation}
+via the fundamental lemma of the calculus of variations.
+The delta function terms are called Schwinger/contact terms 
+and in the case that none of the insertion times coincide we have 
+the Ward-Takahashi identity~\cite{WardWTI,TakahashiWTI}
+\begin{equation}
+  \partial^x_{\mu}\!\Braket{j^\mu(x)\prod^n_{i=1}{\mathcal{V}_i(z_i)}} = 0;
+  \quad x_0 \neq z_{i_0}.
+\end{equation}
+These correlators can be computed perturbatively, and in the case
+of the axial current $j^\mu_5$, the three-point function corresponding
+to triangle Feynman diagrams violates the Ward-Takahashi identity;
+the Adler–Bell–Jackiw anomaly~\cite{Adler,Bell-Jackiw}.
+This suggests that the axial symmetry is not present in the quantum theory.
+Similarly, the Slavnov–Taylor identities imply it is a symmetry of
+the quantum theory if the path integral Jacobian is non-singular
+because the axial transformation is linear in the dirac fields.
+Thus for the class of symmetries linear in the dynamical fields
+in~\eqref{eq:7} a singular path integral Jacobian
+characterises the presence of an anomaly.
+
+\section{Anomalies in QFT}
+
+\subsection{The Path Integral measure \& Fujikawa's method}
+
+We shall now study transformations which are not necessarily symmetries
+of the path integral measure, to this end we must introduce a more
+precise notion of the path integral for fermionic fields using
+Berezin's formal integration of Grassmann variables~\cite{BerezinBook}.
+We decompose the Dirac spinor and its adjoint using an orthonormal basis $\{ \phi_n(x) \}$ of
+the Dirac operator's eigenfunctions and the independent Grassmann variables 
+$\theta_n$ and $\bar{\xi}_m$
+\begin{equation}
+  \psi = \sum_n{\theta_n\phi_n(x)} = \sum_n{\theta_n\!\braket{x|n}},
+\end{equation}
+\begin{equation}
+  \bar{\psi} = \sum_m{\bar{\xi}_m\phi^{\dagger}_m(x)} = \sum_m{\bar{\xi}_m\!\braket{m|x}}.
+  \end{equation}
+Hence the path integral `measure' can be seen as a
+Berezin integral `measure' under a coordinate transformation
+\begin{equation}
+  \theta \mapsto \theta_n\braket{x|n},\quad
+  \bar{\xi} \mapsto \bar{\xi}_m\braket{m|x},
+\end{equation}
+\begin{equation}
+  \mathcal{D}\psi\mathcal{D}\bar{\psi}
+  = {\left[\det{\braket{x|n}}\det{\braket{m|x}}\right]}^{-1}
+  \lim_{\substack{N \rightarrow \infty \\
+  M \rightarrow \infty}}{\left\{ \prod_n^N{d\theta_n}\prod_m^M{d\bar{\xi}_m} \right\}}
+  = \lim_{N \rightarrow \infty}{\prod_n^N{d\theta_n d\bar{\xi}_n}}.
+\end{equation}
+Under the infinitesimal vector transformation the Dirac spinor becomes
+\begin{equation}
+  \psi' = \sum_n{\theta_n'\phi_n(x)} ;\quad \theta_n' = e^{i\vartheta(x)}\theta_n,
+\end{equation}
+and similarly for the adjoint spinor. Thus the path integral measure transforms as
+\begin{equation}
+  \mathcal{D}\psi\mathcal{D}\bar{\psi} \mapsto
+  {\left[\det{\left(e^{i\vartheta(x)\mathbb{I}}\right)}
+  \det{\left(e^{-i\vartheta(x)\mathbb{I}}\right)} \right]}^{-1}
+  \mathcal{D}\psi\mathcal{D}\bar{\psi},
+\end{equation}
+and we see the measure is invariant; the vector symmetry is retained
+by the quantum theory and the correlators are gauge invariant
+by the Slavnov–Taylor identities.
+However, this is not the case for the axial transformation; 
+the axial symmetry is `anomalous'. The following is an
+outline of Fujikawa's method for the existence of the axial anomaly~\cite{Fujikawa,Fujikawa2}.
+Under the axial transformation where the Grassmann variables transform as
+\begin{equation}
+  \theta_n' = \sum_m{C_{nm} \theta_m}, \quad \bar{\xi}_n' = \sum_m{C_{nm} \bar{\xi}_m},
+\end{equation}
+\begin{equation}
+  C_{nm} = \delta_{nm} +i\int{d^4x\, \vartheta(x)\phi_{n}^{\dagger}(x)\gamma^5\phi_m(x)}.
+\end{equation}
+Using the identities
+\begin{equation}
+  \ln{(\mathbb{I} + \epsilon A)} = \epsilon A + \mathcal{O}(\epsilon^2),
+\end{equation}
+\begin{equation}
+  \det\left( e^{A}\right) = e^{\mathrm{Tr}(A)},
+\end{equation}
+we find that the path integral measure changes by the Jacobian
+\begin{equation}
+  J[\vartheta] = {(\det{C})}^{-2} = \exp\left[-2 \mathrm{Tr}(\ln{C}) \right],
+\end{equation}
+\begin{equation}
+  J[\vartheta] = \exp{\left[-2\mathrm{Tr}\left(i
+  \int{d^4x\,  \vartheta(x)\phi_{n}^{\dagger}(x)\gamma^5\phi_m(x)} \right) \right]},
+\end{equation}
+\begin{equation}\label{eq:10}
+  J[\vartheta] = \exp{\left[ -2i
+  \int{d^4x\,\vartheta(x) \sum_n{\phi_{n}^{\dagger}(x)\gamma^5\phi_n(x)}} \right]}.
+\end{equation}
+The sum appearing in the Jacobian is clearly divergent (by orthonormality)
+and requires the introduction of a regulator or ultraviolet cut-off to obtain a
+non-singular Jacobian. However, there is a much more elegant approach available involving 
+the Atiyah–Singer index theorem but first we show the relation between the axial anomaly
+and the axial current. Henceforth, we define the axial anomaly $\mathcal{A}$
+via the Jacobian of the path integral measure
+\begin{equation}
+   J[\vartheta] = \exp{\left[ -\int{d^4x\,\vartheta(x) \mathcal{A} } \right]},
+\end{equation}
+under the axial transformation the partition function becomes
+\begin{equation}
+  Z'[A_\mu, \vartheta] = \int{\mathcal{D}\psi'\mathcal{D}\bar{\psi}'\,
+  \exp{\left[ \int{d^4x\,\bar{\psi}'(i\slashed{D} -m)\psi' -\frac{1}{4}F_{\mu\nu}F^{\mu\nu} } \right]}},
+\end{equation}
+but this is just a relabeling of the integration variables and thus the partition
+function is invariant. Considering the change in the QED lagrangian we have
+\begin{equation}
+  Z[A_\mu, \vartheta] = \int{\mathcal{D}\psi\mathcal{D}\bar{\psi}\,J[\vartheta]
+    \exp{ \left[ \int{d^4x\, \mathcal{L}_{\mathrm{QED}} + \vartheta(x)(\partial_\mu j^\mu_5
+- 2im\bar{\psi}\gamma^5\psi) }  \right] } }.
+\end{equation}
+Thus to first order in $\vartheta(x)$ we have
+\begin{equation}
+   Z[A_\mu, \vartheta] = \int{\mathcal{D}\psi\mathcal{D}\bar{\psi}\, \left\{1 + \int{d^4x\,
+     \vartheta(x)(\partial_\mu j^\mu_5 - 2im\bar{\psi}\gamma^5\psi -\mathcal{A})} \right\}
+   \exp{\left[ \int{d^4x\, \mathcal{L}_{\mathrm{QED}} } \right]}},
+\end{equation}
+by the fundamental lemma of the calculus of variations~\cite{calcvar} we attain 
+the anomalous divergence for the axial current
+\begin{equation}
+  \partial_\mu j^\mu_5 = 2im\bar{\psi}\gamma^5\psi + \mathcal{A}.
+\end{equation}
 
 
+\subsection{Atiyah–Singer index Theorem}
 
-\subsection{Time Ordered Products}
-AKA greens functions
-\subsection{Functional Derivatives of the Partition Function}
-This is why the partition function is aolso called generating functional
+Given an eigenfunction of the Dirac operator
+$\slashed{D}$, $\phi_n$, with an eigenvalue $\lambda_n \neq 0$ 
+,$\gamma^5\phi_n$ is also an eigenfunction
+\begin{equation}
+  \slashed{D}(\gamma^5\phi_n) = -\gamma^5\slashed{D}(\phi_n) = -\lambda_n\gamma^5\phi_n,
+\end{equation}
+and the two are orthogonal as they have different eigenvalues.
+However, when the eigenvalue is zero $\phi_n$ and $\gamma^5\phi_n$ correspond to $\lambda_n = 0$
+and are called zero modes of $\slashed{D}$. We also have that $\gamma^5$ is 
+hermitian thus by the spectral theorem there is a basis that diagonalises $\gamma^5$
+and spans $\mathrm{Ker}(\slashed{D})$. The eigenvalues of $\gamma^5$ are $\pm 1$
+(because ${(\gamma^5)}^2 = I_4$) and we use the projection
+operators $P_\pm = \frac{1}{2}(I_4 \pm \gamma^5)$ to decompose
+spinors into their positive and negative eigenvalue (positive and negative chirality respectively)
+components. Ignoring the infinitesimal parameter for now, only the zero modes contribute
+to the integral in the Jacobian because of orthonormality and we have
+\begin{equation}
+  \int{d^4x\, \sum_n{\phi^\dagger_n\gamma^5\phi_n}}
+  = \sum_n{\int{d^4x\,\phi^{0\dagger}_{n+}\phi^0_{n+}}}
+  -\sum_n{\int{d^4x\,\phi^{0\dagger}_{n-}\phi^0_{n-}}} = n_+ - n_-,
+\end{equation}
+\begin{equation}
+  \int{d^4x\, \mathcal{A}} = 2i(n_+ - n_-),
+\end{equation}
+where $n_\pm$ are the number of positive and negative chirality zero modes $\phi^0_{n\pm}$
+respectively. This is precisely the analytical index of the Dirac operator 
+projected onto the positive chirality subspace
+\begin{equation}
+  \mathrm{index}(\slashed{D}_{+}) = n_+ - n_-, 
+\end{equation}
+\begin{equation}
+  \slashed{D}_\pm \coloneq \slashed{D}P_{\pm} = \slashed{D}\big|_{\{\pm\}}.
+\end{equation}
+By the Atiyah–Singer index theorem this coincides with the Dirac operator's 
+topological index on a compact manifold~\cite{Atiyah-Singer}.
+This implies that the axial anomaly is a topological invariant of the quantum theory
+and no regularisation procedure can restore the axial symmetry.
+On a 4-dimensional compact manifold $\Omega$ without boundary and
+Riemannian curvature $R$ the topological index is~\cite{AST-Alvarez-Gaume,DiffGeomGauge}
+\begin{equation}
+  \mathrm{index}(\slashed{D}_+ ) =  \int_{\Omega}{\hat{A}(\Omega)\mathrm{ch}(F)},
+\end{equation}
+where the integrand, called the index density, only includes 4-form terms and the curvature
+form is given by $F = e\,dA = \frac{e}{2}F_{\mu\nu}dx^\mu \wedge dx^\nu$.
+The characteristic classes
+$\mathrm{ch}(F)$ and $\hat{A}(\Omega)$ are the Chern character
+of the curvature and Dirac genus of the manifold respectively
+\begin{equation}
+  \mathrm{ch}(F) = \mathrm{Tr}\left(\exp{\left[ \frac{i}{2\pi}F \right]}\right),
+\end{equation}
+\begin{equation}
+  \hat{A}(\Omega) = \sqrt{ \det{\left( \frac{ \frac{i}{4\pi}R }{ \sinh{\frac{i}{4\pi}R} } \right) } }. 
+\end{equation}
+Now we pick the manifold $S^{4} = \Omega$ so the Riemannian curvature is 
+constant and $\hat{A}(\Omega) = 1$. Thus the index becomes
+\begin{equation}
+  \mathrm{index}(\slashed{D}_+ ) =  \int_{S^4}{\mathrm{ch}(F)}
+  = \frac{1}{2!}{\left(\frac{i}{2\pi}\right)}^2 \int_{S^4}{\mathrm{Tr}(F^2)}.
+\end{equation}
+Assuming that the action due to the Maxwell Lagrangian is finite
+\begin{equation}\label{eq:8}
+  \int_{S^4}{d^4x\, F_{\mu\nu}F^{\mu\nu}} < \infty \iff 
+  A_\mu\big|_{S^4} \xrightarrow{x \rightarrow \infty} - \frac{i}{e}g^{-1}\partial_{\mu}g\big|_{S^4};
+  \quad g(x)\in \mathrm{U}(1),
+\end{equation}
+we can map our problem from $S^4$ to $\mathbb{R}^4$
+and $\mathrm{ch}(F)$ coincides with the Dirac operator's
+index density in Euclidean space if the gauge fields $A_\mu$
+obey~\eqref{eq:8}~\cite{JackiwRebbi1977,Belavin}.
+Using antisymmetry of the wedge product we identify the
+axial anomaly in Euclidean space as 
+\begin{equation}
+  \partial_\mu j^\mu_5 - 2im\bar{\psi}\gamma^5\psi =
+  \mathcal{A}[A_\mu] = \frac{-ie^2}{16\pi^2}
+  \mathrm{Tr}(\epsilon^{\mu\nu\rho\sigma} F_{\mu\nu}F_{\rho\sigma}).
+\end{equation}
 
-\section{Generalising the Path Integral to Quantum Field Theory}
-In the same way we generalised classical mechanics to 
-classical field theory in section ---, we can generalise 
-quantum mechanics to quantum field theory. That is, instead 
-of considering trajectories of a particle x(t), we
+\subsection{Anomalies as obstructions to gauging}
 
-maybe talk about why deriving the PI approach to QFT is difficult
+We have seen that a singular path integral Jacobian is a necessary and 
+sufficient condition for anomalous linear symmetries.
+In the general case, gauging such a symmetry will
+produce a gauge-variant partition function because constructing a gauge invariant
+classical action ensures the shift in the measure changes the partition function.
+This gauge symmetry breaking is tantamount to a violation of unitarity\footnote{i.e probability
+non-conservation} and is fatal for any quantum theory.
 
-talk about how generating functional generalises and how time ordered products generalise to operators I think?
+We now study the effect of gauging an anomalous symmetries in the case of
+the Dirac Lagrangian's axial symmetry. Using Fujikawa's method~\cite{Fujikawa,Fujikawa2}
+we shall calculate the anomaly for the `axial theory' although a topological approach analogous to
+the previous section is possible (cf.~\cite{AlvarezGuameNon-AB,Sumitani1984})
+using the Atiyah–Singer Families index theorem~\cite{FamiliesIndex}.
+For the theory of massless Dirac fermions coupling to a $\mathrm{U}(1)$ axial boson in~\eqref{eq:9}, 
+the path integral in Euclidean space is 
+\begin{equation}
+  \int{\mathcal{D}\psi\mathcal{D}\bar{\psi}\,
+    \exp{\left[- \int{d^4x\, \bar{\psi}i\widetilde{\slashed{D}}\psi
+  -\frac{1}{4}\mathrm{Tr}(K_{\mu\nu}K^{\mu\nu})} \right]}}.
+\end{equation}
+The classical action is gauge-invariant by construction, thus the only change in
+the path integral under a gauge transformation is from the Jacobian
+\begin{equation}
+    \int{\mathcal{D}\psi'\mathcal{D}\bar{\psi}'\, e^{-S[\psi',\bar{\psi}']} } =
+    \int{\mathcal{D}\psi\mathcal{D}\bar{\psi}\, J[\vartheta] e^{-S[\psi,\bar{\psi}]} },
+\end{equation}
+where the Jacobian takes the same form as in~\eqref{eq:10} for an orthonormal
+basis of eigenfunctions $\{ \phi_n(x)\}$ of the operator $\widetilde{\slashed{D}}$.
+We now proceed via Fujikawa's method of gauge-invariant mode cut-off
+to calculate the Jacobian by introducing a smooth regulator $f(x)$ with
+all derivatives vanishing at infinity
+\begin{equation}
+  J[\vartheta] = \exp{\left[ -2i \lim_{N \rightarrow \infty}{ \left\{
+  \sum_{n=1}^N{ \int{d^4x\, \vartheta(x)\phi_n^\dagger\gamma^5\phi_n} } \right\} } \right]}, 
+\end{equation}
+\begin{equation}
+  J[\vartheta] = \exp{\left[ -2i \lim_{M \rightarrow \infty}{ \left\{
+          \sum_{n=1}^{\infty}{ \int{d^4x\, \vartheta(x)\phi_n^\dagger\gamma^5
+          f\left(\frac{\lambda_n^2}{M^2}\right) \phi_n} } \right\} } \right]}, 
+\end{equation}
+\begin{equation}
+  J[\vartheta] = \exp{\left[ -2i \lim_{M \rightarrow \infty}{
+  \mathrm{Tr}\left\{ \vartheta(x)\gamma^5
+f\left( \frac{ {\widetilde{\slashed{D}}}^2 }{M^2}\right) \right\}} \right]}, 
+\end{equation}
+where the functional trace is taken over spacetime using the basis $\{ \phi_n(x) \}$.
+Now we compute the series using momentum space
+\begin{equation}
+  \phi_n(x) = \int{\frac{d^4k}{(2\pi)^2}\,\tilde{\phi}_n(k)e^{ikx}   },
+\end{equation}
+\begin{equation}
+  \sum_{n = 1}^{\infty}{\phi_n^\dagger\gamma^5
+  f\left( \frac{\widetilde{\slashed{D}}{}^2 }{M^2} \right)\phi_n} =
+  \int{\frac{d^4k d^4p}{(2\pi)^4} \sum_{n=1}^{\infty}{ e^{-ipx}\tilde{\phi}_n^\dagger(p)
+      \gamma^5 f\left( \frac{ \widetilde{\slashed{D}}{}^2 }{M^2}\right) \tilde{\phi}_n(k)
+  e^{ikx} } },
+\end{equation}
+\begin{equation}
+  =  \int{\frac{d^4k}{(2\pi)^4}\, \mathrm{Tr}\left\{
+      \gamma^5 f\left( \frac{(\widetilde{D}_\mu +ik_\mu)(\widetilde{D}^\mu +ik^\mu)}{M^2}
+        + \frac{iq [\gamma^\mu,\gamma^\nu ]K_{\mu\nu} }{4M^2} \right)  \right\} }, 
+\end{equation}
+where we have used the identities
+\begin{equation}
+  \sum_{n = 1}^{\infty}{\tilde{\phi}_n^\dagger(p) A \tilde{\phi}_n(k)} =
+  \delta(k-p) \mathrm{Tr}(A),
+\end{equation}
+\begin{equation}
+  \widetilde{\slashed{D}}{}^2 = \widetilde{D}_\mu \widetilde{D}^\mu
+  + \frac{iq}{4}[\gamma^\mu, \gamma^\nu]K_{\mu\nu},
+\end{equation}
+\begin{equation}
+  e^{-ikx}f(\partial_\mu)e^{ikx} = f(\partial_\mu +ik_\mu).
+\end{equation}
+Now we rescale the momenta via $k_\mu \rightarrow Mk_\mu$ and the series becomes
+\begin{equation}
+  M^4 \int{\frac{d^4k}{(2\pi)^4}\, \mathrm{Tr}\left\{
+      \gamma^5 f\left( \frac{ \widetilde{D}_\mu \widetilde{D}^\mu
+        + 2iMk_\mu \widetilde{D}^\mu}{M^2} -k^2
+        + \frac{iq [\gamma^\mu,\gamma^\nu ]K_{\mu\nu} }{4M^2} \right)  \right\} }, 
+\end{equation}
+expanding the Taylor series of $f(x)$ about $-k^2 = - k_\mu k^\mu$, and using the trace 
+properties of the gamma matrices the only term non-vanishing in
+the limit $M \rightarrow \infty$ is the term quadratic in $\Gamma_{\mu\nu}$ 
+\begin{equation}
+  \frac{M^4q^2}{2!M^4}\mathrm{Tr}(\epsilon^{\mu\nu\rho\sigma}K_{\mu\nu}K_{\rho\sigma})
+  \int{\frac{d^4k}{(2\pi)^4}f''(-k^2) },
+\end{equation}
+and we have 
+\begin{equation}
+J[\vartheta] = \exp{\left[ \int{d^4x\, \frac{-iq^2}{16\pi^2}
+      \mathrm{Tr}(\epsilon^{\mu\nu\rho\sigma}K_{\mu\nu}K_{\rho\sigma})
+      \vartheta(x)} \right]},
+\end{equation}
+thus there is gauge-variance in the path integral and the quantum theory
+is inconsistent. 
 
-\section{Anomalies in QFT \& violation of Ward identities}
+\section{Conclusion}
 
-\newpage
-\bibliographystyle{unsrt}
+In this work, we have shown the connection between symmetries in classical
+and quantum field theories, namely, Noether's theorem's in the classical
+theory induce the Ward-Takahashi identities in the quantum theory.
+Additionally, we have given a characterisation
+of anomalies in the case of linear symmetries as corresponding to
+singular path integral Jacobians and demonstrate the failure inherit to
+gauging an anomalous `linear' symmetry. Moreover, we have shown
+that the axial symmetry admits a well-formulated classical gauge theory
+but the axial anomaly breaks gauge symmetry in the quantum theory.
+Due to the topological nature of the axial anomaly, such a violation
+of unitarity is irrecoverable and a $\mathrm{U}(1)$ axial boson 
+coupled to Dirac fermions does not exist.
+
+\appendix
+\section{N-point function derivative}
+We now give a proof of~\eqref{eq:11}. Observe that
+\begin{equation}
+  \partial^x_{\mu}\!\Braket{j^\mu(x)\prod^n_{i=1}{\!\mathcal{V}_i(z_i)}} =
+  \partial^x_{\mu}\!\Braket{0|\mathcal{T}\left\{ \hat{\jmath}^\mu(x)
+  \prod^n_{i=1}{\!\widehat{\mathcal{V}}_i(z_i)} \right\}|0}.
+\end{equation}
+Let the vertex operators have time-ordering
+$\left\{ \widehat{\mathcal{U}}_i(y^i) \right\} =
+\left\{{\widehat{\mathcal{V}}}_i(z_i) \right\}$
+such that $y^i_0 > y^{i+1}_0$, then
+\begin{equation}\label{eq:a1}
+\Braket{0|\mathcal{T}\left\{ \hat{\jmath}^\mu(x)
+  \prod^n_{i=1}{\!\widehat{\mathcal{V}}_i(z_i)} \right\}|0} = 
+  \mathlarger{\sum}^n_{i=0}{ \Theta(y^i_0 - x_0)\Theta(x_0 - y^{i+1}_0)
+    \braket{0|{\widehat{\mathcal{U}}_1\cdots\widehat{\mathcal{U}}_i}\,\hat{\jmath}^\mu(x)
+    {\widehat{\mathcal{U}}_{i+1}\cdots\widehat{\mathcal{U}}_n}|0}},
+\end{equation}
+where we set $y^0_0 = -\infty$. Subsequently, by differentiation
+of the Heaviside functions we have
+\begin{multline}
+  \partial^x_{\mu}\!\Braket{j^\mu(x)\prod^n_{i=1}{\!\mathcal{V}_i(z_i)}} =
+  \Braket{0|\mathcal{T}\left\{\partial^x_{\mu}\hat{\jmath}^\mu(x)
+  \prod^n_{i=1}{\!\widehat{\mathcal{U}}_i(y^i)}\right\}|0} \\ 
+  + \mathlarger{\sum}^n_{i=0}{\left\{\delta(x_0-y^{i+1}_0)\Theta(y^i_0 - x_0) -
+    \delta(x_0-y^{i}_0)\Theta(x_0 - y^{i+1}_0)\right\}
+      \braket{0|{\widehat{\mathcal{U}}_1\cdots\widehat{\mathcal{U}}_i}\,\hat{\jmath}^0(x)
+    {\widehat{\mathcal{U}}_{i+1}\cdots\widehat{\mathcal{U}}_n}|0}
+  }.
+\end{multline}
+After noting that $\delta(x_0 - y^0_0) = 0$, we see that the third term is
+\begin{equation}
+  \mathlarger{\sum}^n_{i=1}{\delta(x_0 - y^i_0)
+    \braket{0|{\widehat{\mathcal{U}}_1\cdots\widehat{\mathcal{U}}_{i-1}}
+    {[j^0(x),\mathcal{U}_i(y^i)]}_{y^i}\,
+    {\widehat{\mathcal{U}}_{i+1}\cdots\widehat{\mathcal{U}}_n}|0} },
+\end{equation}
+using the notation in~\eqref{eq:12}. Each term in the sum is clearly a time-ordered
+product of the commutator and the $\mathcal{U}_i$ operators. Seeing 
+that the time-ordered product with and $\mathcal{U}_i$ and $\mathcal{V}_i$ coincide,
+it is clear that~\eqref{eq:a1} can be written as~\eqref{eq:11}.
+
+
+\bibliographystyle{JHEP}
 \bibliography{reportNotes}
-\addcontentsline{toc}{section}{References}
 
 \end{document}

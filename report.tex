@@ -78,18 +78,18 @@ a $\mathrm{U}(1)$ axial boson coupled to Dirac fermions does not exist.
 \section{Symmetries in Classical Gauge theory}
 
 \subsection{Classical field theory}
-In classical mechanics we consider a countable set of particles
+In classical mechanics, we consider a countable set of particles
 each with finitely many degrees of freedom
 and generalised coordinates $q_i(t)$. These generalised coordinates ${\{ q_i(t) \}}_i$ specify
-the system's configuration (position in configuration space) and together with the 
+the system's configuration (position in configuration space), and together with the 
 generalised conjugate momenta
-${\left\{p_i(t) \coloneq \frac{\partial L}{\partial \dot{q}_i} \right\}}_i $ 
+${\left\{p_i(t) \coloneq \frac{\partial L}{\partial \dot{q}_i} \right\}}_i $, 
 define the system's position in phase space~\cite{LA&LI-Mech-I}.
-In classical field theory we generalise this notion of configuration space to a
+In classical field theory, we generalise this notion of configuration space to a
 continuum with infinite degrees of freedom. The scalar field $\phi(t)$ can be seen as
 the generalised coordinates of a continuum 
-$\left( q_i(t) \xrightarrow{i \rightarrow \vec{x}} \phi(\vec{x}, t) \right)$ and for a system
-of continua the set of scalar fields ${\{ \phi_k(\vec{x}, t) \}}_k$
+$\left( q_i(t) \xrightarrow{i \rightarrow \vec{x}} \phi(\vec{x}, t) \right)$, and for a system
+of continua the set of scalar fields, ${\{ \phi_k(\vec{x}, t) \}}_k$,
 specifies the system's configuration~\cite{ClassField}.
 Subsequently, we generalise the classical Lagrangian $L(q_i(t), \dot{q}_i(t), t)$ via
 \begin{equation}
@@ -152,7 +152,7 @@ fields given by\footnote{n.b. $K({x}) = \int{d{y}\,[K({y}) \delta(x - y)]}$.}
   F = \int{d^3\vec{x}\, \mathcal{F}(\pi_k, \phi_k, \vec{x}, t)}, \quad
   G = \int{d^3\vec{x}\, \mathcal{G}(\pi_k, \phi_k, \vec{x}, t)},
 \end{equation}
-we define the poisson bracket in field theory via
+we define the poisson bracket in field theory as
 \begin{equation}
   {\{F, G \}}_{f} = \int{d^3\vec{x}\,
   \sum_{k}{\left[ \frac{\delta \mathcal{F}}{\delta \phi_k}\frac{\delta \mathcal{G}}{\delta \pi_k} 
@@ -161,41 +161,41 @@ we define the poisson bracket in field theory via
  
 
 \subsection{Noether's first theorem}
-In classical mechanics Noether's first theorem shows the correspondence between global symmetries of 
-the lagrangian and conserved quantities called Noether charges. This generalises to global symmetries
-of the lagrangian density corresponding to conserved Noether currents in classical field theory.
+In classical mechanics, Noether's first theorem shows the correspondence between global symmetries of 
+the Lagrangian and conserved quantities (Noether charges). This generalises to global symmetries
+of the Lagrangian density corresponding to conserved currents in classical field theory.
 Consider an infinitesimal field transformation $\vartheta(\epsilon)$ such that
 \begin{equation}
   \phi_n \mapsto \phi_n + \delta_\epsilon\phi_n + \mathcal{O}(\epsilon^2); \quad 
   \delta_\epsilon\phi_n = \epsilon\vartheta_n(\phi_k),
 \end{equation}
-where the generators, $\vartheta_k$, are independent of spacetime.
+where the infinitesimal generators, $\vartheta_k$, are independent of spacetime.
 A transformation is called a global symmetry if its effect on the Lagrangian density is
 \begin{equation}
   \mathcal{L} \mapsto \mathcal{L} + \epsilon\partial_\mu\Lambda^\mu(\phi_k, x)
   + \mathcal{O}(\epsilon^2).
 \end{equation}
-This transformation changes the action by a surface term and the Euler-Lagrange equations
-are invariant. Using a Taylor expansion of the Lagrangian density under $\vartheta(\epsilon)$
+Such a transformation changes the action by a surface term, leaving the Euler-Lagrange equations
+invariant. Using a Taylor expansion of the Lagrangian density under $\vartheta(\epsilon)$
 we find that
 \begin{equation}\label{eq:6}
   \delta_\epsilon\mathcal{L} = \sum_k{\delta_\epsilon\phi_k E_k} + \partial_\mu\theta^\mu,
 \end{equation}
 \begin{equation}
   \quad \theta^\mu = \sum_k{\delta_\epsilon\phi_k
-  \frac{\partial \mathcal{L}}{\partial(\partial_\mu{\phi_k}) } }.
+  \frac{\partial \mathcal{L}}{\partial(\partial_\mu{\phi_k}) } },
 \end{equation}
-Where $E_k$ are the Euler-Lagrange derivatives and $\theta^\mu$ is
+where $E_k$ are the Euler-Lagrange derivatives and $\theta^\mu$ is
 the symplectic potential density~\cite{LocalSymm}.
 By considering the shift in the action we arrive at
 Noether's first theorem~\cite{Noether1918}; an 
 infinitesimal transformation $\vartheta(\epsilon)$ is a symmetry
-of the Lagrangian if and only if 
+of the Lagrangian if, and only if,
 \begin{equation}\label{eq:1}
   \epsilon j^\mu \coloneq \theta^\mu - \epsilon\Lambda^\mu,
-  \quad \epsilon\partial_\mu j^\mu = - \delta_\epsilon\phi_k E_k \approx 0.
+  \quad \epsilon\partial_\mu j^\mu = - \delta_\epsilon\phi_k E_k \approx 0,
 \end{equation}
-Where we use the summation convention for the field indices hereafter
+where we use the summation convention for the field indices hereafter,
 and the on-shell divergence-free quantity $j^\mu$ is called the conserved
 Noether current\footnote{n.b. $j^\mu$ is $\epsilon$-independent.}.
 This easily generalises to local symmetries: spacetime dependent generators
@@ -205,10 +205,10 @@ tensor obeys divergence relations on-shell
 \begin{equation}
   {T^\mu}_\nu = \frac{\partial \mathcal{L}}{\partial(\partial_\mu{\phi_k})} 
   \partial_\nu\phi_k -\delta^\mu_\nu\mathcal{L},
-  \quad \partial_\mu {T^\mu}_\nu \approx 0,
+  \quad \partial_\mu {T^\mu}_\nu \approx 0.
 \end{equation}
-which can be seen as the independent conservation relations of
-four Noether currents. By Noether's first theorem the transformations corresponding to
+This divergence property can be seen as the independent conservation relations of
+four Noether currents. By Noether's first theorem, the transformations corresponding to
 these Noether currents are the global symmetries
 \begin{equation}
   \phi_n(x^\mu) \mapsto \phi_n(x^\mu + \epsilon) = \phi_n(x^\mu)
@@ -231,7 +231,7 @@ the action shifts by
 \begin{equation}
   \delta_\xi S = \int{d^4x\, \delta_\xi\phi_n E_n + \partial_\mu\theta^\mu}.
 \end{equation}
-If $\lambda(x)$ is a compactly supported smooth function, the boundary term vanishes and we have
+If $\lambda(x)$ is a compactly supported smooth function the boundary term vanishes, and we have
 \begin{equation}
   \int{d^4x\, \delta_\xi\phi_n E_n} = 0,
 \end{equation}
@@ -244,30 +244,30 @@ and integration by parts leads to
 By the fundamental lemma of the calculus of variations~\cite{calcvar} we obtain the 
 off-shell constraint on the Euler-Lagrange derivatives $\Delta(E) = 0$.
 Thus the equations of motion are not
-all independent and the Euler-Lagrange equations ($E_n = 0$)
+all independent, and the Euler-Lagrange equations ($E_n = 0$)
 are under-determined. However, observables must be uniquely determined
-by the theory hence we conclude some degrees of freedom are gauge. Using
+by the theory, hence we conclude some degrees of freedom are gauge. Using
 the surface term $S^\mu$ from integration by parts we find an expression similar to~\eqref{eq:1}
 \begin{equation}
  \delta_\xi\phi_n E_n = \xi\partial_\mu S^\mu(E_k, \lambda),
 \end{equation}
 with the important difference that $S^\mu$ vanishes on-shell. The
-quantity $j^\mu + S^\mu$ is divergence-free off-shell, subsequently
+quantity $j^\mu + S^\mu$ is divergence-free off-shell, thus
 by the Poincaré lemma we obtain
 Noether's second theorem~\cite{Noether1918, Noeth2Ward, SuperPot};
-on-shell the canonical Noether current $j^\mu$ is
-the divergence of a rank-2 tensor
+the canonical Noether current $j^\mu$ is
+the divergence of a rank-2 tensor on-shell
 \begin{equation}\label{eq:2}
   j^\mu = -S^\mu(E_k, \lambda) + \partial_\nu \kappa^{\mu\nu}
   \approx \partial_\nu \kappa^{\mu\nu};
-  \quad \kappa^{\mu\nu} = -\kappa^{\nu\mu},
+  \quad \kappa^{\mu\nu} = -\kappa^{\nu\mu}.
 \end{equation}
-the antisymmetric tensor $\kappa^{\mu\nu}$ is called a superpotential.
+The antisymmetric tensor $\kappa^{\mu\nu}$ is called a superpotential.
 Although the superpotential is arbitrary ($\kappa^{\mu\nu}$
 is determined up to addition by a divergence-free quantity) 
 it can be uniquely determined if
 one demands the superpotential obeys additional constraints
-(such as asymptotic conservation)~\cite{SuperPot}. In the case of electrodynamics
+(such as asymptotic conservation)~\cite{SuperPot}. In the case of electrodynamics,
 the superpotential is electromagnetic field tensor and~\eqref{eq:2}
 becomes Maxwell's equations
 \begin{equation}
@@ -279,16 +279,15 @@ becomes Maxwell's equations
 \section{The Dirac Lagrangian}
 
 \subsection{Gauging the vector symmetry}
-In quantum mechanics the Schrodinger equation is not Lorentz invariant and is thus
+In quantum mechanics, the Schrodinger equation is not Lorentz invariant and is thus
 incompatible with special relativity. A generalisation of the relativistic
-dispersion relation using Hamiltonian and momentum operators
-for free particles leads to the Klein-Gordon
+dispersion relation, using Hamiltonian and momentum operators, leads to the Klein-Gordon
 equation\footnote{$(\square + m^2)\psi = 0$.}~\cite{Klein1926, Gordon1926}.
-However, the Klein-Gordon equation is a second order partial differential equation and
-subsequently does not uniquely determine time-evolution of the wavefunction.
+However, the Klein-Gordon equation is a second-order partial differential equation and
+subsequently does not uniquely determine the time-evolution of the wavefunction.
 Alternatively, by finding the half-iterate of the d'Alembert
 operator\footnote{$\square \coloneq \partial^2_t - \nabla^2$.}, the 
-Klein-Gordon equation simplifies to a first order partial differential equation;
+Klein-Gordon equation simplifies to a first-order partial differential equation;
 the Dirac equation~\cite{dirac1958}
 \begin{equation}
   (i \gamma^\mu\partial_\mu - m)\psi(x) = 0.
@@ -308,11 +307,11 @@ via Noether's first theorem
   j^\mu = \bar{\psi}\gamma^\mu\psi.
 \end{equation}
 We now attempt to `gauge' this symmetry by adding spacetime dependence
-to the infinitesimal parameter
+to the infinitesimal generator
 \begin{equation}
   \psi \mapsto e^{i\vartheta(x)}\psi, \quad \bar{\psi} \mapsto \bar{\psi}e^{-i\vartheta(x)}.
 \end{equation}
-However, the Lagrangian is not invariant under such a transformation so we introduce a
+However, the Lagrangian is not invariant under such a transformation, so we introduce a
 derivative operator which transforms covariantly
 \begin{equation}\label{eq:3}
   D_\mu \coloneq \partial_\mu + ie\Pi_\mu,
@@ -320,9 +319,9 @@ derivative operator which transforms covariantly
 \begin{equation}
   D_\mu \psi \mapsto D'_\mu\left[e^{i\vartheta(x)}\psi\right] = e^{i\vartheta(x)}D_\mu\psi.
 \end{equation}
-To satisfy this the gauge field must transform as
+To satisfy this, the gauge field must transform as
 \begin{equation}
-  \Pi_\mu \mapsto \Pi_\mu -\frac{1}{e}\partial_\mu\vartheta(x),
+  \Pi_\mu \mapsto \Pi_\mu -\frac{1}{e}\partial_\mu\vartheta(x).
 \end{equation}
 Thus we have a modified Lagrangian which admits a local $\mathrm{U}(1)$ gauge symmetry
 \begin{equation}
@@ -335,14 +334,14 @@ also has a $\mathrm{U}(1)$ gauge symmetry
 \begin{equation}
   \mathcal{L}_\mathrm{EM} = -\frac{1}{4}F_{\mu\nu}F^{\mu\nu} -A_\mu J^\mu.
 \end{equation}
-Thus we identify $\Pi_\mu = A_\mu$ and $ej^\mu = J^\mu$
-and arrive at the Lagrangian for quantum electrodynamics.
+Thus we identify $\Pi_\mu = A_\mu$ and $ej^\mu = J^\mu$,
+and arrive at the Lagrangian for quantum electrodynamics
 \begin{equation}
   \mathcal{L}_\mathrm{QED} = -\frac{1}{4}F_{\mu\nu}F^{\mu\nu} -eA_\mu j^\mu
     + \bar{\psi}(i \gamma^\mu\partial_\mu - m)\psi.
 \end{equation}
 Schwinger arrived at the covariant formulation of quantum electrodynamics
-similarly by constructing a Lagrangian invariant under Lorentz transformations,
+similarly, by constructing a Lagrangian invariant under: Lorentz transformations,
 gauge transformations, and charge conjugation~\cite{Schwinger}. 
 However, this is not the end of the story, the massless Dirac equation
 admits another global $\mathrm{U}(1)$ symmetry. In the next sections 
@@ -394,8 +393,8 @@ although this does not affect the following calculations.}
   \Pi_\mu \mapsto e^{i\vartheta\gamma^5}\Pi_\mu e^{-i\vartheta\gamma^5} 
   - \frac{1}{q}\partial_\mu\vartheta\gamma^5.
 \end{equation}
-This is not the only way to gauge the axial symmetry;
-theories with $\gamma^5$ couplings are a well-studied alternative
+This is the most general way to gauge the axial symmetry;
+theories with $\gamma^5$ couplings are a well-studied special case
 (cf.~\cite{Gamma5coupling}) hence we investigate the implications of~\eqref{eq:13}.
 Now we must add a kinetic term to the Lagrangian to determine the dynamics 
 of the matrix-valued gauge field\footnote{n.b. $\Pi^{ab}_\mu$ has two
@@ -805,13 +804,13 @@ under the axial transformation the partition function becomes
   \exp{\left[ \int{d^4x\,\bar{\psi}'(i\slashed{D} -m)\psi' -\frac{1}{4}F_{\mu\nu}F^{\mu\nu} } \right]}},
 \end{equation}
 but this is just a relabeling of the integration variables and thus the partition
-function is invariant. Considering the change in the QED lagrangian we have
+function is invariant. Considering the change in the QED Lagrangian we have
 \begin{equation}
   Z[A, \vartheta] = \int{\mathcal{D}\psi\mathcal{D}\bar{\psi}\,J[\vartheta]
     \exp{ \left[ \int{d^4x\, \mathcal{L}_{\mathrm{QED}} + \vartheta(x)(\partial_\mu j^\mu_5
 - 2im\bar{\psi}\gamma^5\psi) }  \right] } }.
 \end{equation}
-Thus to first order in $\vartheta(x)$ we have
+Thus to first-order in $\vartheta(x)$ we have
 \begin{equation}
    Z[A, \vartheta] = \int{\mathcal{D}\psi\mathcal{D}\bar{\psi}\, \left\{1 + \int{d^4x\,
      \vartheta(x)(\partial_\mu j^\mu_5 - 2im\bar{\psi}\gamma^5\psi -\mathcal{A})} \right\}

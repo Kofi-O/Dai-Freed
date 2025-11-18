@@ -383,7 +383,9 @@ and a Noether current
 We now proceed à la Schwinger, gauging the axial symmetry by promoting $\partial_\mu$
 to a covariant derivative $\widetilde{D}_\mu$
 as in~\eqref{eq:3} (with $q=e$) and determining the required
-gauge transformation
+gauge transformation\footnote{There are 4 components
+of $\Pi_\mu$ invariant under~\eqref{eq:13} which we set to 0,
+although this does not affect the following calculations.}
 \begin{equation}
   {\mathcal{L}_{D}|}_{m=0} = \bar{\psi}(i\gamma^\mu \partial_\mu)\psi
   - q\bar{\psi}\gamma^\mu\Pi_\mu\psi,
@@ -824,13 +826,15 @@ the anomalous divergence for the axial current
 
 \subsection{Atiyah–Singer index Theorem}
 
-Given an eigenfunction of the Dirac operator
-$\slashed{D}$, $\phi_n$, with an eigenvalue $\lambda_n \neq 0$ 
+The Dirac operator $\slashed{D}$ is hermitian in Euclidean space.
+Given an eigenfunction of $\slashed{D}$, $\phi_n$, with an eigenvalue $\lambda_n \neq 0$ 
 ,$\gamma^5\phi_n$ is also an eigenfunction
 \begin{equation}
-  \slashed{D}(\gamma^5\phi_n) = -\gamma^5\slashed{D}(\phi_n) = -\lambda_n\gamma^5\phi_n,
+  \slashed{D}(\gamma^5\phi_n) = -\gamma^5\slashed{D}(\phi_n) = -\lambda_n\gamma^5\phi_n.
 \end{equation}
-and the two are orthogonal as they have different eigenvalues.
+Moreover, hermiticity of $\slashed{D}$ implies that $\phi_n$ and $\gamma^5\phi_n$
+are orthogonal (as they have different eigenvalues) by the
+spectral theorem~\cite{Spectral}.
 However, when the eigenvalue is zero $\phi_n$ and $\gamma^5\phi_n$ correspond to $\lambda_n = 0$
 and are called zero modes of $\slashed{D}$. We also have that $\gamma^5$ is 
 hermitian thus by the spectral theorem there is a basis that diagonalises $\gamma^5$
@@ -883,16 +887,16 @@ constant and $\hat{A}(\Omega) = 1$. Thus the index becomes
   \mathrm{index}(\slashed{D}_+ ) =  \int_{S^4}{\mathrm{ch}(F)}
   = \frac{1}{2!}{\left(\frac{i}{2\pi}\right)}^2 \int_{S^4}{\mathrm{Tr}(F^2)}.
 \end{equation}
-Assuming that the action due to the Maxwell Lagrangian is finite
+Assuming that the action due to the Maxwell Lagrangian converges
 \begin{equation}\label{eq:8}
-  \int_{S^4}{d^4x\, F_{\mu\nu}F^{\mu\nu}} < \infty \iff 
-  A_\mu\big|_{S^4} \xrightarrow{x \rightarrow \infty} - \frac{i}{e}g^{-1}\partial_{\mu}g\big|_{S^4};
-  \quad g(x)\in \mathrm{U}(1),
+  \int_{\mathbb{R}^4}{d^4x\, F_{\mu\nu}F^{\mu\nu}} < \infty \iff 
+  A_\mu \xrightarrow{x \rightarrow \infty} - \frac{1}{e}\partial_{\mu}\vartheta;
+  \quad \vartheta(x)\in C^2(\mathbb{R}^4),
 \end{equation}
-we can map our problem from $S^4$ to $\mathbb{R}^4$
-and $\mathrm{ch}(F)$ coincides with the Dirac operator's
-index density in Euclidean space if the gauge fields $A_\mu$
-obey~\eqref{eq:8}~\cite{JackiwRebbi1977,Belavin}.
+we can map our problem from $S^4$ to $\mathbb{R}^4$.
+Hence $\mathrm{ch}(F)$ coincides with the Dirac operator's
+index density in Euclidean space if the gauge fields
+are asymptotically `flat' ($A_\mu$ is a pure gauge at infinity)~\cite{JackiwRebbi1977,Belavin}.
 Using antisymmetry of the wedge product we identify the
 axial anomaly in Euclidean space as 
 \begin{equation}

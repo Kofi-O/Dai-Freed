@@ -4,44 +4,44 @@ The top-level auxiliary file: report.aux
 The style file: JHEP.bst
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: reportNotes.bib
-You've used 40 entries,
+You've used 41 entries,
             2316 wiz_defined-function locations,
-            881 strings with 9869 characters,
-and the built_in function-call counts, 15076 in all, are:
-= -- 1641
-> -- 300
+            890 strings with 10118 characters,
+and the built_in function-call counts, 15548 in all, are:
+= -- 1691
+> -- 310
 < -- 0
-+ -- 101
-- -- 61
-* -- 1185
-:= -- 1937
-add.period$ -- 40
-call.type$ -- 40
-change.case$ -- 40
++ -- 104
+- -- 63
+* -- 1223
+:= -- 1991
+add.period$ -- 41
+call.type$ -- 41
+change.case$ -- 41
 chr.to.int$ -- 0
-cite$ -- 40
-duplicate$ -- 1057
-empty$ -- 1420
-format.name$ -- 183
-if$ -- 3931
+cite$ -- 41
+duplicate$ -- 1097
+empty$ -- 1471
+format.name$ -- 189
+if$ -- 4048
 int.to.chr$ -- 0
-int.to.str$ -- 40
-missing$ -- 147
-newline$ -- 124
-num.names$ -- 40
-pop$ -- 126
+int.to.str$ -- 41
+missing$ -- 149
+newline$ -- 127
+num.names$ -- 41
+pop$ -- 134
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 655
+skip$ -- 668
 stack$ -- 0
-substring$ -- 1008
-swap$ -- 331
+substring$ -- 1052
+swap$ -- 338
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 176
-width$ -- 42
-write$ -- 410
+while$ -- 182
+width$ -- 43
+write$ -- 421

@@ -27,7 +27,7 @@
 In this work, we detail the effect of continuous symmetries on classical gauge theories
 namely, Noether's theorems, before gauging the Dirac Lagrangian's 
 axial symmetry to obtain a quantum electrodynamical analogue of the
-interaction between massless Dirac fermions and a $\mathrm{U}(1)$ axial boson;
+interaction between massless Dirac fermions and $\mathrm{U}(1)$ axial bosons;
 an `axial theory'.
 Subsequently, we investigate the effect of a classical theory's symmetries
 on the quantum field theory (QFT) via Slavnov-Taylor and Ward-Takahashi identities,
@@ -47,7 +47,7 @@ we compute the anomaly explicitly.}
 
 The study of continuous symmetries in dynamical systems has long been
 used by theorists to constrain possible Lagrangians. To this end, the seminal
-results in classical field theory are Noether's first and second theorems\cite{Noether1918}, 
+results in classical field theory are Noether's first and second theorems\cite{NoetherTran}, 
 which reveal the correspondence between quantities conserved on-shell and 
 infinitesimal symmetries. Moreover, the analysis of local (gauge) symmetries
 has produced incredibly successful gauge theories such as quantum electrodynamics\cite{Schwinger},
@@ -72,8 +72,7 @@ produces a gauge-variant partition function; an inconsistent quantum theory.
 Finally, we compute the gauge-variance of the `axial theory' partition function
 using Fujikawa's method~\cite{Fujikawa2}, although a topological
 approach is possible (cf.~\cite{AlvarezGuameNon-AB,Sumitani1984}), and
-demonstrate an inconsistency in the quantum theory. Hence
-a $\mathrm{U}(1)$ axial boson coupled to Dirac fermions does not exist.
+demonstrate an inconsistency in the quantum theory.
 
 \section{Symmetries in Classical Gauge theory}
 
@@ -188,7 +187,7 @@ we find that
 where $E_k$ are the Euler-Lagrange derivatives and $\theta^\mu$ is
 the symplectic potential density~\cite{LocalSymm}.
 By considering the shift in the action we arrive at
-Noether's first theorem~\cite{Noether1918}; an 
+Noether's first theorem~\cite{NoetherTran}; an 
 infinitesimal transformation $\vartheta(\epsilon)$ is a symmetry
 of the Lagrangian if, and only if,
 \begin{equation}\label{eq:1}
@@ -254,7 +253,7 @@ the surface term $S^\mu$ from integration by parts we find an expression similar
 with the important difference that $S^\mu$ vanishes on-shell. The
 quantity $j^\mu + S^\mu$ is divergence-free off-shell, thus
 by the Poincaré lemma we obtain
-Noether's second theorem~\cite{Noether1918, Noeth2Ward, SuperPot};
+Noether's second theorem~\cite{NoetherTran, Noeth2Ward, SuperPot};
 the canonical Noether current $j^\mu$ is
 the divergence of a rank-2 tensor on-shell
 \begin{equation}\label{eq:2}
@@ -282,7 +281,7 @@ becomes Maxwell's equations
 In quantum mechanics, the Schrodinger equation is not Lorentz invariant and is thus
 incompatible with special relativity. A generalisation of the relativistic
 dispersion relation, using Hamiltonian and momentum operators, leads to the Klein-Gordon
-equation\footnote{$(\square + m^2)\psi = 0$.}~\cite{Klein1926, Gordon1926}.
+equation\footnote{$(\square + m^2)\psi = 0$.}~\cite{Klein-tran, Gordon1926}.
 However, the Klein-Gordon equation is a second-order partial differential equation and
 subsequently does not uniquely determine the time-evolution of the wavefunction.
 Alternatively, by finding the half-iterate of the d'Alembert
@@ -359,7 +358,7 @@ another symmetry better seen in the Weyl basis
   \begin{pmatrix}0 & \sigma^\mu\partial_\mu \\ \bar{\sigma}^{\mu}\partial_\mu & 0 \end{pmatrix}.
 \end{equation}
 In this basis the Dirac Lagrangian can be seen as the interaction between two Weyl fermions
-of opposite chirality~\cite{Weyl}
+of opposite chirality~\cite{Weyl-tran}
 \begin{equation}
   \mathcal{L}_\mathrm{D} = \psi_\mathrm{L}^{\dagger}(i\sigma^\mu\partial_\mu)\psi_\mathrm{L} +
   \psi_\mathrm{R}^{\dagger}(i\bar{\sigma}^\mu\partial_\mu)\psi_\mathrm{R}
@@ -431,7 +430,7 @@ in~\cite{energy–momentum-tensor} we construct an improved energy-momentum tens
  + \mathrm{Tr}(K_{\kappa\mu}K^{\nu\kappa}) - \delta^\mu_\nu\mathcal{L}_\mathrm{A},
 \end{equation}
 which is clearly gauge-invariant. Thus gauging the axial symmetry results in a 
-well formulated classical gauge theory of an axial boson and massless Dirac
+well formulated classical gauge theory of axial bosons and massless Dirac
 fermions.
 
 \section{Quantum Field Theory}
@@ -533,7 +532,7 @@ quantised theory. Suppose the classical action admits a local symmetry
 such that the path integral measure is invariant
 \begin{equation}
   \phi_\mu \mapsto \phi_\mu + \delta_\epsilon\phi_\mu +
-  \mathcal{O}(\epsilon^2); \quad \delta_\epsilon\phi_\mu = \epsilon\vartheta_\mu(\phi, x),
+  \mathcal{O}(\epsilon^2); \quad \delta_\epsilon\phi_\mu = \epsilon\vartheta_\mu(\phi_k, x),
 \end{equation}
 \begin{equation}
   \mathcal{D}\phi \mapsto
@@ -556,7 +555,7 @@ we can write in Euclidean space
 \end{equation}
 and after interchanging the spacetime and path integrals we have
 \begin{equation}\label{eq:4}
-  \int{d^4x\,J^\mu(x)\!\braket{\vartheta_\mu(\phi, x)}}_J = 0.
+  \int{d^4x\,J^\mu(x)\!\braket{\vartheta_\mu(\phi_k, x)}}_J = 0.
 \end{equation}
 We define the effective quantum action as the Legendre transform
 \begin{equation}
@@ -570,11 +569,11 @@ Taking the functional derivative we obtain
 and after using~\eqref{eq:4} and the definition
 of a functional derivative we have
 \begin{equation}
-  \delta\Gamma[\varphi_\mu;\braket{\vartheta_\mu(\phi, x)}_J] = 0.
+  \delta\Gamma[\varphi_\mu;\braket{\vartheta_\mu(\phi_k, x)}_J] = 0.
 \end{equation}
 Thus the effective quantum action is invariant under the transformations
 \begin{equation}
-  \varphi_\mu \mapsto \varphi_\mu + \epsilon\!\braket{\vartheta_\mu(\phi, x)}_J,
+  \varphi_\mu \mapsto \varphi_\mu + \epsilon\!\braket{\vartheta_\mu(\phi_k, x)}_J,
 \end{equation}
 such a relation is called a Slavnov-Taylor identity~\cite{Slavnov, Taylor, Slavnov–Taylor}.
 If the transformation is linear in the
@@ -799,21 +798,21 @@ via the Jacobian of the path integral measure
 \end{equation}
 Under the axial transformation the partition function becomes
 \begin{equation}
-  Z'[A, \vartheta] = \int{\mathcal{D}\psi'\mathcal{D}\bar{\psi}'\,
-  \exp{\left[ \int{d^4x\, -\frac{1}{4}F_{\mu\nu}F^{\mu\nu} + \bar{\psi}'(i\slashed{D} -m)\psi'} \right]}},
+  Z'[A] = \int{\mathcal{D}\psi'\mathcal{D}\bar{\psi}'\,
+  \exp{\left[ i \int{d^4x\, -\frac{1}{4}F_{\mu\nu}F^{\mu\nu} + \bar{\psi}'(i\slashed{D} -m)\psi'} \right]}},
 \end{equation}
 but this is just a relabeling of the integration variables, thus the partition
 function is unchanged. Considering the change in the QED Lagrangian we have
 \begin{equation}
-  Z[A, \vartheta] = \int{\mathcal{D}\psi\mathcal{D}\bar{\psi}\,J[\vartheta]
-    \exp{ \left[ \int{d^4x\, \mathcal{L}_{\mathrm{QED}} + \vartheta(x)(\partial_\mu j^\mu_5
+  Z[A] = \int{\mathcal{D}\psi\mathcal{D}\bar{\psi}\,J[\vartheta]
+    \exp{ \left[i \int{d^4x\, \mathcal{L}_{\mathrm{QED}} + \vartheta(x)(\partial_\mu j^\mu_5
 - 2im\bar{\psi}\gamma^5\psi) }  \right] } }.
 \end{equation}
 Thus, to first-order in $\vartheta(x)$ we have
 \begin{equation}
-   Z[A, \vartheta] = \int{\mathcal{D}\psi\mathcal{D}\bar{\psi}\, \left\{1 + \int{d^4x\,
+   Z[A] = \int{\mathcal{D}\psi\mathcal{D}\bar{\psi}\, \left\{1 + i\int{d^4x\,
      \vartheta(x)(\partial_\mu j^\mu_5 - 2im\bar{\psi}\gamma^5\psi -\mathcal{A})} \right\}
-   \exp{\left[ \int{d^4x\, \mathcal{L}_{\mathrm{QED}} } \right]}}.
+   \exp{\left[ i\int{d^4x\, \mathcal{L}_{\mathrm{QED}} } \right]}}.
 \end{equation}
 Subsequently, by the fundamental lemma of the calculus of variations we have
 the anomalous divergence for the axial current
@@ -882,15 +881,15 @@ Now we choose the manifold $S^{4} = \Omega$ so the Riemannian curvature is
 constant and $\hat{A}(\Omega) = 1$. Thus the index becomes
 \begin{equation}
   \mathrm{index}(\slashed{D}_+ ) =  \int_{S^4}{\mathrm{ch}(F)}
-  = \frac{1}{2!}{\left(\frac{i}{2\pi}\right)}^2 \int_{S^4}{\mathrm{Tr}(F^2)}.
+  = \frac{1}{2!}{\left(\frac{i}{2\pi}\right)}^2 \int_{S^4}{\mathrm{Tr}(F \wedge F)}.
 \end{equation}
 Assuming the action due to the Maxwell Lagrangian converges
 \begin{equation}\label{eq:8}
   \int_{\mathbb{R}^4}{d^4x\, F_{\mu\nu}F^{\mu\nu}} < \infty \iff 
-  A_\mu \xrightarrow{x \rightarrow \infty} - \frac{1}{e}\partial_{\mu}\vartheta;
+  A_\mu \xrightarrow{|x| \rightarrow \infty} - \frac{1}{e}\partial_{\mu}\vartheta;
   \quad \vartheta(x)\in C^2(\mathbb{R}^4),
 \end{equation}
-we can map our problem from $S^4$ to $\mathbb{R}^4$.
+we can stereographically project our problem from $S^4$ to $\mathbb{R}^4$.
 Hence $\mathrm{ch}(F)$ coincides with the Dirac operator's
 index density in Euclidean space if the gauge fields
 are asymptotically `flat' ($A_\mu$ is a pure gauge at infinity)~\cite{JackiwRebbi1977,Belavin}.
@@ -920,18 +919,18 @@ although a topological approach is possible
 (cf.~\cite{AlvarezGuameNon-AB,Sumitani1984})
 using the Atiyah–Singer Families index theorem~\cite{FamiliesIndex}.
 For the axial theory Lagrangian in~\eqref{eq:9}, 
-the path integral in Euclidean space is 
+the path integral is 
 \begin{equation}
   \int{\mathcal{D}\psi\mathcal{D}\bar{\psi}\,
-    \exp{\left[- \int{d^4x\, -\frac{1}{4}\mathrm{Tr}(K_{\mu\nu}K^{\mu\nu}) 
+    \exp{\left[i \int{d^4x\, -\frac{1}{4}\mathrm{Tr}(K_{\mu\nu}K^{\mu\nu}) 
           + \bar{\psi}i\widetilde{\slashed{D}}\psi
   } \right]}}.
 \end{equation}
 The classical action is gauge-invariant by construction, thus the only change in
 the path integral under a gauge transformation is from the Jacobian factor
 \begin{equation}
-    \int{\mathcal{D}\psi'\mathcal{D}\bar{\psi}'\, e^{-S[\psi',\bar{\psi}']} } =
-    \int{\mathcal{D}\psi\mathcal{D}\bar{\psi}\, J[\vartheta] e^{-S[\psi,\bar{\psi}]} },
+    \int{\mathcal{D}\psi'\mathcal{D}\bar{\psi}'\, e^{iS[\psi',\bar{\psi}']} } =
+    \int{\mathcal{D}\psi\mathcal{D}\bar{\psi}\, J[\vartheta] e^{iS[\psi,\bar{\psi}]} },
 \end{equation}
 where the Jacobian takes the same form as in~\eqref{eq:10}, for an orthonormal
 basis of eigenfunctions $\{ \phi_n(x)\}$ of the operator $\widetilde{\slashed{D}}$
@@ -961,18 +960,18 @@ Now we compute the series in momentum space
   \begin{split}
   \sum_{n = 1}^{\infty}{\phi_n^\dagger\gamma^5
   f\left( \frac{\widetilde{\slashed{D}}{}^2 }{M^2} \right)\phi_n} =
-  \int{\frac{d^4k d^4p}{(2\pi)^4} \sum_{n=1}^{\infty}{ e^{-ip\cdot x}\tilde{\phi}_n^\dagger(p)
+  \int{\frac{d^4k d^4p}{(2\pi)^4} \sum_{n=1}^{\infty}{ e^{-ip_\mu x^\mu}\tilde{\phi}_n^\dagger(p)
       \gamma^5 f\left( \frac{ \widetilde{\slashed{D}}{}^2 }{M^2}\right) \tilde{\phi}_n(k)
-  e^{ik\cdot x} } } \\
+  e^{ik_\mu x^\mu} } } \\
   =  \int{\frac{d^4k}{(2\pi)^4}\, \mathrm{Tr}\left\{
       \gamma^5 f\left( \frac{(\widetilde{D}_\mu +ik_\mu)(\widetilde{D}^\mu +ik^\mu)}{M^2}
         + \frac{iq [\gamma^\mu,\gamma^\nu ]K_{\mu\nu} }{4M^2} \right)  \right\} };
       \end{split}
 \end{equation}
 \begin{equation}
-  \phi_n(x) = \int{\frac{d^4k}{(2\pi)^2}\,\tilde{\phi}_n(k)e^{ik\cdot x}   },
+  \phi_n(x) = \int{\frac{d^4k}{(2\pi)^2}\,\tilde{\phi}_n(k)e^{ik_\mu x^\mu}   },
 \end{equation}
-where we have used the identities
+where the trace is taken over the internal and $\gamma$ indices, and we have use the identities
 \begin{equation}
   \sum_{n = 1}^{\infty}{\tilde{\phi}_n^\dagger(p) A \tilde{\phi}_n(k)} =
   \delta(k-p) \mathrm{Tr}(A),
@@ -982,7 +981,7 @@ where we have used the identities
   + \frac{iq}{4}[\gamma^\mu, \gamma^\nu]K_{\mu\nu},
 \end{equation}
 \begin{equation}
-  e^{-ikx}f(\partial_\mu)e^{ikx} = f(\partial_\mu +ik_\mu).
+  e^{-ik_\mu x^\mu}f(\partial_\mu)e^{ik_\mu x^\mu} = f(\partial_\mu +ik_\mu).
 \end{equation}
 Now we rescale the momenta via $k_\mu \rightarrow Mk_\mu$ and the series becomes
 \begin{equation}
@@ -991,32 +990,61 @@ Now we rescale the momenta via $k_\mu \rightarrow Mk_\mu$ and the series becomes
         + 2iMk_\mu \widetilde{D}^\mu}{M^2} -k^2
         + \frac{iq [\gamma^\mu,\gamma^\nu ]K_{\mu\nu} }{4M^2} \right)  \right\} }. 
 \end{equation}
-Expanding the Taylor series of $f(x)$ about $-k^2 = - k_\mu k^\mu$, and using the trace 
+Expanding the Taylor series of $f(x)$ about $-k^2 \coloneq - k_\mu k^\mu$, and using the trace 
 properties of the gamma matrices, the only non-vanishing term in
 the limit $M \rightarrow \infty$ is the term quadratic in $K_{\mu\nu}$ 
 \begin{equation}
-  \frac{M^4q^2}{2!M^4}\mathrm{Tr}(\epsilon^{\mu\nu\rho\sigma}K_{\mu\nu}K_{\rho\sigma})
+  \frac{M^4q^2}{2!M^4}\epsilon^{\mu\nu\rho\sigma}\mathrm{Tr}(K_{\mu\nu}K_{\rho\sigma})
   \int{\frac{d^4k}{(2\pi)^4}f''(-k^2) }.
 \end{equation}
 We calculate the regulator integral in hyperspherical coordinates
 \begin{equation}
 \begin{split}
-  \int_{\mathbb{R}^4}{\frac{d^4k}{(2\pi)^4}f''(-k^2) }
-  & = \frac{1}{(2\pi)^4}\int_{\mathbb{R}^4}{dr\,d\varphi_1\,d\varphi_2\,d\varphi_3\,
-   f''(-r^2)r^3\sin^2(\varphi_1)\sin(\varphi_2)} \\
-  & = \frac{2\pi^2}{(2\pi)^4}\int^{\infty}_0{dr\,r^3f''(-r^2)}
-  = \frac{1}{16\pi^2}\int_0^\infty{du\,uf''(-u)} = \frac{1}{16\pi^2},
+  \int{\frac{d^4k}{(2\pi)^4}f''(-k^2) }
+  & = \frac{1}{(2\pi)^4}\int{dr\,d\varphi_1\,d\varphi_2\,d\varphi_3\,
+   f''(r^2)r^3\sin^2(\varphi_1)\sin(\varphi_2)} \\
+  & = \frac{2\pi^2}{(2\pi)^4}\int^{\infty}_0{dr\,r^3f''(r^2)}
+  = \frac{1}{16\pi^2}\int_0^\infty{du\,uf''(u)} = \frac{1}{16\pi^2},
 \end{split}
 \end{equation}
 the last equality follows from integration by parts and compact support of 
-$f(x)$ and its derivatives. Finally, we have 
+$f(x)$ and its derivatives. Thus the Jacobian is 
 \begin{equation}
-J[\vartheta] = \exp{\left[ \int{d^4x\, \frac{-iq^2}{16\pi^2}
-      \mathrm{Tr}(\epsilon^{\mu\nu\rho\sigma}K_{\mu\nu}K_{\rho\sigma})
-      \vartheta(x)} \right]},
+J[\vartheta] = \exp{\left[ \frac{-iq^2}{16\pi^2} \int{d^4x\,  \vartheta(x)} 
+      \epsilon^{\mu\nu\rho\sigma}\mathrm{Tr}(K_{\mu\nu}K_{\rho\sigma}) \right]}.
 \end{equation}
-thus there is gauge-variance in the path integral and the quantum theory
-is inconsistent. 
+Using the cycle definition of the Levi-Civita symbol and invariance of the 
+trace under cyclic permutations we see that
+\begin{equation}
+  \begin{split}
+    \epsilon^{\mu\nu\rho\sigma}\mathrm{Tr}(K_{\mu\nu}K_{\rho\sigma})
+    & = 4 \epsilon^{\mu\nu\rho\sigma}\mathrm{Tr}( \partial_\mu\Pi_\nu\partial_\rho\Pi_\sigma
+  +2iq\partial_\mu\Pi_\nu\Pi_\rho\Pi_\sigma) \\
+    & = 4 \epsilon^{\mu\nu\rho\sigma}\partial_\mu\mathrm{Tr}\left( \Pi_\nu\partial_\rho\Pi_\sigma
+   + \frac{2iq}{3} \Pi_\nu\Pi_\rho\Pi_\sigma\right),
+  \end{split}
+\end{equation}
+this is the divergence of a Chern-Simons current~\cite{Witten1989,CSreview}.
+Finally, we have
+\begin{equation}
+  \begin{split}
+    J[\vartheta] & = \exp{\left[ \frac{-iq^2}{4\pi^2} \int{d^4x\, 
+      \vartheta(x)\epsilon^{\mu\nu\rho\sigma}\partial_\mu\mathrm{Tr}
+      \left( \Pi_\nu\partial_\rho\Pi_\sigma + 
+      \frac{2iq}{3} \Pi_\nu\Pi_\rho\Pi_\sigma\right)} \right]} \\
+  & = \exp{ \left[ \frac{-iq^2}{4\pi^2}
+    \lim_{r \rightarrow \infty}{\left\{ \int_{S_r^3}{ds_\mu\,
+    \vartheta(x)\epsilon^{\mu\nu\rho\sigma}\mathrm{Tr}
+      \left( \Pi_\nu\partial_\rho\Pi_\sigma + 
+      \frac{2iq}{3} \Pi_\nu\Pi_\rho\Pi_\sigma\right)} \right\}} \right]},
+  \end{split}
+\end{equation}
+where $r$ is the radius of a 4-ball with boundary $S^3_r$.
+For constant $\vartheta(x)$ the integral is a Chern-Simons action, and hence
+a topological invariant independent of $r$.
+Thus, there is gauge-variance in the path integral. Moreover, 
+the gauge-variance is a topological invariant of the quantum theory and
+no regularisation procedure can produce a consistent QFT\@. 
 
 \section{Conclusion}
 
@@ -1030,8 +1058,8 @@ gauging an anomalous `linear' symmetry. Moreover, we have shown
 that the axial symmetry admits a well-formulated classical gauge theory
 but the axial anomaly breaks gauge symmetry in the quantum theory.
 Due to the topological nature of the axial anomaly, such a violation
-of unitarity is irrecoverable and a $\mathrm{U}(1)$ axial boson 
-coupled to Dirac fermions does not exist.
+of unitarity is irrecoverable and $\mathrm{U}(1)$ axial bosons 
+coupled to Dirac fermions in this manner do not exist.
 
 \appendix
 \section{N-point function derivative}
@@ -1072,7 +1100,8 @@ After noting that $\delta(x_0 - y^0_0) = 0$, we see that the third term is
     {\widehat{\mathcal{U}}_{i+1}\cdots\widehat{\mathcal{U}}_n}|0} },
 \end{equation}
 using the notation in~\eqref{eq:12}. Each term in the sum is clearly a time-ordered
-product of the commutator and the $\mathcal{U}_i$ operators. Seeing 
+product of the `commutator' and the $\mathcal{U}_i$ operators (where
+we time-order the `commutator' with respect to the subscript). Seeing 
 that the time-ordered product with and $\mathcal{U}_i$ and $\mathcal{V}_i$ coincide,
 it is clear that~\eqref{eq:a1} can be written as~\eqref{eq:11}.
 

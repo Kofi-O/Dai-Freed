@@ -13,8 +13,8 @@
 \contentsline {subsection}{\numberline {5.1}Slavnov-Taylor identities}{9}{subsection.5.1}%
 \contentsline {subsection}{\numberline {5.2}Ward-Takahashi identities}{11}{subsection.5.2}%
 \contentsline {section}{\numberline {6}Anomalies in QFT}{12}{section.6}%
-\contentsline {subsection}{\numberline {6.1}The Path Integral measure \& Fujikawa's method}{12}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Atiyah–Singer index Theorem}{14}{subsection.6.2}%
-\contentsline {subsection}{\numberline {6.3}Anomalies as obstructions to gauging}{15}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.1}The path integral measure \& Fujikawa's method}{12}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Atiyah–Singer index theorem}{14}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Anomalies as obstructions to gauging linear symmetries}{15}{subsection.6.3}%
 \contentsline {section}{\numberline {7}Conclusion}{18}{section.7}%
 \contentsline {section}{\numberline {A}N-point function derivative}{18}{appendix.A}%

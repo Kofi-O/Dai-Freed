@@ -26,6 +26,7 @@
 
 ENTRY
   { address
+    annotate
     author
     booktitle
     chapter
@@ -325,6 +326,14 @@ FUNCTION {format.authors}
     { author format.names }
   if$
 }
+
+FUNCTION {format.annotate}
+{ annotate empty$
+    { "" }
+    { annotate }
+    if$
+}
+
 
 FUNCTION {format.eprint}
 { eprint empty$
@@ -805,6 +814,8 @@ FUNCTION {article}
 
   new.sentence
   fin.entry
+  format.annotate write$
+  newline$
 }
 
 FUNCTION {book}

@@ -102,7 +102,7 @@ in configuration space, $\vec{\Phi}(\vec{x}, t)$, the classical action becomes
   = \int{d^4x\,\mathcal{L}(\phi_k(\vec{x}, t),\partial_{\mu}\phi_k(\vec{x}, t), \vec{x}, t)}.
 \end{equation}
 Using Hamilton's principle~\cite{LA&LI-Mech-VII} ($\delta S[\vec{\Phi}; \vec{\rho} ] = 0,
-\forall\vec{\rho} \in C_{0}^{\infty})$\footnote{$\delta{S}$ is a Gateaux derivative,
+\forall\vec{\rho} \in C_{0}^{\infty}),$\footnote{$\delta{S}$ is a Gateaux derivative,
 and $\vec{\rho}$ vanishes at the endpoints of $\vec{\Phi}$.}
 we obtain the field-theoretic Euler-Lagrange equations 
 \begin{equation}
@@ -145,8 +145,8 @@ where we use the functional derivative identify
   - \partial_\mu \left[ \frac{\partial \mathcal{F}}{\partial (\partial_\mu g)} \right].
 \end{equation}
 To begin second quantisation we will also require the notion of a field-theoretic poisson bracket.
-Given two functionals, $F$ and $G$, of the dynamical
-fields given by\footnote{n.b. $K({x}) = \int{d{y}\,[K({y}) \delta(x - y)]}$.}  
+Given two functionals, $F$ and $G$,\footnote{n.b. $K({x}) = \int{d{y}\,[K({y}) \delta(x - y)]}$.}
+of the dynamical fields given by 
 \begin{equation}
   F = \int{d^3\vec{x}\, \mathcal{F}(\pi_k, \phi_k, \vec{x}, t)}, \quad
   G = \int{d^3\vec{x}\, \mathcal{G}(\pi_k, \phi_k, \vec{x}, t)},
@@ -196,7 +196,7 @@ of the Lagrangian if, and only if,
 \end{equation}
 where we use the summation convention for the field indices hereafter,
 and the on-shell divergence-free quantity $j^\mu$ is called the conserved
-Noether current\footnote{n.b. $j^\mu$ is $\epsilon$-independent.}.
+Noether current.\footnote{n.b. $j^\mu$ is $\epsilon$-independent.}
 This easily generalises to local symmetries: spacetime dependent generators
 $\vartheta_k(\phi, x)$. Moreover, a Lagrangian with no
 explicit spacetime dependence implies that the canonical energy-momentum
@@ -281,11 +281,11 @@ becomes Maxwell's equations
 In quantum mechanics, the Schrodinger equation is not Lorentz invariant and is thus
 incompatible with special relativity. A generalisation of the relativistic
 dispersion relation, using Hamiltonian and momentum operators, leads to the Klein-Gordon
-equation\footnote{$(\square + m^2)\psi = 0$.}~\cite{Klein-tran, Gordon1926}.
+equation~\cite{Klein-tran, Gordon1926}.\footnote{$(\square + m^2)\psi = 0$.}
 However, the Klein-Gordon equation is a second-order partial differential equation and
 subsequently does not uniquely determine the time-evolution of the wavefunction.
 Alternatively, by finding the half-iterate of the d'Alembert
-operator\footnote{$\square \coloneq \partial^2_t - \nabla^2$.}, the 
+operator,\footnote{$\square \coloneq \partial^2_t - \nabla^2$.} the 
 Klein-Gordon equation simplifies to a first-order partial differential equation;
 the Dirac equation~\cite{dirac1958}
 \begin{equation}
@@ -380,7 +380,7 @@ and a Noether current
 \end{equation}
 We now proceed à la Schwinger, gauging the axial symmetry by promoting $\partial_\mu$
 to a covariant derivative $\widetilde{D}_\mu$
-as in~\eqref{eq:3} (with $q=e$) and determining the required
+as in~\eqref{eq:3} (with $q=e$), and determining the required
 gauge transformation\footnote{There are 4 components
 of $\Pi_\mu$ invariant under~\eqref{eq:13} which we set to 0,
 although this does not affect the following calculations.}
@@ -396,8 +396,8 @@ This is the most general way to gauge the axial symmetry;
 theories with $\gamma^5$ couplings are a well-studied special case
 (cf.~\cite{Gamma5coupling}) hence we investigate the implications of~\eqref{eq:13}.
 Now we must add a kinetic term to the Lagrangian to determine the dynamics 
-of the matrix-valued gauge field\footnote{n.b. $\Pi^{ab}_\mu$ has two
-internal indices and one spacetime index.}.
+of the matrix-valued gauge field.\footnote{n.b. $\Pi^{ab}_\mu$ has two
+internal indices and one spacetime index.}
 Such a term must be gauge-invariant to preserve
 the $\mathrm{U}(1)$ symmetry. We find a Lagrangian analogous to the Maxwell Lagrangian
 \begin{equation}
@@ -489,9 +489,9 @@ $i\psi^\dagger_\alpha$.}
 \end{equation}
 where the unwritten anticommutators vanish.
 This implies the Dirac spinors are Grassmann (anticommuting)
-variables\footnote{n.b. $\phi^2$ is an eigenvalue of $\hat{\phi}^2 = 0$.}
-and we require Berezin's notion of calculus on a Grassmann algebra~\cite{BerezinBook}
-to define integrals over these fields.
+variables;\footnote{n.b. $\phi^2$ is an eigenvalue of $\hat{\phi}^2 = 0$.}
+we require Berezin's notion of calculus on a Grassmann algebra~\cite{BerezinBook}
+to define integrals over Dirac fields.
 
 \subsection{The path integral}
 In a quantised field theory the path integral can be used to
@@ -576,13 +576,13 @@ Thus the effective quantum action is invariant under the transformations
   \varphi_\mu \mapsto \varphi_\mu + \epsilon\!\braket{\vartheta_\mu(\phi_k, x)}_J,
 \end{equation}
 such a relation is called a Slavnov-Taylor identity~\cite{Slavnov, Taylor, Slavnov–Taylor}.
-If the transformation is linear in the
-fields\footnote{e.g.\,linear $R^\mu_n(\phi_k)$ in~\eqref{eq:5}.} such that
+If the transformation is linear in the 
+fields such that
 \begin{equation}\label{eq:7}
   \vartheta_\mu = \Theta_\mu[\phi, x] = \alpha_\mu(x) +
   \int{d^4y\,\beta^\nu_\mu(x, y)\phi_\nu(y) },
 \end{equation}
-the transformation Jacobian becomes field independent
+(e.g.\,linear $R^\mu_n(\phi_k)$ in~\eqref{eq:5}), the transformation Jacobian becomes field independent
 \begin{equation}
   B_{\mu\nu} = \frac{\delta}{\delta\phi_\nu(y)}(\phi_\mu +\epsilon\Theta_\mu[\phi, x])
   = \delta_{\mu\nu}\delta^{(4)}(x - y) + \epsilon\beta^\nu_\mu(x, y),
@@ -688,14 +688,15 @@ and~\eqref{eq:6} we obtain, to first-order in $\epsilon$, the relation
 \end{equation}
 Demanding that the generator $\lambda(\phi, x)$ is smooth and compactly
 supported, and interchanging the spacetime and path integrals,
-leads to\footnote{n.b.\,\eqref{eq:1}$ \implies \partial^x_\mu j^\mu = -\lambda E$.}
+leads to
 \begin{equation}
   \Braket{ \partial^x_\mu j^\mu(x)\prod^n_{i=1}{\mathcal{V}_i(z_i)} } = 
   -i\mathlarger{\mathlarger{\sum}}_{k=1}^n{\delta^{(4)}(x - z_k)
     \Braket{ \lambda(\phi, x)\frac{\partial\mathcal{V}_k}{\partial\phi}(z_k)
   \prod_{i \neq k}^n{\mathcal{V}_i(z_i)}} },
 \end{equation}
-via the fundamental lemma of the calculus of variations.
+via the fundamental lemma of the
+calculus of variations.\footnote{n.b.\,\eqref{eq:1}$ \implies \partial^x_\mu j^\mu = -\lambda E$.}
 The delta function terms are called Schwinger/contact terms, 
 and in the case that none of the insertion times coincide we have 
 the Ward-Takahashi identity~\cite{WardWTI,TakahashiWTI}
@@ -898,7 +899,7 @@ axial anomaly in Euclidean space as
 \begin{equation}
   \partial_\mu j^\mu_5 - 2im\bar{\psi}\gamma^5\psi =
   \mathcal{A}[A_\mu] = \frac{-ie^2}{16\pi^2}
-  \mathrm{Tr}(\epsilon^{\mu\nu\rho\sigma} F_{\mu\nu}F_{\rho\sigma}).
+  \epsilon^{\mu\nu\rho\sigma} F_{\mu\nu}F_{\rho\sigma}.
 \end{equation}
 
 \subsection{Anomalies as obstructions to gauging}
@@ -909,8 +910,8 @@ In the general case, gauging such a symmetry will
 produce a gauge-variant partition function, because constructing a gauge invariant
 classical action ensures the shift in the measure changes the partition function under
 a gauge transformation.
-This gauge symmetry breaking is tantamount to a violation of unitarity\footnote{i.e probability
-non-conservation.} and is fatal for any quantum theory.
+This gauge symmetry breaking is tantamount to a violation of unitarity
+and is fatal for any quantum theory.
 
 We now study the effect of gauging an anomalous symmetry in the case of
 the Dirac Lagrangian's axial symmetry. Using Fujikawa's method~\cite{Fujikawa,Fujikawa2},
@@ -942,8 +943,8 @@ We now proceed via Fujikawa's method of gauge-invariant mode cut-off
 to calculate the Jacobian; we introduce a decreasing regulator
 bump function $f(x)$, with $f(0) = 1$, to approximate
 the ultraviolet cut-off at $N$. Large eigenvalues of $\widetilde{\slashed{D}}$
-correspond to ultraviolet modes\footnote{n.b. $\partial_\mu$ is a momentum
-operator.}, hence $f(\lambda_n)$ is a good regulator that preserves gauge invariance 
+correspond to ultraviolet modes,\footnote{n.b. $\partial_\mu$ is a momentum
+operator.} hence $f(\lambda_n)$ is a good regulator that preserves gauge invariance 
 of $J[\vartheta]$ and we write
 \begin{equation}
   \begin{split}

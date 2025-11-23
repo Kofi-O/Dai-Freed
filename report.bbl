@@ -4,41 +4,54 @@
 \bibitem{NoetherTran}
 E.~Noether, \emph{Invariant variation problems}, \href{https://doi.org/10.1080/00411457108231446}{\emph{Transport Theor. Stat. Phys.} {\bfseries 1} (1971) 186}.
 
+
 \bibitem{Schwinger}
 J.~Schwinger, \emph{Quantum electrodynamics. i. a covariant formulation}, \href{https://doi.org/10.1103/PhysRev.74.1439}{\emph{Phys. Rev.} {\bfseries 74} (1948) 1439}.
+
 
 \bibitem{Slavnov}
 A.A.~Slavnov, \emph{Ward identities in gauge theories}, \href{https://doi.org/10.1007/BF01090719}{\emph{Theor. Math. Phys.} {\bfseries 10} (1972) 99}.
 
+
 \bibitem{Taylor}
 J.~Taylor, \emph{Ward identities and charge renormalization of the yang-mills field}, \href{https://doi.org/https://doi.org/10.1016/0550-3213(71)90297-5}{\emph{Nucl. Phys. B} {\bfseries 33} (1971) 436}.
+
 
 \bibitem{Slavnov–Taylor}
 M.~D\"{u}tsch, \emph{Slavnov–taylor identities from the causal point of view}, \href{https://doi.org/10.1142/S0217751X97001699}{\emph{Int. J. Mod. Phys. A} {\bfseries 12} (1997) 3205}.
 
+
 \bibitem{WardWTI}
 J.C.~Ward, \emph{An identity in quantum electrodynamics}, \href{https://doi.org/10.1103/PhysRev.78.182}{\emph{Phys. Rev.} {\bfseries 78} (1950) 182}.
+
 
 \bibitem{TakahashiWTI}
 Y.~Takahashi, \emph{On the generalized ward identity}, \href{https://doi.org/10.1007/BF02832514}{\emph{Il Nuovo Cimento (1955-1965)} {\bfseries 6} (1957) 371}.
 
+
 \bibitem{Adler}
 S.L.~Adler, \emph{Axial-vector vertex in spinor electrodynamics}, \href{https://doi.org/10.1103/PhysRev.177.2426}{\emph{Phys. Rev.} {\bfseries 177} (1969) 2426}.
+
 
 \bibitem{Bell-Jackiw}
 J.S.~Bell and R.~Jackiw, \emph{A pcac puzzle: $\pi^0${\textrightarrow}$\gamma$$\gamma$ in the $\sigma$-model}, \href{https://doi.org/10.1007/BF02823296}{\emph{Il Nuovo Cimento A (1965-1970)} {\bfseries 60} (1969) 47}.
 
+
 \bibitem{Atiyah-Singer}
 M.F.~Atiyah and I.M.~Singer, \emph{The index of elliptic operators: I}, \href{https://doi.org/10.2307/1970715}{\emph{Ann. Math.} {\bfseries 87} (1968) 484}.
+
 
 \bibitem{Fujikawa2}
 K.~Fujikawa, \emph{Path integral for gauge theories with fermions}, \href{https://doi.org/10.1103/PhysRevD.21.2848}{\emph{Phys. Rev. D} {\bfseries 21} (1980) 2848}.
 
+
 \bibitem{AlvarezGuameNon-AB}
 L.~Alvarez-Gaumé and P.~Ginsparg, \emph{The topological meaning of non-abelian anomalies}, \href{https://doi.org/https://doi.org/10.1016/0550-3213(84)90487-5}{\emph{Nucl. Phys. B} {\bfseries 243} (1984) 449}.
 
+
 \bibitem{Sumitani1984}
 T.~Sumitani, \emph{Chiral anomalies and the generalised index theorem}, \href{https://doi.org/10.1088/0305-4470/17/14/016}{\emph{J. Phys. A: Math. Gen.} {\bfseries 17} (1984) L811}.
+
 
 \bibitem{LA&LI-Mech-I}
 L.~Landau and E.~Lifshitz, \emph{\href{https://doi.org/10.1016/B978-0-08-050347-9.50006-X}{The Equations of Motion}},  in \emph{Mechanics}, vol.~1, (Oxford), pp.~1--12, Butterworth-Heinemann (1976).
@@ -52,20 +65,24 @@ L.~Landau and E.~Lifshitz, \emph{\href{https://doi.org/10.1016/B978-0-08-050347-
 \bibitem{LocalSymm}
 J.~Lee and R.M.~Wald, \emph{Local symmetries and constraints}, \href{https://doi.org/10.1063/1.528801}{\emph{J. Math. Phys.} {\bfseries 31} (1990) 725}.
 
+
 \bibitem{calcvar}
 J.~Jost and X.~Li-Jost, \emph{\href{https://books.google.co.uk/books?id=QN8Iw7fUA-8C}{The classical theory}},  in \emph{Calculus of Variations}, Cambridge Studies in Advanced Mathematics, (Cambridge), pp.~4--8, Cambridge University Press (1998).
 
 \bibitem{Noeth2Ward}
 S.G.~Avery and B.U.W.~Schwab, \emph{Noether's second theorem and ward identities for gauge symmetries}, \href{https://doi.org/10.1007/JHEP02(2016)031}{\emph{J. High Energy Phys.} {\bfseries 2016} (2016) 31}.
 
+
 \bibitem{SuperPot}
 G.~Barnich and F.~Brandt, \emph{Covariant theory of asymptotic symmetries, conservation laws and central charges}, \href{https://doi.org/10.1016/S0550-3213(02)00251-1}{\emph{Nucl. Phys. B} {\bfseries 633} (2002) 3}.
+
 
 \bibitem{Klein-tran}
 O.~Klein, \emph{\href{https://doi.org/10.1142/9789814368728_0006}{Quantum Theory and Five-Dimensional Relativity Theory}},  in \emph{The Oskar Klein Memorial Lectures}, G.~Ekspong, ed., (London), pp.~67--80, World Scientific (2014).
 
 \bibitem{Gordon1926}
 W.~Gordon, \emph{Der comptoneffekt nach der schr{\"o}dingerschen theorie}, \href{https://doi.org/10.1007/BF01390840}{\emph{Z. Phys.} {\bfseries 40} (1926) 117}.
+As translated by \href{https://api.semanticscholar.org/CorpusID:195782508}{D. H. Delphenich}
 
 \bibitem{dirac1958}
 P.A.M.~Dirac, \emph{\href{https://cds.cern.ch/record/102829}{The Principles of Quantum Mechanics}}, Clarendon Press, Oxford, 4~ed. (1958).
@@ -73,26 +90,34 @@ P.A.M.~Dirac, \emph{\href{https://cds.cern.ch/record/102829}{The Principles of Q
 \bibitem{Weyl-tran}
 H.~Weyl, \emph{Gravitation and the electron}, \href{https://doi.org/10.1073/pnas.15.4.323}{\emph{Proc. Natl. Acad. Sci. U.S.A.} {\bfseries 15} (1929) 323}.
 
+
 \bibitem{Gamma5coupling}
 K.~Fujikawa, \emph{Evaluation of the chiral anomaly in gauge theories with ${\ensuremath{\gamma}}_{5}$ couplings}, \href{https://doi.org/10.1103/PhysRevD.29.285}{\emph{Phys. Rev. D} {\bfseries 29} (1984) 285}.
+
 
 \bibitem{energy–momentum-tensor}
 D.N.~Blaschke, F.~Gieres, M.~Reboud and M.~Schweda, \emph{The energy–momentum tensor(s) in classical gauge theories}, \href{https://doi.org/10.1016/j.nuclphysb.2016.07.001}{\emph{Nucl. Phys. B} {\bfseries 912} (2016) 192}.
 
+
 \bibitem{Holethry}
 P.A.M.~Dirac, \emph{A theory of electrons and protons}, \href{https://doi.org/10.1098/rspa.1930.0013}{\emph{Proc. Roy. Soc. Lond. A} {\bfseries 126} (1930) 360}.
+
 
 \bibitem{GROENEWOLD}
 H.~Groenewold, \emph{On the principles of elementary quantum mechanics}, \href{https://doi.org/https://doi.org/10.1016/S0031-8914(46)80059-4}{\emph{Physica} {\bfseries 12} (1946) 405}.
 
+
 \bibitem{FockSpace}
 J.R.~Klauder, \emph{Exponential hilbert space: Fock space revisited}, \href{https://doi.org/10.1063/1.1665176}{\emph{J. Math. Phys.} {\bfseries 11} (1970) 609}.
+
 
 \bibitem{NtveEnrgy}
 W.~Pauli, \emph{On dirac's new method of field quantization}, \href{https://doi.org/10.1103/RevModPhys.15.175}{\emph{Rev. Mod. Phys.} {\bfseries 15} (1943) 175}.
 
+
 \bibitem{SpinStat}
 W.~Pauli, \emph{On the connection between spin and statistics}, \href{https://doi.org/10.1143/ptp/5.4.526}{\emph{Prog. Theor. Exp. Phys.} {\bfseries 5} (1950) 526}.
+
 
 \bibitem{BerezinBook}
 F.~Berezin, \emph{\href{https://doi.org/10.1016/B978-0-12-089450-5.50007-9}{Chapter I - Generating Functionals}},  in \emph{The Method of Second Quantization}, vol.~24 of \emph{Pure and Applied Physics}, pp.~49--77, Academic Press (1966).
@@ -100,8 +125,10 @@ F.~Berezin, \emph{\href{https://doi.org/10.1016/B978-0-12-089450-5.50007-9}{Chap
 \bibitem{DysonDSE}
 F.J.~Dyson, \emph{The $s$ matrix in quantum electrodynamics}, \href{https://doi.org/10.1103/PhysRev.75.1736}{\emph{Phys. Rev.} {\bfseries 75} (1949) 1736}.
 
+
 \bibitem{SchwingerDSE}
 J.~Schwinger, \emph{On the green’s functions of quantized fields. i}, \href{https://doi.org/10.1073/pnas.37.7.452}{\emph{Proc. Natl. Acad. Sci. U.S.A.} {\bfseries 37} (1951) 452}.
+
 
 \bibitem{Fujikawa}
 K.~Fujikawa and H.~Suzuki, \emph{\href{https://doi.org/10.1093/acprof:oso/9780198529132.003.0005}{The Jacobian in path integrals and quantum anomalies}},  in \emph{Path Integrals and Quantum Anomalies}, (Oxford), Clarendon Press (2004).
@@ -112,22 +139,29 @@ M.S.~Birman and M.Z.~Solomjak, \emph{\href{https://doi.org/10.1007/978-94-009-45
 \bibitem{AST-Alvarez-Gaume}
 L.~Alvarez-Gaume, \emph{A note on the atiyah-singer index theorem}, \href{https://doi.org/10.1088/0305-4470/16/18/018}{\emph{J. Phys. A: Math. Gen.} {\bfseries 16} (1983) 4177}.
 
+
 \bibitem{DiffGeomGauge}
 T.~Eguchi, P.B.~Gilkey and A.J.~Hanson, \emph{Gravitation, gauge theories and differential geometry}, \href{https://doi.org/https://doi.org/10.1016/0370-1573(80)90130-1}{\emph{Phys. Rep.} {\bfseries 66} (1980) 213}.
+
 
 \bibitem{JackiwRebbi1977}
 R.~Jackiw and C.~Rebbi, \emph{Spinor analysis of yang-mills theory}, \href{https://doi.org/10.1103/PhysRevD.16.1052}{\emph{Phys. Rev. D} {\bfseries 16} (1977) 1052}.
 
+
 \bibitem{Belavin}
 A.~Belavin, A.~Polyakov, A.~Schwartz and Y.~Tyupkin, \emph{Pseudoparticle solutions of the yang-mills equations}, \href{https://doi.org/https://doi.org/10.1016/0370-2693(75)90163-X}{\emph{Phys. Lett. B} {\bfseries 59} (1975) 85}.
+
 
 \bibitem{FamiliesIndex}
 M.F.~Atiyah and I.M.~Singer, \emph{The index of elliptic operators: Iv}, \href{https://doi.org/0.2307/1970756}{\emph{Ann. Math.} {\bfseries 93} (1971) 119}.
 
+
 \bibitem{Witten1989}
 E.~Witten, \emph{Quantum field theory and the jones polynomial}, \href{https://doi.org/10.1007/BF01217730}{\emph{Commun. Math. Phys.} {\bfseries 121} (1989) 351}.
 
+
 \bibitem{CSreview}
 M.~Mari\~no, \emph{Chern-simons theory and topological strings}, \href{https://doi.org/10.1103/RevModPhys.77.675}{\emph{Rev. Mod. Phys.} {\bfseries 77} (2005) 675}.
+
 
 \end{thebibliography}\endgroup
